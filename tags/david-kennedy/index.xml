@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>David Kennedy on wroot</title>
+    <link>http://wroot.org/tags/david-kennedy/</link>
+    <description>Recent content in David Kennedy on wroot</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Thu, 27 May 2010 00:02:42 +0000</lastBuildDate>
+    
+	<atom:link href="http://wroot.org/tags/david-kennedy/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Kentuckiana ISSA’s Metasploit Class videos available at Irongeek</title>
+      <link>http://wroot.org/posts/kentuckiana-issas-metasploit-class-videos-available-at-irongeek/</link>
+      <pubDate>Thu, 27 May 2010 00:02:42 +0000</pubDate>
+      
+      <guid>http://wroot.org/posts/kentuckiana-issas-metasploit-class-videos-available-at-irongeek/</guid>
+      <description>These presentations from May 8th, 2010 performed on the Brown Hotel in Louisville, Kentucky. on exploiting with the Metasploit framework has an tremendous value. Its from this month, still fresh! Its 7 hours of presentations, it takes a while to finish (I took almost a week! phew!) but its totally worth it!
+It starts with Adrian &amp;#8220;Irongeek&amp;#8221; Crenshaw introducing Metasploit exploiting a Windows box via msfweb and msfconsole. Pretty neat.</description>
+    </item>
+    
+  </channel>
+</rss>

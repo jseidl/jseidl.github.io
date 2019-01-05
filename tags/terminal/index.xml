@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Terminal on wroot</title>
+    <link>http://wroot.org/tags/terminal/</link>
+    <description>Recent content in Terminal on wroot</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Tue, 04 Dec 2012 11:29:09 +0000</lastBuildDate>
+    
+	<atom:link href="http://wroot.org/tags/terminal/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Fixing ‘guake can not init’ and buggy tab titles on Backtrack 5 R3</title>
+      <link>http://wroot.org/posts/fixing-guake-can-not-init-and-buggy-tab-titles-on-backtrack-5-r3/</link>
+      <pubDate>Tue, 04 Dec 2012 11:29:09 +0000</pubDate>
+      
+      <guid>http://wroot.org/posts/fixing-guake-can-not-init-and-buggy-tab-titles-on-backtrack-5-r3/</guid>
+      <description>Hi Folks, I&amp;#8217;m a heavy Guake Terminal user and I just installed the latest Backtrack 5 revision (R3) and installed Guake on it. I was surprised when I tried to start by getting the message:
+ &amp;#8220;Guake can not init!\n\nGconf Error.\nHave you installed guake.schemas properly?&amp;#8221;
+ Long story short, it seems that the package bundled with this version of Backtrack (and maybe others) have a bug into the debian package file/script that installs the guake.</description>
+    </item>
+    
+    <item>
+      <title>Terminal auto-lock with zsh and vlock</title>
+      <link>http://wroot.org/posts/terminal-auto-lock-with-zsh-and-vlock/</link>
+      <pubDate>Wed, 18 Jan 2012 22:33:27 +0000</pubDate>
+      
+      <guid>http://wroot.org/posts/terminal-auto-lock-with-zsh-and-vlock/</guid>
+      <description>I&amp;#8217;m always concerned about leaving terminal sessions open. I&amp;#8217;ve used for many and many years the $TMOUT environment variable to close my sessions if idle for N seconds.
+Just by exporting the TMOUT variable to the number of desired timeout seconds will close your shell (Bash, Ksh, Zsh and some others).
+The following example will timeout in 300 seconds (5 minutes)
+export TMOUT=300 I am currently reading the book Secure Coding: Principles &amp;amp; Practices and the authors cited this timeout technique as pretty ineffective since it annoys more than it helps.</description>
+    </item>
+    
+  </channel>
+</rss>

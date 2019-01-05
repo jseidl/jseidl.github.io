@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Mitm on wroot</title>
+    <link>http://wroot.org/tags/mitm/</link>
+    <description>Recent content in Mitm on wroot</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Wed, 28 Jul 2010 16:30:14 +0000</lastBuildDate>
+    
+	<atom:link href="http://wroot.org/tags/mitm/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>WPA faces new threat ‘Hole 196’ and new key bruteforcing service</title>
+      <link>http://wroot.org/posts/wpa-faces-new-threat-hole-196-and-new-key-bruteforcing-service-2/</link>
+      <pubDate>Wed, 28 Jul 2010 16:30:14 +0000</pubDate>
+      
+      <guid>http://wroot.org/posts/wpa-faces-new-threat-hole-196-and-new-key-bruteforcing-service-2/</guid>
+      <description>WPA was hit hard these days by a rumor of a new threat called &amp;#8216;Hole 196&amp;#8217;.
+The hole would allow GTK (Group Temporal Key) spoofing forcing users to send the rogue AP their private key information leading to a awesome no-footprinted (medium is over air!) man-in-the-middle attacks.
+To understand transient keys over WPA, Md Sohail Ahmad from AirTight said:
+ WPA2 uses two types of keys: 1) Pairwise Transient Key (PTK), which is unique to each client, for protecting unicast traffic; and 2) Group Temporal Key (GTK) to protect broadcast data sent to multiple clients in a network.</description>
+    </item>
+    
+    <item>
+      <title>Mitigating the risk on an ARP poison attack</title>
+      <link>http://wroot.org/posts/mitigating-the-risk-on-an-arp-poison-attack/</link>
+      <pubDate>Sat, 29 May 2010 23:44:57 +0000</pubDate>
+      
+      <guid>http://wroot.org/posts/mitigating-the-risk-on-an-arp-poison-attack/</guid>
+      <description>ARP poisoning is a technique quite simple to be applied and allows traffic to be sniffer over a switched network. It can be used to sniff the connection on-the-fly and capture plain-text password or hashes. ARP poison also allows combination with other attacks such as DNS spoof and packet filters in order to deploy client side exploits transparently.
+This attack can only be performed from the local network because ARP packets aren&amp;#8217;t routed so you can&amp;#8217;t hop between LANs but it can be performed from any machine on the same network so it is a serious concern when dealing with unhappy employees, interns and industrial espionage.</description>
+    </item>
+    
+  </channel>
+</rss>

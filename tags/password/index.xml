@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Password on wroot</title>
+    <link>http://wroot.org/tags/password/</link>
+    <description>Recent content in Password on wroot</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Mon, 21 Jun 2010 20:25:21 +0000</lastBuildDate>
+    
+	<atom:link href="http://wroot.org/tags/password/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Online password generation utility from PcTools</title>
+      <link>http://wroot.org/posts/online-password-generation-utility-from-pctools/</link>
+      <pubDate>Mon, 21 Jun 2010 20:25:21 +0000</pubDate>
+      
+      <guid>http://wroot.org/posts/online-password-generation-utility-from-pctools/</guid>
+      <description>Here&amp;#8217;s a good online password generator from PcTools that generates passwords based on various parameters such as password length; letters, numbers, special characters inclusion; hability to exclude similar characters etc.
+Good to have bookmarked! There&amp;#8217;s also desktop version (Windows) of the password generator in the &amp;#8220;Password Utilities&amp;#8221; software provided by PcTools.</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,1247 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tags on wroot</title>
+    <link>http://wroot.org/tags/</link>
+    <description>Recent content in Tags on wroot</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Wed, 14 Dec 2011 17:40:00 +0000</lastBuildDate>
+    
+	<atom:link href="http://wroot.org/tags/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Access Control</title>
+      <link>http://wroot.org/tags/access-control/</link>
+      <pubDate>Wed, 14 Dec 2011 17:40:00 +0000</pubDate>
+      
+      <guid>http://wroot.org/tags/access-control/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Adrian Crenshaw</title>
+      <link>http://wroot.org/tags/adrian-crenshaw/</link>
+      <pubDate>Thu, 27 May 2010 00:02:42 +0000</pubDate>
+      
+      <guid>http://wroot.org/tags/adrian-crenshaw/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Aes</title>
+      <link>http://wroot.org/tags/aes/</link>
+      <pubDate>Tue, 29 Jun 2010 14:58:13 +0000</pubDate>
+      
+      <guid>http://wroot.org/tags/aes/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Android</title>
+      <link>http://wroot.org/tags/android/</link>
+      <pubDate>Tue, 30 Apr 2013 00:14:28 +0000</pubDate>
+      
+      <guid>http://wroot.org/tags/android/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Arm</title>
+      <link>http://wroot.org/tags/arm/</link>
+      <pubDate>Mon, 18 Jun 2012 21:50:39 +0000</pubDate>
+      
+      <guid>http://wroot.org/tags/arm/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Arp Poison</title>
+      <link>http://wroot.org/tags/arp-poison/</link>
+      <pubDate>Sat, 29 May 2010 23:44:57 +0000</pubDate>
+      
+      <guid>http://wroot.org/tags/arp-poison/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Attack</title>
+      <link>http://wroot.org/tags/attack/</link>
+      <pubDate>Wed, 14 Dec 2011 17:40:00 +0000</pubDate>
+      
+      <guid>http://wroot.org/tags/attack/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Audit</title>
+      <link>http://wroot.org/tags/audit/</link>
+      <pubDate>Tue, 29 Jun 2010 19:01:29 +0000</pubDate>
+      
+      <guid>http://wroot.org/tags/audit/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Automation</title>
+      <link>http://wroot.org/tags/automation/</link>
+      <pubDate>Wed, 26 Jan 2011 02:30:48 +0000</pubDate>
+      
+      <guid>http://wroot.org/tags/automation/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Avr</title>
+      <link>http://wroot.org/tags/avr/</link>
+      <pubDate>Wed, 26 Jan 2011 02:30:48 +0000</pubDate>
+      
+      <guid>http://wroot.org/tags/avr/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Backdoor</title>
+      <link>http://wroot.org/tags/backdoor/</link>
+      <pubDate>Wed, 23 Sep 2015 14:13:55 +0000</pubDate>
+      
+      <guid>http://wroot.org/tags/backdoor/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Backtrack</title>
+      <link>http://wroot.org/tags/backtrack/</link>
+      <pubDate>Tue, 04 Dec 2012 11:29:09 +0000</pubDate>
+      
+      <guid>http://wroot.org/tags/backtrack/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Bash</title>
+      <link>http://wroot.org/tags/bash/</link>
+      <pubDate>Wed, 18 Jan 2012 22:33:27 +0000</pubDate>
+      
+      <guid>http://wroot.org/tags/bash/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Batch Installation</title>
+      <link>http://wroot.org/tags/batch-installation/</link>
+      <pubDate>Mon, 05 Jul 2010 19:11:59 +0000</pubDate>
+      
+      <guid>http://wroot.org/tags/batch-installation/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Benchmark</title>
+      <link>http://wroot.org/tags/benchmark/</link>
+      <pubDate>Tue, 29 Jun 2010 19:01:29 +0000</pubDate>
+      
+      <guid>http://wroot.org/tags/benchmark/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Bruteforce</title>
+      <link>http://wroot.org/tags/bruteforce/</link>
+      <pubDate>Wed, 28 Jul 2010 16:30:14 +0000</pubDate>
+      
+      <guid>http://wroot.org/tags/bruteforce/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Cacls</title>
+      <link>http://wroot.org/tags/cacls/</link>
+      <pubDate>Fri, 21 May 2010 04:51:04 +0000</pubDate>
+      
+      <guid>http://wroot.org/tags/cacls/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Chipmunk</title>
+      <link>http://wroot.org/tags/chipmunk/</link>
+      <pubDate>Mon, 30 Mar 2015 14:13:12 +0000</pubDate>
+      
+      <guid>http://wroot.org/tags/chipmunk/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Chmod</title>
+      <link>http://wroot.org/tags/chmod/</link>
+      <pubDate>Fri, 21 May 2010 04:51:04 +0000</pubDate>
+      
+      <guid>http://wroot.org/tags/chmod/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Cis</title>
+      <link>http://wroot.org/tags/cis/</link>
+      <pubDate>Tue, 29 Jun 2010 19:01:29 +0000</pubDate>
+      
+      <guid>http://wroot.org/tags/cis/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Clickjacking</title>
+      <link>http://wroot.org/tags/clickjacking/</link>
+      <pubDate>Tue, 07 Dec 2010 22:55:41 +0000</pubDate>
+      
+      <guid>http://wroot.org/tags/clickjacking/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Compliance</title>
+      <link>http://wroot.org/tags/compliance/</link>
+      <pubDate>Tue, 29 Jun 2010 19:01:29 +0000</pubDate>
+      
+      <guid>http://wroot.org/tags/compliance/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Computer Science Week</title>
+      <link>http://wroot.org/tags/computer-science-week/</link>
+      <pubDate>Sun, 11 Nov 2012 14:54:55 +0000</pubDate>
+      
+      <guid>http://wroot.org/tags/computer-science-week/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Conference</title>
+      <link>http://wroot.org/tags/conference/</link>
+      <pubDate>Mon, 22 Oct 2012 15:22:34 +0000</pubDate>
+      
+      <guid>http://wroot.org/tags/conference/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Configuration Management</title>
+      <link>http://wroot.org/tags/configuration-management/</link>
+      <pubDate>Mon, 05 Jul 2010 19:11:59 +0000</pubDate>
+      
+      <guid>http://wroot.org/tags/configuration-management/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Covert Channel</title>
+      <link>http://wroot.org/tags/covert-channel/</link>
+      <pubDate>Wed, 19 Feb 2014 14:31:02 +0000</pubDate>
+      
+      <guid>http://wroot.org/tags/covert-channel/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Cracking</title>
+      <link>http://wroot.org/tags/cracking/</link>
+      <pubDate>Wed, 28 Jul 2010 16:30:14 +0000</pubDate>
+      
+      <guid>http://wroot.org/tags/cracking/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Credential Sniffing</title>
+      <link>http://wroot.org/tags/credential-sniffing/</link>
+      <pubDate>Wed, 31 Oct 2012 02:59:25 +0000</pubDate>
+      
+      <guid>http://wroot.org/tags/credential-sniffing/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Credential Theft</title>
+      <link>http://wroot.org/tags/credential-theft/</link>
+      <pubDate>Mon, 18 Jun 2012 21:50:39 +0000</pubDate>
+      
+      <guid>http://wroot.org/tags/credential-theft/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Data Loss</title>
+      <link>http://wroot.org/tags/data-loss/</link>
+      <pubDate>Fri, 23 Jul 2010 16:19:06 +0000</pubDate>
+      
+      <guid>http://wroot.org/tags/data-loss/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>David Kennedy</title>
+      <link>http://wroot.org/tags/david-kennedy/</link>
+      <pubDate>Thu, 27 May 2010 00:02:42 +0000</pubDate>
+      
+      <guid>http://wroot.org/tags/david-kennedy/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Ddos</title>
+      <link>http://wroot.org/tags/ddos/</link>
+      <pubDate>Fri, 21 Feb 2014 18:32:14 +0000</pubDate>
+      
+      <guid>http://wroot.org/tags/ddos/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Deface</title>
+      <link>http://wroot.org/tags/deface/</link>
+      <pubDate>Sun, 22 Apr 2012 21:00:24 +0000</pubDate>
+      
+      <guid>http://wroot.org/tags/deface/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Directory Permissions</title>
+      <link>http://wroot.org/tags/directory-permissions/</link>
+      <pubDate>Wed, 14 Dec 2011 17:40:00 +0000</pubDate>
+      
+      <guid>http://wroot.org/tags/directory-permissions/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Dlp</title>
+      <link>http://wroot.org/tags/dlp/</link>
+      <pubDate>Wed, 26 Jan 2011 02:30:48 +0000</pubDate>
+      
+      <guid>http://wroot.org/tags/dlp/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Dos</title>
+      <link>http://wroot.org/tags/dos/</link>
+      <pubDate>Fri, 21 Feb 2014 18:32:14 +0000</pubDate>
+      
+      <guid>http://wroot.org/tags/dos/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Downgrade</title>
+      <link>http://wroot.org/tags/downgrade/</link>
+      <pubDate>Sat, 22 May 2010 21:33:15 +0000</pubDate>
+      
+      <guid>http://wroot.org/tags/downgrade/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Drones</title>
+      <link>http://wroot.org/tags/drones/</link>
+      <pubDate>Fri, 16 Dec 2011 20:33:26 +0000</pubDate>
+      
+      <guid>http://wroot.org/tags/drones/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Dsniff</title>
+      <link>http://wroot.org/tags/dsniff/</link>
+      <pubDate>Mon, 18 Jun 2012 21:50:39 +0000</pubDate>
+      
+      <guid>http://wroot.org/tags/dsniff/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Dug Song</title>
+      <link>http://wroot.org/tags/dug-song/</link>
+      <pubDate>Mon, 18 Jun 2012 21:50:39 +0000</pubDate>
+      
+      <guid>http://wroot.org/tags/dug-song/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Elliott Cutright</title>
+      <link>http://wroot.org/tags/elliott-cutright/</link>
+      <pubDate>Thu, 27 May 2010 00:02:42 +0000</pubDate>
+      
+      <guid>http://wroot.org/tags/elliott-cutright/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Encryption</title>
+      <link>http://wroot.org/tags/encryption/</link>
+      <pubDate>Tue, 29 Jun 2010 14:58:13 +0000</pubDate>
+      
+      <guid>http://wroot.org/tags/encryption/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Enumeration</title>
+      <link>http://wroot.org/tags/enumeration/</link>
+      <pubDate>Tue, 30 Apr 2013 00:14:28 +0000</pubDate>
+      
+      <guid>http://wroot.org/tags/enumeration/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Esolang</title>
+      <link>http://wroot.org/tags/esolang/</link>
+      <pubDate>Wed, 19 Feb 2014 14:31:02 +0000</pubDate>
+      
+      <guid>http://wroot.org/tags/esolang/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Ettercap</title>
+      <link>http://wroot.org/tags/ettercap/</link>
+      <pubDate>Tue, 13 Jul 2010 17:42:06 +0000</pubDate>
+      
+      <guid>http://wroot.org/tags/ettercap/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Fbi</title>
+      <link>http://wroot.org/tags/fbi/</link>
+      <pubDate>Tue, 29 Jun 2010 14:58:13 +0000</pubDate>
+      
+      <guid>http://wroot.org/tags/fbi/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Filter</title>
+      <link>http://wroot.org/tags/filter/</link>
+      <pubDate>Tue, 13 Jul 2010 17:42:06 +0000</pubDate>
+      
+      <guid>http://wroot.org/tags/filter/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Goldeneye</title>
+      <link>http://wroot.org/tags/goldeneye/</link>
+      <pubDate>Fri, 21 Feb 2014 18:32:14 +0000</pubDate>
+      
+      <guid>http://wroot.org/tags/goldeneye/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Gps</title>
+      <link>http://wroot.org/tags/gps/</link>
+      <pubDate>Fri, 16 Dec 2011 20:33:26 +0000</pubDate>
+      
+      <guid>http://wroot.org/tags/gps/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Gtk</title>
+      <link>http://wroot.org/tags/gtk/</link>
+      <pubDate>Mon, 30 Mar 2015 14:13:12 +0000</pubDate>
+      
+      <guid>http://wroot.org/tags/gtk/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Guake</title>
+      <link>http://wroot.org/tags/guake/</link>
+      <pubDate>Tue, 04 Dec 2012 11:29:09 +0000</pubDate>
+      
+      <guid>http://wroot.org/tags/guake/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>H2hc</title>
+      <link>http://wroot.org/tags/h2hc/</link>
+      <pubDate>Mon, 22 Oct 2012 15:22:34 +0000</pubDate>
+      
+      <guid>http://wroot.org/tags/h2hc/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Hid</title>
+      <link>http://wroot.org/tags/hid/</link>
+      <pubDate>Wed, 26 Jan 2011 02:30:48 +0000</pubDate>
+      
+      <guid>http://wroot.org/tags/hid/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Http</title>
+      <link>http://wroot.org/tags/http/</link>
+      <pubDate>Tue, 26 Mar 2013 21:58:19 +0000</pubDate>
+      
+      <guid>http://wroot.org/tags/http/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Https</title>
+      <link>http://wroot.org/tags/https/</link>
+      <pubDate>Tue, 26 Mar 2013 21:58:19 +0000</pubDate>
+      
+      <guid>http://wroot.org/tags/https/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Ics</title>
+      <link>http://wroot.org/tags/ics/</link>
+      <pubDate>Mon, 30 Mar 2015 14:13:12 +0000</pubDate>
+      
+      <guid>http://wroot.org/tags/ics/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Ida Pro</title>
+      <link>http://wroot.org/tags/ida-pro/</link>
+      <pubDate>Fri, 06 Aug 2010 13:43:41 +0000</pubDate>
+      
+      <guid>http://wroot.org/tags/ida-pro/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Ids</title>
+      <link>http://wroot.org/tags/ids/</link>
+      <pubDate>Sat, 29 May 2010 23:44:57 +0000</pubDate>
+      
+      <guid>http://wroot.org/tags/ids/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Ipsec</title>
+      <link>http://wroot.org/tags/ipsec/</link>
+      <pubDate>Sat, 29 May 2010 23:44:57 +0000</pubDate>
+      
+      <guid>http://wroot.org/tags/ipsec/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Iran</title>
+      <link>http://wroot.org/tags/iran/</link>
+      <pubDate>Fri, 16 Dec 2011 20:33:26 +0000</pubDate>
+      
+      <guid>http://wroot.org/tags/iran/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Irg</title>
+      <link>http://wroot.org/tags/irg/</link>
+      <pubDate>Fri, 16 Dec 2011 20:33:26 +0000</pubDate>
+      
+      <guid>http://wroot.org/tags/irg/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Irongeek</title>
+      <link>http://wroot.org/tags/irongeek/</link>
+      <pubDate>Thu, 27 May 2010 00:02:42 +0000</pubDate>
+      
+      <guid>http://wroot.org/tags/irongeek/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Javascript</title>
+      <link>http://wroot.org/tags/javascript/</link>
+      <pubDate>Tue, 07 Dec 2010 22:55:41 +0000</pubDate>
+      
+      <guid>http://wroot.org/tags/javascript/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Layer 7</title>
+      <link>http://wroot.org/tags/layer-7/</link>
+      <pubDate>Tue, 26 Mar 2013 21:58:19 +0000</pubDate>
+      
+      <guid>http://wroot.org/tags/layer-7/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Linux</title>
+      <link>http://wroot.org/tags/linux/</link>
+      <pubDate>Tue, 04 Dec 2012 11:29:09 +0000</pubDate>
+      
+      <guid>http://wroot.org/tags/linux/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Lumension</title>
+      <link>http://wroot.org/tags/lumension/</link>
+      <pubDate>Mon, 05 Jul 2010 19:11:59 +0000</pubDate>
+      
+      <guid>http://wroot.org/tags/lumension/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Malware</title>
+      <link>http://wroot.org/tags/malware/</link>
+      <pubDate>Wed, 23 Sep 2015 14:13:55 +0000</pubDate>
+      
+      <guid>http://wroot.org/tags/malware/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Martin Bos</title>
+      <link>http://wroot.org/tags/martin-bos/</link>
+      <pubDate>Thu, 27 May 2010 00:02:42 +0000</pubDate>
+      
+      <guid>http://wroot.org/tags/martin-bos/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Mdk3</title>
+      <link>http://wroot.org/tags/mdk3/</link>
+      <pubDate>Wed, 09 Jun 2010 15:03:38 +0000</pubDate>
+      
+      <guid>http://wroot.org/tags/mdk3/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Metasploit</title>
+      <link>http://wroot.org/tags/metasploit/</link>
+      <pubDate>Thu, 27 May 2010 00:02:42 +0000</pubDate>
+      
+      <guid>http://wroot.org/tags/metasploit/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Microcontroller</title>
+      <link>http://wroot.org/tags/microcontroller/</link>
+      <pubDate>Wed, 26 Jan 2011 02:30:48 +0000</pubDate>
+      
+      <guid>http://wroot.org/tags/microcontroller/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Military Police</title>
+      <link>http://wroot.org/tags/military-police/</link>
+      <pubDate>Sun, 22 Apr 2012 21:00:24 +0000</pubDate>
+      
+      <guid>http://wroot.org/tags/military-police/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Minas Gerais</title>
+      <link>http://wroot.org/tags/minas-gerais/</link>
+      <pubDate>Sun, 11 Nov 2012 14:54:55 +0000</pubDate>
+      
+      <guid>http://wroot.org/tags/minas-gerais/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Mitm</title>
+      <link>http://wroot.org/tags/mitm/</link>
+      <pubDate>Wed, 28 Jul 2010 16:30:14 +0000</pubDate>
+      
+      <guid>http://wroot.org/tags/mitm/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Mobile</title>
+      <link>http://wroot.org/tags/mobile/</link>
+      <pubDate>Tue, 30 Apr 2013 00:14:28 +0000</pubDate>
+      
+      <guid>http://wroot.org/tags/mobile/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Modbus</title>
+      <link>http://wroot.org/tags/modbus/</link>
+      <pubDate>Mon, 30 Mar 2015 14:13:12 +0000</pubDate>
+      
+      <guid>http://wroot.org/tags/modbus/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Network</title>
+      <link>http://wroot.org/tags/network/</link>
+      <pubDate>Sat, 29 May 2010 23:44:57 +0000</pubDate>
+      
+      <guid>http://wroot.org/tags/network/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Ngrep</title>
+      <link>http://wroot.org/tags/ngrep/</link>
+      <pubDate>Wed, 31 Oct 2012 02:59:25 +0000</pubDate>
+      
+      <guid>http://wroot.org/tags/ngrep/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Nic</title>
+      <link>http://wroot.org/tags/nic/</link>
+      <pubDate>Tue, 29 Jun 2010 14:58:13 +0000</pubDate>
+      
+      <guid>http://wroot.org/tags/nic/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Ninite</title>
+      <link>http://wroot.org/tags/ninite/</link>
+      <pubDate>Mon, 05 Jul 2010 19:11:59 +0000</pubDate>
+      
+      <guid>http://wroot.org/tags/ninite/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Nist</title>
+      <link>http://wroot.org/tags/nist/</link>
+      <pubDate>Tue, 29 Jun 2010 19:01:29 +0000</pubDate>
+      
+      <guid>http://wroot.org/tags/nist/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Ntlm</title>
+      <link>http://wroot.org/tags/ntlm/</link>
+      <pubDate>Sat, 22 May 2010 21:33:15 +0000</pubDate>
+      
+      <guid>http://wroot.org/tags/ntlm/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Nullthreat</title>
+      <link>http://wroot.org/tags/nullthreat/</link>
+      <pubDate>Thu, 27 May 2010 00:02:42 +0000</pubDate>
+      
+      <guid>http://wroot.org/tags/nullthreat/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Obfuscation</title>
+      <link>http://wroot.org/tags/obfuscation/</link>
+      <pubDate>Thu, 10 Apr 2014 23:11:52 +0000</pubDate>
+      
+      <guid>http://wroot.org/tags/obfuscation/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Password</title>
+      <link>http://wroot.org/tags/password/</link>
+      <pubDate>Mon, 21 Jun 2010 20:25:21 +0000</pubDate>
+      
+      <guid>http://wroot.org/tags/password/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Pentest</title>
+      <link>http://wroot.org/tags/pentest/</link>
+      <pubDate>Mon, 18 Jun 2012 21:50:39 +0000</pubDate>
+      
+      <guid>http://wroot.org/tags/pentest/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Permissions</title>
+      <link>http://wroot.org/tags/permissions/</link>
+      <pubDate>Fri, 21 May 2010 04:51:04 +0000</pubDate>
+      
+      <guid>http://wroot.org/tags/permissions/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Persistance</title>
+      <link>http://wroot.org/tags/persistance/</link>
+      <pubDate>Wed, 23 Sep 2015 14:13:55 +0000</pubDate>
+      
+      <guid>http://wroot.org/tags/persistance/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Php</title>
+      <link>http://wroot.org/tags/php/</link>
+      <pubDate>Thu, 10 Apr 2014 23:11:52 +0000</pubDate>
+      
+      <guid>http://wroot.org/tags/php/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Plc</title>
+      <link>http://wroot.org/tags/plc/</link>
+      <pubDate>Mon, 30 Mar 2015 14:13:12 +0000</pubDate>
+      
+      <guid>http://wroot.org/tags/plc/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Powershell</title>
+      <link>http://wroot.org/tags/powershell/</link>
+      <pubDate>Wed, 23 Sep 2015 14:13:55 +0000</pubDate>
+      
+      <guid>http://wroot.org/tags/powershell/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Prevention</title>
+      <link>http://wroot.org/tags/prevention/</link>
+      <pubDate>Sat, 22 May 2010 21:33:15 +0000</pubDate>
+      
+      <guid>http://wroot.org/tags/prevention/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Puppet</title>
+      <link>http://wroot.org/tags/puppet/</link>
+      <pubDate>Mon, 05 Jul 2010 19:11:59 +0000</pubDate>
+      
+      <guid>http://wroot.org/tags/puppet/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Purehate</title>
+      <link>http://wroot.org/tags/purehate/</link>
+      <pubDate>Thu, 27 May 2010 00:02:42 +0000</pubDate>
+      
+      <guid>http://wroot.org/tags/purehate/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Pwncycle</title>
+      <link>http://wroot.org/tags/pwncycle/</link>
+      <pubDate>Thu, 27 May 2010 00:02:42 +0000</pubDate>
+      
+      <guid>http://wroot.org/tags/pwncycle/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Pymunk</title>
+      <link>http://wroot.org/tags/pymunk/</link>
+      <pubDate>Mon, 30 Mar 2015 14:13:12 +0000</pubDate>
+      
+      <guid>http://wroot.org/tags/pymunk/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Python</title>
+      <link>http://wroot.org/tags/python/</link>
+      <pubDate>Mon, 30 Mar 2015 14:13:12 +0000</pubDate>
+      
+      <guid>http://wroot.org/tags/python/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Regular Expression</title>
+      <link>http://wroot.org/tags/regular-expression/</link>
+      <pubDate>Wed, 31 Oct 2012 02:59:25 +0000</pubDate>
+      
+      <guid>http://wroot.org/tags/regular-expression/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Rel1k</title>
+      <link>http://wroot.org/tags/rel1k/</link>
+      <pubDate>Thu, 27 May 2010 00:02:42 +0000</pubDate>
+      
+      <guid>http://wroot.org/tags/rel1k/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Rfi</title>
+      <link>http://wroot.org/tags/rfi/</link>
+      <pubDate>Sun, 22 Apr 2012 21:00:24 +0000</pubDate>
+      
+      <guid>http://wroot.org/tags/rfi/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Rootkit</title>
+      <link>http://wroot.org/tags/rootkit/</link>
+      <pubDate>Wed, 23 Sep 2015 14:13:55 +0000</pubDate>
+      
+      <guid>http://wroot.org/tags/rootkit/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Runas</title>
+      <link>http://wroot.org/tags/runas/</link>
+      <pubDate>Fri, 21 May 2010 04:51:04 +0000</pubDate>
+      
+      <guid>http://wroot.org/tags/runas/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Scada</title>
+      <link>http://wroot.org/tags/scada/</link>
+      <pubDate>Mon, 30 Mar 2015 14:13:12 +0000</pubDate>
+      
+      <guid>http://wroot.org/tags/scada/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Scap</title>
+      <link>http://wroot.org/tags/scap/</link>
+      <pubDate>Tue, 29 Jun 2010 19:01:29 +0000</pubDate>
+      
+      <guid>http://wroot.org/tags/scap/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Search Engineering Framework</title>
+      <link>http://wroot.org/tags/search-engineering-framework/</link>
+      <pubDate>Thu, 27 May 2010 00:02:42 +0000</pubDate>
+      
+      <guid>http://wroot.org/tags/search-engineering-framework/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Security</title>
+      <link>http://wroot.org/tags/security/</link>
+      <pubDate>Tue, 29 Jun 2010 19:01:29 +0000</pubDate>
+      
+      <guid>http://wroot.org/tags/security/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Shared Hosting</title>
+      <link>http://wroot.org/tags/shared-hosting/</link>
+      <pubDate>Wed, 14 Dec 2011 17:40:00 +0000</pubDate>
+      
+      <guid>http://wroot.org/tags/shared-hosting/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Shell</title>
+      <link>http://wroot.org/tags/shell/</link>
+      <pubDate>Wed, 18 Jan 2012 22:33:27 +0000</pubDate>
+      
+      <guid>http://wroot.org/tags/shell/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Siemens</title>
+      <link>http://wroot.org/tags/siemens/</link>
+      <pubDate>Fri, 23 Jul 2010 16:19:06 +0000</pubDate>
+      
+      <guid>http://wroot.org/tags/siemens/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Simulator</title>
+      <link>http://wroot.org/tags/simulator/</link>
+      <pubDate>Mon, 30 Mar 2015 14:13:12 +0000</pubDate>
+      
+      <guid>http://wroot.org/tags/simulator/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Sniffing</title>
+      <link>http://wroot.org/tags/sniffing/</link>
+      <pubDate>Wed, 31 Oct 2012 02:59:25 +0000</pubDate>
+      
+      <guid>http://wroot.org/tags/sniffing/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Software</title>
+      <link>http://wroot.org/tags/software/</link>
+      <pubDate>Mon, 30 Mar 2015 14:13:12 +0000</pubDate>
+      
+      <guid>http://wroot.org/tags/software/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Ssl</title>
+      <link>http://wroot.org/tags/ssl/</link>
+      <pubDate>Tue, 13 Jul 2010 17:42:06 +0000</pubDate>
+      
+      <guid>http://wroot.org/tags/ssl/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Steganography</title>
+      <link>http://wroot.org/tags/steganography/</link>
+      <pubDate>Wed, 19 Feb 2014 14:31:02 +0000</pubDate>
+      
+      <guid>http://wroot.org/tags/steganography/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Stuxnet</title>
+      <link>http://wroot.org/tags/stuxnet/</link>
+      <pubDate>Fri, 06 Aug 2010 13:43:41 +0000</pubDate>
+      
+      <guid>http://wroot.org/tags/stuxnet/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Sudo</title>
+      <link>http://wroot.org/tags/sudo/</link>
+      <pubDate>Fri, 21 May 2010 04:51:04 +0000</pubDate>
+      
+      <guid>http://wroot.org/tags/sudo/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>São Paulo</title>
+      <link>http://wroot.org/tags/s%C3%A3o-paulo/</link>
+      <pubDate>Sun, 22 Apr 2012 21:00:24 +0000</pubDate>
+      
+      <guid>http://wroot.org/tags/s%C3%A3o-paulo/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Talks</title>
+      <link>http://wroot.org/tags/talks/</link>
+      <pubDate>Mon, 22 Oct 2012 15:22:34 +0000</pubDate>
+      
+      <guid>http://wroot.org/tags/talks/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Tape</title>
+      <link>http://wroot.org/tags/tape/</link>
+      <pubDate>Wed, 09 Jun 2010 15:03:38 +0000</pubDate>
+      
+      <guid>http://wroot.org/tags/tape/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Tcpdump</title>
+      <link>http://wroot.org/tags/tcpdump/</link>
+      <pubDate>Mon, 18 Jun 2012 21:50:39 +0000</pubDate>
+      
+      <guid>http://wroot.org/tags/tcpdump/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Terminal</title>
+      <link>http://wroot.org/tags/terminal/</link>
+      <pubDate>Tue, 04 Dec 2012 11:29:09 +0000</pubDate>
+      
+      <guid>http://wroot.org/tags/terminal/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Tool</title>
+      <link>http://wroot.org/tags/tool/</link>
+      <pubDate>Tue, 26 Mar 2013 21:58:19 +0000</pubDate>
+      
+      <guid>http://wroot.org/tags/tool/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Trojan</title>
+      <link>http://wroot.org/tags/trojan/</link>
+      <pubDate>Fri, 23 Jul 2010 16:19:06 +0000</pubDate>
+      
+      <guid>http://wroot.org/tags/trojan/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Truecrypt</title>
+      <link>http://wroot.org/tags/truecrypt/</link>
+      <pubDate>Tue, 29 Jun 2010 14:58:13 +0000</pubDate>
+      
+      <guid>http://wroot.org/tags/truecrypt/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Uav</title>
+      <link>http://wroot.org/tags/uav/</link>
+      <pubDate>Fri, 16 Dec 2011 20:33:26 +0000</pubDate>
+      
+      <guid>http://wroot.org/tags/uav/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>University</title>
+      <link>http://wroot.org/tags/university/</link>
+      <pubDate>Sun, 11 Nov 2012 14:54:55 +0000</pubDate>
+      
+      <guid>http://wroot.org/tags/university/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Unix</title>
+      <link>http://wroot.org/tags/unix/</link>
+      <pubDate>Wed, 18 Jan 2012 22:33:27 +0000</pubDate>
+      
+      <guid>http://wroot.org/tags/unix/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Utility</title>
+      <link>http://wroot.org/tags/utility/</link>
+      <pubDate>Mon, 21 Jun 2010 20:25:21 +0000</pubDate>
+      
+      <guid>http://wroot.org/tags/utility/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Viçosa</title>
+      <link>http://wroot.org/tags/vi%C3%A7osa/</link>
+      <pubDate>Sun, 11 Nov 2012 14:54:55 +0000</pubDate>
+      
+      <guid>http://wroot.org/tags/vi%C3%A7osa/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Webserver</title>
+      <link>http://wroot.org/tags/webserver/</link>
+      <pubDate>Tue, 26 Mar 2013 21:58:19 +0000</pubDate>
+      
+      <guid>http://wroot.org/tags/webserver/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Whitespace</title>
+      <link>http://wroot.org/tags/whitespace/</link>
+      <pubDate>Wed, 19 Feb 2014 14:31:02 +0000</pubDate>
+      
+      <guid>http://wroot.org/tags/whitespace/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Wifi</title>
+      <link>http://wroot.org/tags/wifi/</link>
+      <pubDate>Wed, 28 Jul 2010 16:30:14 +0000</pubDate>
+      
+      <guid>http://wroot.org/tags/wifi/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Wincc</title>
+      <link>http://wroot.org/tags/wincc/</link>
+      <pubDate>Fri, 06 Aug 2010 13:43:41 +0000</pubDate>
+      
+      <guid>http://wroot.org/tags/wincc/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Windows</title>
+      <link>http://wroot.org/tags/windows/</link>
+      <pubDate>Fri, 06 Aug 2010 13:43:41 +0000</pubDate>
+      
+      <guid>http://wroot.org/tags/windows/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Wordpress</title>
+      <link>http://wroot.org/tags/wordpress/</link>
+      <pubDate>Wed, 14 Dec 2011 17:40:00 +0000</pubDate>
+      
+      <guid>http://wroot.org/tags/wordpress/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Wpa</title>
+      <link>http://wroot.org/tags/wpa/</link>
+      <pubDate>Wed, 28 Jul 2010 16:30:14 +0000</pubDate>
+      
+      <guid>http://wroot.org/tags/wpa/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Zsh</title>
+      <link>http://wroot.org/tags/zsh/</link>
+      <pubDate>Wed, 18 Jan 2012 22:33:27 +0000</pubDate>
+      
+      <guid>http://wroot.org/tags/zsh/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

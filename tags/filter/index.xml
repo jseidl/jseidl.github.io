@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Filter on wroot</title>
+    <link>http://wroot.org/tags/filter/</link>
+    <description>Recent content in Filter on wroot</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Tue, 13 Jul 2010 17:42:06 +0000</lastBuildDate>
+    
+	<atom:link href="http://wroot.org/tags/filter/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Downgrade HTTPS connections to HTTP using Ettercap filters</title>
+      <link>http://wroot.org/posts/downgrade-https-connections-to-http-using-ettercap-filters/</link>
+      <pubDate>Tue, 13 Jul 2010 17:42:06 +0000</pubDate>
+      
+      <guid>http://wroot.org/posts/downgrade-https-connections-to-http-using-ettercap-filters/</guid>
+      <description>Ettercap is a great tool for MITM poisoning and sniffing. Everyone on Infosec should have played with it (or Cain) at least once.
+Man-In-The-Middle MITM attacks are pretty easy to perform on a local network but the tools tend to crash a LOT. Cain (Windows) is a little more stable than Ettercap but I prefer it over Cain because it doesn&amp;#8217;t spoof SSL that I consider too loud depending on the attack.</description>
+    </item>
+    
+  </channel>
+</rss>

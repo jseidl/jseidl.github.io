@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Configuration Management on wroot</title>
+    <link>http://wroot.org/tags/configuration-management/</link>
+    <description>Recent content in Configuration Management on wroot</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Mon, 05 Jul 2010 19:11:59 +0000</lastBuildDate>
+    
+	<atom:link href="http://wroot.org/tags/configuration-management/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Batch-installing on Windows platforms with Ninite</title>
+      <link>http://wroot.org/posts/batch-installing-on-windows-platforms-with-ninite/</link>
+      <pubDate>Mon, 05 Jul 2010 19:11:59 +0000</pubDate>
+      
+      <guid>http://wroot.org/posts/batch-installing-on-windows-platforms-with-ninite/</guid>
+      <description>Today a friend introduced me that great tool called Ninite. It&amp;#8217;s a batch-installer which comes with the most popular Windows FOSS available in the wild and saves you from downloading and manually installing them.
+Ninite also skips installation screens (and their EULA) and it&amp;#8217;s perfect when you must setup several stations or you have constantly some station setup to do. Although Ninite ISN&amp;#8217;T a configuration management tool but it is a good time-saver for smaller environments.</description>
+    </item>
+    
+  </channel>
+</rss>

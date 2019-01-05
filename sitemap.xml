@@ -1,0 +1,1179 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  
+  <url>
+    <loc>http://wroot.org/posts/babadook-connection-less-powershell-persistent-and-resilient-backdoor/</loc>
+    <lastmod>2015-09-23T14:13:55+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://wroot.org/posts/introducing-virtuaplant-0-1/</loc>
+    <lastmod>2015-03-30T14:13:12+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://wroot.org/projects/virtuaplant/</loc>
+    <lastmod>2015-03-30T14:12:28+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://wroot.org/posts/calling-functions-without-their-names-in-php/</loc>
+    <lastmod>2014-04-10T23:11:52+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://wroot.org/posts/goldeneye-2-1-released-with-even-more-randomness/</loc>
+    <lastmod>2014-02-21T18:32:14+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://wroot.org/posts/whitespace-esolang-covert-channel-steganography/</loc>
+    <lastmod>2014-02-19T14:31:02+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://wroot.org/press/</loc>
+    <lastmod>2013-12-13T14:10:37+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://wroot.org/talks/</loc>
+    <lastmod>2013-07-09T01:21:53+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://wroot.org/posts/enumerating-android-installed-applications-without-special-permissions/</loc>
+    <lastmod>2013-04-30T00:14:28+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://wroot.org/posts/new-version-of-goldeneye-webserver-dos-tool-released/</loc>
+    <lastmod>2013-03-26T21:58:19+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://wroot.org/posts/fixing-guake-can-not-init-and-buggy-tab-titles-on-backtrack-5-r3/</loc>
+    <lastmod>2012-12-04T11:29:09+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://wroot.org/posts/talking-about-ddos-again-at-xvii-semana-de-informatica-computer-science-week/</loc>
+    <lastmod>2012-11-11T14:54:55+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://wroot.org/posts/quick-and-dirty-ngrep-credential-usernamepassword-sniffer/</loc>
+    <lastmod>2012-10-31T02:59:25+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://wroot.org/posts/about-hackers-2-hackers-conference-9th-edition/</loc>
+    <lastmod>2012-10-22T15:22:34+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://wroot.org/projects/goldeneye-4-android/</loc>
+    <lastmod>2012-10-22T15:12:29+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://wroot.org/projects/goldeneye/</loc>
+    <lastmod>2012-10-22T15:10:30+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://wroot.org/about/</loc>
+    <lastmod>2012-09-28T17:12:34+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://wroot.org/projects/multitor/</loc>
+    <lastmod>2012-09-28T17:02:36+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://wroot.org/projects/torblock/</loc>
+    <lastmod>2012-09-28T16:56:30+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://wroot.org/projects/usernamer/</loc>
+    <lastmod>2012-09-28T16:54:05+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://wroot.org/projects/</loc>
+    <lastmod>2012-09-28T16:51:45+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://wroot.org/posts/im-speaking-at-hackers-2-hackers-conference-9th-edition-2012-sao-paulo-brazil/</loc>
+    <lastmod>2012-09-28T16:40:59+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://wroot.org/posts/quick-and-dirty-tcpdump-credential-usernamepassword-sniffer/</loc>
+    <lastmod>2012-06-18T21:50:39+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://wroot.org/posts/sao-paulo-states-military-police-website-almost-hacked-by-rfi/</loc>
+    <lastmod>2012-04-22T21:00:24+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://wroot.org/posts/terminal-auto-lock-with-zsh-and-vlock/</loc>
+    <lastmod>2012-01-18T22:33:27+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://wroot.org/posts/iran-hijacked-us-drone-by-hacking-gps/</loc>
+    <lastmod>2011-12-16T20:33:26+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://wroot.org/posts/shared-hosting-accounts-victims-of-lame-directory-permissions/</loc>
+    <lastmod>2011-12-14T17:40:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://wroot.org/posts/endpoint-dlp-is-hardware-access-control-enough/</loc>
+    <lastmod>2011-01-26T02:30:48+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://wroot.org/posts/playing-around-with-samys-quickjack-clickjacker/</loc>
+    <lastmod>2010-12-07T22:55:41+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://wroot.org/posts/anatomy-of-the-w32-stuxnet-scada-threat/</loc>
+    <lastmod>2010-08-06T13:43:41+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://wroot.org/posts/wpa-faces-new-threat-hole-196-and-new-key-bruteforcing-service-2/</loc>
+    <lastmod>2010-07-28T16:30:14+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://wroot.org/posts/stuxnet-targets-scada-systems-via-usb-drives-vectors/</loc>
+    <lastmod>2010-07-23T16:19:06+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://wroot.org/posts/downgrade-https-connections-to-http-using-ettercap-filters/</loc>
+    <lastmod>2010-07-13T17:42:06+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://wroot.org/posts/batch-installing-on-windows-platforms-with-ninite/</loc>
+    <lastmod>2010-07-05T19:11:59+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://wroot.org/posts/security-benchmark-papers-available-from-cis/</loc>
+    <lastmod>2010-06-29T19:01:29+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://wroot.org/posts/daniel-dantas-hard-drive-encryption-wins-over-fbi/</loc>
+    <lastmod>2010-06-29T14:58:13+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://wroot.org/posts/online-password-generation-utility-from-pctools/</loc>
+    <lastmod>2010-06-21T20:25:21+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://wroot.org/posts/mdk3-goes-bruteforcing-wireless-ssids/</loc>
+    <lastmod>2010-06-09T15:03:38+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://wroot.org/posts/mitigating-the-risk-on-an-arp-poison-attack/</loc>
+    <lastmod>2010-05-29T23:44:57+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://wroot.org/posts/kentuckiana-issas-metasploit-class-videos-available-at-irongeek/</loc>
+    <lastmod>2010-05-27T00:02:42+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://wroot.org/posts/preventing-your-servers-from-downgrade-attacks/</loc>
+    <lastmod>2010-05-22T21:33:15+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://wroot.org/posts/command-line-sudo-and-chmod-under-windows/</loc>
+    <lastmod>2010-05-21T04:51:04+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://wroot.org/categories/access-control/</loc>
+    <lastmod>2011-12-14T17:40:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://wroot.org/tags/access-control/</loc>
+    <lastmod>2011-12-14T17:40:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://wroot.org/tags/adrian-crenshaw/</loc>
+    <lastmod>2010-05-27T00:02:42+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://wroot.org/tags/aes/</loc>
+    <lastmod>2010-06-29T14:58:13+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://wroot.org/tags/android/</loc>
+    <lastmod>2013-04-30T00:14:28+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://wroot.org/categories/application-security/</loc>
+    <lastmod>2014-02-21T18:32:14+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://wroot.org/tags/arm/</loc>
+    <lastmod>2012-06-18T21:50:39+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://wroot.org/tags/arp-poison/</loc>
+    <lastmod>2010-05-29T23:44:57+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://wroot.org/tags/attack/</loc>
+    <lastmod>2011-12-14T17:40:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://wroot.org/tags/audit/</loc>
+    <lastmod>2010-06-29T19:01:29+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://wroot.org/categories/audit-amp-compliance/</loc>
+    <lastmod>2010-06-29T19:01:29+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://wroot.org/categories/authentication/</loc>
+    <lastmod>2010-05-22T21:33:15+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://wroot.org/authors/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://wroot.org/tags/automation/</loc>
+    <lastmod>2011-01-26T02:30:48+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://wroot.org/tags/avr/</loc>
+    <lastmod>2011-01-26T02:30:48+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://wroot.org/tags/backdoor/</loc>
+    <lastmod>2015-09-23T14:13:55+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://wroot.org/tags/backtrack/</loc>
+    <lastmod>2012-12-04T11:29:09+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://wroot.org/tags/bash/</loc>
+    <lastmod>2012-01-18T22:33:27+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://wroot.org/tags/batch-installation/</loc>
+    <lastmod>2010-07-05T19:11:59+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://wroot.org/tags/benchmark/</loc>
+    <lastmod>2010-06-29T19:01:29+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://wroot.org/tags/bruteforce/</loc>
+    <lastmod>2010-07-28T16:30:14+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://wroot.org/tags/cacls/</loc>
+    <lastmod>2010-05-21T04:51:04+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://wroot.org/categories/</loc>
+    <lastmod>2011-12-14T17:40:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://wroot.org/tags/chipmunk/</loc>
+    <lastmod>2015-03-30T14:13:12+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://wroot.org/tags/chmod/</loc>
+    <lastmod>2010-05-21T04:51:04+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://wroot.org/tags/cis/</loc>
+    <lastmod>2010-06-29T19:01:29+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://wroot.org/tags/clickjacking/</loc>
+    <lastmod>2010-12-07T22:55:41+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://wroot.org/tags/compliance/</loc>
+    <lastmod>2010-06-29T19:01:29+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://wroot.org/tags/computer-science-week/</loc>
+    <lastmod>2012-11-11T14:54:55+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://wroot.org/tags/conference/</loc>
+    <lastmod>2012-10-22T15:22:34+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://wroot.org/categories/conferences/</loc>
+    <lastmod>2012-11-11T14:54:55+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://wroot.org/categories/configuration-management/</loc>
+    <lastmod>2010-07-05T19:11:59+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://wroot.org/tags/configuration-management/</loc>
+    <lastmod>2010-07-05T19:11:59+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://wroot.org/tags/covert-channel/</loc>
+    <lastmod>2014-02-19T14:31:02+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://wroot.org/tags/cracking/</loc>
+    <lastmod>2010-07-28T16:30:14+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://wroot.org/tags/credential-sniffing/</loc>
+    <lastmod>2012-10-31T02:59:25+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://wroot.org/tags/credential-theft/</loc>
+    <lastmod>2012-06-18T21:50:39+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://wroot.org/tags/data-loss/</loc>
+    <lastmod>2010-07-23T16:19:06+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://wroot.org/categories/data-loss-prevention/</loc>
+    <lastmod>2011-01-26T02:30:48+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://wroot.org/tags/david-kennedy/</loc>
+    <lastmod>2010-05-27T00:02:42+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://wroot.org/tags/ddos/</loc>
+    <lastmod>2014-02-21T18:32:14+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://wroot.org/tags/deface/</loc>
+    <lastmod>2012-04-22T21:00:24+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://wroot.org/tags/directory-permissions/</loc>
+    <lastmod>2011-12-14T17:40:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://wroot.org/tags/dlp/</loc>
+    <lastmod>2011-01-26T02:30:48+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://wroot.org/tags/dos/</loc>
+    <lastmod>2014-02-21T18:32:14+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://wroot.org/tags/downgrade/</loc>
+    <lastmod>2010-05-22T21:33:15+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://wroot.org/tags/drones/</loc>
+    <lastmod>2011-12-16T20:33:26+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://wroot.org/tags/dsniff/</loc>
+    <lastmod>2012-06-18T21:50:39+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://wroot.org/tags/dug-song/</loc>
+    <lastmod>2012-06-18T21:50:39+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://wroot.org/tags/elliott-cutright/</loc>
+    <lastmod>2010-05-27T00:02:42+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://wroot.org/categories/encryption/</loc>
+    <lastmod>2010-06-29T14:58:13+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://wroot.org/tags/encryption/</loc>
+    <lastmod>2010-06-29T14:58:13+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://wroot.org/tags/enumeration/</loc>
+    <lastmod>2013-04-30T00:14:28+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://wroot.org/tags/esolang/</loc>
+    <lastmod>2014-02-19T14:31:02+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://wroot.org/tags/ettercap/</loc>
+    <lastmod>2010-07-13T17:42:06+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://wroot.org/tags/fbi/</loc>
+    <lastmod>2010-06-29T14:58:13+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://wroot.org/tags/filter/</loc>
+    <lastmod>2010-07-13T17:42:06+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://wroot.org/tags/goldeneye/</loc>
+    <lastmod>2014-02-21T18:32:14+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://wroot.org/tags/gps/</loc>
+    <lastmod>2011-12-16T20:33:26+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://wroot.org/tags/gtk/</loc>
+    <lastmod>2015-03-30T14:13:12+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://wroot.org/tags/guake/</loc>
+    <lastmod>2012-12-04T11:29:09+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://wroot.org/tags/h2hc/</loc>
+    <lastmod>2012-10-22T15:22:34+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://wroot.org/categories/hardening/</loc>
+    <lastmod>2012-01-18T22:33:27+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://wroot.org/tags/hid/</loc>
+    <lastmod>2011-01-26T02:30:48+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://wroot.org/tags/http/</loc>
+    <lastmod>2013-03-26T21:58:19+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://wroot.org/tags/https/</loc>
+    <lastmod>2013-03-26T21:58:19+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://wroot.org/tags/ics/</loc>
+    <lastmod>2015-03-30T14:13:12+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://wroot.org/tags/ida-pro/</loc>
+    <lastmod>2010-08-06T13:43:41+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://wroot.org/tags/ids/</loc>
+    <lastmod>2010-05-29T23:44:57+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://wroot.org/tags/ipsec/</loc>
+    <lastmod>2010-05-29T23:44:57+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://wroot.org/tags/iran/</loc>
+    <lastmod>2011-12-16T20:33:26+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://wroot.org/tags/irg/</loc>
+    <lastmod>2011-12-16T20:33:26+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://wroot.org/tags/irongeek/</loc>
+    <lastmod>2010-05-27T00:02:42+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://wroot.org/tags/javascript/</loc>
+    <lastmod>2010-12-07T22:55:41+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://wroot.org/tags/layer-7/</loc>
+    <lastmod>2013-03-26T21:58:19+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://wroot.org/tags/linux/</loc>
+    <lastmod>2012-12-04T11:29:09+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://wroot.org/tags/lumension/</loc>
+    <lastmod>2010-07-05T19:11:59+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://wroot.org/categories/malware/</loc>
+    <lastmod>2015-09-23T14:13:55+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://wroot.org/tags/malware/</loc>
+    <lastmod>2015-09-23T14:13:55+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://wroot.org/tags/martin-bos/</loc>
+    <lastmod>2010-05-27T00:02:42+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://wroot.org/tags/mdk3/</loc>
+    <lastmod>2010-06-09T15:03:38+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://wroot.org/tags/metasploit/</loc>
+    <lastmod>2010-05-27T00:02:42+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://wroot.org/tags/microcontroller/</loc>
+    <lastmod>2011-01-26T02:30:48+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://wroot.org/tags/military-police/</loc>
+    <lastmod>2012-04-22T21:00:24+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://wroot.org/tags/minas-gerais/</loc>
+    <lastmod>2012-11-11T14:54:55+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://wroot.org/tags/mitm/</loc>
+    <lastmod>2010-07-28T16:30:14+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://wroot.org/categories/mobile/</loc>
+    <lastmod>2013-04-30T00:14:28+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://wroot.org/tags/mobile/</loc>
+    <lastmod>2013-04-30T00:14:28+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://wroot.org/tags/modbus/</loc>
+    <lastmod>2015-03-30T14:13:12+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://wroot.org/tags/network/</loc>
+    <lastmod>2010-05-29T23:44:57+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://wroot.org/categories/network-security/</loc>
+    <lastmod>2012-09-28T16:40:59+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://wroot.org/tags/ngrep/</loc>
+    <lastmod>2012-10-31T02:59:25+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://wroot.org/tags/nic/</loc>
+    <lastmod>2010-06-29T14:58:13+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://wroot.org/tags/ninite/</loc>
+    <lastmod>2010-07-05T19:11:59+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://wroot.org/tags/nist/</loc>
+    <lastmod>2010-06-29T19:01:29+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://wroot.org/tags/ntlm/</loc>
+    <lastmod>2010-05-22T21:33:15+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://wroot.org/tags/nullthreat/</loc>
+    <lastmod>2010-05-27T00:02:42+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://wroot.org/tags/obfuscation/</loc>
+    <lastmod>2014-04-10T23:11:52+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://wroot.org/pages/</loc>
+    <lastmod>2013-12-13T14:10:37+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://wroot.org/tags/password/</loc>
+    <lastmod>2010-06-21T20:25:21+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://wroot.org/categories/penetration-testing/</loc>
+    <lastmod>2015-09-23T14:13:55+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://wroot.org/tags/pentest/</loc>
+    <lastmod>2012-06-18T21:50:39+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://wroot.org/tags/permissions/</loc>
+    <lastmod>2010-05-21T04:51:04+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://wroot.org/tags/persistance/</loc>
+    <lastmod>2015-09-23T14:13:55+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://wroot.org/tags/php/</loc>
+    <lastmod>2014-04-10T23:11:52+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://wroot.org/tags/plc/</loc>
+    <lastmod>2015-03-30T14:13:12+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://wroot.org/posts/</loc>
+    <lastmod>2015-09-23T14:13:55+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://wroot.org/tags/powershell/</loc>
+    <lastmod>2015-09-23T14:13:55+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://wroot.org/tags/prevention/</loc>
+    <lastmod>2010-05-22T21:33:15+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://wroot.org/tags/puppet/</loc>
+    <lastmod>2010-07-05T19:11:59+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://wroot.org/tags/purehate/</loc>
+    <lastmod>2010-05-27T00:02:42+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://wroot.org/tags/pwncycle/</loc>
+    <lastmod>2010-05-27T00:02:42+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://wroot.org/tags/pymunk/</loc>
+    <lastmod>2015-03-30T14:13:12+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://wroot.org/tags/python/</loc>
+    <lastmod>2015-03-30T14:13:12+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://wroot.org/tags/regular-expression/</loc>
+    <lastmod>2012-10-31T02:59:25+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://wroot.org/tags/rel1k/</loc>
+    <lastmod>2010-05-27T00:02:42+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://wroot.org/tags/rfi/</loc>
+    <lastmod>2012-04-22T21:00:24+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://wroot.org/categories/robotics-automation/</loc>
+    <lastmod>2011-12-16T20:33:26+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://wroot.org/tags/rootkit/</loc>
+    <lastmod>2015-09-23T14:13:55+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://wroot.org/tags/runas/</loc>
+    <lastmod>2010-05-21T04:51:04+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://wroot.org/tags/scada/</loc>
+    <lastmod>2015-03-30T14:13:12+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://wroot.org/categories/scada-ics/</loc>
+    <lastmod>2015-03-30T14:13:12+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://wroot.org/tags/scap/</loc>
+    <lastmod>2010-06-29T19:01:29+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://wroot.org/tags/search-engineering-framework/</loc>
+    <lastmod>2010-05-27T00:02:42+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://wroot.org/tags/security/</loc>
+    <lastmod>2010-06-29T19:01:29+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://wroot.org/series/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://wroot.org/tags/shared-hosting/</loc>
+    <lastmod>2011-12-14T17:40:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://wroot.org/tags/shell/</loc>
+    <lastmod>2012-01-18T22:33:27+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://wroot.org/tags/siemens/</loc>
+    <lastmod>2010-07-23T16:19:06+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://wroot.org/tags/simulator/</loc>
+    <lastmod>2015-03-30T14:13:12+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://wroot.org/tags/sniffing/</loc>
+    <lastmod>2012-10-31T02:59:25+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://wroot.org/tags/software/</loc>
+    <lastmod>2015-03-30T14:13:12+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://wroot.org/tags/ssl/</loc>
+    <lastmod>2010-07-13T17:42:06+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://wroot.org/categories/steganography/</loc>
+    <lastmod>2014-02-19T14:31:02+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://wroot.org/tags/steganography/</loc>
+    <lastmod>2014-02-19T14:31:02+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://wroot.org/tags/stuxnet/</loc>
+    <lastmod>2010-08-06T13:43:41+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://wroot.org/tags/sudo/</loc>
+    <lastmod>2010-05-21T04:51:04+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://wroot.org/categories/systems-administration/</loc>
+    <lastmod>2012-12-04T11:29:09+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://wroot.org/tags/s%C3%A3o-paulo/</loc>
+    <lastmod>2012-04-22T21:00:24+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://wroot.org/tags/</loc>
+    <lastmod>2011-12-14T17:40:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://wroot.org/tags/talks/</loc>
+    <lastmod>2012-10-22T15:22:34+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://wroot.org/tags/tape/</loc>
+    <lastmod>2010-06-09T15:03:38+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://wroot.org/tags/tcpdump/</loc>
+    <lastmod>2012-06-18T21:50:39+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://wroot.org/tags/terminal/</loc>
+    <lastmod>2012-12-04T11:29:09+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://wroot.org/tags/tool/</loc>
+    <lastmod>2013-03-26T21:58:19+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://wroot.org/tags/trojan/</loc>
+    <lastmod>2010-07-23T16:19:06+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://wroot.org/tags/truecrypt/</loc>
+    <lastmod>2010-06-29T14:58:13+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://wroot.org/tags/uav/</loc>
+    <lastmod>2011-12-16T20:33:26+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://wroot.org/tags/university/</loc>
+    <lastmod>2012-11-11T14:54:55+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://wroot.org/tags/unix/</loc>
+    <lastmod>2012-01-18T22:33:27+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://wroot.org/tags/utility/</loc>
+    <lastmod>2010-06-21T20:25:21+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://wroot.org/tags/vi%C3%A7osa/</loc>
+    <lastmod>2012-11-11T14:54:55+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://wroot.org/tags/webserver/</loc>
+    <lastmod>2013-03-26T21:58:19+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://wroot.org/tags/whitespace/</loc>
+    <lastmod>2014-02-19T14:31:02+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://wroot.org/tags/wifi/</loc>
+    <lastmod>2010-07-28T16:30:14+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://wroot.org/tags/wincc/</loc>
+    <lastmod>2010-08-06T13:43:41+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://wroot.org/tags/windows/</loc>
+    <lastmod>2010-08-06T13:43:41+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://wroot.org/tags/wordpress/</loc>
+    <lastmod>2011-12-14T17:40:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://wroot.org/tags/wpa/</loc>
+    <lastmod>2010-07-28T16:30:14+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://wroot.org/tags/zsh/</loc>
+    <lastmod>2012-01-18T22:33:27+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://wroot.org/</loc>
+    <lastmod>2015-09-23T14:13:55+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+</urlset>

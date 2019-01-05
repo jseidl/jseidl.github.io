@@ -1,0 +1,365 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Posts on wroot</title>
+    <link>http://wroot.org/posts/</link>
+    <description>Recent content in Posts on wroot</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Wed, 23 Sep 2015 14:13:55 +0000</lastBuildDate>
+    
+	<atom:link href="http://wroot.org/posts/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Babadook: Connection-less Powershell Persistent and Resilient “Backdoor”</title>
+      <link>http://wroot.org/posts/babadook-connection-less-powershell-persistent-and-resilient-backdoor/</link>
+      <pubDate>Wed, 23 Sep 2015 14:13:55 +0000</pubDate>
+      
+      <guid>http://wroot.org/posts/babadook-connection-less-powershell-persistent-and-resilient-backdoor/</guid>
+      <description>At my previous company I used to prank the colleagues who left their stations unlocked. I call this my &amp;#8220;internal awareness program&amp;#8221;.
+It was all fun and games at the beginning. I would leave post-its on their monitors with a friendly message &amp;#8220;You could&amp;#8217;ve been hacked&amp;#8221; but it wasn&amp;#8217;t giving the expected results. Some colleagues found it funny and started &amp;#8220;collecting&amp;#8221; my post-its. There was a guy in particular with 5 of them.</description>
+    </item>
+    
+    <item>
+      <title>Introducing VirtuaPlant 0.1</title>
+      <link>http://wroot.org/posts/introducing-virtuaplant-0-1/</link>
+      <pubDate>Mon, 30 Mar 2015 14:13:12 +0000</pubDate>
+      
+      <guid>http://wroot.org/posts/introducing-virtuaplant-0-1/</guid>
+      <description>Today I&amp;#8217;m releasing a project I&amp;#8217;ve been working on for the past week which I called VirtuaPlant (yeah I now, I suck at giving names).
+From the project page:
+ VirtuaPlant is a Industrial Control Systems simulator which adds a “similar to real-world control logic” to the basic “read/write tags” feature of most PLC simulators. Paired with a game library and 2d physics engine, VirtuaPlant is able to present a GUI simulating the “world view” behind the control system allowing the user to have a vision of the would-be actions behind the control systems.</description>
+    </item>
+    
+    <item>
+      <title>Calling functions without their names in PHP</title>
+      <link>http://wroot.org/posts/calling-functions-without-their-names-in-php/</link>
+      <pubDate>Thu, 10 Apr 2014 23:11:52 +0000</pubDate>
+      
+      <guid>http://wroot.org/posts/calling-functions-without-their-names-in-php/</guid>
+      <description>Strings. Ah juicy and precious strings! It is common for malware scanners and IDPS to look for suspicious strings in network traffic and files&amp;#8230; but what if there are no strings to look for? (whaaa?)
+Today I was wondering about some features found in many interpreted languages of listing its internal functions in some sort of list/array. This way we can enumerate the [index] =&amp;gt; function_name relationship, replace all function_names on the code to their index and voilá!</description>
+    </item>
+    
+    <item>
+      <title>GoldenEye 2.1 released with even more randomness</title>
+      <link>http://wroot.org/posts/goldeneye-2-1-released-with-even-more-randomness/</link>
+      <pubDate>Fri, 21 Feb 2014 18:32:14 +0000</pubDate>
+      
+      <guid>http://wroot.org/posts/goldeneye-2-1-released-with-even-more-randomness/</guid>
+      <description>Recently I&amp;#8217;ve discovered that GoldenEye got his first signature from a big vendor.
+That&amp;#8217;s funny since the main GoldenEye objective is to be signature-proof due its randomness. I&amp;#8217;ve done a quick search on the internet and found the signature update link for their products, downloaded, located that one mentioned above.
+It was a very crude signature, as expected:
+&amp;lt;Pattern&amp;gt;\[Keep-Alive: 1(1\d|20)\]&amp;lt;/Pattern&amp;gt;&amp;lt;Pattern&amp;gt;\[Cache-Control: (must-revalidate, )?no-cache\].*&amp;lt;/Pattern&amp;gt;&amp;lt;Pattern&amp;gt;\[http://(www\.(google|usatoday)|engadget\.search\.aol)\.com/(search)?(/results)?\?q\].*&amp;lt;/Pattern&amp;gt;&amp;lt;Pattern&amp;gt;.*\[(Mozilla/\d\.\d|Opera 9.80) \((Windows|X11|compatible); U?; (Linux|Windows NT \d\.</description>
+    </item>
+    
+    <item>
+      <title>Whitespace Esolang Covert Channel / Steganography</title>
+      <link>http://wroot.org/posts/whitespace-esolang-covert-channel-steganography/</link>
+      <pubDate>Wed, 19 Feb 2014 14:31:02 +0000</pubDate>
+      
+      <guid>http://wroot.org/posts/whitespace-esolang-covert-channel-steganography/</guid>
+      <description>I&amp;#8217;ve been always a fan of esoteric programming languages (esolangs). These programming languages are generally made just for fun, mostly in universities or for challenges. Wikipedia describes as the following:
+ An esoteric programming language (esolang, in short) is a programming language designed to test the boundaries of computer programming language design, as a proof of concept, or as a joke. The use of esoteric distinguishes these languages from programming languages that working developers use to write software.</description>
+    </item>
+    
+    <item>
+      <title>Enumerating Android installed applications without special permissions</title>
+      <link>http://wroot.org/posts/enumerating-android-installed-applications-without-special-permissions/</link>
+      <pubDate>Tue, 30 Apr 2013 00:14:28 +0000</pubDate>
+      
+      <guid>http://wroot.org/posts/enumerating-android-installed-applications-without-special-permissions/</guid>
+      <description>Sometimes I took some random Android app I&amp;#8217;ve recently installed on my phone and start performing some tests on it. It&amp;#8217;s not uncommon to see unauthenticated API requests, plaintext HTTP communication and some obfuscation logic or hardcoded credentials rammed down at client code. As I use to say in my SCADA talks,
+ &amp;#8220;everything that is &amp;#8216;new&amp;#8217; is prone to &amp;#8216;newbie&amp;#8217; mistakes&amp;#8221;
+ This is not different for mobile development.</description>
+    </item>
+    
+    <item>
+      <title>New version of GoldenEye WebServer DoS tool released</title>
+      <link>http://wroot.org/posts/new-version-of-goldeneye-webserver-dos-tool-released/</link>
+      <pubDate>Tue, 26 Mar 2013 21:58:19 +0000</pubDate>
+      
+      <guid>http://wroot.org/posts/new-version-of-goldeneye-webserver-dos-tool-released/</guid>
+      <description>After the hackers 2 hackers conference talk last year, some people contacted me about known Python performance issues regarding the use of threads related to the GIL.
+Indeed the threading wasn&amp;#8217;t performing well due the nature of GIL so I&amp;#8217;ve rewritten the code to support Python&amp;#8217;s multiprocessing module. It&amp;#8217;s a tad faster but I haven&amp;#8217;t tested it exhaustively so if you feel the inner-beta-tester in you, let me know!
+The download is available as always at the github project page at https://github.</description>
+    </item>
+    
+    <item>
+      <title>Fixing ‘guake can not init’ and buggy tab titles on Backtrack 5 R3</title>
+      <link>http://wroot.org/posts/fixing-guake-can-not-init-and-buggy-tab-titles-on-backtrack-5-r3/</link>
+      <pubDate>Tue, 04 Dec 2012 11:29:09 +0000</pubDate>
+      
+      <guid>http://wroot.org/posts/fixing-guake-can-not-init-and-buggy-tab-titles-on-backtrack-5-r3/</guid>
+      <description>Hi Folks, I&amp;#8217;m a heavy Guake Terminal user and I just installed the latest Backtrack 5 revision (R3) and installed Guake on it. I was surprised when I tried to start by getting the message:
+ &amp;#8220;Guake can not init!\n\nGconf Error.\nHave you installed guake.schemas properly?&amp;#8221;
+ Long story short, it seems that the package bundled with this version of Backtrack (and maybe others) have a bug into the debian package file/script that installs the guake.</description>
+    </item>
+    
+    <item>
+      <title>Talking about D/DoS (again) at XVII Semana de Informática (Computer Science Week)</title>
+      <link>http://wroot.org/posts/talking-about-ddos-again-at-xvii-semana-de-informatica-computer-science-week/</link>
+      <pubDate>Sun, 11 Nov 2012 14:54:55 +0000</pubDate>
+      
+      <guid>http://wroot.org/posts/talking-about-ddos-again-at-xvii-semana-de-informatica-computer-science-week/</guid>
+      <description>I&amp;#8217;m speaking at the 17th Computer Science Week at Minas Gerais, Brazil November 24th. I&amp;#8217;ll be giving an extended version of my H2HC Talk for Computer Science students at UFV (Universidade Federal de Viçosa / Viçosa Federal University) at Minas Gerais, Brazil.
+More at my talk&amp;#8217;s summary page on the event website
+@UPDATE
+It was a great talk! Thanks for everyone that attended! Slides are on my slideshare!</description>
+    </item>
+    
+    <item>
+      <title>Quick and dirty ngrep credential (username/password) sniffer</title>
+      <link>http://wroot.org/posts/quick-and-dirty-ngrep-credential-usernamepassword-sniffer/</link>
+      <pubDate>Wed, 31 Oct 2012 02:59:25 +0000</pubDate>
+      
+      <guid>http://wroot.org/posts/quick-and-dirty-ngrep-credential-usernamepassword-sniffer/</guid>
+      <description>Some time ago I&amp;#8217;ve posted a quick (and dirty too!) command-liner using tcpdump to sniff plaintext credentials over the wire.
+Now I&amp;#8217;ve acomplished the same thing with a shorter regex and ngrep tool.
+ngrep &amp;#39;[&amp;amp;\s?](?:login|user(?:name|)|p(ass(?:word|wd|)|w|wd))[\s:=]\s?([^&amp;amp;\s]*)&amp;#39; -q -i Where -i is for case-insensitive and -q for more precise output. See man ngrep for additional information.
+And the output is as follows:
+interface: eth0 (10.1.1.0/255.255.255.0)match: [&amp;amp;\s?](?:login|user(?:name|)|p(ass(?:word|wd|)|w|wd))[\s:=]\s?([^&amp;amp;\s]*)T 10.1.1.111:49196 -&amp;gt; 96.126.98.110:80 [AP]POST /users/signin &amp;lt;acronym title=&amp;#34;HyperText Transfer Protocol&amp;#34;&amp;gt;HTTP&amp;lt;/acronym&amp;gt;/1.</description>
+    </item>
+    
+    <item>
+      <title>About Hackers 2 Hackers Conference 9th Edition</title>
+      <link>http://wroot.org/posts/about-hackers-2-hackers-conference-9th-edition/</link>
+      <pubDate>Mon, 22 Oct 2012 15:22:34 +0000</pubDate>
+      
+      <guid>http://wroot.org/posts/about-hackers-2-hackers-conference-9th-edition/</guid>
+      <description>Hi Folks,
+This last weekend was my talk on Hackers 2 Hackers Conference 9th Edition @ São Paulo, Brazil. The talk was in portuguese and the slides are available here (download pdf) and here (slideshare).
+The subject of the talk was about layer 7 denial of service techniques and tools, using haproxy and socat to create a distributed denial of service from a single node, some XSS payload for DDoS and demonstration of the GoldenEye Mobile tool released today.</description>
+    </item>
+    
+    <item>
+      <title>I’m speaking at Hackers 2 Hackers Conference 9th edition – 2012 @ São Paulo, Brazil!</title>
+      <link>http://wroot.org/posts/im-speaking-at-hackers-2-hackers-conference-9th-edition-2012-sao-paulo-brazil/</link>
+      <pubDate>Fri, 28 Sep 2012 16:40:59 +0000</pubDate>
+      
+      <guid>http://wroot.org/posts/im-speaking-at-hackers-2-hackers-conference-9th-edition-2012-sao-paulo-brazil/</guid>
+      <description>Hi folks! I&amp;#8217;m glad to inform that my paper &amp;#8220;Advanced DDoS techniques: Layer 7, load-balancing and mobile tools&amp;#8221; was accepted by the 9th Hackers 2 Hackers Conference (H2HC).
+The event will take place on October 20-21 and it seems to be another success just like previous editions.
+Don&amp;#8217;t forget to check the event&amp;#8217;s website for full line-up. If you can, enroll and enjoy!</description>
+    </item>
+    
+    <item>
+      <title>Quick and dirty tcpdump credential (username/password) sniffer</title>
+      <link>http://wroot.org/posts/quick-and-dirty-tcpdump-credential-usernamepassword-sniffer/</link>
+      <pubDate>Mon, 18 Jun 2012 21:50:39 +0000</pubDate>
+      
+      <guid>http://wroot.org/posts/quick-and-dirty-tcpdump-credential-usernamepassword-sniffer/</guid>
+      <description>I&amp;#8217;ve been playing the last months with mobile pentesting within the Android platform. As I&amp;#8217;ve been able to setup tcpdump-arm on my android phone, I began fooling around with it. I was trying to cross-compile Dug Song&amp;#8217;s dsniff into armle architechture but it was only giving me headaches within the libnet/libnids dependencies and stuff.
+So I wrote a quick one-liner to dump potential credentials (username/password) flowing in plaintext over the line:</description>
+    </item>
+    
+    <item>
+      <title>São Paulo State’s Military Police website (almost) hacked by RFI</title>
+      <link>http://wroot.org/posts/sao-paulo-states-military-police-website-almost-hacked-by-rfi/</link>
+      <pubDate>Sun, 22 Apr 2012 21:00:24 +0000</pubDate>
+      
+      <guid>http://wroot.org/posts/sao-paulo-states-military-police-website-almost-hacked-by-rfi/</guid>
+      <description>Today a friend shared me this link which pointed to São Paulo State&amp;#8217;s Military Police website and showed a deface-like page with a hacktivist text and a youtube video.
+The first thing that came to my eyes was the URL:
+http://www.polmil.sp.gov.br/abrirframes.asp?PAGINA=http%3A%2F%2Fwww.nova89fm.com.br%2Fwebsite%2F &amp;#8216;abrirframes.asp&amp;#8217; is &amp;#8216;openframes.asp&amp;#8217; and &amp;#8216;PAGINA=&amp;#8217; is &amp;#8216;PAGE=&amp;#8217; in Brazilian Portuguese. Say no more.
+That&amp;#8217;s why I&amp;#8217;ve said &amp;#8220;almost hacked&amp;#8221;. The site that was actually hacked was www.nova89fm.com.br (a Brazilian FM Radio) and not São Paulo State&amp;#8217;s Military Police&amp;#8217;s.</description>
+    </item>
+    
+    <item>
+      <title>Terminal auto-lock with zsh and vlock</title>
+      <link>http://wroot.org/posts/terminal-auto-lock-with-zsh-and-vlock/</link>
+      <pubDate>Wed, 18 Jan 2012 22:33:27 +0000</pubDate>
+      
+      <guid>http://wroot.org/posts/terminal-auto-lock-with-zsh-and-vlock/</guid>
+      <description>I&amp;#8217;m always concerned about leaving terminal sessions open. I&amp;#8217;ve used for many and many years the $TMOUT environment variable to close my sessions if idle for N seconds.
+Just by exporting the TMOUT variable to the number of desired timeout seconds will close your shell (Bash, Ksh, Zsh and some others).
+The following example will timeout in 300 seconds (5 minutes)
+export TMOUT=300 I am currently reading the book Secure Coding: Principles &amp;amp; Practices and the authors cited this timeout technique as pretty ineffective since it annoys more than it helps.</description>
+    </item>
+    
+    <item>
+      <title>Iran hijacked US Drone by hacking GPS</title>
+      <link>http://wroot.org/posts/iran-hijacked-us-drone-by-hacking-gps/</link>
+      <pubDate>Fri, 16 Dec 2011 20:33:26 +0000</pubDate>
+      
+      <guid>http://wroot.org/posts/iran-hijacked-us-drone-by-hacking-gps/</guid>
+      <description>These past weeks I&amp;#8217;ve been following the US drone hijacking by the Iranian Revolutionary Guards.
+Recently the details of the hacking were posted.
+The IRG says the communication signals were jammed forcing the UAV to go into autopilot (RTL &amp;#8211; Return To Land, to be more precise). Then the GPS signals were spoofed to make the drone think that Iran Base was his Base.
+US experts are still questioning these claims.</description>
+    </item>
+    
+    <item>
+      <title>Shared-hosting accounts victims of lame directory permissions</title>
+      <link>http://wroot.org/posts/shared-hosting-accounts-victims-of-lame-directory-permissions/</link>
+      <pubDate>Wed, 14 Dec 2011 17:40:00 +0000</pubDate>
+      
+      <guid>http://wroot.org/posts/shared-hosting-accounts-victims-of-lame-directory-permissions/</guid>
+      <description>From a few months some clients started to complain about their shared-hosting accounts being amazingly owned even if their PHP applications (WordPress mostly) were totally up to date.
+The malware got into most of the PHP files including a PHP snippet that would eval and decode a base64-encoded string containing a script declaration loading Javascript from outside. This Javascript usually initiates download of .exe&amp;#8217;s and stuff.
+A friend&amp;#8217;s account got hacked a few days back by this very same technique.</description>
+    </item>
+    
+    <item>
+      <title>Endpoint DLP: Is hardware access control enough?</title>
+      <link>http://wroot.org/posts/endpoint-dlp-is-hardware-access-control-enough/</link>
+      <pubDate>Wed, 26 Jan 2011 02:30:48 +0000</pubDate>
+      
+      <guid>http://wroot.org/posts/endpoint-dlp-is-hardware-access-control-enough/</guid>
+      <description>I&amp;#8217;ve stumbled on this article about using a custom-built hardware to bypass hardware enforcement on most DLP solutions available on market.
+The solution uses an Atmel&amp;#8217;s AVR microcontroller (the same on the Arduino&amp;#8216;s I&amp;#8217;ve been playing around lately) and the V-USB library to create a virtual USB device and is crafted to announce itself as HID (Human-interface device). What common hardware fits this description: the keyboard. As you are not likely to forbid keyboard access to your users (or else they wouldn&amp;#8217;t be able to type and thus work), this will gracefully pass through many enforcements.</description>
+    </item>
+    
+    <item>
+      <title>Playing around with Samy’s Quickjack clickjacker</title>
+      <link>http://wroot.org/posts/playing-around-with-samys-quickjack-clickjacker/</link>
+      <pubDate>Tue, 07 Dec 2010 22:55:41 +0000</pubDate>
+      
+      <guid>http://wroot.org/posts/playing-around-with-samys-quickjack-clickjacker/</guid>
+      <description>In the past few days I&amp;#8217;ve started following the work of Samy Kankar, which has some great work. Among all of them, I&amp;#8217;ve almost-randomly picked one to play, Quickjack.
+From Samy&amp;#8217;s project page:
+ Quickjack is a tool developed to easily create pages with the capability to clickjack users no matter where they click on the page. The tool has an extremely intuitive interface and is literally a point-and-click tool.</description>
+    </item>
+    
+    <item>
+      <title>Anatomy of the W32.Stuxnet SCADA threat</title>
+      <link>http://wroot.org/posts/anatomy-of-the-w32-stuxnet-scada-threat/</link>
+      <pubDate>Fri, 06 Aug 2010 13:43:41 +0000</pubDate>
+      
+      <guid>http://wroot.org/posts/anatomy-of-the-w32-stuxnet-scada-threat/</guid>
+      <description>Symantec released an in-depth analysis of W32.Stuxnet, reviewed through IDA-PRO. The analysis shows off the staged infection process, the unusual injection of legitimate services instead of issuing LoadLibrary calls, core encryption and exported functions.
+Tofino Security (specialized on SCADA security) has released an excellent white paper on the case (requires [free] registration). If you are a Malware Researcher / Reverse Engineer or just curious, I totally recommend it.
+There&amp;#8217;s code, great explanation, images, graphs and such explaining it all the process from infection, rooting and the propper malware code.</description>
+    </item>
+    
+    <item>
+      <title>WPA faces new threat ‘Hole 196’ and new key bruteforcing service</title>
+      <link>http://wroot.org/posts/wpa-faces-new-threat-hole-196-and-new-key-bruteforcing-service-2/</link>
+      <pubDate>Wed, 28 Jul 2010 16:30:14 +0000</pubDate>
+      
+      <guid>http://wroot.org/posts/wpa-faces-new-threat-hole-196-and-new-key-bruteforcing-service-2/</guid>
+      <description>WPA was hit hard these days by a rumor of a new threat called &amp;#8216;Hole 196&amp;#8217;.
+The hole would allow GTK (Group Temporal Key) spoofing forcing users to send the rogue AP their private key information leading to a awesome no-footprinted (medium is over air!) man-in-the-middle attacks.
+To understand transient keys over WPA, Md Sohail Ahmad from AirTight said:
+ WPA2 uses two types of keys: 1) Pairwise Transient Key (PTK), which is unique to each client, for protecting unicast traffic; and 2) Group Temporal Key (GTK) to protect broadcast data sent to multiple clients in a network.</description>
+    </item>
+    
+    <item>
+      <title>Stuxnet targets SCADA systems via USB drives vectors</title>
+      <link>http://wroot.org/posts/stuxnet-targets-scada-systems-via-usb-drives-vectors/</link>
+      <pubDate>Fri, 23 Jul 2010 16:19:06 +0000</pubDate>
+      
+      <guid>http://wroot.org/posts/stuxnet-targets-scada-systems-via-usb-drives-vectors/</guid>
+      <description>Microsoft disclosed a zero-day flaw on Windows Shell on Friday and Stuxnet (W32.Stuxnet) is already exploiting it to gain access to SCADA systems through its attack vector.
+Since SCADA systems are updated mainly by CDs or pen drives, the attack vector fits as a glove. The malware targets Siemens&amp;#8217; Simatic WinCC software and intends to steal information like projects schematics and upload them to an external website.
+From CNet:
+ Once the malware locates the data it is looking for it encodes it and attempts to upload it to a remote server.</description>
+    </item>
+    
+    <item>
+      <title>Downgrade HTTPS connections to HTTP using Ettercap filters</title>
+      <link>http://wroot.org/posts/downgrade-https-connections-to-http-using-ettercap-filters/</link>
+      <pubDate>Tue, 13 Jul 2010 17:42:06 +0000</pubDate>
+      
+      <guid>http://wroot.org/posts/downgrade-https-connections-to-http-using-ettercap-filters/</guid>
+      <description>Ettercap is a great tool for MITM poisoning and sniffing. Everyone on Infosec should have played with it (or Cain) at least once.
+Man-In-The-Middle MITM attacks are pretty easy to perform on a local network but the tools tend to crash a LOT. Cain (Windows) is a little more stable than Ettercap but I prefer it over Cain because it doesn&amp;#8217;t spoof SSL that I consider too loud depending on the attack.</description>
+    </item>
+    
+    <item>
+      <title>Batch-installing on Windows platforms with Ninite</title>
+      <link>http://wroot.org/posts/batch-installing-on-windows-platforms-with-ninite/</link>
+      <pubDate>Mon, 05 Jul 2010 19:11:59 +0000</pubDate>
+      
+      <guid>http://wroot.org/posts/batch-installing-on-windows-platforms-with-ninite/</guid>
+      <description>Today a friend introduced me that great tool called Ninite. It&amp;#8217;s a batch-installer which comes with the most popular Windows FOSS available in the wild and saves you from downloading and manually installing them.
+Ninite also skips installation screens (and their EULA) and it&amp;#8217;s perfect when you must setup several stations or you have constantly some station setup to do. Although Ninite ISN&amp;#8217;T a configuration management tool but it is a good time-saver for smaller environments.</description>
+    </item>
+    
+    <item>
+      <title>Security benchmark papers available from CIS</title>
+      <link>http://wroot.org/posts/security-benchmark-papers-available-from-cis/</link>
+      <pubDate>Tue, 29 Jun 2010 19:01:29 +0000</pubDate>
+      
+      <guid>http://wroot.org/posts/security-benchmark-papers-available-from-cis/</guid>
+      <description>The Center for Internet Security has some great papers on security benchmark for many OS (All flavours of Windows, Linux and Solaris) and applications (Apache, MSSQL, MySQL, Oracle etc).
+The papers are available to download at their CIS Resources Download.
+CIS has also a great audit tool called the &amp;#8220;CIS-CAT (Configuration Audit Tool) Benchmark Tool&amp;#8221; that is SCAP-Validated as a Federal Desktop Core Configuration (FDCC) scanner tool by NIST and is in its wonderful NCP low-level benchmark repository.</description>
+    </item>
+    
+    <item>
+      <title>Daniel Dantas’ hard drive encryption wins over FBI</title>
+      <link>http://wroot.org/posts/daniel-dantas-hard-drive-encryption-wins-over-fbi/</link>
+      <pubDate>Tue, 29 Jun 2010 14:58:13 +0000</pubDate>
+      
+      <guid>http://wroot.org/posts/daniel-dantas-hard-drive-encryption-wins-over-fbi/</guid>
+      <description>Just read it on Slashdot that FBI failed to break encryption of Daniel Dantas&amp;#8217;s hard drives.
+Daniel Dantas is a brazillian banker involved in financial frauds caught by the federal police in July 2008. The 5 hard drives siezed by the Federal Police at his apartment were cyphered with the top-notch AES encryption algorithm with a 256-bit key. Two softwares were used to manage the encryption and one of them was the widely used and known open-source tool TrueCrypt.</description>
+    </item>
+    
+    <item>
+      <title>Online password generation utility from PcTools</title>
+      <link>http://wroot.org/posts/online-password-generation-utility-from-pctools/</link>
+      <pubDate>Mon, 21 Jun 2010 20:25:21 +0000</pubDate>
+      
+      <guid>http://wroot.org/posts/online-password-generation-utility-from-pctools/</guid>
+      <description>Here&amp;#8217;s a good online password generator from PcTools that generates passwords based on various parameters such as password length; letters, numbers, special characters inclusion; hability to exclude similar characters etc.
+Good to have bookmarked! There&amp;#8217;s also desktop version (Windows) of the password generator in the &amp;#8220;Password Utilities&amp;#8221; software provided by PcTools.</description>
+    </item>
+    
+    <item>
+      <title>MDK3 goes bruteforcing Wireless SSIDs</title>
+      <link>http://wroot.org/posts/mdk3-goes-bruteforcing-wireless-ssids/</link>
+      <pubDate>Wed, 09 Jun 2010 15:03:38 +0000</pubDate>
+      
+      <guid>http://wroot.org/posts/mdk3-goes-bruteforcing-wireless-ssids/</guid>
+      <description>One good practice is to disable your SSID broadcast so you don&amp;#8217;t show up on the victims list. Although this doesn&amp;#8217;t make you completely invisible, it does aid reducing ease of location. (Networks can still be located by BSSIDs).
+MDK3 was written by ASPj to bruteforce network SSIDs (even with wordlists).
+Tape has done some testings around and described it all on his blog post. It has some videos too of the attack in progress on a 3-character-lenght SSID.</description>
+    </item>
+    
+    <item>
+      <title>Mitigating the risk on an ARP poison attack</title>
+      <link>http://wroot.org/posts/mitigating-the-risk-on-an-arp-poison-attack/</link>
+      <pubDate>Sat, 29 May 2010 23:44:57 +0000</pubDate>
+      
+      <guid>http://wroot.org/posts/mitigating-the-risk-on-an-arp-poison-attack/</guid>
+      <description>ARP poisoning is a technique quite simple to be applied and allows traffic to be sniffer over a switched network. It can be used to sniff the connection on-the-fly and capture plain-text password or hashes. ARP poison also allows combination with other attacks such as DNS spoof and packet filters in order to deploy client side exploits transparently.
+This attack can only be performed from the local network because ARP packets aren&amp;#8217;t routed so you can&amp;#8217;t hop between LANs but it can be performed from any machine on the same network so it is a serious concern when dealing with unhappy employees, interns and industrial espionage.</description>
+    </item>
+    
+    <item>
+      <title>Kentuckiana ISSA’s Metasploit Class videos available at Irongeek</title>
+      <link>http://wroot.org/posts/kentuckiana-issas-metasploit-class-videos-available-at-irongeek/</link>
+      <pubDate>Thu, 27 May 2010 00:02:42 +0000</pubDate>
+      
+      <guid>http://wroot.org/posts/kentuckiana-issas-metasploit-class-videos-available-at-irongeek/</guid>
+      <description>These presentations from May 8th, 2010 performed on the Brown Hotel in Louisville, Kentucky. on exploiting with the Metasploit framework has an tremendous value. Its from this month, still fresh! Its 7 hours of presentations, it takes a while to finish (I took almost a week! phew!) but its totally worth it!
+It starts with Adrian &amp;#8220;Irongeek&amp;#8221; Crenshaw introducing Metasploit exploiting a Windows box via msfweb and msfconsole. Pretty neat.</description>
+    </item>
+    
+    <item>
+      <title>Preventing your servers from downgrade attacks</title>
+      <link>http://wroot.org/posts/preventing-your-servers-from-downgrade-attacks/</link>
+      <pubDate>Sat, 22 May 2010 21:33:15 +0000</pubDate>
+      
+      <guid>http://wroot.org/posts/preventing-your-servers-from-downgrade-attacks/</guid>
+      <description>&lt;p&gt;One of the coolest attacks is forcing a downgrade between the client and server, making the server believe that client has support only for older and insecure versions of your protocol. This works with Windows&amp;#8217; NTLM authentication and with &lt;acronym title=&#34;Secure Sockets Layer&#34;&gt;SSL&lt;/acronym&gt;, mostly.&lt;/p&gt;
+
+&lt;h2 id=&#34;how-does-8216-downgrade-attack-8217-work&#34;&gt;How does &amp;#8216;downgrade attack&amp;#8217; work?&lt;/h2&gt;
+
+&lt;p&gt;Downgrade attacks are born from a misconfiguration and takes place within &lt;acronym title=&#34;Man-in-the-middle&#34;&gt;MITM&lt;/acronym&gt; attacks. Privilege is escalated by trapping the connection request and thus forcing the use of an older protocol version with known security issues by faking the client-side accepted protocol versions. Then the weak protocol is attacked and access is escalated.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Command-line sudo and chmod under Windows</title>
+      <link>http://wroot.org/posts/command-line-sudo-and-chmod-under-windows/</link>
+      <pubDate>Fri, 21 May 2010 04:51:04 +0000</pubDate>
+      
+      <guid>http://wroot.org/posts/command-line-sudo-and-chmod-under-windows/</guid>
+      <description>I&amp;#8217;m quite not a fan of GUI utilities but I&amp;#8217;m a great fan of command-line and batch processing.
+I&amp;#8217;ve recently changed profiles under a Windows box and had to move some files over them. At first wondered about logging in as the old user, copy all the files to a temp folder, log back as my new user and copy them to my new folder. But hell, too much time spent.</description>
+    </item>
+    
+  </channel>
+</rss>

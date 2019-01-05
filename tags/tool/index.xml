@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tool on wroot</title>
+    <link>http://wroot.org/tags/tool/</link>
+    <description>Recent content in Tool on wroot</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Tue, 26 Mar 2013 21:58:19 +0000</lastBuildDate>
+    
+	<atom:link href="http://wroot.org/tags/tool/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>New version of GoldenEye WebServer DoS tool released</title>
+      <link>http://wroot.org/posts/new-version-of-goldeneye-webserver-dos-tool-released/</link>
+      <pubDate>Tue, 26 Mar 2013 21:58:19 +0000</pubDate>
+      
+      <guid>http://wroot.org/posts/new-version-of-goldeneye-webserver-dos-tool-released/</guid>
+      <description>After the hackers 2 hackers conference talk last year, some people contacted me about known Python performance issues regarding the use of threads related to the GIL.
+Indeed the threading wasn&amp;#8217;t performing well due the nature of GIL so I&amp;#8217;ve rewritten the code to support Python&amp;#8217;s multiprocessing module. It&amp;#8217;s a tad faster but I haven&amp;#8217;t tested it exhaustively so if you feel the inner-beta-tester in you, let me know!
+The download is available as always at the github project page at https://github.</description>
+    </item>
+    
+    <item>
+      <title>Online password generation utility from PcTools</title>
+      <link>http://wroot.org/posts/online-password-generation-utility-from-pctools/</link>
+      <pubDate>Mon, 21 Jun 2010 20:25:21 +0000</pubDate>
+      
+      <guid>http://wroot.org/posts/online-password-generation-utility-from-pctools/</guid>
+      <description>Here&amp;#8217;s a good online password generator from PcTools that generates passwords based on various parameters such as password length; letters, numbers, special characters inclusion; hability to exclude similar characters etc.
+Good to have bookmarked! There&amp;#8217;s also desktop version (Windows) of the password generator in the &amp;#8220;Password Utilities&amp;#8221; software provided by PcTools.</description>
+    </item>
+    
+  </channel>
+</rss>

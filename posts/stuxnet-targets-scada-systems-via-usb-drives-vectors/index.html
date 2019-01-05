@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+  <meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'>
+<meta name='description' content='Microsoft disclosed a zero-day flaw on Windows Shell on Friday and Stuxnet (W32.Stuxnet) is already exploiting it to gain access to SCADA systems through its attack vector.
+Since SCADA systems are updated mainly by CDs or pen drives, the attack vector fits as a glove. The malware targets Siemens&#8217; Simatic WinCC software and intends to steal information like projects schematics and upload them to an external website.
+From CNet:
+ Once the malware locates the data it is looking for it encodes it and attempts to upload it to a remote server.'>
+
+<meta property='og:title' content='Stuxnet targets SCADA systems via USB drives vectors • wroot'>
+<meta property='og:description' content='Microsoft disclosed a zero-day flaw on Windows Shell on Friday and Stuxnet (W32.Stuxnet) is already exploiting it to gain access to SCADA systems through its attack vector.
+Since SCADA systems are updated mainly by CDs or pen drives, the attack vector fits as a glove. The malware targets Siemens&#8217; Simatic WinCC software and intends to steal information like projects schematics and upload them to an external website.
+From CNet:
+ Once the malware locates the data it is looking for it encodes it and attempts to upload it to a remote server.'>
+<meta property='og:url' content='http://wroot.org/posts/stuxnet-targets-scada-systems-via-usb-drives-vectors/'>
+<meta property='og:site_name' content='wroot'>
+<meta property='og:type' content='article'><meta property='article:section' content='Posts'><meta property='article:tag' content='backdoor'><meta property='article:tag' content='data loss'><meta property='article:tag' content='malware'><meta property='article:tag' content='rootkit'><meta property='article:tag' content='scada'><meta property='article:tag' content='siemens'><meta property='article:tag' content='stuxnet'><meta property='article:tag' content='trojan'><meta property='article:tag' content='wincc'><meta property='article:published_time' content='2010-07-23T16:19:06Z'/><meta property='article:modified_time' content='2010-07-23T16:19:06Z'/><meta name='twitter:card' content='summary'><meta name='twitter:site' content='@jseidl'>
+
+<meta name="generator" content="Hugo 0.53" />
+
+  <title>Stuxnet targets SCADA systems via USB drives vectors • wroot</title>
+  <link rel='canonical' href='http://wroot.org/posts/stuxnet-targets-scada-systems-via-usb-drives-vectors/'>
+  
+  
+  <link rel='icon' href='/favicon.ico'><link rel='stylesheet' href='/webfonts/ptserif/main.css'><link rel='stylesheet' href='/webfonts/source-code-pro/main.css'><link rel='stylesheet' href='/css/style.css'>
+  
+
+</head>
+
+
+<body>
+<div id="container">
+    <header id="header">
+    <div id="header-outer" class="outer">
+        <div id="header-inner" class="inner">
+            <a id="main-nav-toggle" class="nav-icon" href="javascript:;"></a>
+            <a id="logo" class="logo-text" href="http://wroot.org/">wroot</a>
+            <nav id="main-nav">
+                
+                <a class="main-nav-link" href="/about/">About</a>
+                
+                <a class="main-nav-link" href="/talks/">Talks</a>
+                
+                <a class="main-nav-link" href="/projects/">Projects</a>
+                
+                <a class="main-nav-link" href="/press/">Press</a>
+                
+                <a class="main-nav-link" href="https://twitter.com/jseidl">Twitter</a>
+                
+                <a class="main-nav-link" href="https://www.linkedin.com/in/janseidl">LinkedIn</a>
+                
+                <a class="main-nav-link" href="http://github.com/jseidl">GitHub</a>
+                
+                <a class="main-nav-link" href="http://www.slideshare.net/jseidl/">SlideShare</a>
+                
+            </nav>
+            <nav id="sub-nav">
+                <div id="search-form-wrap">
+                </div>
+            </nav>
+        </div>
+    </div>
+</header>
+    <section id="main" class="outer">
+        <article class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+        <header class="article-header">
+            <h1 class="article-title" itemprop="name">Stuxnet targets SCADA systems via USB drives vectors</h1>
+        </header>
+        
+        <div class="article-meta">
+            
+            <a href="/posts/stuxnet-targets-scada-systems-via-usb-drives-vectors/" class="article-date">
+                <time datetime='2010-07-23T16:19:06.000&#43;00:00' itemprop="datePublished">2010-07-23</time>
+            </a>
+            
+            
+            
+            <div class="post-categories">
+                <div class="article-category">
+                    
+                    
+                    <a class="article-category-link" href="http://wroot.org//categories/malware">Malware</a>
+                    
+                </div>
+            </div>
+            
+            
+        </div>
+        <div class="article-entry" itemprop="articleBody">
+            <p>Microsoft disclosed a <a href="http://www.scmagazineus.com/flaw-uses-usb-devices-as-vector-to-steal-data/article/174873/">zero-day flaw on Windows Shell</a> on Friday and <a href="http://news.cnet.com/8301-27080_3-20011159-245.html">Stuxnet (W32.Stuxnet)</a> is already exploiting it to gain access to <acronym title="Supervisory Acquisition and Data Control">SCADA</acronym> systems through its attack vector.</p>
+
+<p>Since <acronym title="Supervisory Acquisition and Data Control">SCADA</acronym> systems are updated mainly by CDs or pen drives, the attack vector fits as a glove. The malware targets Siemens&#8217; Simatic WinCC software and intends to steal information like projects schematics and upload them to an external website.</p>
+
+<p>From <a href="http://news.cnet.com/8301-27080_3-20011159-245.html">CNet</a>:</p>
+
+<blockquote>
+<p>Once the malware locates the data it is looking for it encodes it and attempts to upload it to a remote server. The malware waits for a response from the server, which may contain more commands, he said.</p>
+</blockquote>
+
+<p>Along with the data steal, Stuxnet also provides a trojan backdoor aiming Siemens services and a rootkit (to hide it from the system).</p>
+
+<blockquote>
+<p>Once the machine is infected, a Trojan looks to see if the computer it lands on is running Siemens&#8217; Simatic WinCC software. The malware then automatically uses a default password that is hard-coded into the software to access the control system&#8217;s Microsoft <acronym title="Structured Query Language">SQL</acronym> database. The password has been available on the Internet for several years, according to <a href="http://www.wired.com/threatlevel/2010/07/siemens-scada/">Wired&#8217;s Threat Level blog</a>.</p>
+</blockquote>
+
+<p>Sophos has also released a video on YouTube showing a <a href="http://www.youtube.com/sophoslabs#p/u/1/1UxN7WJFTVg"><acronym title="Supervisory Acquisition and Data Control">SCADA</acronym> system compromised by Stuxnet</a>.</p>
+
+<p>The spreading is done by using stolen/spoofed signed digital certificates:</p>
+
+<blockquote>
+<p>The malware includes a rootkit, which is software designed to hide the fact that a computer has been compromised, and other software that sneaks onto computers by using a digital certificates signed two Taiwanese chip manufacturers that are based in the same industrial complex in Taiwan&#8211;RealTek and JMicron, according to Chester Wisniewski, senior security advisor at Sophos. (Sophos has posted a video showing how a computer is infected on YouTube.) It is unclear how the digital signatures were acquired by the attacker, but experts believe they were stolen and that the companies were not involved.</p>
+</blockquote>
+
+<p>Adding to this scenario, <acronym title="Supervisory Acquisition and Data Control">SCADA</acronym> admins are not able to change the default password because it would break up software apart.</p>
+
+<p><acronym title="Supervisory Acquisition and Data Control">SCADA</acronym> systems rely on the fact of being unplugged from networks and as <a href="http://www.schneier.com/blog/archives/2010/07/internet_worm_t.html">Schneier said</a>, &#8220;would YOU like to be the guy that breaks all installed systems controlling valves and such by adding security that nobody demands?&#8221;.</p>
+
+<p>It seems that <acronym title="Supervisory Acquisition and Data Control">SCADA</acronym> will demand closer attention from now on since I agree with other professionals that doubts that this is the first <acronym title="Supervisory Acquisition and Data Control">SCADA</acronym> malware.</p>
+
+        </div>
+
+        
+        
+        
+
+        
+
+
+        
+        <footer class="article-footer">
+            <ul class="article-tag-list">
+                
+                <li class="article-tag-list-item">
+                    <a class="article-tag-list-link" href="http://wroot.org//tags/backdoor">backdoor
+                    </a>
+                </li>
+                
+                <li class="article-tag-list-item">
+                    <a class="article-tag-list-link" href="http://wroot.org//tags/data-loss">data loss
+                    </a>
+                </li>
+                
+                <li class="article-tag-list-item">
+                    <a class="article-tag-list-link" href="http://wroot.org//tags/malware">malware
+                    </a>
+                </li>
+                
+                <li class="article-tag-list-item">
+                    <a class="article-tag-list-link" href="http://wroot.org//tags/rootkit">rootkit
+                    </a>
+                </li>
+                
+                <li class="article-tag-list-item">
+                    <a class="article-tag-list-link" href="http://wroot.org//tags/scada">scada
+                    </a>
+                </li>
+                
+                <li class="article-tag-list-item">
+                    <a class="article-tag-list-link" href="http://wroot.org//tags/siemens">siemens
+                    </a>
+                </li>
+                
+                <li class="article-tag-list-item">
+                    <a class="article-tag-list-link" href="http://wroot.org//tags/stuxnet">stuxnet
+                    </a>
+                </li>
+                
+                <li class="article-tag-list-item">
+                    <a class="article-tag-list-link" href="http://wroot.org//tags/trojan">trojan
+                    </a>
+                </li>
+                
+                <li class="article-tag-list-item">
+                    <a class="article-tag-list-link" href="http://wroot.org//tags/wincc">wincc
+                    </a>
+                </li>
+                
+            </ul>
+        </footer>
+        
+    </div>
+    <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "wroot" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+    <nav id="article-nav">
+    
+    <a href="/posts/wpa-faces-new-threat-hole-196-and-new-key-bruteforcing-service-2/" id="article-nav-newer" class="article-nav-link-wrap">
+        <div class="article-nav-title"><span>&lt;</span>&nbsp;
+            WPA faces new threat ‘Hole 196’ and new key bruteforcing service
+        </div>
+    </a>
+    
+    
+    <a href="/posts/downgrade-https-connections-to-http-using-ettercap-filters/" id="article-nav-older" class="article-nav-link-wrap">
+        <div class="article-nav-title">Downgrade HTTPS connections to HTTP using Ettercap filters&nbsp;<span>&gt;</span></div>
+    </a>
+    
+</nav>
+</article>
+
+        
+    </section>
+    <footer id="footer">
+    <div class="outer">
+        <div id="footer-info" class="inner">
+            &copy; 2019 wroot&nbsp;
+            Powered by <a href="https://gohugo.io" target="_blank">Hugo</a> with (a slightly modified) theme <a href="https://github.com/carsonip/hugo-theme-minos">Minos</a>
+        </div>
+    </div>
+    
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/styles/tomorrow-night.min.css" integrity="sha256-2wL88NKUqvJi/ExflDzkzUumjUM73mcK2gBvBBeLvTk=" crossorigin="anonymous" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/highlight.min.js" integrity="sha256-KbfTjB0WZ8vvXngdpJGY3Yp3xKk+tttbqClO11anCIU=" crossorigin="anonymous"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+
+    
+    <script>
+        document.getElementById('main-nav-toggle').addEventListener('click', function () {
+            var header = document.getElementById('header');
+            if (header.classList.contains('mobile-on')) {
+                header.classList.remove('mobile-on');
+            } else {
+                header.classList.add('mobile-on');
+            }
+        });
+    </script>
+</footer>
+
+</div>
+</body>
+</html>

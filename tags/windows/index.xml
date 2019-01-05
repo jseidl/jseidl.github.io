@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Windows on wroot</title>
+    <link>http://wroot.org/tags/windows/</link>
+    <description>Recent content in Windows on wroot</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Fri, 06 Aug 2010 13:43:41 +0000</lastBuildDate>
+    
+	<atom:link href="http://wroot.org/tags/windows/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Anatomy of the W32.Stuxnet SCADA threat</title>
+      <link>http://wroot.org/posts/anatomy-of-the-w32-stuxnet-scada-threat/</link>
+      <pubDate>Fri, 06 Aug 2010 13:43:41 +0000</pubDate>
+      
+      <guid>http://wroot.org/posts/anatomy-of-the-w32-stuxnet-scada-threat/</guid>
+      <description>Symantec released an in-depth analysis of W32.Stuxnet, reviewed through IDA-PRO. The analysis shows off the staged infection process, the unusual injection of legitimate services instead of issuing LoadLibrary calls, core encryption and exported functions.
+Tofino Security (specialized on SCADA security) has released an excellent white paper on the case (requires [free] registration). If you are a Malware Researcher / Reverse Engineer or just curious, I totally recommend it.
+There&amp;#8217;s code, great explanation, images, graphs and such explaining it all the process from infection, rooting and the propper malware code.</description>
+    </item>
+    
+    <item>
+      <title>Command-line sudo and chmod under Windows</title>
+      <link>http://wroot.org/posts/command-line-sudo-and-chmod-under-windows/</link>
+      <pubDate>Fri, 21 May 2010 04:51:04 +0000</pubDate>
+      
+      <guid>http://wroot.org/posts/command-line-sudo-and-chmod-under-windows/</guid>
+      <description>I&amp;#8217;m quite not a fan of GUI utilities but I&amp;#8217;m a great fan of command-line and batch processing.
+I&amp;#8217;ve recently changed profiles under a Windows box and had to move some files over them. At first wondered about logging in as the old user, copy all the files to a temp folder, log back as my new user and copy them to my new folder. But hell, too much time spent.</description>
+    </item>
+    
+  </channel>
+</rss>

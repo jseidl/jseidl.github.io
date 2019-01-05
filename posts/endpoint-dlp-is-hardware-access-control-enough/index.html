@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+  <meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'>
+<meta name='description' content='I&#8217;ve stumbled on this article about using a custom-built hardware to bypass hardware enforcement on most DLP solutions available on market.
+The solution uses an Atmel&#8217;s AVR microcontroller (the same on the Arduino&#8216;s I&#8217;ve been playing around lately) and the V-USB library to create a virtual USB device and is crafted to announce itself as HID (Human-interface device). What common hardware fits this description: the keyboard. As you are not likely to forbid keyboard access to your users (or else they wouldn&#8217;t be able to type and thus work), this will gracefully pass through many enforcements.'>
+
+<meta property='og:title' content='Endpoint DLP: Is hardware access control enough? • wroot'>
+<meta property='og:description' content='I&#8217;ve stumbled on this article about using a custom-built hardware to bypass hardware enforcement on most DLP solutions available on market.
+The solution uses an Atmel&#8217;s AVR microcontroller (the same on the Arduino&#8216;s I&#8217;ve been playing around lately) and the V-USB library to create a virtual USB device and is crafted to announce itself as HID (Human-interface device). What common hardware fits this description: the keyboard. As you are not likely to forbid keyboard access to your users (or else they wouldn&#8217;t be able to type and thus work), this will gracefully pass through many enforcements.'>
+<meta property='og:url' content='http://wroot.org/posts/endpoint-dlp-is-hardware-access-control-enough/'>
+<meta property='og:site_name' content='wroot'>
+<meta property='og:type' content='article'><meta property='article:section' content='Posts'><meta property='article:tag' content='automation'><meta property='article:tag' content='AVR'><meta property='article:tag' content='DLP'><meta property='article:tag' content='HID'><meta property='article:tag' content='malware'><meta property='article:tag' content='microcontroller'><meta property='article:published_time' content='2011-01-26T02:30:48Z'/><meta property='article:modified_time' content='2011-01-26T02:30:48Z'/><meta name='twitter:card' content='summary'><meta name='twitter:site' content='@jseidl'>
+
+<meta name="generator" content="Hugo 0.53" />
+
+  <title>Endpoint DLP: Is hardware access control enough? • wroot</title>
+  <link rel='canonical' href='http://wroot.org/posts/endpoint-dlp-is-hardware-access-control-enough/'>
+  
+  
+  <link rel='icon' href='/favicon.ico'><link rel='stylesheet' href='/webfonts/ptserif/main.css'><link rel='stylesheet' href='/webfonts/source-code-pro/main.css'><link rel='stylesheet' href='/css/style.css'>
+  
+
+</head>
+
+
+<body>
+<div id="container">
+    <header id="header">
+    <div id="header-outer" class="outer">
+        <div id="header-inner" class="inner">
+            <a id="main-nav-toggle" class="nav-icon" href="javascript:;"></a>
+            <a id="logo" class="logo-text" href="http://wroot.org/">wroot</a>
+            <nav id="main-nav">
+                
+                <a class="main-nav-link" href="/about/">About</a>
+                
+                <a class="main-nav-link" href="/talks/">Talks</a>
+                
+                <a class="main-nav-link" href="/projects/">Projects</a>
+                
+                <a class="main-nav-link" href="/press/">Press</a>
+                
+                <a class="main-nav-link" href="https://twitter.com/jseidl">Twitter</a>
+                
+                <a class="main-nav-link" href="https://www.linkedin.com/in/janseidl">LinkedIn</a>
+                
+                <a class="main-nav-link" href="http://github.com/jseidl">GitHub</a>
+                
+                <a class="main-nav-link" href="http://www.slideshare.net/jseidl/">SlideShare</a>
+                
+            </nav>
+            <nav id="sub-nav">
+                <div id="search-form-wrap">
+                </div>
+            </nav>
+        </div>
+    </div>
+</header>
+    <section id="main" class="outer">
+        <article class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+        <header class="article-header">
+            <h1 class="article-title" itemprop="name">Endpoint DLP: Is hardware access control enough?</h1>
+        </header>
+        
+        <div class="article-meta">
+            
+            <a href="/posts/endpoint-dlp-is-hardware-access-control-enough/" class="article-date">
+                <time datetime='2011-01-26T02:30:48.000&#43;00:00' itemprop="datePublished">2011-01-26</time>
+            </a>
+            
+            
+            
+            <div class="post-categories">
+                <div class="article-category">
+                    
+                    
+                    <a class="article-category-link" href="http://wroot.org//categories/data-loss-prevention">Data-loss prevention</a>
+                    
+                    
+                    <span>&gt;</span>
+                    
+                    <a class="article-category-link" href="http://wroot.org//categories/robotics-/-automation">Robotics / Automation</a>
+                    
+                </div>
+            </div>
+            
+            
+        </div>
+        <div class="article-entry" itemprop="articleBody">
+            
+
+<p>I&#8217;ve stumbled on <a href="http://thomascannon.net/projects/dlp-bypass/">this article</a> about using a custom-built hardware to bypass hardware enforcement on most DLP solutions available on market.</p>
+
+<p>The solution uses an <a href="http://www.atmel.com/products/AVR/">Atmel&#8217;s AVR microcontroller</a> (the same on the <a href="http://www.arduino.cc">Arduino</a>&#8216;s I&#8217;ve been playing around lately) and the <a href="http://www.obdev.at/products/vusb/">V-<acronym title="Universal Serial Bus">USB</acronym> library</a> to create a virtual <acronym title="Universal Serial Bus">USB</acronym> device and is crafted to announce itself as <a href="http://en.wikipedia.org/wiki/Human_interface_device"><acronym title="Human-interface device">HID</acronym></a> (Human-interface device). What common hardware fits this description: <strong>the keyboard</strong>. As you are not likely to forbid keyboard access to your users (or else they wouldn&#8217;t be able to type and thus work), this will gracefully pass through many enforcements.</p>
+
+<p>The <acronym title="Human-interface device">HID</acronym> protocol allows bi-directional communication and this makes a perfect vector for data transfer.</p>
+
+<blockquote>
+<p>The <acronym title="Human-interface device">HID</acronym> protocol allows communication in both directions by sending and receiving reports and feature requests. I’ve utilised this control channel to allow the PC to transfer files over the <acronym title="Human-interface device">HID</acronym> protocol to the device (&#8230;)</p>
+</blockquote>
+
+<p>Thomas Cannon (the article author) had made experiments with a <acronym title="Universal Serial Bus">USB</acronym> drive and other with an micro SD module attached to the custom-built hardware in order to store the transfered data since the AVR internal memory is quite short (maybe it&#8217;s fine for Bill Gates).</p>
+
+<h2 id="white-listing">White-listing</h2>
+
+<p>While I&#8217;ve already seen some DLP solutions enforcing pendrives accesses through its vendor and model, I dunno if some had already made a way to enforce a unique fingerprint for each device (maybe yes, sounds feasible).</p>
+
+<h2 id="can-you-trust-drive-signatures-what-about-the-data-they-traffic">Can you trust drive signatures? What about the data they traffic?</h2>
+
+<p>What if drives signatures cannot be trusted anymore? We are left with the only enforcement left at input level: data monitoring.</p>
+
+<p>Network <acronym title="Intrusion-Prevention System">IPS</acronym>/IDSs are employed to detect (and sometimes stop) rogue data running on wires. Application <acronym title="Intrusion Detection System">IDS</acronym>/IPSs are employed to detect (and sometimes stop) rogue data that come over inputs. Why not deploy <acronym title="Intrusion Detection System">IDS</acronym>/IPSs at <acronym title="Human-interface device">HID</acronym> level? They are inputs, aren&#8217;t?</p>
+
+<p>Suppose you have the latest DLP solution blocking all your <acronym title="Universal Serial Bus">USB</acronym> drives, <acronym title="Compact Disc">CD</acronym> drives, Floppy drives, ZIP drives, iPhone etc etc. You also have all your network connections, email servers, <acronym title="HyperText Transfer Protocol">HTTP</acronym> traffic monitored.</p>
+
+<p>An badly intentioned user won&#8217;t be able to upload malware through the drives nor download from web or network but what would stop him from actually TYPING the payload into notepad? Every hex or worse, every bit? Yes, sounds crazy and would take lots of time but hey &#8211; never doubt a determined person.</p>
+
+<h2 id="things-can-be-automated">Things can be automated</h2>
+
+<p>Ok, so you think &#8216;Hey Jan, this would never happen, you are crazy. It would be very very very hard to keep track of every 0 or 1 typed&#8217;. Sure, I completely agree. The AVR-based hardware thus, does not.</p>
+
+<p>This little beauty needs a piece of code on the host machine to make the data transfer possible so it has a stage where you simply open a notepad and the microcontroller (since he is actually a keyboard) will type it for you! Wow, zero work huh?</p>
+
+<h2 id="seems-that-moore-was-right-after-all">Seems that Moore was right after all</h2>
+
+<p>There are lot of microcontroller kits like BasicX, Arduino, Parallax and Pololu, just to name a few. Earlier at the São Paulo&#8217;s Hackers to Hackers Conference (H2HC) I&#8217;ve seen people using and R/C quad-copter holding an embedded system to crack WEP keys. Now we have a &#8216;robot-keyboard&#8217;.</p>
+
+<p>Hardware is getting cheaper, fast as hell. A system is as secure as the complexity need to crack it. Cheaper hardware, more processing per second, greater the complexity has to be.</p>
+
+<p>I wouldn&#8217;t be surprised if the next hackers cracking machines will be actually, machines.</p>
+
+        </div>
+
+        
+        
+        <div class="article-toc" >
+            <h3>Contents</h3>
+            <nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#white-listing">White-listing</a></li>
+<li><a href="#can-you-trust-drive-signatures-what-about-the-data-they-traffic">Can you trust drive signatures? What about the data they traffic?</a></li>
+<li><a href="#things-can-be-automated">Things can be automated</a></li>
+<li><a href="#seems-that-moore-was-right-after-all">Seems that Moore was right after all</a></li>
+</ul></li>
+</ul>
+</nav>
+        </div>
+        
+        
+
+        
+
+
+        
+        <footer class="article-footer">
+            <ul class="article-tag-list">
+                
+                <li class="article-tag-list-item">
+                    <a class="article-tag-list-link" href="http://wroot.org//tags/automation">automation
+                    </a>
+                </li>
+                
+                <li class="article-tag-list-item">
+                    <a class="article-tag-list-link" href="http://wroot.org//tags/avr">AVR
+                    </a>
+                </li>
+                
+                <li class="article-tag-list-item">
+                    <a class="article-tag-list-link" href="http://wroot.org//tags/dlp">DLP
+                    </a>
+                </li>
+                
+                <li class="article-tag-list-item">
+                    <a class="article-tag-list-link" href="http://wroot.org//tags/hid">HID
+                    </a>
+                </li>
+                
+                <li class="article-tag-list-item">
+                    <a class="article-tag-list-link" href="http://wroot.org//tags/malware">malware
+                    </a>
+                </li>
+                
+                <li class="article-tag-list-item">
+                    <a class="article-tag-list-link" href="http://wroot.org//tags/microcontroller">microcontroller
+                    </a>
+                </li>
+                
+            </ul>
+        </footer>
+        
+    </div>
+    <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "wroot" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+    <nav id="article-nav">
+    
+    <a href="/posts/shared-hosting-accounts-victims-of-lame-directory-permissions/" id="article-nav-newer" class="article-nav-link-wrap">
+        <div class="article-nav-title"><span>&lt;</span>&nbsp;
+            Shared-hosting accounts victims of lame directory permissions
+        </div>
+    </a>
+    
+    
+    <a href="/posts/playing-around-with-samys-quickjack-clickjacker/" id="article-nav-older" class="article-nav-link-wrap">
+        <div class="article-nav-title">Playing around with Samy’s Quickjack clickjacker&nbsp;<span>&gt;</span></div>
+    </a>
+    
+</nav>
+</article>
+
+        
+    </section>
+    <footer id="footer">
+    <div class="outer">
+        <div id="footer-info" class="inner">
+            &copy; 2019 wroot&nbsp;
+            Powered by <a href="https://gohugo.io" target="_blank">Hugo</a> with (a slightly modified) theme <a href="https://github.com/carsonip/hugo-theme-minos">Minos</a>
+        </div>
+    </div>
+    
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/styles/tomorrow-night.min.css" integrity="sha256-2wL88NKUqvJi/ExflDzkzUumjUM73mcK2gBvBBeLvTk=" crossorigin="anonymous" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/highlight.min.js" integrity="sha256-KbfTjB0WZ8vvXngdpJGY3Yp3xKk+tttbqClO11anCIU=" crossorigin="anonymous"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+
+    
+    <script>
+        document.getElementById('main-nav-toggle').addEventListener('click', function () {
+            var header = document.getElementById('header');
+            if (header.classList.contains('mobile-on')) {
+                header.classList.remove('mobile-on');
+            } else {
+                header.classList.add('mobile-on');
+            }
+        });
+    </script>
+</footer>
+
+</div>
+</body>
+</html>

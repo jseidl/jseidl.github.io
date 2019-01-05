@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>H2hc on wroot</title>
+    <link>http://wroot.org/tags/h2hc/</link>
+    <description>Recent content in H2hc on wroot</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Mon, 22 Oct 2012 15:22:34 +0000</lastBuildDate>
+    
+	<atom:link href="http://wroot.org/tags/h2hc/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>About Hackers 2 Hackers Conference 9th Edition</title>
+      <link>http://wroot.org/posts/about-hackers-2-hackers-conference-9th-edition/</link>
+      <pubDate>Mon, 22 Oct 2012 15:22:34 +0000</pubDate>
+      
+      <guid>http://wroot.org/posts/about-hackers-2-hackers-conference-9th-edition/</guid>
+      <description>Hi Folks,
+This last weekend was my talk on Hackers 2 Hackers Conference 9th Edition @ São Paulo, Brazil. The talk was in portuguese and the slides are available here (download pdf) and here (slideshare).
+The subject of the talk was about layer 7 denial of service techniques and tools, using haproxy and socat to create a distributed denial of service from a single node, some XSS payload for DDoS and demonstration of the GoldenEye Mobile tool released today.</description>
+    </item>
+    
+    <item>
+      <title>I’m speaking at Hackers 2 Hackers Conference 9th edition – 2012 @ São Paulo, Brazil!</title>
+      <link>http://wroot.org/posts/im-speaking-at-hackers-2-hackers-conference-9th-edition-2012-sao-paulo-brazil/</link>
+      <pubDate>Fri, 28 Sep 2012 16:40:59 +0000</pubDate>
+      
+      <guid>http://wroot.org/posts/im-speaking-at-hackers-2-hackers-conference-9th-edition-2012-sao-paulo-brazil/</guid>
+      <description>Hi folks! I&amp;#8217;m glad to inform that my paper &amp;#8220;Advanced DDoS techniques: Layer 7, load-balancing and mobile tools&amp;#8221; was accepted by the 9th Hackers 2 Hackers Conference (H2HC).
+The event will take place on October 20-21 and it seems to be another success just like previous editions.
+Don&amp;#8217;t forget to check the event&amp;#8217;s website for full line-up. If you can, enroll and enjoy!</description>
+    </item>
+    
+  </channel>
+</rss>

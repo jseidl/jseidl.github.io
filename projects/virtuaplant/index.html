@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+  <meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'>
+<meta name='description' content='Introduction VirtuaPlant is a Industrial Control Systems simulator which adds a &#8220;similar to real-world control logic&#8221; to the basic &#8220;read/write tags&#8221; feature of most PLC simulators. Paired with a game library and 2d physics engine, VirtuaPlant is able to present a GUI simulating the &#8220;world view&#8221; behind the control system allowing the user to have a vision of the would-be actions behind the control systems.
+Motivation I regularly receive emails asking for PLC simulators suggestions and I really didn&#8217;t find many options rather than simple soft-PLCs with no embedded control logic (mostly because this is implemented according to client&#8217;s needs) thus leaving to the user the job of implementing their own control logic behind.'>
+
+<meta property='og:title' content='VirtuaPlant • wroot'>
+<meta property='og:description' content='Introduction VirtuaPlant is a Industrial Control Systems simulator which adds a &#8220;similar to real-world control logic&#8221; to the basic &#8220;read/write tags&#8221; feature of most PLC simulators. Paired with a game library and 2d physics engine, VirtuaPlant is able to present a GUI simulating the &#8220;world view&#8221; behind the control system allowing the user to have a vision of the would-be actions behind the control systems.
+Motivation I regularly receive emails asking for PLC simulators suggestions and I really didn&#8217;t find many options rather than simple soft-PLCs with no embedded control logic (mostly because this is implemented according to client&#8217;s needs) thus leaving to the user the job of implementing their own control logic behind.'>
+<meta property='og:url' content='http://wroot.org/projects/virtuaplant/'>
+<meta property='og:site_name' content='wroot'>
+<meta property='og:type' content='article'><meta property='article:section' content='Projects'><meta property='article:published_time' content='2015-03-30T14:12:28Z'/><meta property='article:modified_time' content='2015-03-30T14:12:28Z'/><meta name='twitter:card' content='summary'><meta name='twitter:site' content='@jseidl'>
+
+<meta name="generator" content="Hugo 0.53" />
+
+  <title>VirtuaPlant • wroot</title>
+  <link rel='canonical' href='http://wroot.org/projects/virtuaplant/'>
+  
+  
+  <link rel='icon' href='/favicon.ico'><link rel='stylesheet' href='/webfonts/ptserif/main.css'><link rel='stylesheet' href='/webfonts/source-code-pro/main.css'><link rel='stylesheet' href='/css/style.css'>
+  
+
+</head>
+
+
+<body>
+<div id="container">
+    <header id="header">
+    <div id="header-outer" class="outer">
+        <div id="header-inner" class="inner">
+            <a id="main-nav-toggle" class="nav-icon" href="javascript:;"></a>
+            <a id="logo" class="logo-text" href="http://wroot.org/">wroot</a>
+            <nav id="main-nav">
+                
+                <a class="main-nav-link" href="/about/">About</a>
+                
+                <a class="main-nav-link" href="/talks/">Talks</a>
+                
+                <a class="main-nav-link" href="/projects/">Projects</a>
+                
+                <a class="main-nav-link" href="/press/">Press</a>
+                
+                <a class="main-nav-link" href="https://twitter.com/jseidl">Twitter</a>
+                
+                <a class="main-nav-link" href="https://www.linkedin.com/in/janseidl">LinkedIn</a>
+                
+                <a class="main-nav-link" href="http://github.com/jseidl">GitHub</a>
+                
+                <a class="main-nav-link" href="http://www.slideshare.net/jseidl/">SlideShare</a>
+                
+            </nav>
+            <nav id="sub-nav">
+                <div id="search-form-wrap">
+                </div>
+            </nav>
+        </div>
+    </div>
+</header>
+    <section id="main" class="outer">
+        <article class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+        <header class="article-header">
+            <h1 class="article-title" itemprop="name">VirtuaPlant</h1>
+        </header>
+        
+        <div class="article-meta">
+            
+            
+            
+            
+        </div>
+        <div class="article-entry" itemprop="articleBody">
+            
+
+<h2 id="introduction">Introduction</h2>
+
+<p>VirtuaPlant is a Industrial Control Systems simulator which adds a &#8220;<em>similar</em> to real-world control logic&#8221; to the basic &#8220;read/write tags&#8221; feature of most PLC simulators. Paired with a game library and 2d physics engine, VirtuaPlant is able to present a <acronym title="Graphical User Interface">GUI</acronym> simulating the &#8220;world view&#8221; behind the control system allowing the user to have a vision of the would-be actions behind the control systems.</p>
+
+<h2 id="motivation">Motivation</h2>
+
+<p>I regularly receive emails asking for PLC simulators suggestions and I really didn&#8217;t find many options rather than simple soft-PLCs with no embedded control logic (mostly because this is implemented according to client&#8217;s needs) thus leaving to the user the job of implementing their own control logic behind.</p>
+
+<p>Also, many demos are made with custom-built or off-the-shelf kits involving hardware which raises the cost of the simulators for newcomers and low budget users and the idea of having everything (Control System + Plant parts) on software came to my mind.</p>
+
+<p>Finally, <em>the &#8220;Gamification&#8221; paradigm is hype, cool and makes the learning process even more phun!</em></p>
+
+<h2 id="inspiration">Inspiration</h2>
+
+<p>The inspiration for starting with a bottle filling factory came from <a href="http://electrical-engineering-portal.com/plc-implementation-of-the-bottle-filling-application" title="PLC implementation of the bottle-filling application" target="_blank">an article</a> found on electrical-engineering-portal.com named &#8220;PLC implementation of the bottle-filling application&#8221;.</p>
+
+<p>Even the project being inspired on the process described in the article, the process implemented in the Bottle-filling factory isn&#8217;t 100% faithful, but hey, it works!</p>
+
+<h2 id="overview">Overview</h2>
+
+<p>All the software is written in (guess what?) Python. The idea is for VirtuaPlant to be a collection of different plant types using different protocols in order to be a learning platform and testbed.</p>
+
+<p>The first release introduces a as-simple-as-it-can-get one-process &#8220;bottle-filling factory&#8221; running Modbus as its protocol.</p>
+
+<h3 id="world-view">World View</h3>
+
+<p>World View consits on the game and 2d physics engine, simulating the effects of the control systems&#8217; action on virtual (<em>cyberz!</em>) assets.</p>
+
+<p>It uses python&#8217;s <a href="http://pygame.org/" title="PyGame">pygame</a> and <a href="http://pymunk.readthedocs.org/en/latest/" title="PyMunk Documentation">pymunk</a> (<a href="http://chipmunk-physics.net/" title="Chipmunk Physics">Chipmunk</a> engine for python &#8212; intended to be replaced by pybox2d due the lack of swept collision handling which currently limits us a little).</p>
+
+<p><img src="https://wroot.org/wp/wp-content/uploads/2015/03/worldview.png" alt="VirtuaPlant - World View" width="602" height="386" class="aligncenter size-full wp-image-52044" srcset="https://wroot.org/wp/wp-content/uploads/2015/03/worldview.png 602w, https://wroot.org/wp/wp-content/uploads/2015/03/worldview-300x192.png 300w" sizes="(max-width: 602px) 100vw, 602px" /></p>
+
+<h3 id="plc-controller">PLC controller</h3>
+
+<p>The soft-plc is implemented over the <a href="http://pymodbus.readthedocs.org" title="PyModbus Documentation">pymodbus</a> library which runs on a separate thread in the World View component and shares its context (i.e. Registers/Inputs/Tags) with the World View functions in order to simulate assets being &#8220;plugged in&#8221; to the controller.</p>
+
+<h3 id="hmi">HMI</h3>
+
+<p>The HMI is written using GTK3 and is quite dead simple. Also runs pymodbus client on a separate thread and connects over TCP/<acronym title="Internet Protocol">IP</acronym> to the server (so it could be technically on a separate machine), constantly polling (i.e. reading) the server&#8217;s (soft PLC in World View) tags. Control is also possible by writing in the soft-PLC tags.</p>
+
+<p><img src="https://wroot.org/wp/wp-content/uploads/2015/03/hmi.png" alt="Poor Man&#039;s HMI" width="331" height="369" class="aligncenter size-full wp-image-52040" srcset="https://wroot.org/wp/wp-content/uploads/2015/03/hmi.png 331w, https://wroot.org/wp/wp-content/uploads/2015/03/hmi-269x300.png 269w" sizes="(max-width: 331px) 100vw, 331px" /></p>
+
+<h3 id="attack-scripts">Attack scripts</h3>
+
+<p>You didn&#8217;t thought I was leaving this behind, did you? The phun on having a World View is to see the results when you start messing around with the soft-PLCs tags! Some pre-built scripts for determined actions are available so you can <em>unleash the script-kiddie on yourself</em> and make the plant go nuts! <strong>YAY!</strong></p>
+
+<p><img src="https://wroot.org/wp/wp-content/uploads/2015/03/spill.png" alt="Attacking VirtuaPlant" width="602" height="386" class="aligncenter size-full wp-image-52046" srcset="https://wroot.org/wp/wp-content/uploads/2015/03/spill.png 602w, https://wroot.org/wp/wp-content/uploads/2015/03/spill-300x192.png 300w" sizes="(max-width: 602px) 100vw, 602px" /></p>
+
+<h2 id="demo">Demo</h2>
+
+<p>Check out this YouTube video demonstrating the attacks on the VirtuaPlant Bottle-Filling Factory:</p>
+
+
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+  <iframe src="//www.youtube.com/embed/kAfV8acCwfw" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
+</div>
+
+
+<h2 id="download">Download</h2>
+
+<p>All the code can be found under the <a href="http://github.com/jseidl/virtuaplant" title="VirtuaPlant @ GitHub">VirtuaPlant GitHub repository</a>.</p>
+
+<h2 id="installation-requirements">Installation requirements</h2>
+
+<p>The following packages are required:</p>
+
+<ul>
+<li>PyGame</li>
+<li>PyMunk</li>
+<li>PyModbus (requires pycrypto, pyasn1)</li>
+<li>PyGObject / GTK</li>
+</ul>
+
+<p>On Debian-based systems (like Ubuntu) you can apt-get the packages which are not provided over pip:</p>
+
+<pre class="lang:sh decode:true " >apt-get install python-pygame python-gobject python-pip</pre>
+
+<p>Then install the pip ones:</p>
+
+<pre class="lang:sh decode:true " >pip install pymunk
+pip install pymodbus
+pip install pyasn1
+pip install pycrypto
+</pre>
+
+<p>or install all of the pip packages by using our provided requirement.txt file:</p>
+
+<pre class="lang:sh decode:true">pip install &lt; requirements.txt</pre>
+
+<h2 id="running">Running</h2>
+
+<p>Enter the <code>/plants</code> directory, select the plant you want (currently only one available) and start both the world simulator and the HMI with the <code>start.sh</code> script. Parts can be ran individually by running <code>world.py</code> and <code>hmi.py</code> (self-explanatory). All the attack scripts are under the <code>/attacks</code> subdirectory.</p>
+
+<h2 id="future">Future</h2>
+
+<h3 id="the-following-plant-scenarios-are-being-considered">The following plant scenarios are being considered:</h3>
+
+<ul>
+<li>Oil Refinery Boiler</li>
+<li>Nuclear Power Plant Reactor</li>
+<li>Steel Plant Furnace</li>
+</ul>
+
+<h3 id="the-following-protocols-are-being-considered">The following protocols are being considered:</h3>
+
+<ul>
+<li>DNP3 (based on <a href="http://www.automatak.com/opendnp3/" title="OpenDNP3">OpenDNP3</a>)</li>
+<li>S7</li>
+</ul>
+
+<p>Suggestions? Found bugs? Wanna help? Hit me an email or send me a message on Twitter! Contact information on <a href="https://wroot.org/about/" title="About">my about page</a>.</p>
+
+        </div>
+
+        
+        
+        <div class="article-toc" >
+            <h3>Contents</h3>
+            <nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#introduction">Introduction</a></li>
+<li><a href="#motivation">Motivation</a></li>
+<li><a href="#inspiration">Inspiration</a></li>
+<li><a href="#overview">Overview</a>
+<ul>
+<li><a href="#world-view">World View</a></li>
+<li><a href="#plc-controller">PLC controller</a></li>
+<li><a href="#hmi">HMI</a></li>
+<li><a href="#attack-scripts">Attack scripts</a></li>
+</ul></li>
+<li><a href="#demo">Demo</a></li>
+<li><a href="#download">Download</a></li>
+<li><a href="#installation-requirements">Installation requirements</a></li>
+<li><a href="#running">Running</a></li>
+<li><a href="#future">Future</a>
+<ul>
+<li><a href="#the-following-plant-scenarios-are-being-considered">The following plant scenarios are being considered:</a></li>
+<li><a href="#the-following-protocols-are-being-considered">The following protocols are being considered:</a></li>
+</ul></li>
+</ul></li>
+</ul>
+</nav>
+        </div>
+        
+        
+
+        
+
+
+        
+    </div>
+    <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "wroot" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+    <nav id="article-nav">
+    
+    <a href="/posts/introducing-virtuaplant-0-1/" id="article-nav-newer" class="article-nav-link-wrap">
+        <div class="article-nav-title"><span>&lt;</span>&nbsp;
+            Introducing VirtuaPlant 0.1
+        </div>
+    </a>
+    
+    
+    <a href="/posts/calling-functions-without-their-names-in-php/" id="article-nav-older" class="article-nav-link-wrap">
+        <div class="article-nav-title">Calling functions without their names in PHP&nbsp;<span>&gt;</span></div>
+    </a>
+    
+</nav>
+</article>
+
+        
+    </section>
+    <footer id="footer">
+    <div class="outer">
+        <div id="footer-info" class="inner">
+            &copy; 2019 wroot&nbsp;
+            Powered by <a href="https://gohugo.io" target="_blank">Hugo</a> with (a slightly modified) theme <a href="https://github.com/carsonip/hugo-theme-minos">Minos</a>
+        </div>
+    </div>
+    
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/styles/tomorrow-night.min.css" integrity="sha256-2wL88NKUqvJi/ExflDzkzUumjUM73mcK2gBvBBeLvTk=" crossorigin="anonymous" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/highlight.min.js" integrity="sha256-KbfTjB0WZ8vvXngdpJGY3Yp3xKk+tttbqClO11anCIU=" crossorigin="anonymous"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+
+    
+    <script>
+        document.getElementById('main-nav-toggle').addEventListener('click', function () {
+            var header = document.getElementById('header');
+            if (header.classList.contains('mobile-on')) {
+                header.classList.remove('mobile-on');
+            } else {
+                header.classList.add('mobile-on');
+            }
+        });
+    </script>
+</footer>
+
+</div>
+</body>
+</html>

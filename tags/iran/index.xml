@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Iran on wroot</title>
+    <link>http://wroot.org/tags/iran/</link>
+    <description>Recent content in Iran on wroot</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Fri, 16 Dec 2011 20:33:26 +0000</lastBuildDate>
+    
+	<atom:link href="http://wroot.org/tags/iran/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Iran hijacked US Drone by hacking GPS</title>
+      <link>http://wroot.org/posts/iran-hijacked-us-drone-by-hacking-gps/</link>
+      <pubDate>Fri, 16 Dec 2011 20:33:26 +0000</pubDate>
+      
+      <guid>http://wroot.org/posts/iran-hijacked-us-drone-by-hacking-gps/</guid>
+      <description>These past weeks I&amp;#8217;ve been following the US drone hijacking by the Iranian Revolutionary Guards.
+Recently the details of the hacking were posted.
+The IRG says the communication signals were jammed forcing the UAV to go into autopilot (RTL &amp;#8211; Return To Land, to be more precise). Then the GPS signals were spoofed to make the drone think that Iran Base was his Base.
+US experts are still questioning these claims.</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Clickjacking on wroot</title>
+    <link>http://wroot.org/tags/clickjacking/</link>
+    <description>Recent content in Clickjacking on wroot</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Tue, 07 Dec 2010 22:55:41 +0000</lastBuildDate>
+    
+	<atom:link href="http://wroot.org/tags/clickjacking/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Playing around with Samy’s Quickjack clickjacker</title>
+      <link>http://wroot.org/posts/playing-around-with-samys-quickjack-clickjacker/</link>
+      <pubDate>Tue, 07 Dec 2010 22:55:41 +0000</pubDate>
+      
+      <guid>http://wroot.org/posts/playing-around-with-samys-quickjack-clickjacker/</guid>
+      <description>In the past few days I&amp;#8217;ve started following the work of Samy Kankar, which has some great work. Among all of them, I&amp;#8217;ve almost-randomly picked one to play, Quickjack.
+From Samy&amp;#8217;s project page:
+ Quickjack is a tool developed to easily create pages with the capability to clickjack users no matter where they click on the page. The tool has an extremely intuitive interface and is literally a point-and-click tool.</description>
+    </item>
+    
+  </channel>
+</rss>

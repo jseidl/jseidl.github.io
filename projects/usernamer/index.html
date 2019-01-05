@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+  <meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'>
+<meta name='description' content='Usernamer usernamer is a penetration testing tool to generate a list of possible usernames/logins for determined name (ex: John Doe Doeson) for user enumeration or bruteforcing. This tool also supports text-files with one name per line as input.
+Features usernamer has a plugin structure that enables a series of transformations:
+ normal: Permutates given name with all surnames (if more than one) with name starting and ending (johndoedoeson,johndoesondoe,doedoesonjohn etc) two_terms: Permutates given name with all surnames (if more than one) with name starting and ending but it will output a two-termed login (johndoe, doejohn, johndoeson etc) one_term: Permutates all name tokens (first name and surnames) and generates single terms usernames (john, doe, doeson) dotted_two_terms: Permutates given name with all surnames (if more than one) with name starting and ending but it will output a two-termed login dot-separated (john.'>
+
+<meta property='og:title' content='Usernamer • wroot'>
+<meta property='og:description' content='Usernamer usernamer is a penetration testing tool to generate a list of possible usernames/logins for determined name (ex: John Doe Doeson) for user enumeration or bruteforcing. This tool also supports text-files with one name per line as input.
+Features usernamer has a plugin structure that enables a series of transformations:
+ normal: Permutates given name with all surnames (if more than one) with name starting and ending (johndoedoeson,johndoesondoe,doedoesonjohn etc) two_terms: Permutates given name with all surnames (if more than one) with name starting and ending but it will output a two-termed login (johndoe, doejohn, johndoeson etc) one_term: Permutates all name tokens (first name and surnames) and generates single terms usernames (john, doe, doeson) dotted_two_terms: Permutates given name with all surnames (if more than one) with name starting and ending but it will output a two-termed login dot-separated (john.'>
+<meta property='og:url' content='http://wroot.org/projects/usernamer/'>
+<meta property='og:site_name' content='wroot'>
+<meta property='og:type' content='article'><meta property='article:section' content='Projects'><meta property='article:published_time' content='2012-09-28T16:54:05Z'/><meta property='article:modified_time' content='2012-09-28T16:54:05Z'/><meta name='twitter:card' content='summary'><meta name='twitter:site' content='@jseidl'>
+
+<meta name="generator" content="Hugo 0.53" />
+
+  <title>Usernamer • wroot</title>
+  <link rel='canonical' href='http://wroot.org/projects/usernamer/'>
+  
+  
+  <link rel='icon' href='/favicon.ico'><link rel='stylesheet' href='/webfonts/ptserif/main.css'><link rel='stylesheet' href='/webfonts/source-code-pro/main.css'><link rel='stylesheet' href='/css/style.css'>
+  
+
+</head>
+
+
+<body>
+<div id="container">
+    <header id="header">
+    <div id="header-outer" class="outer">
+        <div id="header-inner" class="inner">
+            <a id="main-nav-toggle" class="nav-icon" href="javascript:;"></a>
+            <a id="logo" class="logo-text" href="http://wroot.org/">wroot</a>
+            <nav id="main-nav">
+                
+                <a class="main-nav-link" href="/about/">About</a>
+                
+                <a class="main-nav-link" href="/talks/">Talks</a>
+                
+                <a class="main-nav-link" href="/projects/">Projects</a>
+                
+                <a class="main-nav-link" href="/press/">Press</a>
+                
+                <a class="main-nav-link" href="https://twitter.com/jseidl">Twitter</a>
+                
+                <a class="main-nav-link" href="https://www.linkedin.com/in/janseidl">LinkedIn</a>
+                
+                <a class="main-nav-link" href="http://github.com/jseidl">GitHub</a>
+                
+                <a class="main-nav-link" href="http://www.slideshare.net/jseidl/">SlideShare</a>
+                
+            </nav>
+            <nav id="sub-nav">
+                <div id="search-form-wrap">
+                </div>
+            </nav>
+        </div>
+    </div>
+</header>
+    <section id="main" class="outer">
+        <article class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+        <header class="article-header">
+            <h1 class="article-title" itemprop="name">Usernamer</h1>
+        </header>
+        
+        <div class="article-meta">
+            
+            
+            
+            
+        </div>
+        <div class="article-entry" itemprop="articleBody">
+            
+
+<h1 id="usernamer">Usernamer</h1>
+
+<p>usernamer is a penetration testing tool to generate a list of possible usernames/logins for determined name (ex: John Doe Doeson) for user enumeration or bruteforcing. This tool also supports text-files with one name per line as input.</p>
+
+<h3 id="features">Features</h3>
+
+<p>usernamer has a plugin structure that enables a series of transformations:</p>
+
+<ul>
+<li>normal: Permutates given name with all surnames (if more than one) with name starting and ending (johndoedoeson,johndoesondoe,doedoesonjohn etc)</li>
+<li>two_terms: Permutates given name with all surnames (if more than one) with name starting and ending but it will output a two-termed login (johndoe, doejohn, johndoeson etc)</li>
+<li>one_term: Permutates all name tokens (first name and surnames) and generates single terms usernames (john, doe, doeson)</li>
+<li>dotted_two_terms: Permutates given name with all surnames (if more than one) with name starting and ending but it will output a two-termed login dot-separated (john.doe, doe.john, john.doeson etc)</li>
+<li>normal_abbreviated: Generates abbreviated versions of the &#8216;normal&#8217; and &#8216;two_terms&#8217; plugins (jdoe, johnd, jd etc)</li>
+</ul>
+
+<h3 id="examples">Examples</h3>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ ./usernamer.py -n <span style="color:#e6db74">&#39;John Doe&#39;</span> -l
+jdoe
+dj
+john.doe
+johnd
+doej
+johndoe
+doe
+doe.john
+djohn
+jd
+john</code></pre></div>
+
+<h3 id="download">Download</h3>
+
+<p>Download the latest version of usernamer directly from the <a href="https://github.com/jseidl/usernamer">github project page</a>.</p>
+
+        </div>
+
+        
+        
+        <div class="article-toc" >
+            <h3>Contents</h3>
+            <nav id="TableOfContents">
+<ul>
+<li><a href="#usernamer">Usernamer</a>
+<ul>
+<li>
+<ul>
+<li><a href="#features">Features</a></li>
+<li><a href="#examples">Examples</a></li>
+<li><a href="#download">Download</a></li>
+</ul></li>
+</ul></li>
+</ul>
+</nav>
+        </div>
+        
+        
+
+        
+
+
+        
+    </div>
+    <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "wroot" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+    <nav id="article-nav">
+    
+    <a href="/projects/torblock/" id="article-nav-newer" class="article-nav-link-wrap">
+        <div class="article-nav-title"><span>&lt;</span>&nbsp;
+            TOR-Block
+        </div>
+    </a>
+    
+    
+    <a href="/posts/im-speaking-at-hackers-2-hackers-conference-9th-edition-2012-sao-paulo-brazil/" id="article-nav-older" class="article-nav-link-wrap">
+        <div class="article-nav-title">I’m speaking at Hackers 2 Hackers Conference 9th edition – 2012 @ São Paulo, Brazil!&nbsp;<span>&gt;</span></div>
+    </a>
+    
+</nav>
+</article>
+
+        
+    </section>
+    <footer id="footer">
+    <div class="outer">
+        <div id="footer-info" class="inner">
+            &copy; 2019 wroot&nbsp;
+            Powered by <a href="https://gohugo.io" target="_blank">Hugo</a> with (a slightly modified) theme <a href="https://github.com/carsonip/hugo-theme-minos">Minos</a>
+        </div>
+    </div>
+    
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/styles/tomorrow-night.min.css" integrity="sha256-2wL88NKUqvJi/ExflDzkzUumjUM73mcK2gBvBBeLvTk=" crossorigin="anonymous" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/highlight.min.js" integrity="sha256-KbfTjB0WZ8vvXngdpJGY3Yp3xKk+tttbqClO11anCIU=" crossorigin="anonymous"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+
+    
+    <script>
+        document.getElementById('main-nav-toggle').addEventListener('click', function () {
+            var header = document.getElementById('header');
+            if (header.classList.contains('mobile-on')) {
+                header.classList.remove('mobile-on');
+            } else {
+                header.classList.add('mobile-on');
+            }
+        });
+    </script>
+</footer>
+
+</div>
+</body>
+</html>

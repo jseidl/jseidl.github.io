@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Categories on wroot</title>
+    <link>http://wroot.org/categories/</link>
+    <description>Recent content in Categories on wroot</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Wed, 14 Dec 2011 17:40:00 +0000</lastBuildDate>
+    
+	<atom:link href="http://wroot.org/categories/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Access Control</title>
+      <link>http://wroot.org/categories/access-control/</link>
+      <pubDate>Wed, 14 Dec 2011 17:40:00 +0000</pubDate>
+      
+      <guid>http://wroot.org/categories/access-control/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Application Security</title>
+      <link>http://wroot.org/categories/application-security/</link>
+      <pubDate>Fri, 21 Feb 2014 18:32:14 +0000</pubDate>
+      
+      <guid>http://wroot.org/categories/application-security/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Audit Amp Compliance</title>
+      <link>http://wroot.org/categories/audit-amp-compliance/</link>
+      <pubDate>Tue, 29 Jun 2010 19:01:29 +0000</pubDate>
+      
+      <guid>http://wroot.org/categories/audit-amp-compliance/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Authentication</title>
+      <link>http://wroot.org/categories/authentication/</link>
+      <pubDate>Sat, 22 May 2010 21:33:15 +0000</pubDate>
+      
+      <guid>http://wroot.org/categories/authentication/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Conferences</title>
+      <link>http://wroot.org/categories/conferences/</link>
+      <pubDate>Sun, 11 Nov 2012 14:54:55 +0000</pubDate>
+      
+      <guid>http://wroot.org/categories/conferences/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Configuration Management</title>
+      <link>http://wroot.org/categories/configuration-management/</link>
+      <pubDate>Mon, 05 Jul 2010 19:11:59 +0000</pubDate>
+      
+      <guid>http://wroot.org/categories/configuration-management/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Data Loss Prevention</title>
+      <link>http://wroot.org/categories/data-loss-prevention/</link>
+      <pubDate>Wed, 26 Jan 2011 02:30:48 +0000</pubDate>
+      
+      <guid>http://wroot.org/categories/data-loss-prevention/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Encryption</title>
+      <link>http://wroot.org/categories/encryption/</link>
+      <pubDate>Tue, 29 Jun 2010 14:58:13 +0000</pubDate>
+      
+      <guid>http://wroot.org/categories/encryption/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Hardening</title>
+      <link>http://wroot.org/categories/hardening/</link>
+      <pubDate>Wed, 18 Jan 2012 22:33:27 +0000</pubDate>
+      
+      <guid>http://wroot.org/categories/hardening/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Malware</title>
+      <link>http://wroot.org/categories/malware/</link>
+      <pubDate>Wed, 23 Sep 2015 14:13:55 +0000</pubDate>
+      
+      <guid>http://wroot.org/categories/malware/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Mobile</title>
+      <link>http://wroot.org/categories/mobile/</link>
+      <pubDate>Tue, 30 Apr 2013 00:14:28 +0000</pubDate>
+      
+      <guid>http://wroot.org/categories/mobile/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Network Security</title>
+      <link>http://wroot.org/categories/network-security/</link>
+      <pubDate>Fri, 28 Sep 2012 16:40:59 +0000</pubDate>
+      
+      <guid>http://wroot.org/categories/network-security/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Penetration Testing</title>
+      <link>http://wroot.org/categories/penetration-testing/</link>
+      <pubDate>Wed, 23 Sep 2015 14:13:55 +0000</pubDate>
+      
+      <guid>http://wroot.org/categories/penetration-testing/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Robotics / Automation</title>
+      <link>http://wroot.org/categories/robotics-automation/</link>
+      <pubDate>Fri, 16 Dec 2011 20:33:26 +0000</pubDate>
+      
+      <guid>http://wroot.org/categories/robotics-automation/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Scada/Ics</title>
+      <link>http://wroot.org/categories/scada-ics/</link>
+      <pubDate>Mon, 30 Mar 2015 14:13:12 +0000</pubDate>
+      
+      <guid>http://wroot.org/categories/scada-ics/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Steganography</title>
+      <link>http://wroot.org/categories/steganography/</link>
+      <pubDate>Wed, 19 Feb 2014 14:31:02 +0000</pubDate>
+      
+      <guid>http://wroot.org/categories/steganography/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Systems Administration</title>
+      <link>http://wroot.org/categories/systems-administration/</link>
+      <pubDate>Tue, 04 Dec 2012 11:29:09 +0000</pubDate>
+      
+      <guid>http://wroot.org/categories/systems-administration/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

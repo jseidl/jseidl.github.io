@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Projects on wroot</title>
+    <link>http://wroot.org/projects/</link>
+    <description>Recent content in Projects on wroot</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Fri, 28 Sep 2012 16:51:45 +0000</lastBuildDate>
+    
+	<atom:link href="http://wroot.org/projects/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>VirtuaPlant</title>
+      <link>http://wroot.org/projects/virtuaplant/</link>
+      <pubDate>Mon, 30 Mar 2015 14:12:28 +0000</pubDate>
+      
+      <guid>http://wroot.org/projects/virtuaplant/</guid>
+      <description>Introduction VirtuaPlant is a Industrial Control Systems simulator which adds a &amp;#8220;similar to real-world control logic&amp;#8221; to the basic &amp;#8220;read/write tags&amp;#8221; feature of most PLC simulators. Paired with a game library and 2d physics engine, VirtuaPlant is able to present a GUI simulating the &amp;#8220;world view&amp;#8221; behind the control system allowing the user to have a vision of the would-be actions behind the control systems.
+Motivation I regularly receive emails asking for PLC simulators suggestions and I really didn&amp;#8217;t find many options rather than simple soft-PLCs with no embedded control logic (mostly because this is implemented according to client&amp;#8217;s needs) thus leaving to the user the job of implementing their own control logic behind.</description>
+    </item>
+    
+    <item>
+      <title>GoldenEye 4 Android</title>
+      <link>http://wroot.org/projects/goldeneye-4-android/</link>
+      <pubDate>Mon, 22 Oct 2012 15:12:29 +0000</pubDate>
+      
+      <guid>http://wroot.org/projects/goldeneye-4-android/</guid>
+      <description>GoldenEye Mobile is an Android port of the Python HTTP DoS Tool. It uses KeepAlive headers to persist socket connection until it consumes all available sockets on the HTTP server.
+This software is written in Python.
+Featured on You can find the GoldenEye Mobile software under the following projects:
+ F-Droid Android FOSS App Catalog  Download Download the latest version of GoldenEye 4 Android directly from the github project page.</description>
+    </item>
+    
+    <item>
+      <title>GoldenEye</title>
+      <link>http://wroot.org/projects/goldeneye/</link>
+      <pubDate>Mon, 22 Oct 2012 15:10:30 +0000</pubDate>
+      
+      <guid>http://wroot.org/projects/goldeneye/</guid>
+      <description>GoldenEye GoldenEye is a HTTP/S Layer 7 Denial-of-Service Testing Tool. It uses KeepAlive (and Connection: keep-alive) paired with Cache-Control options to persist socket connection busting through caching (when possible) until it consumes all available sockets on the HTTP/S server.
+This project started by the influence of Barry Shteiman who created HULK, a Proof-of-concept tool that I decided to improve which later became GoldenEye. Kudos for you Barry!
+This software is written in purely Python.</description>
+    </item>
+    
+    <item>
+      <title>Multi-TOR</title>
+      <link>http://wroot.org/projects/multitor/</link>
+      <pubDate>Fri, 28 Sep 2012 17:02:36 +0000</pubDate>
+      
+      <guid>http://wroot.org/projects/multitor/</guid>
+      <description>Multi-TOR is a shellscript to open multiple TOR instances each one with a different identity (IP address) and bound to a specific socket.
+Port numbers will start at 9050 and grow up the number of instances required. From there you can bind the sockets to other sockets and perform requests thru the TOR network.
+Download Download the latest version of Multi-TOR directly from the github project page.</description>
+    </item>
+    
+    <item>
+      <title>TOR-Block</title>
+      <link>http://wroot.org/projects/torblock/</link>
+      <pubDate>Fri, 28 Sep 2012 16:56:30 +0000</pubDate>
+      
+      <guid>http://wroot.org/projects/torblock/</guid>
+      <description>TORBlock TORBlock is a BASH script to automatically download the list of TOR exit-nodes and add them to your IPTables ruleset.
+This script uses hosts advertised on TOR&amp;#8217;s public exit-node lists in order to extract IP addresses and roll out the rules.
+TORBlock uses and (configurable) dedicated chain (default = TORBLOCK) in order to ease management and permit chain flushing on updates.
+Download Download the latest version of TOR-Block directly from the github project page.</description>
+    </item>
+    
+    <item>
+      <title>Usernamer</title>
+      <link>http://wroot.org/projects/usernamer/</link>
+      <pubDate>Fri, 28 Sep 2012 16:54:05 +0000</pubDate>
+      
+      <guid>http://wroot.org/projects/usernamer/</guid>
+      <description>Usernamer usernamer is a penetration testing tool to generate a list of possible usernames/logins for determined name (ex: John Doe Doeson) for user enumeration or bruteforcing. This tool also supports text-files with one name per line as input.
+Features usernamer has a plugin structure that enables a series of transformations:
+ normal: Permutates given name with all surnames (if more than one) with name starting and ending (johndoedoeson,johndoesondoe,doedoesonjohn etc) two_terms: Permutates given name with all surnames (if more than one) with name starting and ending but it will output a two-termed login (johndoe, doejohn, johndoeson etc) one_term: Permutates all name tokens (first name and surnames) and generates single terms usernames (john, doe, doeson) dotted_two_terms: Permutates given name with all surnames (if more than one) with name starting and ending but it will output a two-termed login dot-separated (john.</description>
+    </item>
+    
+  </channel>
+</rss>

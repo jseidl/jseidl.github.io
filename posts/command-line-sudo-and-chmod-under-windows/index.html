@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+  <meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'>
+<meta name='description' content='I&#8217;m quite not a fan of GUI utilities but I&#8217;m a great fan of command-line and batch processing.
+I&#8217;ve recently changed profiles under a Windows box and had to move some files over them. At first wondered about logging in as the old user, copy all the files to a temp folder, log back as my new user and copy them to my new folder. But hell, too much time spent.'>
+
+<meta property='og:title' content='Command-line sudo and chmod under Windows • wroot'>
+<meta property='og:description' content='I&#8217;m quite not a fan of GUI utilities but I&#8217;m a great fan of command-line and batch processing.
+I&#8217;ve recently changed profiles under a Windows box and had to move some files over them. At first wondered about logging in as the old user, copy all the files to a temp folder, log back as my new user and copy them to my new folder. But hell, too much time spent.'>
+<meta property='og:url' content='http://wroot.org/posts/command-line-sudo-and-chmod-under-windows/'>
+<meta property='og:site_name' content='wroot'>
+<meta property='og:type' content='article'><meta property='article:section' content='Posts'><meta property='article:tag' content='cacls'><meta property='article:tag' content='chmod'><meta property='article:tag' content='permissions'><meta property='article:tag' content='runas'><meta property='article:tag' content='sudo'><meta property='article:tag' content='windows'><meta property='article:published_time' content='2010-05-21T04:51:04Z'/><meta property='article:modified_time' content='2010-05-21T04:51:04Z'/><meta name='twitter:card' content='summary'><meta name='twitter:site' content='@jseidl'>
+
+<meta name="generator" content="Hugo 0.53" />
+
+  <title>Command-line sudo and chmod under Windows • wroot</title>
+  <link rel='canonical' href='http://wroot.org/posts/command-line-sudo-and-chmod-under-windows/'>
+  
+  
+  <link rel='icon' href='/favicon.ico'><link rel='stylesheet' href='/webfonts/ptserif/main.css'><link rel='stylesheet' href='/webfonts/source-code-pro/main.css'><link rel='stylesheet' href='/css/style.css'>
+  
+
+</head>
+
+
+<body>
+<div id="container">
+    <header id="header">
+    <div id="header-outer" class="outer">
+        <div id="header-inner" class="inner">
+            <a id="main-nav-toggle" class="nav-icon" href="javascript:;"></a>
+            <a id="logo" class="logo-text" href="http://wroot.org/">wroot</a>
+            <nav id="main-nav">
+                
+                <a class="main-nav-link" href="/about/">About</a>
+                
+                <a class="main-nav-link" href="/talks/">Talks</a>
+                
+                <a class="main-nav-link" href="/projects/">Projects</a>
+                
+                <a class="main-nav-link" href="/press/">Press</a>
+                
+                <a class="main-nav-link" href="https://twitter.com/jseidl">Twitter</a>
+                
+                <a class="main-nav-link" href="https://www.linkedin.com/in/janseidl">LinkedIn</a>
+                
+                <a class="main-nav-link" href="http://github.com/jseidl">GitHub</a>
+                
+                <a class="main-nav-link" href="http://www.slideshare.net/jseidl/">SlideShare</a>
+                
+            </nav>
+            <nav id="sub-nav">
+                <div id="search-form-wrap">
+                </div>
+            </nav>
+        </div>
+    </div>
+</header>
+    <section id="main" class="outer">
+        <article class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+        <header class="article-header">
+            <h1 class="article-title" itemprop="name">Command-line sudo and chmod under Windows</h1>
+        </header>
+        
+        <div class="article-meta">
+            
+            <a href="/posts/command-line-sudo-and-chmod-under-windows/" class="article-date">
+                <time datetime='2010-05-21T04:51:04.000&#43;00:00' itemprop="datePublished">2010-05-21</time>
+            </a>
+            
+            
+            
+            <div class="post-categories">
+                <div class="article-category">
+                    
+                    
+                    <a class="article-category-link" href="http://wroot.org//categories/access-control">Access Control</a>
+                    
+                </div>
+            </div>
+            
+            
+        </div>
+        <div class="article-entry" itemprop="articleBody">
+            
+
+<p>I&#8217;m quite not a fan of <acronym title="Graphical User Interface">GUI</acronym> utilities but I&#8217;m a great fan of command-line and batch processing.</p>
+
+<p>I&#8217;ve recently changed profiles under a Windows box and had to move some files over them. At first wondered about logging in as the old user, copy all the files to a temp folder, log back as my new user and copy them to my new folder. But hell, too much time spent.</p>
+
+<p>There&#8217;s must be a command-line solution, even on Windows!</p>
+
+<p>So, I started Googling around for <code>sudo</code> like commands and then I&#8217;ve found Windows&#8217; built-in <code>runas</code></p>
+
+<h2 id="runas">runas</h2>
+
+<p>Basic syntax for <code>runas</code> is as follow:</p>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">runas /user:MACHINENAME<span style="color:#ae81ff">\u</span>sername command</code></pre></div>
+
+<p>Example: Spawning an Administrator shell</p>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">runas /user:DEVEL<span style="color:#ae81ff">\A</span>dministrator cmd</code></pre></div>
+
+<p>See all the options on <code>runas /?</code>.</p>
+
+<h2 id="cacls">cacls</h2>
+
+<p>This is the Windows&#8217; <code>chmod</code>. It allows you to change files and dirs permissions for Windows&#8217; ACL&#8217;s under Read/Write/Change/Full Control schema.</p>
+
+<p>CACLS (Change ACLs) also lets you to edit the ACL instead of replacing it through the <code>/E</code> directive. It has three basic operations: <strong>Grant <code>/G</code></strong>, <strong>Replace <code>/P</code></strong> or <strong>Demote <code>/D</code></strong>.</p>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">cacls FILENAME /P USER:PERMS</code></pre></div>
+
+<p>Access type (PERMS) can be:</p>
+
+<dl>
+<dt>N</dt>
+<dd>None (only with /P)</dd>
+<dt>R</dt>
+<dd>Read</dd>
+<dt>W</dt>
+<dd>Write</dd>
+<dt>C</dt>
+<dd>Change</dd>
+<dt>F</dt>
+<dd>Full Access</dd>
+</dl>
+
+<p>Example: Granting user full-access under certain directory</p>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">cacls mydir<span style="color:#ae81ff">\*</span> /P jseidl:F</code></pre></div>
+
+<p>Of course, you must have the propper permissions to set the permissions, so it&#8217;s a good companion for <code>runas</code>.</p>
+
+<p>Hope it helped!</p>
+
+        </div>
+
+        
+        
+        <div class="article-toc" >
+            <h3>Contents</h3>
+            <nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#runas">runas</a></li>
+<li><a href="#cacls">cacls</a></li>
+</ul></li>
+</ul>
+</nav>
+        </div>
+        
+        
+
+        
+
+
+        
+        <footer class="article-footer">
+            <ul class="article-tag-list">
+                
+                <li class="article-tag-list-item">
+                    <a class="article-tag-list-link" href="http://wroot.org//tags/cacls">cacls
+                    </a>
+                </li>
+                
+                <li class="article-tag-list-item">
+                    <a class="article-tag-list-link" href="http://wroot.org//tags/chmod">chmod
+                    </a>
+                </li>
+                
+                <li class="article-tag-list-item">
+                    <a class="article-tag-list-link" href="http://wroot.org//tags/permissions">permissions
+                    </a>
+                </li>
+                
+                <li class="article-tag-list-item">
+                    <a class="article-tag-list-link" href="http://wroot.org//tags/runas">runas
+                    </a>
+                </li>
+                
+                <li class="article-tag-list-item">
+                    <a class="article-tag-list-link" href="http://wroot.org//tags/sudo">sudo
+                    </a>
+                </li>
+                
+                <li class="article-tag-list-item">
+                    <a class="article-tag-list-link" href="http://wroot.org//tags/windows">windows
+                    </a>
+                </li>
+                
+            </ul>
+        </footer>
+        
+    </div>
+    <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "wroot" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+    <nav id="article-nav">
+    
+    <a href="/posts/preventing-your-servers-from-downgrade-attacks/" id="article-nav-newer" class="article-nav-link-wrap">
+        <div class="article-nav-title"><span>&lt;</span>&nbsp;
+            Preventing your servers from downgrade attacks
+        </div>
+    </a>
+    
+    
+</nav>
+</article>
+
+        
+    </section>
+    <footer id="footer">
+    <div class="outer">
+        <div id="footer-info" class="inner">
+            &copy; 2019 wroot&nbsp;
+            Powered by <a href="https://gohugo.io" target="_blank">Hugo</a> with (a slightly modified) theme <a href="https://github.com/carsonip/hugo-theme-minos">Minos</a>
+        </div>
+    </div>
+    
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/styles/tomorrow-night.min.css" integrity="sha256-2wL88NKUqvJi/ExflDzkzUumjUM73mcK2gBvBBeLvTk=" crossorigin="anonymous" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/highlight.min.js" integrity="sha256-KbfTjB0WZ8vvXngdpJGY3Yp3xKk+tttbqClO11anCIU=" crossorigin="anonymous"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+
+    
+    <script>
+        document.getElementById('main-nav-toggle').addEventListener('click', function () {
+            var header = document.getElementById('header');
+            if (header.classList.contains('mobile-on')) {
+                header.classList.remove('mobile-on');
+            } else {
+                header.classList.add('mobile-on');
+            }
+        });
+    </script>
+</footer>
+
+</div>
+</body>
+</html>

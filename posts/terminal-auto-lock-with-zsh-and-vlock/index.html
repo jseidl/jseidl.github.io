@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+  <meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'>
+<meta name='description' content='I&#8217;m always concerned about leaving terminal sessions open. I&#8217;ve used for many and many years the $TMOUT environment variable to close my sessions if idle for N seconds.
+Just by exporting the TMOUT variable to the number of desired timeout seconds will close your shell (Bash, Ksh, Zsh and some others).
+The following example will timeout in 300 seconds (5 minutes)
+export TMOUT=300 I am currently reading the book Secure Coding: Principles &amp; Practices and the authors cited this timeout technique as pretty ineffective since it annoys more than it helps.'>
+
+<meta property='og:title' content='Terminal auto-lock with zsh and vlock • wroot'>
+<meta property='og:description' content='I&#8217;m always concerned about leaving terminal sessions open. I&#8217;ve used for many and many years the $TMOUT environment variable to close my sessions if idle for N seconds.
+Just by exporting the TMOUT variable to the number of desired timeout seconds will close your shell (Bash, Ksh, Zsh and some others).
+The following example will timeout in 300 seconds (5 minutes)
+export TMOUT=300 I am currently reading the book Secure Coding: Principles &amp; Practices and the authors cited this timeout technique as pretty ineffective since it annoys more than it helps.'>
+<meta property='og:url' content='http://wroot.org/posts/terminal-auto-lock-with-zsh-and-vlock/'>
+<meta property='og:site_name' content='wroot'>
+<meta property='og:type' content='article'><meta property='article:section' content='Posts'><meta property='article:tag' content='bash'><meta property='article:tag' content='linux'><meta property='article:tag' content='shell'><meta property='article:tag' content='terminal'><meta property='article:tag' content='unix'><meta property='article:tag' content='zsh'><meta property='article:published_time' content='2012-01-18T22:33:27Z'/><meta property='article:modified_time' content='2012-01-18T22:33:27Z'/><meta name='twitter:card' content='summary'><meta name='twitter:site' content='@jseidl'>
+
+<meta name="generator" content="Hugo 0.53" />
+
+  <title>Terminal auto-lock with zsh and vlock • wroot</title>
+  <link rel='canonical' href='http://wroot.org/posts/terminal-auto-lock-with-zsh-and-vlock/'>
+  
+  
+  <link rel='icon' href='/favicon.ico'><link rel='stylesheet' href='/webfonts/ptserif/main.css'><link rel='stylesheet' href='/webfonts/source-code-pro/main.css'><link rel='stylesheet' href='/css/style.css'>
+  
+
+</head>
+
+
+<body>
+<div id="container">
+    <header id="header">
+    <div id="header-outer" class="outer">
+        <div id="header-inner" class="inner">
+            <a id="main-nav-toggle" class="nav-icon" href="javascript:;"></a>
+            <a id="logo" class="logo-text" href="http://wroot.org/">wroot</a>
+            <nav id="main-nav">
+                
+                <a class="main-nav-link" href="/about/">About</a>
+                
+                <a class="main-nav-link" href="/talks/">Talks</a>
+                
+                <a class="main-nav-link" href="/projects/">Projects</a>
+                
+                <a class="main-nav-link" href="/press/">Press</a>
+                
+                <a class="main-nav-link" href="https://twitter.com/jseidl">Twitter</a>
+                
+                <a class="main-nav-link" href="https://www.linkedin.com/in/janseidl">LinkedIn</a>
+                
+                <a class="main-nav-link" href="http://github.com/jseidl">GitHub</a>
+                
+                <a class="main-nav-link" href="http://www.slideshare.net/jseidl/">SlideShare</a>
+                
+            </nav>
+            <nav id="sub-nav">
+                <div id="search-form-wrap">
+                </div>
+            </nav>
+        </div>
+    </div>
+</header>
+    <section id="main" class="outer">
+        <article class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+        <header class="article-header">
+            <h1 class="article-title" itemprop="name">Terminal auto-lock with zsh and vlock</h1>
+        </header>
+        
+        <div class="article-meta">
+            
+            <a href="/posts/terminal-auto-lock-with-zsh-and-vlock/" class="article-date">
+                <time datetime='2012-01-18T22:33:27.000&#43;00:00' itemprop="datePublished">2012-01-18</time>
+            </a>
+            
+            
+            
+            <div class="post-categories">
+                <div class="article-category">
+                    
+                    
+                    <a class="article-category-link" href="http://wroot.org//categories/hardening">Hardening</a>
+                    
+                </div>
+            </div>
+            
+            
+        </div>
+        <div class="article-entry" itemprop="articleBody">
+            <p>I&#8217;m always concerned about leaving terminal sessions open. I&#8217;ve used for many and many years the <code>$TMOUT</code> environment variable to close my sessions if idle for <code>N</code> seconds.</p>
+
+<p>Just by exporting the <code>TMOUT</code> variable to the number of desired timeout seconds will close your shell (Bash, Ksh, Zsh and some others).</p>
+
+<p>The following example will timeout in 300 seconds (5 minutes)</p>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">export TMOUT<span style="color:#f92672">=</span><span style="color:#ae81ff">300</span></code></pre></div>
+
+<p>I am currently reading the book <a href="http://www.securecoding.org/">Secure Coding: Principles &amp; Practices</a> and the authors cited this timeout technique as pretty ineffective since it annoys more than it helps. I was obliged to agree. I got pretty mad with it some good times.</p>
+
+<p>So I started looking for alternatives.</p>
+
+<p>I&#8217;ve found a console application called <code>&lt;a href=&quot;http://freecode.com/projects/vlock&quot;&gt;vlock&lt;/a&gt;</code>. It should be available on most distro&#8217;s repositories.</p>
+
+<p>Just invoke <code>vlock</code> and the terminal session will be locked awaiting the user password to unlock. Pretty nice. Locking is definitely better than killing the session.</p>
+
+<p>So I just started to wonder how to integrate <code>vlock</code> with <code>zsh</code> and after some research I&#8217;ve discovered that the shell will only be killed within <code>TMOUT</code> if no <a href="http://zsh.sourceforge.net/Doc/Release/Functions.html#Trap-Functions">trap function</a> for signal <code>ALARM</code> is set.</p>
+
+<p>If you set an <code>ALARM</code> trap function, it will be called instead of killing the session. Perfect.</p>
+
+<p>So I ended up with this in my <code>.zshrc</code>:</p>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">export TMOUT<span style="color:#f92672">=</span><span style="color:#ae81ff">600</span>
+<span style="color:#66d9ef">function</span> TRAPALRM<span style="color:#f92672">()</span> <span style="color:#f92672">{</span> vlock <span style="color:#f92672">}</span></code></pre></div>
+
+<p>And now <code>zsh</code> locks my sessions after 10 minutes. It&#8217;s working perfectly even within <code>tmux</code>.</p>
+
+<p>@UPDATE</p>
+
+<p>As the comment from the reader <strong>Ehtesh Choudhury</strong> we can accomplish that in <code>tmux</code> only by adding to your configuration:</p>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">set -g lock-command vlock</code></pre></div>
+
+        </div>
+
+        
+        
+        
+
+        
+
+
+        
+        <footer class="article-footer">
+            <ul class="article-tag-list">
+                
+                <li class="article-tag-list-item">
+                    <a class="article-tag-list-link" href="http://wroot.org//tags/bash">bash
+                    </a>
+                </li>
+                
+                <li class="article-tag-list-item">
+                    <a class="article-tag-list-link" href="http://wroot.org//tags/linux">linux
+                    </a>
+                </li>
+                
+                <li class="article-tag-list-item">
+                    <a class="article-tag-list-link" href="http://wroot.org//tags/shell">shell
+                    </a>
+                </li>
+                
+                <li class="article-tag-list-item">
+                    <a class="article-tag-list-link" href="http://wroot.org//tags/terminal">terminal
+                    </a>
+                </li>
+                
+                <li class="article-tag-list-item">
+                    <a class="article-tag-list-link" href="http://wroot.org//tags/unix">unix
+                    </a>
+                </li>
+                
+                <li class="article-tag-list-item">
+                    <a class="article-tag-list-link" href="http://wroot.org//tags/zsh">zsh
+                    </a>
+                </li>
+                
+            </ul>
+        </footer>
+        
+    </div>
+    <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "wroot" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+    <nav id="article-nav">
+    
+    <a href="/posts/sao-paulo-states-military-police-website-almost-hacked-by-rfi/" id="article-nav-newer" class="article-nav-link-wrap">
+        <div class="article-nav-title"><span>&lt;</span>&nbsp;
+            São Paulo State’s Military Police website (almost) hacked by RFI
+        </div>
+    </a>
+    
+    
+    <a href="/posts/iran-hijacked-us-drone-by-hacking-gps/" id="article-nav-older" class="article-nav-link-wrap">
+        <div class="article-nav-title">Iran hijacked US Drone by hacking GPS&nbsp;<span>&gt;</span></div>
+    </a>
+    
+</nav>
+</article>
+
+        
+    </section>
+    <footer id="footer">
+    <div class="outer">
+        <div id="footer-info" class="inner">
+            &copy; 2019 wroot&nbsp;
+            Powered by <a href="https://gohugo.io" target="_blank">Hugo</a> with (a slightly modified) theme <a href="https://github.com/carsonip/hugo-theme-minos">Minos</a>
+        </div>
+    </div>
+    
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/styles/tomorrow-night.min.css" integrity="sha256-2wL88NKUqvJi/ExflDzkzUumjUM73mcK2gBvBBeLvTk=" crossorigin="anonymous" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/highlight.min.js" integrity="sha256-KbfTjB0WZ8vvXngdpJGY3Yp3xKk+tttbqClO11anCIU=" crossorigin="anonymous"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+
+    
+    <script>
+        document.getElementById('main-nav-toggle').addEventListener('click', function () {
+            var header = document.getElementById('header');
+            if (header.classList.contains('mobile-on')) {
+                header.classList.remove('mobile-on');
+            } else {
+                header.classList.add('mobile-on');
+            }
+        });
+    </script>
+</footer>
+
+</div>
+</body>
+</html>

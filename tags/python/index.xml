@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Python on wroot</title>
+    <link>http://wroot.org/tags/python/</link>
+    <description>Recent content in Python on wroot</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Mon, 30 Mar 2015 14:13:12 +0000</lastBuildDate>
+    
+	<atom:link href="http://wroot.org/tags/python/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Introducing VirtuaPlant 0.1</title>
+      <link>http://wroot.org/posts/introducing-virtuaplant-0-1/</link>
+      <pubDate>Mon, 30 Mar 2015 14:13:12 +0000</pubDate>
+      
+      <guid>http://wroot.org/posts/introducing-virtuaplant-0-1/</guid>
+      <description>Today I&amp;#8217;m releasing a project I&amp;#8217;ve been working on for the past week which I called VirtuaPlant (yeah I now, I suck at giving names).
+From the project page:
+ VirtuaPlant is a Industrial Control Systems simulator which adds a “similar to real-world control logic” to the basic “read/write tags” feature of most PLC simulators. Paired with a game library and 2d physics engine, VirtuaPlant is able to present a GUI simulating the “world view” behind the control system allowing the user to have a vision of the would-be actions behind the control systems.</description>
+    </item>
+    
+    <item>
+      <title>GoldenEye 2.1 released with even more randomness</title>
+      <link>http://wroot.org/posts/goldeneye-2-1-released-with-even-more-randomness/</link>
+      <pubDate>Fri, 21 Feb 2014 18:32:14 +0000</pubDate>
+      
+      <guid>http://wroot.org/posts/goldeneye-2-1-released-with-even-more-randomness/</guid>
+      <description>Recently I&amp;#8217;ve discovered that GoldenEye got his first signature from a big vendor.
+That&amp;#8217;s funny since the main GoldenEye objective is to be signature-proof due its randomness. I&amp;#8217;ve done a quick search on the internet and found the signature update link for their products, downloaded, located that one mentioned above.
+It was a very crude signature, as expected:
+&amp;lt;Pattern&amp;gt;\[Keep-Alive: 1(1\d|20)\]&amp;lt;/Pattern&amp;gt;&amp;lt;Pattern&amp;gt;\[Cache-Control: (must-revalidate, )?no-cache\].*&amp;lt;/Pattern&amp;gt;&amp;lt;Pattern&amp;gt;\[http://(www\.(google|usatoday)|engadget\.search\.aol)\.com/(search)?(/results)?\?q\].*&amp;lt;/Pattern&amp;gt;&amp;lt;Pattern&amp;gt;.*\[(Mozilla/\d\.\d|Opera 9.80) \((Windows|X11|compatible); U?; (Linux|Windows NT \d\.</description>
+    </item>
+    
+  </channel>
+</rss>

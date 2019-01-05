@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Mobile on wroot</title>
+    <link>http://wroot.org/tags/mobile/</link>
+    <description>Recent content in Mobile on wroot</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Tue, 30 Apr 2013 00:14:28 +0000</lastBuildDate>
+    
+	<atom:link href="http://wroot.org/tags/mobile/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Enumerating Android installed applications without special permissions</title>
+      <link>http://wroot.org/posts/enumerating-android-installed-applications-without-special-permissions/</link>
+      <pubDate>Tue, 30 Apr 2013 00:14:28 +0000</pubDate>
+      
+      <guid>http://wroot.org/posts/enumerating-android-installed-applications-without-special-permissions/</guid>
+      <description>Sometimes I took some random Android app I&amp;#8217;ve recently installed on my phone and start performing some tests on it. It&amp;#8217;s not uncommon to see unauthenticated API requests, plaintext HTTP communication and some obfuscation logic or hardcoded credentials rammed down at client code. As I use to say in my SCADA talks,
+ &amp;#8220;everything that is &amp;#8216;new&amp;#8217; is prone to &amp;#8216;newbie&amp;#8217; mistakes&amp;#8221;
+ This is not different for mobile development.</description>
+    </item>
+    
+  </channel>
+</rss>

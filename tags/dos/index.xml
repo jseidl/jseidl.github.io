@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Dos on wroot</title>
+    <link>http://wroot.org/tags/dos/</link>
+    <description>Recent content in Dos on wroot</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Fri, 21 Feb 2014 18:32:14 +0000</lastBuildDate>
+    
+	<atom:link href="http://wroot.org/tags/dos/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>GoldenEye 2.1 released with even more randomness</title>
+      <link>http://wroot.org/posts/goldeneye-2-1-released-with-even-more-randomness/</link>
+      <pubDate>Fri, 21 Feb 2014 18:32:14 +0000</pubDate>
+      
+      <guid>http://wroot.org/posts/goldeneye-2-1-released-with-even-more-randomness/</guid>
+      <description>Recently I&amp;#8217;ve discovered that GoldenEye got his first signature from a big vendor.
+That&amp;#8217;s funny since the main GoldenEye objective is to be signature-proof due its randomness. I&amp;#8217;ve done a quick search on the internet and found the signature update link for their products, downloaded, located that one mentioned above.
+It was a very crude signature, as expected:
+&amp;lt;Pattern&amp;gt;\[Keep-Alive: 1(1\d|20)\]&amp;lt;/Pattern&amp;gt;&amp;lt;Pattern&amp;gt;\[Cache-Control: (must-revalidate, )?no-cache\].*&amp;lt;/Pattern&amp;gt;&amp;lt;Pattern&amp;gt;\[http://(www\.(google|usatoday)|engadget\.search\.aol)\.com/(search)?(/results)?\?q\].*&amp;lt;/Pattern&amp;gt;&amp;lt;Pattern&amp;gt;.*\[(Mozilla/\d\.\d|Opera 9.80) \((Windows|X11|compatible); U?; (Linux|Windows NT \d\.</description>
+    </item>
+    
+    <item>
+      <title>New version of GoldenEye WebServer DoS tool released</title>
+      <link>http://wroot.org/posts/new-version-of-goldeneye-webserver-dos-tool-released/</link>
+      <pubDate>Tue, 26 Mar 2013 21:58:19 +0000</pubDate>
+      
+      <guid>http://wroot.org/posts/new-version-of-goldeneye-webserver-dos-tool-released/</guid>
+      <description>After the hackers 2 hackers conference talk last year, some people contacted me about known Python performance issues regarding the use of threads related to the GIL.
+Indeed the threading wasn&amp;#8217;t performing well due the nature of GIL so I&amp;#8217;ve rewritten the code to support Python&amp;#8217;s multiprocessing module. It&amp;#8217;s a tad faster but I haven&amp;#8217;t tested it exhaustively so if you feel the inner-beta-tester in you, let me know!
+The download is available as always at the github project page at https://github.</description>
+    </item>
+    
+    <item>
+      <title>Talking about D/DoS (again) at XVII Semana de Informática (Computer Science Week)</title>
+      <link>http://wroot.org/posts/talking-about-ddos-again-at-xvii-semana-de-informatica-computer-science-week/</link>
+      <pubDate>Sun, 11 Nov 2012 14:54:55 +0000</pubDate>
+      
+      <guid>http://wroot.org/posts/talking-about-ddos-again-at-xvii-semana-de-informatica-computer-science-week/</guid>
+      <description>I&amp;#8217;m speaking at the 17th Computer Science Week at Minas Gerais, Brazil November 24th. I&amp;#8217;ll be giving an extended version of my H2HC Talk for Computer Science students at UFV (Universidade Federal de Viçosa / Viçosa Federal University) at Minas Gerais, Brazil.
+More at my talk&amp;#8217;s summary page on the event website
+@UPDATE
+It was a great talk! Thanks for everyone that attended! Slides are on my slideshare!</description>
+    </item>
+    
+    <item>
+      <title>About Hackers 2 Hackers Conference 9th Edition</title>
+      <link>http://wroot.org/posts/about-hackers-2-hackers-conference-9th-edition/</link>
+      <pubDate>Mon, 22 Oct 2012 15:22:34 +0000</pubDate>
+      
+      <guid>http://wroot.org/posts/about-hackers-2-hackers-conference-9th-edition/</guid>
+      <description>Hi Folks,
+This last weekend was my talk on Hackers 2 Hackers Conference 9th Edition @ São Paulo, Brazil. The talk was in portuguese and the slides are available here (download pdf) and here (slideshare).
+The subject of the talk was about layer 7 denial of service techniques and tools, using haproxy and socat to create a distributed denial of service from a single node, some XSS payload for DDoS and demonstration of the GoldenEye Mobile tool released today.</description>
+    </item>
+    
+  </channel>
+</rss>

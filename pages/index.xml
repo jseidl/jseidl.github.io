@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Pages on wroot</title>
+    <link>http://wroot.org/pages/</link>
+    <description>Recent content in Pages on wroot</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Fri, 13 Dec 2013 14:10:37 +0000</lastBuildDate>
+    
+	<atom:link href="http://wroot.org/pages/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Press</title>
+      <link>http://wroot.org/press/</link>
+      <pubDate>Fri, 13 Dec 2013 14:10:37 +0000</pubDate>
+      
+      <guid>http://wroot.org/press/</guid>
+      <description>Printed or digital publications about me or my researches released on press.
+ 14/07/2014 &amp;#8211; ToolsWatch Newsletter June 2014 &amp;#8211; One year and a half after GoldenEye &amp;#8211; Web (EN) [PDF] 07/05/2014 &amp;#8211; Em edição &amp;#8220;histórica&amp;#8221;, FISL enquadra a espionagem na internet 13/02/2014 &amp;#8211; Conheça os palestrantes internacionais confirmados para o FISL15 &amp;#8211; Revista Espírito Livre &amp;#8211; Web (BR) 08/07/2013 &amp;#8211; Experiment Simulated Attacks On Natural Gas Plant &amp;#8211; Dark Reading &amp;#8211; Web (US) 24/08/2013 &amp;#8211; Interview &amp;#8211; The New Indian Express &amp;#8211; Chennai, India 24/08/2013 &amp;#8211; Interview &amp;#8211; The Times of India &amp;#8211; Chennai, India  </description>
+    </item>
+    
+    <item>
+      <title>Talks</title>
+      <link>http://wroot.org/talks/</link>
+      <pubDate>Tue, 09 Jul 2013 01:21:53 +0000</pubDate>
+      
+      <guid>http://wroot.org/talks/</guid>
+      <description>Upcoming Talks None so far!
+Past Talks 2017  [December, 4-5] CanSecWest 2017 &amp;#8211; Vancouver, Canada &amp;#8211; Privilege escalation on high-end servers due to implementation gaps in Intel&amp;rsquo;s CPU Hot-Add flow (en_US)  2015  [December, 4-5] Forum Goiano de Software Livre 2015 &amp;#8211; Goiania, Brazil &amp;#8211; Aleph, Open Source Malware Analysis Pipeline System (pt_BR) [November, 5-8] Ground Zero Summit &amp;#8211; New Delhi, India &amp;#8211; Catch­-me if you can: TOR tricks for bots, shells and general hacking (en_US) [October, 24-25] Hackers to Hackers Conference &amp;#8211; Sao Paulo, Brazil &amp;#8211; PhysICS – Using physics simulation engine to demonstrate impacts on industrial control systems attacks (pt_BR) [October, 20-22] 4SICS &amp;#8211; Stockholm, Sweden &amp;#8211; Reducing attack surface on ICS with Windows native solutions (en_US) [October, 14-16] Latinoware 2015 &amp;#8211; Foz do Iguacu, Brazil &amp;#8211; Aleph, Open Source Malware Analysis Pipeline System (pt_BR) [March, 15] 0x90 Cyber Security Summit &amp;#8211; Chennai, India &amp;#8211; Catch­-me if you can: TOR tricks for bots, shells and general hacking (en_US)  2014  [November, 21-22] Fórum Goiano de Software Livre 2014 &amp;#8211; Goiânia, Brazil &amp;#8211; NSA-Proof Communications (mostly) (pt_BR) [November, 5-7] Conferência Latino-Americana de Segurança em SCADA &amp;#8211; Rio de Janeiro, Brazil &amp;#8211; SCADA hacking: diversão em escala industrial (pt_BR) [October, 18-19] Hackers 2 Hackers Conference &amp;#8211; São Paulo, Brazil &amp;#8211; Catch­-me if you can: TOR tricks for bots, shells and general hacking (pt_BR) [October, 15-17] Latinoware 2014 &amp;#8211; Foz do Iguacu, Brazil &amp;#8211; NSA-Proof Communications (mostly) (pt_BR) [August, 27-31] XIX Semana de Informática &amp;#8211; Minas Gerais, Brazil &amp;#8211; NSA-Proof Communications (mostly) (pt_BR) [May 8] After FISL das galáxias!</description>
+    </item>
+    
+    <item>
+      <title>About</title>
+      <link>http://wroot.org/about/</link>
+      <pubDate>Fri, 28 Sep 2012 17:12:34 +0000</pubDate>
+      
+      <guid>http://wroot.org/about/</guid>
+      <description>Jan Seidl is a Brazilian extreme Information Security professional, Unix Addict and opensource lover.
+ Speaker at several Information Security, ICS/SCADA and Open Source conferences. Author of the book &amp;#8220;Segurança de automação industrial e SCADA&amp;#8221; (Industrial Automation and SCADA Security) published by Elsevier/Campus [in Brazilian Portuguese] Currently working as and independent consultant DIY&amp;#8217;er Side hobbies: Building robots, drones (terrible pilot BTW), mediocre guitar playing, radio hacking, satellite tracking, random electronics, burning things by accident, burning things intentionally.</description>
+    </item>
+    
+  </channel>
+</rss>

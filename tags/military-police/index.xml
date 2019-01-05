@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Military Police on wroot</title>
+    <link>http://wroot.org/tags/military-police/</link>
+    <description>Recent content in Military Police on wroot</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Sun, 22 Apr 2012 21:00:24 +0000</lastBuildDate>
+    
+	<atom:link href="http://wroot.org/tags/military-police/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>São Paulo State’s Military Police website (almost) hacked by RFI</title>
+      <link>http://wroot.org/posts/sao-paulo-states-military-police-website-almost-hacked-by-rfi/</link>
+      <pubDate>Sun, 22 Apr 2012 21:00:24 +0000</pubDate>
+      
+      <guid>http://wroot.org/posts/sao-paulo-states-military-police-website-almost-hacked-by-rfi/</guid>
+      <description>Today a friend shared me this link which pointed to São Paulo State&amp;#8217;s Military Police website and showed a deface-like page with a hacktivist text and a youtube video.
+The first thing that came to my eyes was the URL:
+http://www.polmil.sp.gov.br/abrirframes.asp?PAGINA=http%3A%2F%2Fwww.nova89fm.com.br%2Fwebsite%2F &amp;#8216;abrirframes.asp&amp;#8217; is &amp;#8216;openframes.asp&amp;#8217; and &amp;#8216;PAGINA=&amp;#8217; is &amp;#8216;PAGE=&amp;#8217; in Brazilian Portuguese. Say no more.
+That&amp;#8217;s why I&amp;#8217;ve said &amp;#8220;almost hacked&amp;#8221;. The site that was actually hacked was www.nova89fm.com.br (a Brazilian FM Radio) and not São Paulo State&amp;#8217;s Military Police&amp;#8217;s.</description>
+    </item>
+    
+  </channel>
+</rss>

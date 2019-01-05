@@ -1,0 +1,662 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+  <meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'>
+<meta name='description' content='^(build|hack|tweak|pwn|secur)ing$'>
+
+<meta property='og:title' content='wroot'>
+<meta property='og:description' content='^(build|hack|tweak|pwn|secur)ing$'>
+<meta property='og:url' content='http://wroot.org/'>
+<meta property='og:site_name' content='wroot'>
+<meta property='og:type' content='website'><meta property='og:updated_time' content='2015-09-23T14:13:55Z'/><meta name='twitter:card' content='summary'><meta name='twitter:site' content='@jseidl'>
+
+<meta name="generator" content="Hugo 0.53" />
+
+  <title>wroot</title>
+  <link rel='canonical' href='http://wroot.org/'>
+  
+    <link href="http://wroot.org/index.xml" rel="alternate" type="application/rss+xml" title="wroot" />
+  
+  
+  <link rel='icon' href='/favicon.ico'><link rel='stylesheet' href='/webfonts/ptserif/main.css'><link rel='stylesheet' href='/webfonts/source-code-pro/main.css'><link rel='stylesheet' href='/css/style.css'>
+  
+
+</head>
+
+
+<body>
+<div id="container">
+    <header id="header">
+    <div id="header-outer" class="outer">
+        <div id="header-inner" class="inner">
+            <a id="main-nav-toggle" class="nav-icon" href="javascript:;"></a>
+            <a id="logo" class="logo-text" href="http://wroot.org/">wroot</a>
+            <nav id="main-nav">
+                
+                <a class="main-nav-link" href="/about/">About</a>
+                
+                <a class="main-nav-link" href="/talks/">Talks</a>
+                
+                <a class="main-nav-link" href="/projects/">Projects</a>
+                
+                <a class="main-nav-link" href="/press/">Press</a>
+                
+                <a class="main-nav-link" href="https://twitter.com/jseidl">Twitter</a>
+                
+                <a class="main-nav-link" href="https://www.linkedin.com/in/janseidl">LinkedIn</a>
+                
+                <a class="main-nav-link" href="http://github.com/jseidl">GitHub</a>
+                
+                <a class="main-nav-link" href="http://www.slideshare.net/jseidl/">SlideShare</a>
+                
+            </nav>
+            <nav id="sub-nav">
+                <div id="search-form-wrap">
+                </div>
+            </nav>
+        </div>
+    </div>
+</header>
+    <section id="main" class="outer">
+        
+        <article class="article article-type-post" itemscope itemprop="blogPost">
+            <div class="article-inner">
+                
+                
+                <header class="article-header">
+                    <h1 itemprop="name"><a class="article-title" href="/posts/babadook-connection-less-powershell-persistent-and-resilient-backdoor/">Babadook: Connection-less Powershell Persistent and Resilient “Backdoor”</a></h1>
+                </header>
+                
+                <div class="article-meta">
+                    <a href="/posts/babadook-connection-less-powershell-persistent-and-resilient-backdoor/" class="article-date">
+                        <time datetime='2015-09-23T14:13:55.000&#43;00:00' itemprop="datePublished">2015-09-23</time>
+                    </a>
+                    
+                    
+                    <div class="post-categories">
+                        <div class="article-category">
+                            
+                            
+                            <a class="article-category-link" href="http://wroot.org//categories/malware">Malware</a>
+                            
+                            
+                            <span>&gt;</span>
+                            
+                            <a class="article-category-link" href="http://wroot.org//categories/penetration-testing">Penetration Testing</a>
+                            
+                        </div>
+                    </div>
+                    
+                    
+                </div>
+                <div class="article-entry" itemprop="articleBody">
+                    <p>
+                        
+                    At my previous company I used to prank the colleagues who left their stations unlocked. I call this my &#8220;internal awareness program&#8221;.
+It was all fun and games at the beginning. I would leave post-its on their monitors with a friendly message &#8220;You could&#8217;ve been hacked&#8221; but it wasn&#8217;t giving the expected results. Some colleagues found it funny and started &#8220;collecting&#8221; my post-its. There was a guy in particular with 5 of them.
+                    </p>
+                    <p class="article-more-link">
+                        <a href="/posts/babadook-connection-less-powershell-persistent-and-resilient-backdoor/">Read More</a>
+                    </p>
+                </div>
+
+                
+                <footer class="article-footer">
+                    <ul class="article-tag-list">
+                        
+                        <li class="article-tag-list-item">
+                            <a class="article-tag-list-link" href="http://wroot.org//tags/backdoor">backdoor
+                            </a>
+                        </li>
+                        
+                        <li class="article-tag-list-item">
+                            <a class="article-tag-list-link" href="http://wroot.org//tags/malware">malware
+                            </a>
+                        </li>
+                        
+                        <li class="article-tag-list-item">
+                            <a class="article-tag-list-link" href="http://wroot.org//tags/persistance">persistance
+                            </a>
+                        </li>
+                        
+                        <li class="article-tag-list-item">
+                            <a class="article-tag-list-link" href="http://wroot.org//tags/powershell">powershell
+                            </a>
+                        </li>
+                        
+                        <li class="article-tag-list-item">
+                            <a class="article-tag-list-link" href="http://wroot.org//tags/rootkit">rootkit
+                            </a>
+                        </li>
+                        
+                    </ul>
+                </footer>
+                
+            </div>
+        </article>
+        
+        <article class="article article-type-post" itemscope itemprop="blogPost">
+            <div class="article-inner">
+                
+                
+                <header class="article-header">
+                    <h1 itemprop="name"><a class="article-title" href="/posts/introducing-virtuaplant-0-1/">Introducing VirtuaPlant 0.1</a></h1>
+                </header>
+                
+                <div class="article-meta">
+                    <a href="/posts/introducing-virtuaplant-0-1/" class="article-date">
+                        <time datetime='2015-03-30T14:13:12.000&#43;00:00' itemprop="datePublished">2015-03-30</time>
+                    </a>
+                    
+                    
+                    <div class="post-categories">
+                        <div class="article-category">
+                            
+                            
+                            <a class="article-category-link" href="http://wroot.org//categories/scada/ics">SCADA/ICS</a>
+                            
+                        </div>
+                    </div>
+                    
+                    
+                </div>
+                <div class="article-entry" itemprop="articleBody">
+                    <p>
+                        
+                    Today I&#8217;m releasing a project I&#8217;ve been working on for the past week which I called VirtuaPlant (yeah I now, I suck at giving names).
+From the project page:
+ VirtuaPlant is a Industrial Control Systems simulator which adds a “similar to real-world control logic” to the basic “read/write tags” feature of most PLC simulators. Paired with a game library and 2d physics engine, VirtuaPlant is able to present a GUI simulating the “world view” behind the control system allowing the user to have a vision of the would-be actions behind the control systems.
+                    </p>
+                    <p class="article-more-link">
+                        <a href="/posts/introducing-virtuaplant-0-1/">Read More</a>
+                    </p>
+                </div>
+
+                
+                <footer class="article-footer">
+                    <ul class="article-tag-list">
+                        
+                        <li class="article-tag-list-item">
+                            <a class="article-tag-list-link" href="http://wroot.org//tags/chipmunk">chipmunk
+                            </a>
+                        </li>
+                        
+                        <li class="article-tag-list-item">
+                            <a class="article-tag-list-link" href="http://wroot.org//tags/gtk">gtk
+                            </a>
+                        </li>
+                        
+                        <li class="article-tag-list-item">
+                            <a class="article-tag-list-link" href="http://wroot.org//tags/ics">ics
+                            </a>
+                        </li>
+                        
+                        <li class="article-tag-list-item">
+                            <a class="article-tag-list-link" href="http://wroot.org//tags/modbus">modbus
+                            </a>
+                        </li>
+                        
+                        <li class="article-tag-list-item">
+                            <a class="article-tag-list-link" href="http://wroot.org//tags/plc">plc
+                            </a>
+                        </li>
+                        
+                        <li class="article-tag-list-item">
+                            <a class="article-tag-list-link" href="http://wroot.org//tags/pymunk">pymunk
+                            </a>
+                        </li>
+                        
+                        <li class="article-tag-list-item">
+                            <a class="article-tag-list-link" href="http://wroot.org//tags/python">python
+                            </a>
+                        </li>
+                        
+                        <li class="article-tag-list-item">
+                            <a class="article-tag-list-link" href="http://wroot.org//tags/scada">scada
+                            </a>
+                        </li>
+                        
+                        <li class="article-tag-list-item">
+                            <a class="article-tag-list-link" href="http://wroot.org//tags/simulator">simulator
+                            </a>
+                        </li>
+                        
+                        <li class="article-tag-list-item">
+                            <a class="article-tag-list-link" href="http://wroot.org//tags/software">software
+                            </a>
+                        </li>
+                        
+                    </ul>
+                </footer>
+                
+            </div>
+        </article>
+        
+        <article class="article article-type-post" itemscope itemprop="blogPost">
+            <div class="article-inner">
+                
+                
+                <header class="article-header">
+                    <h1 itemprop="name"><a class="article-title" href="/posts/calling-functions-without-their-names-in-php/">Calling functions without their names in PHP</a></h1>
+                </header>
+                
+                <div class="article-meta">
+                    <a href="/posts/calling-functions-without-their-names-in-php/" class="article-date">
+                        <time datetime='2014-04-10T23:11:52.000&#43;00:00' itemprop="datePublished">2014-04-10</time>
+                    </a>
+                    
+                    
+                    <div class="post-categories">
+                        <div class="article-category">
+                            
+                            
+                            <a class="article-category-link" href="http://wroot.org//categories/malware">Malware</a>
+                            
+                        </div>
+                    </div>
+                    
+                    
+                </div>
+                <div class="article-entry" itemprop="articleBody">
+                    <p>
+                        
+                    Strings. Ah juicy and precious strings! It is common for malware scanners and IDPS to look for suspicious strings in network traffic and files&#8230; but what if there are no strings to look for? (whaaa?)
+Today I was wondering about some features found in many interpreted languages of listing its internal functions in some sort of list/array. This way we can enumerate the [index] =&gt; function_name relationship, replace all function_names on the code to their index and voilá!
+                    </p>
+                    <p class="article-more-link">
+                        <a href="/posts/calling-functions-without-their-names-in-php/">Read More</a>
+                    </p>
+                </div>
+
+                
+                <footer class="article-footer">
+                    <ul class="article-tag-list">
+                        
+                        <li class="article-tag-list-item">
+                            <a class="article-tag-list-link" href="http://wroot.org//tags/backdoor">backdoor
+                            </a>
+                        </li>
+                        
+                        <li class="article-tag-list-item">
+                            <a class="article-tag-list-link" href="http://wroot.org//tags/malware">malware
+                            </a>
+                        </li>
+                        
+                        <li class="article-tag-list-item">
+                            <a class="article-tag-list-link" href="http://wroot.org//tags/obfuscation">obfuscation
+                            </a>
+                        </li>
+                        
+                        <li class="article-tag-list-item">
+                            <a class="article-tag-list-link" href="http://wroot.org//tags/php">php
+                            </a>
+                        </li>
+                        
+                    </ul>
+                </footer>
+                
+            </div>
+        </article>
+        
+        <article class="article article-type-post" itemscope itemprop="blogPost">
+            <div class="article-inner">
+                
+                
+                <header class="article-header">
+                    <h1 itemprop="name"><a class="article-title" href="/posts/goldeneye-2-1-released-with-even-more-randomness/">GoldenEye 2.1 released with even more randomness</a></h1>
+                </header>
+                
+                <div class="article-meta">
+                    <a href="/posts/goldeneye-2-1-released-with-even-more-randomness/" class="article-date">
+                        <time datetime='2014-02-21T18:32:14.000&#43;00:00' itemprop="datePublished">2014-02-21</time>
+                    </a>
+                    
+                    
+                    <div class="post-categories">
+                        <div class="article-category">
+                            
+                            
+                            <a class="article-category-link" href="http://wroot.org//categories/application-security">Application Security</a>
+                            
+                            
+                            <span>&gt;</span>
+                            
+                            <a class="article-category-link" href="http://wroot.org//categories/penetration-testing">Penetration Testing</a>
+                            
+                        </div>
+                    </div>
+                    
+                    
+                </div>
+                <div class="article-entry" itemprop="articleBody">
+                    <p>
+                        
+                    Recently I&#8217;ve discovered that GoldenEye got his first signature from a big vendor.
+That&#8217;s funny since the main GoldenEye objective is to be signature-proof due its randomness. I&#8217;ve done a quick search on the internet and found the signature update link for their products, downloaded, located that one mentioned above.
+It was a very crude signature, as expected:
+&lt;Pattern&gt;\[Keep-Alive: 1(1\d|20)\]&lt;/Pattern&gt;&lt;Pattern&gt;\[Cache-Control: (must-revalidate, )?no-cache\].*&lt;/Pattern&gt;&lt;Pattern&gt;\[http://(www\.(google|usatoday)|engadget\.search\.aol)\.com/(search)?(/results)?\?q\].*&lt;/Pattern&gt;&lt;Pattern&gt;.*\[(Mozilla/\d\.\d|Opera 9.80) \((Windows|X11|compatible); U?; (Linux|Windows NT \d\.
+                    </p>
+                    <p class="article-more-link">
+                        <a href="/posts/goldeneye-2-1-released-with-even-more-randomness/">Read More</a>
+                    </p>
+                </div>
+
+                
+                <footer class="article-footer">
+                    <ul class="article-tag-list">
+                        
+                        <li class="article-tag-list-item">
+                            <a class="article-tag-list-link" href="http://wroot.org//tags/ddos">ddos
+                            </a>
+                        </li>
+                        
+                        <li class="article-tag-list-item">
+                            <a class="article-tag-list-link" href="http://wroot.org//tags/dos">dos
+                            </a>
+                        </li>
+                        
+                        <li class="article-tag-list-item">
+                            <a class="article-tag-list-link" href="http://wroot.org//tags/goldeneye">goldeneye
+                            </a>
+                        </li>
+                        
+                        <li class="article-tag-list-item">
+                            <a class="article-tag-list-link" href="http://wroot.org//tags/python">python
+                            </a>
+                        </li>
+                        
+                    </ul>
+                </footer>
+                
+            </div>
+        </article>
+        
+        <article class="article article-type-post" itemscope itemprop="blogPost">
+            <div class="article-inner">
+                
+                
+                <header class="article-header">
+                    <h1 itemprop="name"><a class="article-title" href="/posts/whitespace-esolang-covert-channel-steganography/">Whitespace Esolang Covert Channel / Steganography</a></h1>
+                </header>
+                
+                <div class="article-meta">
+                    <a href="/posts/whitespace-esolang-covert-channel-steganography/" class="article-date">
+                        <time datetime='2014-02-19T14:31:02.000&#43;00:00' itemprop="datePublished">2014-02-19</time>
+                    </a>
+                    
+                    
+                    <div class="post-categories">
+                        <div class="article-category">
+                            
+                            
+                            <a class="article-category-link" href="http://wroot.org//categories/malware">Malware</a>
+                            
+                            
+                            <span>&gt;</span>
+                            
+                            <a class="article-category-link" href="http://wroot.org//categories/penetration-testing">Penetration Testing</a>
+                            
+                            
+                            <span>&gt;</span>
+                            
+                            <a class="article-category-link" href="http://wroot.org//categories/steganography">Steganography</a>
+                            
+                        </div>
+                    </div>
+                    
+                    
+                </div>
+                <div class="article-entry" itemprop="articleBody">
+                    <p>
+                        
+                    I&#8217;ve been always a fan of esoteric programming languages (esolangs). These programming languages are generally made just for fun, mostly in universities or for challenges. Wikipedia describes as the following:
+ An esoteric programming language (esolang, in short) is a programming language designed to test the boundaries of computer programming language design, as a proof of concept, or as a joke. The use of esoteric distinguishes these languages from programming languages that working developers use to write software.
+                    </p>
+                    <p class="article-more-link">
+                        <a href="/posts/whitespace-esolang-covert-channel-steganography/">Read More</a>
+                    </p>
+                </div>
+
+                
+                <footer class="article-footer">
+                    <ul class="article-tag-list">
+                        
+                        <li class="article-tag-list-item">
+                            <a class="article-tag-list-link" href="http://wroot.org//tags/covert-channel">covert channel
+                            </a>
+                        </li>
+                        
+                        <li class="article-tag-list-item">
+                            <a class="article-tag-list-link" href="http://wroot.org//tags/esolang">esolang
+                            </a>
+                        </li>
+                        
+                        <li class="article-tag-list-item">
+                            <a class="article-tag-list-link" href="http://wroot.org//tags/php">php
+                            </a>
+                        </li>
+                        
+                        <li class="article-tag-list-item">
+                            <a class="article-tag-list-link" href="http://wroot.org//tags/steganography">steganography
+                            </a>
+                        </li>
+                        
+                        <li class="article-tag-list-item">
+                            <a class="article-tag-list-link" href="http://wroot.org//tags/whitespace">whitespace
+                            </a>
+                        </li>
+                        
+                    </ul>
+                </footer>
+                
+            </div>
+        </article>
+        
+        <article class="article article-type-post" itemscope itemprop="blogPost">
+            <div class="article-inner">
+                
+                
+                <header class="article-header">
+                    <h1 itemprop="name"><a class="article-title" href="/posts/enumerating-android-installed-applications-without-special-permissions/">Enumerating Android installed applications without special permissions</a></h1>
+                </header>
+                
+                <div class="article-meta">
+                    <a href="/posts/enumerating-android-installed-applications-without-special-permissions/" class="article-date">
+                        <time datetime='2013-04-30T00:14:28.000&#43;00:00' itemprop="datePublished">2013-04-30</time>
+                    </a>
+                    
+                    
+                    <div class="post-categories">
+                        <div class="article-category">
+                            
+                            
+                            <a class="article-category-link" href="http://wroot.org//categories/mobile">Mobile</a>
+                            
+                        </div>
+                    </div>
+                    
+                    
+                </div>
+                <div class="article-entry" itemprop="articleBody">
+                    <p>
+                        
+                    Sometimes I took some random Android app I&#8217;ve recently installed on my phone and start performing some tests on it. It&#8217;s not uncommon to see unauthenticated API requests, plaintext HTTP communication and some obfuscation logic or hardcoded credentials rammed down at client code. As I use to say in my SCADA talks,
+ &#8220;everything that is &#8216;new&#8217; is prone to &#8216;newbie&#8217; mistakes&#8221;
+ This is not different for mobile development.
+                    </p>
+                    <p class="article-more-link">
+                        <a href="/posts/enumerating-android-installed-applications-without-special-permissions/">Read More</a>
+                    </p>
+                </div>
+
+                
+                <footer class="article-footer">
+                    <ul class="article-tag-list">
+                        
+                        <li class="article-tag-list-item">
+                            <a class="article-tag-list-link" href="http://wroot.org//tags/android">android
+                            </a>
+                        </li>
+                        
+                        <li class="article-tag-list-item">
+                            <a class="article-tag-list-link" href="http://wroot.org//tags/enumeration">enumeration
+                            </a>
+                        </li>
+                        
+                        <li class="article-tag-list-item">
+                            <a class="article-tag-list-link" href="http://wroot.org//tags/mobile">mobile
+                            </a>
+                        </li>
+                        
+                    </ul>
+                </footer>
+                
+            </div>
+        </article>
+        
+        <article class="article article-type-post" itemscope itemprop="blogPost">
+            <div class="article-inner">
+                
+                
+                <header class="article-header">
+                    <h1 itemprop="name"><a class="article-title" href="/posts/new-version-of-goldeneye-webserver-dos-tool-released/">New version of GoldenEye WebServer DoS tool released</a></h1>
+                </header>
+                
+                <div class="article-meta">
+                    <a href="/posts/new-version-of-goldeneye-webserver-dos-tool-released/" class="article-date">
+                        <time datetime='2013-03-26T21:58:19.000&#43;00:00' itemprop="datePublished">2013-03-26</time>
+                    </a>
+                    
+                    
+                    <div class="post-categories">
+                        <div class="article-category">
+                            
+                            
+                            <a class="article-category-link" href="http://wroot.org//categories/penetration-testing">Penetration Testing</a>
+                            
+                        </div>
+                    </div>
+                    
+                    
+                </div>
+                <div class="article-entry" itemprop="articleBody">
+                    <p>
+                        
+                    After the hackers 2 hackers conference talk last year, some people contacted me about known Python performance issues regarding the use of threads related to the GIL.
+Indeed the threading wasn&#8217;t performing well due the nature of GIL so I&#8217;ve rewritten the code to support Python&#8217;s multiprocessing module. It&#8217;s a tad faster but I haven&#8217;t tested it exhaustively so if you feel the inner-beta-tester in you, let me know!
+The download is available as always at the github project page at https://github.
+                    </p>
+                    <p class="article-more-link">
+                        <a href="/posts/new-version-of-goldeneye-webserver-dos-tool-released/">Read More</a>
+                    </p>
+                </div>
+
+                
+                <footer class="article-footer">
+                    <ul class="article-tag-list">
+                        
+                        <li class="article-tag-list-item">
+                            <a class="article-tag-list-link" href="http://wroot.org//tags/dos">dos
+                            </a>
+                        </li>
+                        
+                        <li class="article-tag-list-item">
+                            <a class="article-tag-list-link" href="http://wroot.org//tags/goldeneye">goldeneye
+                            </a>
+                        </li>
+                        
+                        <li class="article-tag-list-item">
+                            <a class="article-tag-list-link" href="http://wroot.org//tags/http">http
+                            </a>
+                        </li>
+                        
+                        <li class="article-tag-list-item">
+                            <a class="article-tag-list-link" href="http://wroot.org//tags/https">https
+                            </a>
+                        </li>
+                        
+                        <li class="article-tag-list-item">
+                            <a class="article-tag-list-link" href="http://wroot.org//tags/layer-7">layer 7
+                            </a>
+                        </li>
+                        
+                        <li class="article-tag-list-item">
+                            <a class="article-tag-list-link" href="http://wroot.org//tags/tool">tool
+                            </a>
+                        </li>
+                        
+                        <li class="article-tag-list-item">
+                            <a class="article-tag-list-link" href="http://wroot.org//tags/webserver">webserver
+                            </a>
+                        </li>
+                        
+                    </ul>
+                </footer>
+                
+            </div>
+        </article>
+        
+
+        
+
+<nav id="page-nav">
+    
+    
+    
+    <span class="page-number current">1</span>
+    
+    
+    
+    <a href="/page/2/">2</a>
+    
+    
+    
+    <a href="/page/3/">3</a>
+    
+    
+    
+    <a href="/page/4/">4</a>
+    
+    
+    
+    <a href="/page/5/">5</a>
+    
+    
+
+    
+    <a href="/page/2/" rel="next" class="extend next">Next &raquo;</a>
+    
+</nav>
+
+    </section>
+    <footer id="footer">
+    <div class="outer">
+        <div id="footer-info" class="inner">
+            &copy; 2019 wroot&nbsp;
+            Powered by <a href="https://gohugo.io" target="_blank">Hugo</a> with (a slightly modified) theme <a href="https://github.com/carsonip/hugo-theme-minos">Minos</a>
+        </div>
+    </div>
+    
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/styles/tomorrow-night.min.css" integrity="sha256-2wL88NKUqvJi/ExflDzkzUumjUM73mcK2gBvBBeLvTk=" crossorigin="anonymous" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/highlight.min.js" integrity="sha256-KbfTjB0WZ8vvXngdpJGY3Yp3xKk+tttbqClO11anCIU=" crossorigin="anonymous"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+
+    
+    <script>
+        document.getElementById('main-nav-toggle').addEventListener('click', function () {
+            var header = document.getElementById('header');
+            if (header.classList.contains('mobile-on')) {
+                header.classList.remove('mobile-on');
+            } else {
+                header.classList.add('mobile-on');
+            }
+        });
+    </script>
+</footer>
+
+</div>
+</body>
+</html>

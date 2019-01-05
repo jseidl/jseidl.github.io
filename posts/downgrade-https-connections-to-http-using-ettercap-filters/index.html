@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+  <meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'>
+<meta name='description' content='Ettercap is a great tool for MITM poisoning and sniffing. Everyone on Infosec should have played with it (or Cain) at least once.
+Man-In-The-Middle MITM attacks are pretty easy to perform on a local network but the tools tend to crash a LOT. Cain (Windows) is a little more stable than Ettercap but I prefer it over Cain because it doesn&#8217;t spoof SSL that I consider too loud depending on the attack.'>
+
+<meta property='og:title' content='Downgrade HTTPS connections to HTTP using Ettercap filters • wroot'>
+<meta property='og:description' content='Ettercap is a great tool for MITM poisoning and sniffing. Everyone on Infosec should have played with it (or Cain) at least once.
+Man-In-The-Middle MITM attacks are pretty easy to perform on a local network but the tools tend to crash a LOT. Cain (Windows) is a little more stable than Ettercap but I prefer it over Cain because it doesn&#8217;t spoof SSL that I consider too loud depending on the attack.'>
+<meta property='og:url' content='http://wroot.org/posts/downgrade-https-connections-to-http-using-ettercap-filters/'>
+<meta property='og:site_name' content='wroot'>
+<meta property='og:type' content='article'><meta property='article:section' content='Posts'><meta property='article:tag' content='ettercap'><meta property='article:tag' content='filter'><meta property='article:tag' content='http'><meta property='article:tag' content='ssl'><meta property='article:published_time' content='2010-07-13T17:42:06Z'/><meta property='article:modified_time' content='2010-07-13T17:42:06Z'/><meta name='twitter:card' content='summary'><meta name='twitter:site' content='@jseidl'>
+
+<meta name="generator" content="Hugo 0.53" />
+
+  <title>Downgrade HTTPS connections to HTTP using Ettercap filters • wroot</title>
+  <link rel='canonical' href='http://wroot.org/posts/downgrade-https-connections-to-http-using-ettercap-filters/'>
+  
+  
+  <link rel='icon' href='/favicon.ico'><link rel='stylesheet' href='/webfonts/ptserif/main.css'><link rel='stylesheet' href='/webfonts/source-code-pro/main.css'><link rel='stylesheet' href='/css/style.css'>
+  
+
+</head>
+
+
+<body>
+<div id="container">
+    <header id="header">
+    <div id="header-outer" class="outer">
+        <div id="header-inner" class="inner">
+            <a id="main-nav-toggle" class="nav-icon" href="javascript:;"></a>
+            <a id="logo" class="logo-text" href="http://wroot.org/">wroot</a>
+            <nav id="main-nav">
+                
+                <a class="main-nav-link" href="/about/">About</a>
+                
+                <a class="main-nav-link" href="/talks/">Talks</a>
+                
+                <a class="main-nav-link" href="/projects/">Projects</a>
+                
+                <a class="main-nav-link" href="/press/">Press</a>
+                
+                <a class="main-nav-link" href="https://twitter.com/jseidl">Twitter</a>
+                
+                <a class="main-nav-link" href="https://www.linkedin.com/in/janseidl">LinkedIn</a>
+                
+                <a class="main-nav-link" href="http://github.com/jseidl">GitHub</a>
+                
+                <a class="main-nav-link" href="http://www.slideshare.net/jseidl/">SlideShare</a>
+                
+            </nav>
+            <nav id="sub-nav">
+                <div id="search-form-wrap">
+                </div>
+            </nav>
+        </div>
+    </div>
+</header>
+    <section id="main" class="outer">
+        <article class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+        <header class="article-header">
+            <h1 class="article-title" itemprop="name">Downgrade HTTPS connections to HTTP using Ettercap filters</h1>
+        </header>
+        
+        <div class="article-meta">
+            
+            <a href="/posts/downgrade-https-connections-to-http-using-ettercap-filters/" class="article-date">
+                <time datetime='2010-07-13T17:42:06.000&#43;00:00' itemprop="datePublished">2010-07-13</time>
+            </a>
+            
+            
+            
+            <div class="post-categories">
+                <div class="article-category">
+                    
+                    
+                    <a class="article-category-link" href="http://wroot.org//categories/penetration-testing">Penetration Testing</a>
+                    
+                </div>
+            </div>
+            
+            
+        </div>
+        <div class="article-entry" itemprop="articleBody">
+            
+
+<p>Ettercap is a great tool for <acronym title="Man-in-the-middle">MITM</acronym> poisoning and sniffing. Everyone on Infosec should have played with it (or Cain) at least once.</p>
+
+<h2 id="man-in-the-middle">Man-In-The-Middle</h2>
+
+<p><acronym title="Man-in-the-middle">MITM</acronym> attacks are pretty easy to perform on a local network but the tools tend to crash a LOT. Cain (Windows) is a little more stable than Ettercap but I prefer it over Cain because it doesn&#8217;t spoof <acronym title="Secure Sockets Layer">SSL</acronym> that I consider too loud depending on the attack. <em>NOTE: Ettercap runs better on text mode.</em></p>
+
+<h2 id="filters">Filters</h2>
+
+<p>Well, another nice feature of Ettercap are its filters. You can do lot of stuff while playing with them. The nicest toy I&#8217;ve found to play around so far is content rewriting (but I think custom packet injection can be even funnier). <a href="http://www.irongeek.com/i.php?page=security/ettercapfilter">Irongeek has played with Ettercap Filters in the past</a> to rewrite <code>img</code> tags.</p>
+
+<h2 id="sniffing-while-acronym-title-man-in-the-middle-mitm-acronym">Sniffing while <acronym title="Man-in-the-middle">MITM</acronym></h2>
+
+<p>Sniffing plaintext passwords are just easy. Either Cain and Ettercap are built to detect common strings containing passwords but <acronym title="Secure Sockets Layer">SSL</acronym> has made this kind of sniffing impossible and many sites are using it at least for the login processes.</p>
+
+<p>So while we wait for the super-quantum-computers to break 256-bit AES encryption, we may consider avoiding <acronym title="Secure Sockets Layer">SSL</acronym> for the period we&#8217;re sniffing so I&#8217;ve thought that filters could be perfect for that.</p>
+
+<p>What would define where the login form data will be sent? The <code>form</code>&#8216;s <code>action</code> field. So if I can interfere in the <acronym title="HyperText Transfer Protocol">HTTP</acronym> response I can send the login data ANYWHERE.</p>
+
+<p>I&#8217;ve decided to just downgrade the <acronym title="Secure Sockets Layer">SSL</acronym> because I always tend to make the least noise I can (because we don&#8217;t want to get caught by the forensics, do we?). I could redirect the request to a specially crafted site or so but it would be much more noticeable.</p>
+
+<h2 id="what-if-acronym-title-secure-sockets-layer-ssl-acronym-is-required-on-server-side">What if <acronym title="Secure Sockets Layer">SSL</acronym> is required on server-side</h2>
+
+<p>No problem, <acronym title="Secure Sockets Layer">SSL</acronym> on server-side can be a requirement but by the time the server complains, data was already sent over in plain-text. :)</p>
+
+<h2 id="getting-things-done">Getting things done</h2>
+
+<p>You can get <a href="http://github.com/jseidl/etter.filter.hrf/">my filter on my github page</a>.</p>
+
+<p>Just run the attack with the filter (assuming router is 192.168.0.1 and victim is 192.168.0.100):</p>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">ettercap -T -q -F hrf.ef -M ARP:remote /192.168.0.1/ /192.168.0.100/</code></pre></div>
+
+<p>You should see the following output:</p>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">ettercap NG-0.7.3 copyright 2001-2004 ALoR &amp; NaGA
+
+Content filters loaded from hrf.ef...
+Listening on eth0... (Ethernet)
+(...)
+[HTTP Response Filter] Encoding zapped.
+[HTTP Response Filter] Encoding zapped.
+[HTTP Response Filter] Encoding zapped.
+[HTTP Response Filter] *** HTTPS ZAPPED from response
+[HTTP Response Filter] Encoding zapped.
+[HTTP Response Filter] *** HTTPS ZAPPED from response
+[HTTP Response Filter] *** HTTPS ZAPPED from response
+(...)</code></pre></div>
+
+<p>And your victim will no longer receive (nor send) any <em>https</em> string anymore.</p>
+
+<h2 id="quick-note-about-request-response-filtering">Quick note about request / response filtering</h2>
+
+<p>Sometimes you may have to comment one leg (request / response) out of the filtering or you will get redirection loops (like while tampering Facebook connections). Also, if the request is already under https, you won&#8217;t be able to filter it. The beauty of this attack is disallowing your victim to escape your domain to a secure zone.</p>
+
+<p>HTH!</p>
+
+        </div>
+
+        
+        
+        <div class="article-toc" >
+            <h3>Contents</h3>
+            <nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#man-in-the-middle">Man-In-The-Middle</a></li>
+<li><a href="#filters">Filters</a></li>
+<li><a href="#sniffing-while-acronym-title-man-in-the-middle-mitm-acronym">Sniffing while <acronym title="Man-in-the-middle">MITM</acronym></a></li>
+<li><a href="#what-if-acronym-title-secure-sockets-layer-ssl-acronym-is-required-on-server-side">What if <acronym title="Secure Sockets Layer">SSL</acronym> is required on server-side</a></li>
+<li><a href="#getting-things-done">Getting things done</a></li>
+<li><a href="#quick-note-about-request-response-filtering">Quick note about request / response filtering</a></li>
+</ul></li>
+</ul>
+</nav>
+        </div>
+        
+        
+
+        
+
+
+        
+        <footer class="article-footer">
+            <ul class="article-tag-list">
+                
+                <li class="article-tag-list-item">
+                    <a class="article-tag-list-link" href="http://wroot.org//tags/ettercap">ettercap
+                    </a>
+                </li>
+                
+                <li class="article-tag-list-item">
+                    <a class="article-tag-list-link" href="http://wroot.org//tags/filter">filter
+                    </a>
+                </li>
+                
+                <li class="article-tag-list-item">
+                    <a class="article-tag-list-link" href="http://wroot.org//tags/http">http
+                    </a>
+                </li>
+                
+                <li class="article-tag-list-item">
+                    <a class="article-tag-list-link" href="http://wroot.org//tags/ssl">ssl
+                    </a>
+                </li>
+                
+            </ul>
+        </footer>
+        
+    </div>
+    <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "wroot" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+    <nav id="article-nav">
+    
+    <a href="/posts/stuxnet-targets-scada-systems-via-usb-drives-vectors/" id="article-nav-newer" class="article-nav-link-wrap">
+        <div class="article-nav-title"><span>&lt;</span>&nbsp;
+            Stuxnet targets SCADA systems via USB drives vectors
+        </div>
+    </a>
+    
+    
+    <a href="/posts/batch-installing-on-windows-platforms-with-ninite/" id="article-nav-older" class="article-nav-link-wrap">
+        <div class="article-nav-title">Batch-installing on Windows platforms with Ninite&nbsp;<span>&gt;</span></div>
+    </a>
+    
+</nav>
+</article>
+
+        
+    </section>
+    <footer id="footer">
+    <div class="outer">
+        <div id="footer-info" class="inner">
+            &copy; 2019 wroot&nbsp;
+            Powered by <a href="https://gohugo.io" target="_blank">Hugo</a> with (a slightly modified) theme <a href="https://github.com/carsonip/hugo-theme-minos">Minos</a>
+        </div>
+    </div>
+    
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/styles/tomorrow-night.min.css" integrity="sha256-2wL88NKUqvJi/ExflDzkzUumjUM73mcK2gBvBBeLvTk=" crossorigin="anonymous" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/highlight.min.js" integrity="sha256-KbfTjB0WZ8vvXngdpJGY3Yp3xKk+tttbqClO11anCIU=" crossorigin="anonymous"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+
+    
+    <script>
+        document.getElementById('main-nav-toggle').addEventListener('click', function () {
+            var header = document.getElementById('header');
+            if (header.classList.contains('mobile-on')) {
+                header.classList.remove('mobile-on');
+            } else {
+                header.classList.add('mobile-on');
+            }
+        });
+    </script>
+</footer>
+
+</div>
+</body>
+</html>

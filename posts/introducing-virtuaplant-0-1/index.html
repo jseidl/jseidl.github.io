@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+  <meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'>
+<meta name='description' content='Today I&#8217;m releasing a project I&#8217;ve been working on for the past week which I called VirtuaPlant (yeah I now, I suck at giving names).
+From the project page:
+ VirtuaPlant is a Industrial Control Systems simulator which adds a “similar to real-world control logic” to the basic “read/write tags” feature of most PLC simulators. Paired with a game library and 2d physics engine, VirtuaPlant is able to present a GUI simulating the “world view” behind the control system allowing the user to have a vision of the would-be actions behind the control systems.'>
+
+<meta property='og:title' content='Introducing VirtuaPlant 0.1 • wroot'>
+<meta property='og:description' content='Today I&#8217;m releasing a project I&#8217;ve been working on for the past week which I called VirtuaPlant (yeah I now, I suck at giving names).
+From the project page:
+ VirtuaPlant is a Industrial Control Systems simulator which adds a “similar to real-world control logic” to the basic “read/write tags” feature of most PLC simulators. Paired with a game library and 2d physics engine, VirtuaPlant is able to present a GUI simulating the “world view” behind the control system allowing the user to have a vision of the would-be actions behind the control systems.'>
+<meta property='og:url' content='http://wroot.org/posts/introducing-virtuaplant-0-1/'>
+<meta property='og:site_name' content='wroot'>
+<meta property='og:type' content='article'><meta property='article:section' content='Posts'><meta property='article:tag' content='chipmunk'><meta property='article:tag' content='gtk'><meta property='article:tag' content='ics'><meta property='article:tag' content='modbus'><meta property='article:tag' content='plc'><meta property='article:tag' content='pymunk'><meta property='article:tag' content='python'><meta property='article:tag' content='scada'><meta property='article:tag' content='simulator'><meta property='article:tag' content='software'><meta property='article:published_time' content='2015-03-30T14:13:12Z'/><meta property='article:modified_time' content='2015-03-30T14:13:12Z'/><meta name='twitter:card' content='summary'><meta name='twitter:site' content='@jseidl'>
+
+<meta name="generator" content="Hugo 0.53" />
+
+  <title>Introducing VirtuaPlant 0.1 • wroot</title>
+  <link rel='canonical' href='http://wroot.org/posts/introducing-virtuaplant-0-1/'>
+  
+  
+  <link rel='icon' href='/favicon.ico'><link rel='stylesheet' href='/webfonts/ptserif/main.css'><link rel='stylesheet' href='/webfonts/source-code-pro/main.css'><link rel='stylesheet' href='/css/style.css'>
+  
+
+</head>
+
+
+<body>
+<div id="container">
+    <header id="header">
+    <div id="header-outer" class="outer">
+        <div id="header-inner" class="inner">
+            <a id="main-nav-toggle" class="nav-icon" href="javascript:;"></a>
+            <a id="logo" class="logo-text" href="http://wroot.org/">wroot</a>
+            <nav id="main-nav">
+                
+                <a class="main-nav-link" href="/about/">About</a>
+                
+                <a class="main-nav-link" href="/talks/">Talks</a>
+                
+                <a class="main-nav-link" href="/projects/">Projects</a>
+                
+                <a class="main-nav-link" href="/press/">Press</a>
+                
+                <a class="main-nav-link" href="https://twitter.com/jseidl">Twitter</a>
+                
+                <a class="main-nav-link" href="https://www.linkedin.com/in/janseidl">LinkedIn</a>
+                
+                <a class="main-nav-link" href="http://github.com/jseidl">GitHub</a>
+                
+                <a class="main-nav-link" href="http://www.slideshare.net/jseidl/">SlideShare</a>
+                
+            </nav>
+            <nav id="sub-nav">
+                <div id="search-form-wrap">
+                </div>
+            </nav>
+        </div>
+    </div>
+</header>
+    <section id="main" class="outer">
+        <article class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+        <header class="article-header">
+            <h1 class="article-title" itemprop="name">Introducing VirtuaPlant 0.1</h1>
+        </header>
+        
+        <div class="article-meta">
+            
+            <a href="/posts/introducing-virtuaplant-0-1/" class="article-date">
+                <time datetime='2015-03-30T14:13:12.000&#43;00:00' itemprop="datePublished">2015-03-30</time>
+            </a>
+            
+            
+            
+            <div class="post-categories">
+                <div class="article-category">
+                    
+                    
+                    <a class="article-category-link" href="http://wroot.org//categories/scada/ics">SCADA/ICS</a>
+                    
+                </div>
+            </div>
+            
+            
+        </div>
+        <div class="article-entry" itemprop="articleBody">
+            
+
+<p>Today I&#8217;m releasing a project I&#8217;ve been working on for the past week which I called VirtuaPlant (yeah I now, I suck at giving names).</p>
+
+<p><em>From the <a href="/projects/virtuaplant">project page</a>:</em></p>
+
+<blockquote>
+<p>VirtuaPlant is a Industrial Control Systems simulator which adds a “similar to real-world control logic” to the basic “read/write tags” feature of most PLC simulators. Paired with a game library and 2d physics engine, VirtuaPlant is able to present a <acronym title="Graphical User Interface">GUI</acronym> simulating the “world view” behind the control system allowing the user to have a vision of the would-be actions behind the control systems.</p>
+</blockquote>
+
+<p>This first version features a dead simple single process of filling bottles with small pellets (It was supposed to be liquid but I still haven&#8217;t figured out how to deal with liquids on the engine) but the <em>fun is guaranteed</em>!</p>
+
+<h2 id="motivation">Motivation</h2>
+
+<p>The idea came after receiving the billionth email asking for recommendations for a PLC simulator, since I dislike the idea of simply recommending one of the soft PLCs with no logic inside which simply allows the user to read and write stuff, I&#8217;ve decided to write something more which contained some logic and also allowed the user to see the effects of their actions.</p>
+
+<p>Then while doing my daily readings I&#8217;ve stumbled upon <a href="http://electrical-engineering-portal.com/plc-implementation-of-the-bottle-filling-application" title="PLC implementation of the bottle-filling application" target="_blank">this technical article</a> and thought that it could easily be reproducible over software. Enter VirtuaPlant!</p>
+
+<h2 id="just-shut-up-show-me-the-goodies">Just shut up, show me the goodies!</h2>
+
+<p>The main screen is the &#8220;game screen&#8221; or &#8220;world view&#8221; which simulates the real world being controlled by the PLC. This uses the physics engine to render the actions and also features a modbus server &#8220;connected&#8221; to it.</p>
+
+<p><img src="https://wroot.org/wp/wp-content/uploads/2015/03/worldview.png" alt="Fill, fill, fill!" width="602" height="386" class="aligncenter size-full wp-image-52044" srcset="https://wroot.org/wp/wp-content/uploads/2015/03/worldview.png 602w, https://wroot.org/wp/wp-content/uploads/2015/03/worldview-300x192.png 300w" sizes="(max-width: 602px) 100vw, 602px" /></p>
+
+<p>I&#8217;ve also made a poor-man&#8217;s HMI to get the field-feel, give feedback on the TAGs status and provide minimum control (Start/Stop). This has a modbus client connected over TCP the modbus server (PLC) on the World View.</p>
+
+<p><img src="https://wroot.org/wp/wp-content/uploads/2015/03/hmi.png" alt="Still less ugly than most HMIs I&#039;ve seen on field" width="331" height="369" class="aligncenter size-full wp-image-52040" srcset="https://wroot.org/wp/wp-content/uploads/2015/03/hmi.png 331w, https://wroot.org/wp/wp-content/uploads/2015/03/hmi-269x300.png 269w" sizes="(max-width: 331px) 100vw, 331px" /></p>
+
+<p>And the cherry on top, some attack scripts to make everything a mess! Make the nozzle open all the time flooding everything, or the motor on all the time making all the bottles empty or stopping the whole process.</p>
+
+<p><img src="https://wroot.org/wp/wp-content/uploads/2015/03/spill.png" alt="Spill all the things!" width="602" height="386" class="aligncenter size-full wp-image-52046" srcset="https://wroot.org/wp/wp-content/uploads/2015/03/spill.png 602w, https://wroot.org/wp/wp-content/uploads/2015/03/spill-300x192.png 300w" sizes="(max-width: 602px) 100vw, 602px" /></p>
+
+<h2 id="demo">Demo</h2>
+
+<p>Here&#8217;s a video of VirtuaPlant in action:</p>
+
+
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+  <iframe src="//www.youtube.com/embed/kAfV8acCwfw" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
+</div>
+
+
+<h2 id="i-wanna-get-it-gimme">I wanna get it! Gimme!</h2>
+
+<p>Rush to the <a href="/projects/virtuaplant">project page</a> to find out more about the project, get the download links and instructions.</p>
+
+<h2 id="help-wanted">Help wanted</h2>
+
+<p>If you know pybox2d or are a talented designer, your help is needed in order to make VirtuaPlant even better!</p>
+
+<p>The following improvements are to be made:</p>
+
+<ul>
+<li>Better UI for World View and HMI</li>
+<li>Move from Chipmunk to Box2d</li>
+<li>Create more plant scenarios</li>
+</ul>
+
+<p>Contact me if you feel like you could help on these matters!</p>
+
+        </div>
+
+        
+        
+        <div class="article-toc" >
+            <h3>Contents</h3>
+            <nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#motivation">Motivation</a></li>
+<li><a href="#just-shut-up-show-me-the-goodies">Just shut up, show me the goodies!</a></li>
+<li><a href="#demo">Demo</a></li>
+<li><a href="#i-wanna-get-it-gimme">I wanna get it! Gimme!</a></li>
+<li><a href="#help-wanted">Help wanted</a></li>
+</ul></li>
+</ul>
+</nav>
+        </div>
+        
+        
+
+        
+
+
+        
+        <footer class="article-footer">
+            <ul class="article-tag-list">
+                
+                <li class="article-tag-list-item">
+                    <a class="article-tag-list-link" href="http://wroot.org//tags/chipmunk">chipmunk
+                    </a>
+                </li>
+                
+                <li class="article-tag-list-item">
+                    <a class="article-tag-list-link" href="http://wroot.org//tags/gtk">gtk
+                    </a>
+                </li>
+                
+                <li class="article-tag-list-item">
+                    <a class="article-tag-list-link" href="http://wroot.org//tags/ics">ics
+                    </a>
+                </li>
+                
+                <li class="article-tag-list-item">
+                    <a class="article-tag-list-link" href="http://wroot.org//tags/modbus">modbus
+                    </a>
+                </li>
+                
+                <li class="article-tag-list-item">
+                    <a class="article-tag-list-link" href="http://wroot.org//tags/plc">plc
+                    </a>
+                </li>
+                
+                <li class="article-tag-list-item">
+                    <a class="article-tag-list-link" href="http://wroot.org//tags/pymunk">pymunk
+                    </a>
+                </li>
+                
+                <li class="article-tag-list-item">
+                    <a class="article-tag-list-link" href="http://wroot.org//tags/python">python
+                    </a>
+                </li>
+                
+                <li class="article-tag-list-item">
+                    <a class="article-tag-list-link" href="http://wroot.org//tags/scada">scada
+                    </a>
+                </li>
+                
+                <li class="article-tag-list-item">
+                    <a class="article-tag-list-link" href="http://wroot.org//tags/simulator">simulator
+                    </a>
+                </li>
+                
+                <li class="article-tag-list-item">
+                    <a class="article-tag-list-link" href="http://wroot.org//tags/software">software
+                    </a>
+                </li>
+                
+            </ul>
+        </footer>
+        
+    </div>
+    <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "wroot" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+    <nav id="article-nav">
+    
+    <a href="/posts/babadook-connection-less-powershell-persistent-and-resilient-backdoor/" id="article-nav-newer" class="article-nav-link-wrap">
+        <div class="article-nav-title"><span>&lt;</span>&nbsp;
+            Babadook: Connection-less Powershell Persistent and Resilient “Backdoor”
+        </div>
+    </a>
+    
+    
+    <a href="/projects/virtuaplant/" id="article-nav-older" class="article-nav-link-wrap">
+        <div class="article-nav-title">VirtuaPlant&nbsp;<span>&gt;</span></div>
+    </a>
+    
+</nav>
+</article>
+
+        
+    </section>
+    <footer id="footer">
+    <div class="outer">
+        <div id="footer-info" class="inner">
+            &copy; 2019 wroot&nbsp;
+            Powered by <a href="https://gohugo.io" target="_blank">Hugo</a> with (a slightly modified) theme <a href="https://github.com/carsonip/hugo-theme-minos">Minos</a>
+        </div>
+    </div>
+    
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/styles/tomorrow-night.min.css" integrity="sha256-2wL88NKUqvJi/ExflDzkzUumjUM73mcK2gBvBBeLvTk=" crossorigin="anonymous" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/highlight.min.js" integrity="sha256-KbfTjB0WZ8vvXngdpJGY3Yp3xKk+tttbqClO11anCIU=" crossorigin="anonymous"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+
+    
+    <script>
+        document.getElementById('main-nav-toggle').addEventListener('click', function () {
+            var header = document.getElementById('header');
+            if (header.classList.contains('mobile-on')) {
+                header.classList.remove('mobile-on');
+            } else {
+                header.classList.add('mobile-on');
+            }
+        });
+    </script>
+</footer>
+
+</div>
+</body>
+</html>

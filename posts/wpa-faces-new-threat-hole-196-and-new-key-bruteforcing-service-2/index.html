@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+  <meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'>
+<meta name='description' content='WPA was hit hard these days by a rumor of a new threat called &#8216;Hole 196&#8217;.
+The hole would allow GTK (Group Temporal Key) spoofing forcing users to send the rogue AP their private key information leading to a awesome no-footprinted (medium is over air!) man-in-the-middle attacks.
+To understand transient keys over WPA, Md Sohail Ahmad from AirTight said:
+ WPA2 uses two types of keys: 1) Pairwise Transient Key (PTK), which is unique to each client, for protecting unicast traffic; and 2) Group Temporal Key (GTK) to protect broadcast data sent to multiple clients in a network.'>
+
+<meta property='og:title' content='WPA faces new threat ‘Hole 196’ and new key bruteforcing service • wroot'>
+<meta property='og:description' content='WPA was hit hard these days by a rumor of a new threat called &#8216;Hole 196&#8217;.
+The hole would allow GTK (Group Temporal Key) spoofing forcing users to send the rogue AP their private key information leading to a awesome no-footprinted (medium is over air!) man-in-the-middle attacks.
+To understand transient keys over WPA, Md Sohail Ahmad from AirTight said:
+ WPA2 uses two types of keys: 1) Pairwise Transient Key (PTK), which is unique to each client, for protecting unicast traffic; and 2) Group Temporal Key (GTK) to protect broadcast data sent to multiple clients in a network.'>
+<meta property='og:url' content='http://wroot.org/posts/wpa-faces-new-threat-hole-196-and-new-key-bruteforcing-service-2/'>
+<meta property='og:site_name' content='wroot'>
+<meta property='og:type' content='article'><meta property='article:section' content='Posts'><meta property='article:tag' content='bruteforce'><meta property='article:tag' content='cracking'><meta property='article:tag' content='mitm'><meta property='article:tag' content='wifi'><meta property='article:tag' content='wpa'><meta property='article:published_time' content='2010-07-28T16:30:14Z'/><meta property='article:modified_time' content='2010-07-28T16:30:14Z'/><meta name='twitter:card' content='summary'><meta name='twitter:site' content='@jseidl'>
+
+<meta name="generator" content="Hugo 0.53" />
+
+  <title>WPA faces new threat ‘Hole 196’ and new key bruteforcing service • wroot</title>
+  <link rel='canonical' href='http://wroot.org/posts/wpa-faces-new-threat-hole-196-and-new-key-bruteforcing-service-2/'>
+  
+  
+  <link rel='icon' href='/favicon.ico'><link rel='stylesheet' href='/webfonts/ptserif/main.css'><link rel='stylesheet' href='/webfonts/source-code-pro/main.css'><link rel='stylesheet' href='/css/style.css'>
+  
+
+</head>
+
+
+<body>
+<div id="container">
+    <header id="header">
+    <div id="header-outer" class="outer">
+        <div id="header-inner" class="inner">
+            <a id="main-nav-toggle" class="nav-icon" href="javascript:;"></a>
+            <a id="logo" class="logo-text" href="http://wroot.org/">wroot</a>
+            <nav id="main-nav">
+                
+                <a class="main-nav-link" href="/about/">About</a>
+                
+                <a class="main-nav-link" href="/talks/">Talks</a>
+                
+                <a class="main-nav-link" href="/projects/">Projects</a>
+                
+                <a class="main-nav-link" href="/press/">Press</a>
+                
+                <a class="main-nav-link" href="https://twitter.com/jseidl">Twitter</a>
+                
+                <a class="main-nav-link" href="https://www.linkedin.com/in/janseidl">LinkedIn</a>
+                
+                <a class="main-nav-link" href="http://github.com/jseidl">GitHub</a>
+                
+                <a class="main-nav-link" href="http://www.slideshare.net/jseidl/">SlideShare</a>
+                
+            </nav>
+            <nav id="sub-nav">
+                <div id="search-form-wrap">
+                </div>
+            </nav>
+        </div>
+    </div>
+</header>
+    <section id="main" class="outer">
+        <article class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+        <header class="article-header">
+            <h1 class="article-title" itemprop="name">WPA faces new threat ‘Hole 196’ and new key bruteforcing service</h1>
+        </header>
+        
+        <div class="article-meta">
+            
+            <a href="/posts/wpa-faces-new-threat-hole-196-and-new-key-bruteforcing-service-2/" class="article-date">
+                <time datetime='2010-07-28T16:30:14.000&#43;00:00' itemprop="datePublished">2010-07-28</time>
+            </a>
+            
+            
+            
+            <div class="post-categories">
+                <div class="article-category">
+                    
+                    
+                    <a class="article-category-link" href="http://wroot.org//categories/network-security">Network Security</a>
+                    
+                </div>
+            </div>
+            
+            
+        </div>
+        <div class="article-entry" itemprop="articleBody">
+            <p>WPA <a href="http://wifinetnews.com/archives/2010/07/researchers_hints_8021x_wpa2_flaw.html" title="Researcher Gives Clues about WPA2 Flaw">was</a> <a href="http://www.networkworld.com/newsletters/wireless/2010/072610wireless1.html" title="WPA2 vulnerability found ">hit</a> <a href="http://www.darknet.org.uk/2010/07/wpa2-vulnerability-discovered-hole-196-a-flaw-in-gtk-group-temporal-key/" title="WPA2 Vulnerability Discovered – “Hole 196″ – A Flaw In GTK (Group Temporal Key)">hard</a> these days by a rumor of a new threat called &#8216;Hole 196&#8217;.</p>
+
+<p>The hole would allow GTK (Group Temporal Key) spoofing forcing users to send the rogue AP their private key information leading to a awesome no-footprinted (medium is over air!) <a href="/tag/mitm">man-in-the-middle</a> attacks.</p>
+
+<p>To understand transient keys over WPA, Md Sohail Ahmad from AirTight said:</p>
+
+<blockquote>
+<p>WPA2 uses two types of keys: 1) Pairwise Transient Key (PTK), which is unique to each client, for protecting unicast traffic; and 2) Group Temporal Key (GTK) to protect broadcast data sent to multiple clients in a network. PTKs can detect address spoofing and data forgery. &#8220;GTKs do not have this property,&#8221; according to page 196 of the IEEE 802.11 standard. (&#8230;) Because a client has the GTK protocol for receiving broadcast traffic, the user of that client device could exploit GTK to create its own broadcast packet. From there, clients will respond to the sending MAC address with their own private key information.</p>
+</blockquote>
+
+<p>The solution would be some kind of GTK signing so it could be validated though the endpoint (holding the PTK) protecting itself from this spoof attack.</p>
+
+<p><a href="http://wifinetnews.com/archives/2010/07/researchers_hints_8021x_wpa2_flaw.html#comments">The discussion</a> now is around if it is really a flaw/threat or is just another shenanigan from <a href="http://www.airtightnetworks.com/WPA2-Hole196">AirTight</a> to gain attention from venture fundings, but it seems (this time) to be a legitimate issue.</p>
+
+<p>I&#8217;ve read on <a href="http://www.schneier.com/blog/archives/2010/07/wpa_cracking_in.html">Bruce</a> that a new service called &#8220;<a href="http://www.wpacracker.com/index.html">WPA Cracker</a>&#8220;. The service consists into <a href="/tag/bruteforce">brute-forcing</a> your WPA keys with (a rich and huge database of) dictionary attacks, in many languages on their cracking-cluster of several machines.</p>
+
+<p>Back in 2008, <a href="http://blogs.techrepublic.com.com/security/?p=702">Chad Perrin has discussed</a> that cloud computing could be used to distributed cracking / bruteforcing. Some projects have managed that like <a href="http://www.freerainbowtables.com/">Free Rainbow Tables</a> (<a href="http://boinc.freerainbowtables.com/distrrtgen/">DistRTGen</a> @ Boinc).</p>
+
+<p>The Church of WiFi maintains a huge database of WPA Rainbow Tables but the caveat is that keys are salted with the network&#8217;s <acronym title="Service set identifiier">SSID</acronym>.</p>
+
+<blockquote>
+<p>Yes, the Church Of Wifi has put a large rainbow table collection online. However, there are a few ways in which this collection has not met our needs. The first is that since each handshake is salted with the ESSID of the network, you have to build a unique set of rainbow tables for each network that you’d potentially like to audit. The Church Of Wifi has gone to heroic efforts to build tables for the 1000 most popular ESSIDs, but we find that this is often not enough. If someone has enabled WPA encryption on their wireless network, chances are that they’ve changed their ESSID to something that’s not very common as well.</p>
+
+<p>Additionally, since they had to build so many sets, they had to limit the size of their dictionary in order to keep the resulting tables manageable. We feel that 1,000,000 words is really not large enough to do a comprehensive search, and that the way the dictionary was constructed discounts some of the specifics for WPA network password requirements. WPA Cracker provides a service that can crack the PSK of a network with any ESSID, using a dictionary that is several orders of magnitude larger.</p>
+</blockquote>
+
+<p><em>From <a href="http://www.wpacracker.com/faq.html#3">WPA Cracker&#8217;s <acronym title="Frequently Asked Questions">FAQ</acronym> on &#8220;Aren&#8217;t there Rainbow Tables?&#8221;</a></em></p>
+
+<p>That&#8217;s a good approach since keys tend to have a fixed size (or better, users tend to make them the least necessary to attend the requisites) so you don&#8217;t spend computational power trying password that wouldn&#8217;t fit them.</p>
+
+<p>WPA Cracker may not be a threat at all, since even with a huge cluster it&#8217;s limited do dictionary attacks. If you use a dictionary password, you <em>deserve</em> to be cracked.</p>
+
+        </div>
+
+        
+        
+        
+
+        
+
+
+        
+        <footer class="article-footer">
+            <ul class="article-tag-list">
+                
+                <li class="article-tag-list-item">
+                    <a class="article-tag-list-link" href="http://wroot.org//tags/bruteforce">bruteforce
+                    </a>
+                </li>
+                
+                <li class="article-tag-list-item">
+                    <a class="article-tag-list-link" href="http://wroot.org//tags/cracking">cracking
+                    </a>
+                </li>
+                
+                <li class="article-tag-list-item">
+                    <a class="article-tag-list-link" href="http://wroot.org//tags/mitm">mitm
+                    </a>
+                </li>
+                
+                <li class="article-tag-list-item">
+                    <a class="article-tag-list-link" href="http://wroot.org//tags/wifi">wifi
+                    </a>
+                </li>
+                
+                <li class="article-tag-list-item">
+                    <a class="article-tag-list-link" href="http://wroot.org//tags/wpa">wpa
+                    </a>
+                </li>
+                
+            </ul>
+        </footer>
+        
+    </div>
+    <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "wroot" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+    <nav id="article-nav">
+    
+    <a href="/posts/anatomy-of-the-w32-stuxnet-scada-threat/" id="article-nav-newer" class="article-nav-link-wrap">
+        <div class="article-nav-title"><span>&lt;</span>&nbsp;
+            Anatomy of the W32.Stuxnet SCADA threat
+        </div>
+    </a>
+    
+    
+    <a href="/posts/stuxnet-targets-scada-systems-via-usb-drives-vectors/" id="article-nav-older" class="article-nav-link-wrap">
+        <div class="article-nav-title">Stuxnet targets SCADA systems via USB drives vectors&nbsp;<span>&gt;</span></div>
+    </a>
+    
+</nav>
+</article>
+
+        
+    </section>
+    <footer id="footer">
+    <div class="outer">
+        <div id="footer-info" class="inner">
+            &copy; 2019 wroot&nbsp;
+            Powered by <a href="https://gohugo.io" target="_blank">Hugo</a> with (a slightly modified) theme <a href="https://github.com/carsonip/hugo-theme-minos">Minos</a>
+        </div>
+    </div>
+    
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/styles/tomorrow-night.min.css" integrity="sha256-2wL88NKUqvJi/ExflDzkzUumjUM73mcK2gBvBBeLvTk=" crossorigin="anonymous" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/highlight.min.js" integrity="sha256-KbfTjB0WZ8vvXngdpJGY3Yp3xKk+tttbqClO11anCIU=" crossorigin="anonymous"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+
+    
+    <script>
+        document.getElementById('main-nav-toggle').addEventListener('click', function () {
+            var header = document.getElementById('header');
+            if (header.classList.contains('mobile-on')) {
+                header.classList.remove('mobile-on');
+            } else {
+                header.classList.add('mobile-on');
+            }
+        });
+    </script>
+</footer>
+
+</div>
+</body>
+</html>

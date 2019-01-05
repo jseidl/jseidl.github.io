@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Shared Hosting on wroot</title>
+    <link>http://wroot.org/tags/shared-hosting/</link>
+    <description>Recent content in Shared Hosting on wroot</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Wed, 14 Dec 2011 17:40:00 +0000</lastBuildDate>
+    
+	<atom:link href="http://wroot.org/tags/shared-hosting/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Shared-hosting accounts victims of lame directory permissions</title>
+      <link>http://wroot.org/posts/shared-hosting-accounts-victims-of-lame-directory-permissions/</link>
+      <pubDate>Wed, 14 Dec 2011 17:40:00 +0000</pubDate>
+      
+      <guid>http://wroot.org/posts/shared-hosting-accounts-victims-of-lame-directory-permissions/</guid>
+      <description>From a few months some clients started to complain about their shared-hosting accounts being amazingly owned even if their PHP applications (WordPress mostly) were totally up to date.
+The malware got into most of the PHP files including a PHP snippet that would eval and decode a base64-encoded string containing a script declaration loading Javascript from outside. This Javascript usually initiates download of .exe&amp;#8217;s and stuff.
+A friend&amp;#8217;s account got hacked a few days back by this very same technique.</description>
+    </item>
+    
+  </channel>
+</rss>

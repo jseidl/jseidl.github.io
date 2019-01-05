@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Access Control on wroot</title>
+    <link>http://wroot.org/categories/access-control/</link>
+    <description>Recent content in Access Control on wroot</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Wed, 14 Dec 2011 17:40:00 +0000</lastBuildDate>
+    
+	<atom:link href="http://wroot.org/categories/access-control/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Shared-hosting accounts victims of lame directory permissions</title>
+      <link>http://wroot.org/posts/shared-hosting-accounts-victims-of-lame-directory-permissions/</link>
+      <pubDate>Wed, 14 Dec 2011 17:40:00 +0000</pubDate>
+      
+      <guid>http://wroot.org/posts/shared-hosting-accounts-victims-of-lame-directory-permissions/</guid>
+      <description>From a few months some clients started to complain about their shared-hosting accounts being amazingly owned even if their PHP applications (WordPress mostly) were totally up to date.
+The malware got into most of the PHP files including a PHP snippet that would eval and decode a base64-encoded string containing a script declaration loading Javascript from outside. This Javascript usually initiates download of .exe&amp;#8217;s and stuff.
+A friend&amp;#8217;s account got hacked a few days back by this very same technique.</description>
+    </item>
+    
+    <item>
+      <title>Online password generation utility from PcTools</title>
+      <link>http://wroot.org/posts/online-password-generation-utility-from-pctools/</link>
+      <pubDate>Mon, 21 Jun 2010 20:25:21 +0000</pubDate>
+      
+      <guid>http://wroot.org/posts/online-password-generation-utility-from-pctools/</guid>
+      <description>Here&amp;#8217;s a good online password generator from PcTools that generates passwords based on various parameters such as password length; letters, numbers, special characters inclusion; hability to exclude similar characters etc.
+Good to have bookmarked! There&amp;#8217;s also desktop version (Windows) of the password generator in the &amp;#8220;Password Utilities&amp;#8221; software provided by PcTools.</description>
+    </item>
+    
+    <item>
+      <title>Command-line sudo and chmod under Windows</title>
+      <link>http://wroot.org/posts/command-line-sudo-and-chmod-under-windows/</link>
+      <pubDate>Fri, 21 May 2010 04:51:04 +0000</pubDate>
+      
+      <guid>http://wroot.org/posts/command-line-sudo-and-chmod-under-windows/</guid>
+      <description>I&amp;#8217;m quite not a fan of GUI utilities but I&amp;#8217;m a great fan of command-line and batch processing.
+I&amp;#8217;ve recently changed profiles under a Windows box and had to move some files over them. At first wondered about logging in as the old user, copy all the files to a temp folder, log back as my new user and copy them to my new folder. But hell, too much time spent.</description>
+    </item>
+    
+  </channel>
+</rss>

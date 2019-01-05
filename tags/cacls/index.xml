@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Cacls on wroot</title>
+    <link>http://wroot.org/tags/cacls/</link>
+    <description>Recent content in Cacls on wroot</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Fri, 21 May 2010 04:51:04 +0000</lastBuildDate>
+    
+	<atom:link href="http://wroot.org/tags/cacls/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Command-line sudo and chmod under Windows</title>
+      <link>http://wroot.org/posts/command-line-sudo-and-chmod-under-windows/</link>
+      <pubDate>Fri, 21 May 2010 04:51:04 +0000</pubDate>
+      
+      <guid>http://wroot.org/posts/command-line-sudo-and-chmod-under-windows/</guid>
+      <description>I&amp;#8217;m quite not a fan of GUI utilities but I&amp;#8217;m a great fan of command-line and batch processing.
+I&amp;#8217;ve recently changed profiles under a Windows box and had to move some files over them. At first wondered about logging in as the old user, copy all the files to a temp folder, log back as my new user and copy them to my new folder. But hell, too much time spent.</description>
+    </item>
+    
+  </channel>
+</rss>

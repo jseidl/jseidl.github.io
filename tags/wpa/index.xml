@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Wpa on wroot</title>
+    <link>http://wroot.org/tags/wpa/</link>
+    <description>Recent content in Wpa on wroot</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Wed, 28 Jul 2010 16:30:14 +0000</lastBuildDate>
+    
+	<atom:link href="http://wroot.org/tags/wpa/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>WPA faces new threat ‘Hole 196’ and new key bruteforcing service</title>
+      <link>http://wroot.org/posts/wpa-faces-new-threat-hole-196-and-new-key-bruteforcing-service-2/</link>
+      <pubDate>Wed, 28 Jul 2010 16:30:14 +0000</pubDate>
+      
+      <guid>http://wroot.org/posts/wpa-faces-new-threat-hole-196-and-new-key-bruteforcing-service-2/</guid>
+      <description>WPA was hit hard these days by a rumor of a new threat called &amp;#8216;Hole 196&amp;#8217;.
+The hole would allow GTK (Group Temporal Key) spoofing forcing users to send the rogue AP their private key information leading to a awesome no-footprinted (medium is over air!) man-in-the-middle attacks.
+To understand transient keys over WPA, Md Sohail Ahmad from AirTight said:
+ WPA2 uses two types of keys: 1) Pairwise Transient Key (PTK), which is unique to each client, for protecting unicast traffic; and 2) Group Temporal Key (GTK) to protect broadcast data sent to multiple clients in a network.</description>
+    </item>
+    
+  </channel>
+</rss>

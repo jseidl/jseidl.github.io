@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Cracking on wroot</title>
+    <link>http://wroot.org/tags/cracking/</link>
+    <description>Recent content in Cracking on wroot</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Wed, 28 Jul 2010 16:30:14 +0000</lastBuildDate>
+    
+	<atom:link href="http://wroot.org/tags/cracking/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>WPA faces new threat ‘Hole 196’ and new key bruteforcing service</title>
+      <link>http://wroot.org/posts/wpa-faces-new-threat-hole-196-and-new-key-bruteforcing-service-2/</link>
+      <pubDate>Wed, 28 Jul 2010 16:30:14 +0000</pubDate>
+      
+      <guid>http://wroot.org/posts/wpa-faces-new-threat-hole-196-and-new-key-bruteforcing-service-2/</guid>
+      <description>WPA was hit hard these days by a rumor of a new threat called &amp;#8216;Hole 196&amp;#8217;.
+The hole would allow GTK (Group Temporal Key) spoofing forcing users to send the rogue AP their private key information leading to a awesome no-footprinted (medium is over air!) man-in-the-middle attacks.
+To understand transient keys over WPA, Md Sohail Ahmad from AirTight said:
+ WPA2 uses two types of keys: 1) Pairwise Transient Key (PTK), which is unique to each client, for protecting unicast traffic; and 2) Group Temporal Key (GTK) to protect broadcast data sent to multiple clients in a network.</description>
+    </item>
+    
+    <item>
+      <title>MDK3 goes bruteforcing Wireless SSIDs</title>
+      <link>http://wroot.org/posts/mdk3-goes-bruteforcing-wireless-ssids/</link>
+      <pubDate>Wed, 09 Jun 2010 15:03:38 +0000</pubDate>
+      
+      <guid>http://wroot.org/posts/mdk3-goes-bruteforcing-wireless-ssids/</guid>
+      <description>One good practice is to disable your SSID broadcast so you don&amp;#8217;t show up on the victims list. Although this doesn&amp;#8217;t make you completely invisible, it does aid reducing ease of location. (Networks can still be located by BSSIDs).
+MDK3 was written by ASPj to bruteforce network SSIDs (even with wordlists).
+Tape has done some testings around and described it all on his blog post. It has some videos too of the attack in progress on a 3-character-lenght SSID.</description>
+    </item>
+    
+  </channel>
+</rss>

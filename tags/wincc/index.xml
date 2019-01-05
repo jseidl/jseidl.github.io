@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Wincc on wroot</title>
+    <link>http://wroot.org/tags/wincc/</link>
+    <description>Recent content in Wincc on wroot</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Fri, 06 Aug 2010 13:43:41 +0000</lastBuildDate>
+    
+	<atom:link href="http://wroot.org/tags/wincc/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Anatomy of the W32.Stuxnet SCADA threat</title>
+      <link>http://wroot.org/posts/anatomy-of-the-w32-stuxnet-scada-threat/</link>
+      <pubDate>Fri, 06 Aug 2010 13:43:41 +0000</pubDate>
+      
+      <guid>http://wroot.org/posts/anatomy-of-the-w32-stuxnet-scada-threat/</guid>
+      <description>Symantec released an in-depth analysis of W32.Stuxnet, reviewed through IDA-PRO. The analysis shows off the staged infection process, the unusual injection of legitimate services instead of issuing LoadLibrary calls, core encryption and exported functions.
+Tofino Security (specialized on SCADA security) has released an excellent white paper on the case (requires [free] registration). If you are a Malware Researcher / Reverse Engineer or just curious, I totally recommend it.
+There&amp;#8217;s code, great explanation, images, graphs and such explaining it all the process from infection, rooting and the propper malware code.</description>
+    </item>
+    
+    <item>
+      <title>Stuxnet targets SCADA systems via USB drives vectors</title>
+      <link>http://wroot.org/posts/stuxnet-targets-scada-systems-via-usb-drives-vectors/</link>
+      <pubDate>Fri, 23 Jul 2010 16:19:06 +0000</pubDate>
+      
+      <guid>http://wroot.org/posts/stuxnet-targets-scada-systems-via-usb-drives-vectors/</guid>
+      <description>Microsoft disclosed a zero-day flaw on Windows Shell on Friday and Stuxnet (W32.Stuxnet) is already exploiting it to gain access to SCADA systems through its attack vector.
+Since SCADA systems are updated mainly by CDs or pen drives, the attack vector fits as a glove. The malware targets Siemens&amp;#8217; Simatic WinCC software and intends to steal information like projects schematics and upload them to an external website.
+From CNet:
+ Once the malware locates the data it is looking for it encodes it and attempts to upload it to a remote server.</description>
+    </item>
+    
+  </channel>
+</rss>

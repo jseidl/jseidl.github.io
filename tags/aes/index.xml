@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Aes on wroot</title>
+    <link>http://wroot.org/tags/aes/</link>
+    <description>Recent content in Aes on wroot</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Tue, 29 Jun 2010 14:58:13 +0000</lastBuildDate>
+    
+	<atom:link href="http://wroot.org/tags/aes/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Daniel Dantas’ hard drive encryption wins over FBI</title>
+      <link>http://wroot.org/posts/daniel-dantas-hard-drive-encryption-wins-over-fbi/</link>
+      <pubDate>Tue, 29 Jun 2010 14:58:13 +0000</pubDate>
+      
+      <guid>http://wroot.org/posts/daniel-dantas-hard-drive-encryption-wins-over-fbi/</guid>
+      <description>Just read it on Slashdot that FBI failed to break encryption of Daniel Dantas&amp;#8217;s hard drives.
+Daniel Dantas is a brazillian banker involved in financial frauds caught by the federal police in July 2008. The 5 hard drives siezed by the Federal Police at his apartment were cyphered with the top-notch AES encryption algorithm with a 256-bit key. Two softwares were used to manage the encryption and one of them was the widely used and known open-source tool TrueCrypt.</description>
+    </item>
+    
+  </channel>
+</rss>

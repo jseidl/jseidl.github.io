@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Obfuscation on wroot</title>
+    <link>http://wroot.org/tags/obfuscation/</link>
+    <description>Recent content in Obfuscation on wroot</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Thu, 10 Apr 2014 23:11:52 +0000</lastBuildDate>
+    
+	<atom:link href="http://wroot.org/tags/obfuscation/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Calling functions without their names in PHP</title>
+      <link>http://wroot.org/posts/calling-functions-without-their-names-in-php/</link>
+      <pubDate>Thu, 10 Apr 2014 23:11:52 +0000</pubDate>
+      
+      <guid>http://wroot.org/posts/calling-functions-without-their-names-in-php/</guid>
+      <description>Strings. Ah juicy and precious strings! It is common for malware scanners and IDPS to look for suspicious strings in network traffic and files&amp;#8230; but what if there are no strings to look for? (whaaa?)
+Today I was wondering about some features found in many interpreted languages of listing its internal functions in some sort of list/array. This way we can enumerate the [index] =&amp;gt; function_name relationship, replace all function_names on the code to their index and voilá!</description>
+    </item>
+    
+  </channel>
+</rss>

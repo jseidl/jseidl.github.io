@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Persistance on wroot</title>
+    <link>http://wroot.org/tags/persistance/</link>
+    <description>Recent content in Persistance on wroot</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Wed, 23 Sep 2015 14:13:55 +0000</lastBuildDate>
+    
+	<atom:link href="http://wroot.org/tags/persistance/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Babadook: Connection-less Powershell Persistent and Resilient “Backdoor”</title>
+      <link>http://wroot.org/posts/babadook-connection-less-powershell-persistent-and-resilient-backdoor/</link>
+      <pubDate>Wed, 23 Sep 2015 14:13:55 +0000</pubDate>
+      
+      <guid>http://wroot.org/posts/babadook-connection-less-powershell-persistent-and-resilient-backdoor/</guid>
+      <description>At my previous company I used to prank the colleagues who left their stations unlocked. I call this my &amp;#8220;internal awareness program&amp;#8221;.
+It was all fun and games at the beginning. I would leave post-its on their monitors with a friendly message &amp;#8220;You could&amp;#8217;ve been hacked&amp;#8221; but it wasn&amp;#8217;t giving the expected results. Some colleagues found it funny and started &amp;#8220;collecting&amp;#8221; my post-its. There was a guy in particular with 5 of them.</description>
+    </item>
+    
+  </channel>
+</rss>

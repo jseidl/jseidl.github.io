@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Conferences on wroot</title>
+    <link>http://wroot.org/categories/conferences/</link>
+    <description>Recent content in Conferences on wroot</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Sun, 11 Nov 2012 14:54:55 +0000</lastBuildDate>
+    
+	<atom:link href="http://wroot.org/categories/conferences/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Talking about D/DoS (again) at XVII Semana de Informática (Computer Science Week)</title>
+      <link>http://wroot.org/posts/talking-about-ddos-again-at-xvii-semana-de-informatica-computer-science-week/</link>
+      <pubDate>Sun, 11 Nov 2012 14:54:55 +0000</pubDate>
+      
+      <guid>http://wroot.org/posts/talking-about-ddos-again-at-xvii-semana-de-informatica-computer-science-week/</guid>
+      <description>I&amp;#8217;m speaking at the 17th Computer Science Week at Minas Gerais, Brazil November 24th. I&amp;#8217;ll be giving an extended version of my H2HC Talk for Computer Science students at UFV (Universidade Federal de Viçosa / Viçosa Federal University) at Minas Gerais, Brazil.
+More at my talk&amp;#8217;s summary page on the event website
+@UPDATE
+It was a great talk! Thanks for everyone that attended! Slides are on my slideshare!</description>
+    </item>
+    
+    <item>
+      <title>About Hackers 2 Hackers Conference 9th Edition</title>
+      <link>http://wroot.org/posts/about-hackers-2-hackers-conference-9th-edition/</link>
+      <pubDate>Mon, 22 Oct 2012 15:22:34 +0000</pubDate>
+      
+      <guid>http://wroot.org/posts/about-hackers-2-hackers-conference-9th-edition/</guid>
+      <description>Hi Folks,
+This last weekend was my talk on Hackers 2 Hackers Conference 9th Edition @ São Paulo, Brazil. The talk was in portuguese and the slides are available here (download pdf) and here (slideshare).
+The subject of the talk was about layer 7 denial of service techniques and tools, using haproxy and socat to create a distributed denial of service from a single node, some XSS payload for DDoS and demonstration of the GoldenEye Mobile tool released today.</description>
+    </item>
+    
+  </channel>
+</rss>

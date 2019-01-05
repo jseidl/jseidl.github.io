@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Automation on wroot</title>
+    <link>http://wroot.org/tags/automation/</link>
+    <description>Recent content in Automation on wroot</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Wed, 26 Jan 2011 02:30:48 +0000</lastBuildDate>
+    
+	<atom:link href="http://wroot.org/tags/automation/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Endpoint DLP: Is hardware access control enough?</title>
+      <link>http://wroot.org/posts/endpoint-dlp-is-hardware-access-control-enough/</link>
+      <pubDate>Wed, 26 Jan 2011 02:30:48 +0000</pubDate>
+      
+      <guid>http://wroot.org/posts/endpoint-dlp-is-hardware-access-control-enough/</guid>
+      <description>I&amp;#8217;ve stumbled on this article about using a custom-built hardware to bypass hardware enforcement on most DLP solutions available on market.
+The solution uses an Atmel&amp;#8217;s AVR microcontroller (the same on the Arduino&amp;#8216;s I&amp;#8217;ve been playing around lately) and the V-USB library to create a virtual USB device and is crafted to announce itself as HID (Human-interface device). What common hardware fits this description: the keyboard. As you are not likely to forbid keyboard access to your users (or else they wouldn&amp;#8217;t be able to type and thus work), this will gracefully pass through many enforcements.</description>
+    </item>
+    
+  </channel>
+</rss>

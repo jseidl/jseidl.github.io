@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+  <meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'>
+<meta name='description' content='In the past few days I&#8217;ve started following the work of Samy Kankar, which has some great work. Among all of them, I&#8217;ve almost-randomly picked one to play, Quickjack.
+From Samy&#8217;s project page:
+ Quickjack is a tool developed to easily create pages with the capability to clickjack users no matter where they click on the page. The tool has an extremely intuitive interface and is literally a point-and-click tool.'>
+
+<meta property='og:title' content='Playing around with Samy’s Quickjack clickjacker • wroot'>
+<meta property='og:description' content='In the past few days I&#8217;ve started following the work of Samy Kankar, which has some great work. Among all of them, I&#8217;ve almost-randomly picked one to play, Quickjack.
+From Samy&#8217;s project page:
+ Quickjack is a tool developed to easily create pages with the capability to clickjack users no matter where they click on the page. The tool has an extremely intuitive interface and is literally a point-and-click tool.'>
+<meta property='og:url' content='http://wroot.org/posts/playing-around-with-samys-quickjack-clickjacker/'>
+<meta property='og:site_name' content='wroot'>
+<meta property='og:type' content='article'><meta property='article:section' content='Posts'><meta property='article:tag' content='clickjacking'><meta property='article:tag' content='javascript'><meta property='article:published_time' content='2010-12-07T22:55:41Z'/><meta property='article:modified_time' content='2010-12-07T22:55:41Z'/><meta name='twitter:card' content='summary'><meta name='twitter:site' content='@jseidl'>
+
+<meta name="generator" content="Hugo 0.53" />
+
+  <title>Playing around with Samy’s Quickjack clickjacker • wroot</title>
+  <link rel='canonical' href='http://wroot.org/posts/playing-around-with-samys-quickjack-clickjacker/'>
+  
+  
+  <link rel='icon' href='/favicon.ico'><link rel='stylesheet' href='/webfonts/ptserif/main.css'><link rel='stylesheet' href='/webfonts/source-code-pro/main.css'><link rel='stylesheet' href='/css/style.css'>
+  
+
+</head>
+
+
+<body>
+<div id="container">
+    <header id="header">
+    <div id="header-outer" class="outer">
+        <div id="header-inner" class="inner">
+            <a id="main-nav-toggle" class="nav-icon" href="javascript:;"></a>
+            <a id="logo" class="logo-text" href="http://wroot.org/">wroot</a>
+            <nav id="main-nav">
+                
+                <a class="main-nav-link" href="/about/">About</a>
+                
+                <a class="main-nav-link" href="/talks/">Talks</a>
+                
+                <a class="main-nav-link" href="/projects/">Projects</a>
+                
+                <a class="main-nav-link" href="/press/">Press</a>
+                
+                <a class="main-nav-link" href="https://twitter.com/jseidl">Twitter</a>
+                
+                <a class="main-nav-link" href="https://www.linkedin.com/in/janseidl">LinkedIn</a>
+                
+                <a class="main-nav-link" href="http://github.com/jseidl">GitHub</a>
+                
+                <a class="main-nav-link" href="http://www.slideshare.net/jseidl/">SlideShare</a>
+                
+            </nav>
+            <nav id="sub-nav">
+                <div id="search-form-wrap">
+                </div>
+            </nav>
+        </div>
+    </div>
+</header>
+    <section id="main" class="outer">
+        <article class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+        <header class="article-header">
+            <h1 class="article-title" itemprop="name">Playing around with Samy’s Quickjack clickjacker</h1>
+        </header>
+        
+        <div class="article-meta">
+            
+            <a href="/posts/playing-around-with-samys-quickjack-clickjacker/" class="article-date">
+                <time datetime='2010-12-07T22:55:41.000&#43;00:00' itemprop="datePublished">2010-12-07</time>
+            </a>
+            
+            
+            
+            <div class="post-categories">
+                <div class="article-category">
+                    
+                    
+                    <a class="article-category-link" href="http://wroot.org//categories/malware">Malware</a>
+                    
+                </div>
+            </div>
+            
+            
+        </div>
+        <div class="article-entry" itemprop="articleBody">
+            
+
+<p>In the past few days I&#8217;ve started following the work of <a href="http://www.samy.pl/">Samy Kankar</a>, which has some great work. Among all of them, I&#8217;ve almost-randomly picked one to play, <a href="http://www.samy.pl/quickjack">Quickjack</a>.</p>
+
+<p><em>From Samy&#8217;s project page:</em></p>
+
+<blockquote>
+<p>Quickjack is a tool developed to easily create pages with the capability to clickjack users no matter where they click on the page. The tool has an extremely intuitive interface and is literally a point-and-click tool. It also allows frame slicing and other features such as referral scrubing and more.</p>
+</blockquote>
+
+<p>Quickjack provides an easy-to-use (ridiculous to use) <acronym title="Graphical User Interface">GUI</acronym> to generate the clickjacking code. Quickjacks&#8217;s clickjacking method consists on the classic <code>iframe</code> overlay.</p>
+
+<p>This is the original expanded Quickjack-generated relevant JavaScript code (comments by me):</p>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">d</span><span style="color:#f92672">=</span>document;
+
+<span style="color:#75715e">// Listen to event
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">if</span>(<span style="color:#f92672">!</span><span style="color:#a6e22e">d</span>.<span style="color:#a6e22e">all</span>) <span style="color:#a6e22e">d</span>.<span style="color:#a6e22e">captureEvents</span>(<span style="color:#a6e22e">Event</span>.<span style="color:#a6e22e">MOUSEMOVE</span>);
+<span style="color:#a6e22e">d</span>.<span style="color:#a6e22e">onmousemove</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span>(<span style="color:#a6e22e">e</span>){
+
+	<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">d</span>.<span style="color:#a6e22e">getElementById</span>(<span style="color:#e6db74">&#34;v&#34;</span>).<span style="color:#a6e22e">style</span>;
+
+        <span style="color:#75715e">// Update iframe position
+</span><span style="color:#75715e"></span>	<span style="color:#a6e22e">i</span>.<span style="color:#a6e22e">left</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">d</span>.<span style="color:#a6e22e">all</span> <span style="color:#f92672">?</span> <span style="color:#a6e22e">event</span>.<span style="color:#a6e22e">clientX</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">d</span>.<span style="color:#a6e22e">body</span>.<span style="color:#a6e22e">scrollLeft</span> <span style="color:#f92672">:</span> <span style="color:#a6e22e">e</span>.<span style="color:#a6e22e">pageX</span>;
+	<span style="color:#a6e22e">i</span>.<span style="color:#a6e22e">top</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">d</span>.<span style="color:#a6e22e">all</span> <span style="color:#f92672">?</span> <span style="color:#a6e22e">event</span>.<span style="color:#a6e22e">clientY</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">d</span>.<span style="color:#a6e22e">body</span>.<span style="color:#a6e22e">scrollTop</span> <span style="color:#f92672">:</span> <span style="color:#a6e22e">e</span>.<span style="color:#a6e22e">pageY</span>;
+};
+</code></pre></div>
+
+<p>Basically, it listens to the <code>mousemove</code> event and sets the <code>top</code> and <code>left</code> <acronym title="Cascading Style Sheets">CSS</acronym> proprierties to match the cursor&#8217;s <code>X</code> and <code>Y</code> positions.</p>
+
+<h2 id="going-further">Going further</h2>
+
+<p>Problem to my use was that, by design, Samy&#8217;s approach jacks EVERY click, even if not on an anchor. The cursor staying on <code>pointer</code> (the little hand) all the time was telling out the felony.</p>
+
+<p>In order to make a more subtle approach, I&#8217;ve hacked up Samy&#8217;s code a little to add hover element (event target) detection to apply the overlay only when hovering <code>a</code> objects.</p>
+
+<p><em>NOTE: Not tested on elements within the anchor tag.</em></p>
+
+<p><em>NOTE: Tested on IE7+ and decent browsers (FFox, Chrome).</em></p>
+
+<p><em>NOTE: On Chrome, <code>window.status</code> was successfully spoofed. Bonus!</em></p>
+
+<p><em>NOTE: Both codes (Samy and mine) works. Each one has its own objectives and fulfill them well.</em></p>
+
+<h2 id="talk-is-cheap-show-me-the-code">Talk is cheap, show me the code!</h2>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">d</span><span style="color:#f92672">=</span>document;
+
+<span style="color:#66d9ef">if</span> (<span style="color:#f92672">!</span><span style="color:#a6e22e">d</span>.<span style="color:#a6e22e">all</span>) <span style="color:#a6e22e">d</span>.<span style="color:#a6e22e">captureEvents</span>(<span style="color:#a6e22e">Event</span>.<span style="color:#a6e22e">MOUSEMOVE</span>);
+
+<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">d</span>.<span style="color:#a6e22e">getElementById</span>(<span style="color:#e6db74">&#34;v&#34;</span>).<span style="color:#a6e22e">style</span>;
+
+<span style="color:#75715e">// Set overflow from JavaScript, prevent
+</span><span style="color:#75715e">// some filters from blocking the iframe
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">i</span>.<span style="color:#a6e22e">overflow</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;hidden&#39;</span>;
+
+<span style="color:#a6e22e">d</span>.<span style="color:#a6e22e">onmousemove</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span>(<span style="color:#a6e22e">e</span>) {
+
+	<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">v_left</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">d</span>.<span style="color:#a6e22e">all</span><span style="color:#f92672">?</span><span style="color:#a6e22e">event</span>.<span style="color:#a6e22e">clientX</span><span style="color:#f92672">+</span><span style="color:#a6e22e">d</span>.<span style="color:#a6e22e">body</span>.<span style="color:#a6e22e">scrollLeft</span><span style="color:#f92672">:</span><span style="color:#a6e22e">e</span>.<span style="color:#a6e22e">pageX</span>;
+	<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">v_top</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">d</span>.<span style="color:#a6e22e">all</span><span style="color:#f92672">?</span><span style="color:#a6e22e">event</span>.<span style="color:#a6e22e">clientY</span><span style="color:#f92672">+</span><span style="color:#a6e22e">d</span>.<span style="color:#a6e22e">body</span>.<span style="color:#a6e22e">scrollTop</span><span style="color:#f92672">:</span><span style="color:#a6e22e">e</span>.<span style="color:#a6e22e">pageY</span>;
+
+	<span style="color:#75715e">// Internet Explorer offset fix
+</span><span style="color:#75715e"></span>	<span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">d</span>.<span style="color:#a6e22e">all</span>) {
+	        <span style="color:#a6e22e">v_left</span> <span style="color:#f92672">-=</span> <span style="color:#ae81ff">5</span>;
+        	<span style="color:#a6e22e">v_top</span> <span style="color:#f92672">-=</span> <span style="color:#ae81ff">5</span>;
+	}<span style="color:#75715e">//end if
+</span><span style="color:#75715e"></span>
+	<span style="color:#75715e">// Update position
+</span><span style="color:#75715e"></span>	<span style="color:#a6e22e">i</span>.<span style="color:#a6e22e">left</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">v_left</span>;
+	<span style="color:#a6e22e">i</span>.<span style="color:#a6e22e">top</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">v_top</span>;
+
+	<span style="color:#75715e">// Hides the iframe to prevent
+</span><span style="color:#75715e"></span>	<span style="color:#75715e">// pointer &#39;hand&#39; cursor from appearing
+</span><span style="color:#75715e"></span>	<span style="color:#a6e22e">i</span>.<span style="color:#a6e22e">display</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;none&#39;</span>;
+
+	<span style="color:#75715e">// Just for the old browser&#39;s long tail
+</span><span style="color:#75715e"></span>	window.<span style="color:#a6e22e">status</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">null</span>;
+
+	<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">elem</span> <span style="color:#f92672">=</span> (<span style="color:#a6e22e">d</span>.<span style="color:#a6e22e">all</span>) <span style="color:#f92672">?</span> <span style="color:#a6e22e">event</span>.<span style="color:#a6e22e">srcElement</span> <span style="color:#f92672">:</span> <span style="color:#a6e22e">e</span>.<span style="color:#a6e22e">target</span>;
+
+	<span style="color:#75715e">// If we got a link...
+</span><span style="color:#75715e"></span>	<span style="color:#66d9ef">if</span> (<span style="color:#a6e22e">elem</span>.<span style="color:#a6e22e">nodeName</span> <span style="color:#f92672">==</span> <span style="color:#e6db74">&#39;A&#39;</span>) {
+
+	    <span style="color:#75715e">// Just for the old browser&#39;s long tail
+</span><span style="color:#75715e"></span>	    window.<span style="color:#a6e22e">status</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">elem</span>.<span style="color:#a6e22e">href</span>;
+
+	    <span style="color:#75715e">// Internet Explorer needs a larger &#39;hitbox&#39;
+</span><span style="color:#75715e"></span>	    <span style="color:#a6e22e">i</span>.<span style="color:#a6e22e">width</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">10</span>;
+	    <span style="color:#a6e22e">i</span>.<span style="color:#a6e22e">height</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">10</span>;
+
+	    <span style="color:#75715e">// Deliver the evil
+</span><span style="color:#75715e"></span>	    <span style="color:#a6e22e">i</span>.<span style="color:#a6e22e">display</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;block&#39;</span>;
+	}<span style="color:#75715e">//end if
+</span><span style="color:#75715e"></span>
+};
+</code></pre></div>
+
+<p>Pretty bigger than the original huh? But, fear not! Compressed they are much all the same.</p>
+
+<p>Original Compressed (relevant snippet)</p>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">d</span><span style="color:#f92672">=</span>document;<span style="color:#66d9ef">if</span>(<span style="color:#f92672">!</span><span style="color:#a6e22e">d</span>.<span style="color:#a6e22e">all</span>)<span style="color:#a6e22e">d</span>.<span style="color:#a6e22e">captureEvents</span>(<span style="color:#a6e22e">Event</span>.<span style="color:#a6e22e">MOUSEMOVE</span>);<span style="color:#a6e22e">d</span>.<span style="color:#a6e22e">onmousemove</span><span style="color:#f92672">=</span><span style="color:#66d9ef">function</span>(<span style="color:#a6e22e">e</span>){<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">i</span><span style="color:#f92672">=</span><span style="color:#a6e22e">d</span>.<span style="color:#a6e22e">getElementById</span>(<span style="color:#e6db74">&#34;v&#34;</span>).<span style="color:#a6e22e">style</span>;<span style="color:#a6e22e">i</span>.<span style="color:#a6e22e">left</span><span style="color:#f92672">=</span><span style="color:#a6e22e">d</span>.<span style="color:#a6e22e">all</span><span style="color:#f92672">?</span><span style="color:#a6e22e">event</span>.<span style="color:#a6e22e">clientX</span><span style="color:#f92672">+</span><span style="color:#a6e22e">d</span>.<span style="color:#a6e22e">body</span>.<span style="color:#a6e22e">scrollLeft</span><span style="color:#f92672">:</span><span style="color:#a6e22e">e</span>.<span style="color:#a6e22e">pageX</span>;<span style="color:#a6e22e">i</span>.<span style="color:#a6e22e">top</span><span style="color:#f92672">=</span><span style="color:#a6e22e">d</span>.<span style="color:#a6e22e">all</span><span style="color:#f92672">?</span><span style="color:#a6e22e">event</span>.<span style="color:#a6e22e">clientY</span><span style="color:#f92672">+</span><span style="color:#a6e22e">d</span>.<span style="color:#a6e22e">body</span>.<span style="color:#a6e22e">scrollTop</span><span style="color:#f92672">:</span><span style="color:#a6e22e">e</span>.<span style="color:#a6e22e">pageY</span>};
+</code></pre></div>
+
+<p>My Hack, Compressed (relevant snippet)</p>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">d</span><span style="color:#f92672">=</span>document;<span style="color:#66d9ef">if</span>(<span style="color:#f92672">!</span><span style="color:#a6e22e">d</span>.<span style="color:#a6e22e">all</span>){<span style="color:#a6e22e">d</span>.<span style="color:#a6e22e">captureEvents</span>(<span style="color:#a6e22e">Event</span>.<span style="color:#a6e22e">MOUSEMOVE</span>)}<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">i</span><span style="color:#f92672">=</span><span style="color:#a6e22e">d</span>.<span style="color:#a6e22e">getElementById</span>(<span style="color:#e6db74">&#34;v&#34;</span>).<span style="color:#a6e22e">style</span>;<span style="color:#a6e22e">i</span>.<span style="color:#a6e22e">overflow</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;hidden&#34;</span>;<span style="color:#a6e22e">d</span>.<span style="color:#a6e22e">onmousemove</span><span style="color:#f92672">=</span><span style="color:#66d9ef">function</span>(<span style="color:#a6e22e">f</span>){<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">a</span><span style="color:#f92672">=</span><span style="color:#a6e22e">d</span>.<span style="color:#a6e22e">all</span><span style="color:#f92672">?</span><span style="color:#a6e22e">event</span>.<span style="color:#a6e22e">clientX</span><span style="color:#f92672">+</span><span style="color:#a6e22e">d</span>.<span style="color:#a6e22e">body</span>.<span style="color:#a6e22e">scrollLeft</span><span style="color:#f92672">:</span><span style="color:#a6e22e">f</span>.<span style="color:#a6e22e">pageX</span>;<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">b</span><span style="color:#f92672">=</span><span style="color:#a6e22e">d</span>.<span style="color:#a6e22e">all</span><span style="color:#f92672">?</span><span style="color:#a6e22e">event</span>.<span style="color:#a6e22e">clientY</span><span style="color:#f92672">+</span><span style="color:#a6e22e">d</span>.<span style="color:#a6e22e">body</span>.<span style="color:#a6e22e">scrollTop</span><span style="color:#f92672">:</span><span style="color:#a6e22e">f</span>.<span style="color:#a6e22e">pageY</span>;<span style="color:#66d9ef">if</span>(<span style="color:#a6e22e">d</span>.<span style="color:#a6e22e">all</span>){<span style="color:#a6e22e">a</span><span style="color:#f92672">-=</span><span style="color:#ae81ff">5</span>;<span style="color:#a6e22e">b</span><span style="color:#f92672">-=</span><span style="color:#ae81ff">5</span>}<span style="color:#a6e22e">i</span>.<span style="color:#a6e22e">left</span><span style="color:#f92672">=</span><span style="color:#a6e22e">a</span>;<span style="color:#a6e22e">i</span>.<span style="color:#a6e22e">top</span><span style="color:#f92672">=</span><span style="color:#a6e22e">b</span>;<span style="color:#a6e22e">i</span>.<span style="color:#a6e22e">display</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;none&#34;</span>;window.<span style="color:#a6e22e">status</span><span style="color:#f92672">=</span><span style="color:#66d9ef">null</span>;<span style="color:#66d9ef">var</span> <span style="color:#a6e22e">c</span><span style="color:#f92672">=</span>(<span style="color:#a6e22e">d</span>.<span style="color:#a6e22e">all</span>)<span style="color:#f92672">?</span><span style="color:#a6e22e">event</span>.<span style="color:#a6e22e">srcElement</span><span style="color:#f92672">:</span><span style="color:#a6e22e">f</span>.<span style="color:#a6e22e">target</span>;<span style="color:#66d9ef">if</span>(<span style="color:#a6e22e">c</span>.<span style="color:#a6e22e">nodeName</span><span style="color:#f92672">==</span><span style="color:#e6db74">&#34;A&#34;</span>){window.<span style="color:#a6e22e">status</span><span style="color:#f92672">=</span><span style="color:#a6e22e">c</span>.<span style="color:#a6e22e">href</span>;<span style="color:#a6e22e">i</span>.<span style="color:#a6e22e">width</span><span style="color:#f92672">=</span><span style="color:#ae81ff">10</span>;<span style="color:#a6e22e">i</span>.<span style="color:#a6e22e">height</span><span style="color:#f92672">=</span><span style="color:#ae81ff">10</span>;<span style="color:#a6e22e">i</span>.<span style="color:#a6e22e">display</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;block&#34;</span>}};
+</code></pre></div>
+
+<h2 id="code-is-cheap-show-me-the-demo">Code is cheap, show me the DEMO!</h2>
+
+<p>Check out the demo <a href="https://wroot.org/code/security/web/javascript/clickjack/">here</a>. The link on this page SHOULD take you to Google, but <strong>it won&#8217;t</strong>. (:</p>
+
+<h2 id="how-bad-is-clickjacking">How bad is Clickjacking?</h2>
+
+<p>Browsers&#8217; JavaScript support evolved past the years. Nowadays, a human-initiated click must take place before some JavaScript can run so if you want to run something that you might not get the user to click by his free will, clickjacking might be the answer.</p>
+
+<p>Most adult industry sites use this kind of technique (in many ways different than this) to trigger pop-up advertisements.</p>
+
+<h2 id="ok-clickjacking-will-make-me-or-my-users-click-some-ads-so-what">Ok, Clickjacking will make me (or my users) click some ads, so what?</h2>
+
+<p>Well, there are many ways that a legitimate click can be used, but I&#8217;ll let this open for discussion.</p>
+
+<h2 id="deploying-the-plague">Deploying the plague</h2>
+
+<p>This can be acomplished in many ways, the one&#8217;s that come first off my mind are: XSS and physical document infection by appending code after server compromise.</p>
+
+<h2 id="any-further-ideas">Any further ideas?</h2>
+
+<p>I still wondering if it would be useful if the true link actually gets followed after click has been hijacked. If so, it&#8217;s very easy to implement with a <code>click</code> observer on the <code>iframe</code> to take <code>window.location</code> to the real <code>href</code> beneath it. Maybe when I get another extra time I&#8217;ll play on that.</p>
+
+<p>[]s</p>
+
+        </div>
+
+        
+        
+        <div class="article-toc" >
+            <h3>Contents</h3>
+            <nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#going-further">Going further</a></li>
+<li><a href="#talk-is-cheap-show-me-the-code">Talk is cheap, show me the code!</a></li>
+<li><a href="#code-is-cheap-show-me-the-demo">Code is cheap, show me the DEMO!</a></li>
+<li><a href="#how-bad-is-clickjacking">How bad is Clickjacking?</a></li>
+<li><a href="#ok-clickjacking-will-make-me-or-my-users-click-some-ads-so-what">Ok, Clickjacking will make me (or my users) click some ads, so what?</a></li>
+<li><a href="#deploying-the-plague">Deploying the plague</a></li>
+<li><a href="#any-further-ideas">Any further ideas?</a></li>
+</ul></li>
+</ul>
+</nav>
+        </div>
+        
+        
+
+        
+
+
+        
+        <footer class="article-footer">
+            <ul class="article-tag-list">
+                
+                <li class="article-tag-list-item">
+                    <a class="article-tag-list-link" href="http://wroot.org//tags/clickjacking">clickjacking
+                    </a>
+                </li>
+                
+                <li class="article-tag-list-item">
+                    <a class="article-tag-list-link" href="http://wroot.org//tags/javascript">javascript
+                    </a>
+                </li>
+                
+            </ul>
+        </footer>
+        
+    </div>
+    <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "wroot" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+    <nav id="article-nav">
+    
+    <a href="/posts/endpoint-dlp-is-hardware-access-control-enough/" id="article-nav-newer" class="article-nav-link-wrap">
+        <div class="article-nav-title"><span>&lt;</span>&nbsp;
+            Endpoint DLP: Is hardware access control enough?
+        </div>
+    </a>
+    
+    
+    <a href="/posts/anatomy-of-the-w32-stuxnet-scada-threat/" id="article-nav-older" class="article-nav-link-wrap">
+        <div class="article-nav-title">Anatomy of the W32.Stuxnet SCADA threat&nbsp;<span>&gt;</span></div>
+    </a>
+    
+</nav>
+</article>
+
+        
+    </section>
+    <footer id="footer">
+    <div class="outer">
+        <div id="footer-info" class="inner">
+            &copy; 2019 wroot&nbsp;
+            Powered by <a href="https://gohugo.io" target="_blank">Hugo</a> with (a slightly modified) theme <a href="https://github.com/carsonip/hugo-theme-minos">Minos</a>
+        </div>
+    </div>
+    
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/styles/tomorrow-night.min.css" integrity="sha256-2wL88NKUqvJi/ExflDzkzUumjUM73mcK2gBvBBeLvTk=" crossorigin="anonymous" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/highlight.min.js" integrity="sha256-KbfTjB0WZ8vvXngdpJGY3Yp3xKk+tttbqClO11anCIU=" crossorigin="anonymous"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+
+    
+    <script>
+        document.getElementById('main-nav-toggle').addEventListener('click', function () {
+            var header = document.getElementById('header');
+            if (header.classList.contains('mobile-on')) {
+                header.classList.remove('mobile-on');
+            } else {
+                header.classList.add('mobile-on');
+            }
+        });
+    </script>
+</footer>
+
+</div>
+</body>
+</html>

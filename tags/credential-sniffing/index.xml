@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Credential Sniffing on wroot</title>
+    <link>http://wroot.org/tags/credential-sniffing/</link>
+    <description>Recent content in Credential Sniffing on wroot</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Wed, 31 Oct 2012 02:59:25 +0000</lastBuildDate>
+    
+	<atom:link href="http://wroot.org/tags/credential-sniffing/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Quick and dirty ngrep credential (username/password) sniffer</title>
+      <link>http://wroot.org/posts/quick-and-dirty-ngrep-credential-usernamepassword-sniffer/</link>
+      <pubDate>Wed, 31 Oct 2012 02:59:25 +0000</pubDate>
+      
+      <guid>http://wroot.org/posts/quick-and-dirty-ngrep-credential-usernamepassword-sniffer/</guid>
+      <description>Some time ago I&amp;#8217;ve posted a quick (and dirty too!) command-liner using tcpdump to sniff plaintext credentials over the wire.
+Now I&amp;#8217;ve acomplished the same thing with a shorter regex and ngrep tool.
+ngrep &amp;#39;[&amp;amp;\s?](?:login|user(?:name|)|p(ass(?:word|wd|)|w|wd))[\s:=]\s?([^&amp;amp;\s]*)&amp;#39; -q -i Where -i is for case-insensitive and -q for more precise output. See man ngrep for additional information.
+And the output is as follows:
+interface: eth0 (10.1.1.0/255.255.255.0)match: [&amp;amp;\s?](?:login|user(?:name|)|p(ass(?:word|wd|)|w|wd))[\s:=]\s?([^&amp;amp;\s]*)T 10.1.1.111:49196 -&amp;gt; 96.126.98.110:80 [AP]POST /users/signin &amp;lt;acronym title=&amp;#34;HyperText Transfer Protocol&amp;#34;&amp;gt;HTTP&amp;lt;/acronym&amp;gt;/1.</description>
+    </item>
+    
+  </channel>
+</rss>

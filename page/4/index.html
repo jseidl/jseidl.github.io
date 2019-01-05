@@ -1,0 +1,909 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+  <meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'>
+<meta name='description' content='^(build|hack|tweak|pwn|secur)ing$'>
+
+<meta property='og:title' content='wroot'>
+<meta property='og:description' content='^(build|hack|tweak|pwn|secur)ing$'>
+<meta property='og:url' content='http://wroot.org/'>
+<meta property='og:site_name' content='wroot'>
+<meta property='og:type' content='website'><meta property='og:updated_time' content='2015-09-23T14:13:55Z'/><meta name='twitter:card' content='summary'><meta name='twitter:site' content='@jseidl'>
+
+<meta name="generator" content="Hugo 0.53" />
+
+  <title>wroot</title>
+  <link rel='canonical' href='http://wroot.org/'>
+  
+    <link href="http://wroot.org/index.xml" rel="alternate" type="application/rss+xml" title="wroot" />
+  
+  
+  <link rel='icon' href='/favicon.ico'><link rel='stylesheet' href='/webfonts/ptserif/main.css'><link rel='stylesheet' href='/webfonts/source-code-pro/main.css'><link rel='stylesheet' href='/css/style.css'>
+  
+
+</head>
+
+
+<body>
+<div id="container">
+    <header id="header">
+    <div id="header-outer" class="outer">
+        <div id="header-inner" class="inner">
+            <a id="main-nav-toggle" class="nav-icon" href="javascript:;"></a>
+            <a id="logo" class="logo-text" href="http://wroot.org/">wroot</a>
+            <nav id="main-nav">
+                
+                <a class="main-nav-link" href="/about/">About</a>
+                
+                <a class="main-nav-link" href="/talks/">Talks</a>
+                
+                <a class="main-nav-link" href="/projects/">Projects</a>
+                
+                <a class="main-nav-link" href="/press/">Press</a>
+                
+                <a class="main-nav-link" href="https://twitter.com/jseidl">Twitter</a>
+                
+                <a class="main-nav-link" href="https://www.linkedin.com/in/janseidl">LinkedIn</a>
+                
+                <a class="main-nav-link" href="http://github.com/jseidl">GitHub</a>
+                
+                <a class="main-nav-link" href="http://www.slideshare.net/jseidl/">SlideShare</a>
+                
+            </nav>
+            <nav id="sub-nav">
+                <div id="search-form-wrap">
+                </div>
+            </nav>
+        </div>
+    </div>
+</header>
+    <section id="main" class="outer">
+        
+        <article class="article article-type-post" itemscope itemprop="blogPost">
+            <div class="article-inner">
+                
+                
+                <header class="article-header">
+                    <h1 itemprop="name"><a class="article-title" href="/posts/stuxnet-targets-scada-systems-via-usb-drives-vectors/">Stuxnet targets SCADA systems via USB drives vectors</a></h1>
+                </header>
+                
+                <div class="article-meta">
+                    <a href="/posts/stuxnet-targets-scada-systems-via-usb-drives-vectors/" class="article-date">
+                        <time datetime='2010-07-23T16:19:06.000&#43;00:00' itemprop="datePublished">2010-07-23</time>
+                    </a>
+                    
+                    
+                    <div class="post-categories">
+                        <div class="article-category">
+                            
+                            
+                            <a class="article-category-link" href="http://wroot.org//categories/malware">Malware</a>
+                            
+                        </div>
+                    </div>
+                    
+                    
+                </div>
+                <div class="article-entry" itemprop="articleBody">
+                    <p>
+                        
+                    Microsoft disclosed a zero-day flaw on Windows Shell on Friday and Stuxnet (W32.Stuxnet) is already exploiting it to gain access to SCADA systems through its attack vector.
+Since SCADA systems are updated mainly by CDs or pen drives, the attack vector fits as a glove. The malware targets Siemens&#8217; Simatic WinCC software and intends to steal information like projects schematics and upload them to an external website.
+From CNet:
+ Once the malware locates the data it is looking for it encodes it and attempts to upload it to a remote server.
+                    </p>
+                    <p class="article-more-link">
+                        <a href="/posts/stuxnet-targets-scada-systems-via-usb-drives-vectors/">Read More</a>
+                    </p>
+                </div>
+
+                
+                <footer class="article-footer">
+                    <ul class="article-tag-list">
+                        
+                        <li class="article-tag-list-item">
+                            <a class="article-tag-list-link" href="http://wroot.org//tags/backdoor">backdoor
+                            </a>
+                        </li>
+                        
+                        <li class="article-tag-list-item">
+                            <a class="article-tag-list-link" href="http://wroot.org//tags/data-loss">data loss
+                            </a>
+                        </li>
+                        
+                        <li class="article-tag-list-item">
+                            <a class="article-tag-list-link" href="http://wroot.org//tags/malware">malware
+                            </a>
+                        </li>
+                        
+                        <li class="article-tag-list-item">
+                            <a class="article-tag-list-link" href="http://wroot.org//tags/rootkit">rootkit
+                            </a>
+                        </li>
+                        
+                        <li class="article-tag-list-item">
+                            <a class="article-tag-list-link" href="http://wroot.org//tags/scada">scada
+                            </a>
+                        </li>
+                        
+                        <li class="article-tag-list-item">
+                            <a class="article-tag-list-link" href="http://wroot.org//tags/siemens">siemens
+                            </a>
+                        </li>
+                        
+                        <li class="article-tag-list-item">
+                            <a class="article-tag-list-link" href="http://wroot.org//tags/stuxnet">stuxnet
+                            </a>
+                        </li>
+                        
+                        <li class="article-tag-list-item">
+                            <a class="article-tag-list-link" href="http://wroot.org//tags/trojan">trojan
+                            </a>
+                        </li>
+                        
+                        <li class="article-tag-list-item">
+                            <a class="article-tag-list-link" href="http://wroot.org//tags/wincc">wincc
+                            </a>
+                        </li>
+                        
+                    </ul>
+                </footer>
+                
+            </div>
+        </article>
+        
+        <article class="article article-type-post" itemscope itemprop="blogPost">
+            <div class="article-inner">
+                
+                
+                <header class="article-header">
+                    <h1 itemprop="name"><a class="article-title" href="/posts/downgrade-https-connections-to-http-using-ettercap-filters/">Downgrade HTTPS connections to HTTP using Ettercap filters</a></h1>
+                </header>
+                
+                <div class="article-meta">
+                    <a href="/posts/downgrade-https-connections-to-http-using-ettercap-filters/" class="article-date">
+                        <time datetime='2010-07-13T17:42:06.000&#43;00:00' itemprop="datePublished">2010-07-13</time>
+                    </a>
+                    
+                    
+                    <div class="post-categories">
+                        <div class="article-category">
+                            
+                            
+                            <a class="article-category-link" href="http://wroot.org//categories/penetration-testing">Penetration Testing</a>
+                            
+                        </div>
+                    </div>
+                    
+                    
+                </div>
+                <div class="article-entry" itemprop="articleBody">
+                    <p>
+                        
+                    Ettercap is a great tool for MITM poisoning and sniffing. Everyone on Infosec should have played with it (or Cain) at least once.
+Man-In-The-Middle MITM attacks are pretty easy to perform on a local network but the tools tend to crash a LOT. Cain (Windows) is a little more stable than Ettercap but I prefer it over Cain because it doesn&#8217;t spoof SSL that I consider too loud depending on the attack.
+                    </p>
+                    <p class="article-more-link">
+                        <a href="/posts/downgrade-https-connections-to-http-using-ettercap-filters/">Read More</a>
+                    </p>
+                </div>
+
+                
+                <footer class="article-footer">
+                    <ul class="article-tag-list">
+                        
+                        <li class="article-tag-list-item">
+                            <a class="article-tag-list-link" href="http://wroot.org//tags/ettercap">ettercap
+                            </a>
+                        </li>
+                        
+                        <li class="article-tag-list-item">
+                            <a class="article-tag-list-link" href="http://wroot.org//tags/filter">filter
+                            </a>
+                        </li>
+                        
+                        <li class="article-tag-list-item">
+                            <a class="article-tag-list-link" href="http://wroot.org//tags/http">http
+                            </a>
+                        </li>
+                        
+                        <li class="article-tag-list-item">
+                            <a class="article-tag-list-link" href="http://wroot.org//tags/ssl">ssl
+                            </a>
+                        </li>
+                        
+                    </ul>
+                </footer>
+                
+            </div>
+        </article>
+        
+        <article class="article article-type-post" itemscope itemprop="blogPost">
+            <div class="article-inner">
+                
+                
+                <header class="article-header">
+                    <h1 itemprop="name"><a class="article-title" href="/posts/batch-installing-on-windows-platforms-with-ninite/">Batch-installing on Windows platforms with Ninite</a></h1>
+                </header>
+                
+                <div class="article-meta">
+                    <a href="/posts/batch-installing-on-windows-platforms-with-ninite/" class="article-date">
+                        <time datetime='2010-07-05T19:11:59.000&#43;00:00' itemprop="datePublished">2010-07-05</time>
+                    </a>
+                    
+                    
+                    <div class="post-categories">
+                        <div class="article-category">
+                            
+                            
+                            <a class="article-category-link" href="http://wroot.org//categories/configuration-management">Configuration Management</a>
+                            
+                        </div>
+                    </div>
+                    
+                    
+                </div>
+                <div class="article-entry" itemprop="articleBody">
+                    <p>
+                        
+                    Today a friend introduced me that great tool called Ninite. It&#8217;s a batch-installer which comes with the most popular Windows FOSS available in the wild and saves you from downloading and manually installing them.
+Ninite also skips installation screens (and their EULA) and it&#8217;s perfect when you must setup several stations or you have constantly some station setup to do. Although Ninite ISN&#8217;T a configuration management tool but it is a good time-saver for smaller environments.
+                    </p>
+                    <p class="article-more-link">
+                        <a href="/posts/batch-installing-on-windows-platforms-with-ninite/">Read More</a>
+                    </p>
+                </div>
+
+                
+                <footer class="article-footer">
+                    <ul class="article-tag-list">
+                        
+                        <li class="article-tag-list-item">
+                            <a class="article-tag-list-link" href="http://wroot.org//tags/batch-installation">batch installation
+                            </a>
+                        </li>
+                        
+                        <li class="article-tag-list-item">
+                            <a class="article-tag-list-link" href="http://wroot.org//tags/configuration-management">configuration management
+                            </a>
+                        </li>
+                        
+                        <li class="article-tag-list-item">
+                            <a class="article-tag-list-link" href="http://wroot.org//tags/lumension">lumension
+                            </a>
+                        </li>
+                        
+                        <li class="article-tag-list-item">
+                            <a class="article-tag-list-link" href="http://wroot.org//tags/ninite">ninite
+                            </a>
+                        </li>
+                        
+                        <li class="article-tag-list-item">
+                            <a class="article-tag-list-link" href="http://wroot.org//tags/puppet">puppet
+                            </a>
+                        </li>
+                        
+                    </ul>
+                </footer>
+                
+            </div>
+        </article>
+        
+        <article class="article article-type-post" itemscope itemprop="blogPost">
+            <div class="article-inner">
+                
+                
+                <header class="article-header">
+                    <h1 itemprop="name"><a class="article-title" href="/posts/security-benchmark-papers-available-from-cis/">Security benchmark papers available from CIS</a></h1>
+                </header>
+                
+                <div class="article-meta">
+                    <a href="/posts/security-benchmark-papers-available-from-cis/" class="article-date">
+                        <time datetime='2010-06-29T19:01:29.000&#43;00:00' itemprop="datePublished">2010-06-29</time>
+                    </a>
+                    
+                    
+                    <div class="post-categories">
+                        <div class="article-category">
+                            
+                            
+                            <a class="article-category-link" href="http://wroot.org//categories/audit-amp-compliance">Audit &amp;amp; Compliance</a>
+                            
+                        </div>
+                    </div>
+                    
+                    
+                </div>
+                <div class="article-entry" itemprop="articleBody">
+                    <p>
+                        
+                    The Center for Internet Security has some great papers on security benchmark for many OS (All flavours of Windows, Linux and Solaris) and applications (Apache, MSSQL, MySQL, Oracle etc).
+The papers are available to download at their CIS Resources Download.
+CIS has also a great audit tool called the &#8220;CIS-CAT (Configuration Audit Tool) Benchmark Tool&#8221; that is SCAP-Validated as a Federal Desktop Core Configuration (FDCC) scanner tool by NIST and is in its wonderful NCP low-level benchmark repository.
+                    </p>
+                    <p class="article-more-link">
+                        <a href="/posts/security-benchmark-papers-available-from-cis/">Read More</a>
+                    </p>
+                </div>
+
+                
+                <footer class="article-footer">
+                    <ul class="article-tag-list">
+                        
+                        <li class="article-tag-list-item">
+                            <a class="article-tag-list-link" href="http://wroot.org//tags/audit">audit
+                            </a>
+                        </li>
+                        
+                        <li class="article-tag-list-item">
+                            <a class="article-tag-list-link" href="http://wroot.org//tags/benchmark">benchmark
+                            </a>
+                        </li>
+                        
+                        <li class="article-tag-list-item">
+                            <a class="article-tag-list-link" href="http://wroot.org//tags/cis">cis
+                            </a>
+                        </li>
+                        
+                        <li class="article-tag-list-item">
+                            <a class="article-tag-list-link" href="http://wroot.org//tags/compliance">compliance
+                            </a>
+                        </li>
+                        
+                        <li class="article-tag-list-item">
+                            <a class="article-tag-list-link" href="http://wroot.org//tags/nist">nist
+                            </a>
+                        </li>
+                        
+                        <li class="article-tag-list-item">
+                            <a class="article-tag-list-link" href="http://wroot.org//tags/scap">scap
+                            </a>
+                        </li>
+                        
+                        <li class="article-tag-list-item">
+                            <a class="article-tag-list-link" href="http://wroot.org//tags/security">security
+                            </a>
+                        </li>
+                        
+                    </ul>
+                </footer>
+                
+            </div>
+        </article>
+        
+        <article class="article article-type-post" itemscope itemprop="blogPost">
+            <div class="article-inner">
+                
+                
+                <header class="article-header">
+                    <h1 itemprop="name"><a class="article-title" href="/posts/daniel-dantas-hard-drive-encryption-wins-over-fbi/">Daniel Dantas’ hard drive encryption wins over FBI</a></h1>
+                </header>
+                
+                <div class="article-meta">
+                    <a href="/posts/daniel-dantas-hard-drive-encryption-wins-over-fbi/" class="article-date">
+                        <time datetime='2010-06-29T14:58:13.000&#43;00:00' itemprop="datePublished">2010-06-29</time>
+                    </a>
+                    
+                    
+                    <div class="post-categories">
+                        <div class="article-category">
+                            
+                            
+                            <a class="article-category-link" href="http://wroot.org//categories/encryption">Encryption</a>
+                            
+                        </div>
+                    </div>
+                    
+                    
+                </div>
+                <div class="article-entry" itemprop="articleBody">
+                    <p>
+                        
+                    Just read it on Slashdot that FBI failed to break encryption of Daniel Dantas&#8217;s hard drives.
+Daniel Dantas is a brazillian banker involved in financial frauds caught by the federal police in July 2008. The 5 hard drives siezed by the Federal Police at his apartment were cyphered with the top-notch AES encryption algorithm with a 256-bit key. Two softwares were used to manage the encryption and one of them was the widely used and known open-source tool TrueCrypt.
+                    </p>
+                    <p class="article-more-link">
+                        <a href="/posts/daniel-dantas-hard-drive-encryption-wins-over-fbi/">Read More</a>
+                    </p>
+                </div>
+
+                
+                <footer class="article-footer">
+                    <ul class="article-tag-list">
+                        
+                        <li class="article-tag-list-item">
+                            <a class="article-tag-list-link" href="http://wroot.org//tags/aes">aes
+                            </a>
+                        </li>
+                        
+                        <li class="article-tag-list-item">
+                            <a class="article-tag-list-link" href="http://wroot.org//tags/bruteforce">bruteforce
+                            </a>
+                        </li>
+                        
+                        <li class="article-tag-list-item">
+                            <a class="article-tag-list-link" href="http://wroot.org//tags/encryption">encryption
+                            </a>
+                        </li>
+                        
+                        <li class="article-tag-list-item">
+                            <a class="article-tag-list-link" href="http://wroot.org//tags/fbi">fbi
+                            </a>
+                        </li>
+                        
+                        <li class="article-tag-list-item">
+                            <a class="article-tag-list-link" href="http://wroot.org//tags/nic">nic
+                            </a>
+                        </li>
+                        
+                        <li class="article-tag-list-item">
+                            <a class="article-tag-list-link" href="http://wroot.org//tags/truecrypt">truecrypt
+                            </a>
+                        </li>
+                        
+                    </ul>
+                </footer>
+                
+            </div>
+        </article>
+        
+        <article class="article article-type-post" itemscope itemprop="blogPost">
+            <div class="article-inner">
+                
+                
+                <header class="article-header">
+                    <h1 itemprop="name"><a class="article-title" href="/posts/online-password-generation-utility-from-pctools/">Online password generation utility from PcTools</a></h1>
+                </header>
+                
+                <div class="article-meta">
+                    <a href="/posts/online-password-generation-utility-from-pctools/" class="article-date">
+                        <time datetime='2010-06-21T20:25:21.000&#43;00:00' itemprop="datePublished">2010-06-21</time>
+                    </a>
+                    
+                    
+                    <div class="post-categories">
+                        <div class="article-category">
+                            
+                            
+                            <a class="article-category-link" href="http://wroot.org//categories/access-control">Access Control</a>
+                            
+                        </div>
+                    </div>
+                    
+                    
+                </div>
+                <div class="article-entry" itemprop="articleBody">
+                    <p>
+                        
+                    Here&#8217;s a good online password generator from PcTools that generates passwords based on various parameters such as password length; letters, numbers, special characters inclusion; hability to exclude similar characters etc.
+Good to have bookmarked! There&#8217;s also desktop version (Windows) of the password generator in the &#8220;Password Utilities&#8221; software provided by PcTools.
+                    </p>
+                    <p class="article-more-link">
+                        <a href="/posts/online-password-generation-utility-from-pctools/">Read More</a>
+                    </p>
+                </div>
+
+                
+                <footer class="article-footer">
+                    <ul class="article-tag-list">
+                        
+                        <li class="article-tag-list-item">
+                            <a class="article-tag-list-link" href="http://wroot.org//tags/password">password
+                            </a>
+                        </li>
+                        
+                        <li class="article-tag-list-item">
+                            <a class="article-tag-list-link" href="http://wroot.org//tags/tool">tool
+                            </a>
+                        </li>
+                        
+                        <li class="article-tag-list-item">
+                            <a class="article-tag-list-link" href="http://wroot.org//tags/utility">utility
+                            </a>
+                        </li>
+                        
+                    </ul>
+                </footer>
+                
+            </div>
+        </article>
+        
+        <article class="article article-type-post" itemscope itemprop="blogPost">
+            <div class="article-inner">
+                
+                
+                <header class="article-header">
+                    <h1 itemprop="name"><a class="article-title" href="/posts/mdk3-goes-bruteforcing-wireless-ssids/">MDK3 goes bruteforcing Wireless SSIDs</a></h1>
+                </header>
+                
+                <div class="article-meta">
+                    <a href="/posts/mdk3-goes-bruteforcing-wireless-ssids/" class="article-date">
+                        <time datetime='2010-06-09T15:03:38.000&#43;00:00' itemprop="datePublished">2010-06-09</time>
+                    </a>
+                    
+                    
+                    <div class="post-categories">
+                        <div class="article-category">
+                            
+                            
+                            <a class="article-category-link" href="http://wroot.org//categories/penetration-testing">Penetration Testing</a>
+                            
+                        </div>
+                    </div>
+                    
+                    
+                </div>
+                <div class="article-entry" itemprop="articleBody">
+                    <p>
+                        
+                    One good practice is to disable your SSID broadcast so you don&#8217;t show up on the victims list. Although this doesn&#8217;t make you completely invisible, it does aid reducing ease of location. (Networks can still be located by BSSIDs).
+MDK3 was written by ASPj to bruteforce network SSIDs (even with wordlists).
+Tape has done some testings around and described it all on his blog post. It has some videos too of the attack in progress on a 3-character-lenght SSID.
+                    </p>
+                    <p class="article-more-link">
+                        <a href="/posts/mdk3-goes-bruteforcing-wireless-ssids/">Read More</a>
+                    </p>
+                </div>
+
+                
+                <footer class="article-footer">
+                    <ul class="article-tag-list">
+                        
+                        <li class="article-tag-list-item">
+                            <a class="article-tag-list-link" href="http://wroot.org//tags/bruteforce">bruteforce
+                            </a>
+                        </li>
+                        
+                        <li class="article-tag-list-item">
+                            <a class="article-tag-list-link" href="http://wroot.org//tags/cracking">cracking
+                            </a>
+                        </li>
+                        
+                        <li class="article-tag-list-item">
+                            <a class="article-tag-list-link" href="http://wroot.org//tags/mdk3">mdk3
+                            </a>
+                        </li>
+                        
+                        <li class="article-tag-list-item">
+                            <a class="article-tag-list-link" href="http://wroot.org//tags/tape">tape
+                            </a>
+                        </li>
+                        
+                        <li class="article-tag-list-item">
+                            <a class="article-tag-list-link" href="http://wroot.org//tags/wifi">wifi
+                            </a>
+                        </li>
+                        
+                    </ul>
+                </footer>
+                
+            </div>
+        </article>
+        
+        <article class="article article-type-post" itemscope itemprop="blogPost">
+            <div class="article-inner">
+                
+                
+                <header class="article-header">
+                    <h1 itemprop="name"><a class="article-title" href="/posts/mitigating-the-risk-on-an-arp-poison-attack/">Mitigating the risk on an ARP poison attack</a></h1>
+                </header>
+                
+                <div class="article-meta">
+                    <a href="/posts/mitigating-the-risk-on-an-arp-poison-attack/" class="article-date">
+                        <time datetime='2010-05-29T23:44:57.000&#43;00:00' itemprop="datePublished">2010-05-29</time>
+                    </a>
+                    
+                    
+                    <div class="post-categories">
+                        <div class="article-category">
+                            
+                            
+                            <a class="article-category-link" href="http://wroot.org//categories/network-security">Network Security</a>
+                            
+                        </div>
+                    </div>
+                    
+                    
+                </div>
+                <div class="article-entry" itemprop="articleBody">
+                    <p>
+                        
+                    ARP poisoning is a technique quite simple to be applied and allows traffic to be sniffer over a switched network. It can be used to sniff the connection on-the-fly and capture plain-text password or hashes. ARP poison also allows combination with other attacks such as DNS spoof and packet filters in order to deploy client side exploits transparently.
+This attack can only be performed from the local network because ARP packets aren&#8217;t routed so you can&#8217;t hop between LANs but it can be performed from any machine on the same network so it is a serious concern when dealing with unhappy employees, interns and industrial espionage.
+                    </p>
+                    <p class="article-more-link">
+                        <a href="/posts/mitigating-the-risk-on-an-arp-poison-attack/">Read More</a>
+                    </p>
+                </div>
+
+                
+                <footer class="article-footer">
+                    <ul class="article-tag-list">
+                        
+                        <li class="article-tag-list-item">
+                            <a class="article-tag-list-link" href="http://wroot.org//tags/arp-poison">arp poison
+                            </a>
+                        </li>
+                        
+                        <li class="article-tag-list-item">
+                            <a class="article-tag-list-link" href="http://wroot.org//tags/ids">ids
+                            </a>
+                        </li>
+                        
+                        <li class="article-tag-list-item">
+                            <a class="article-tag-list-link" href="http://wroot.org//tags/ipsec">ipsec
+                            </a>
+                        </li>
+                        
+                        <li class="article-tag-list-item">
+                            <a class="article-tag-list-link" href="http://wroot.org//tags/mitm">mitm
+                            </a>
+                        </li>
+                        
+                        <li class="article-tag-list-item">
+                            <a class="article-tag-list-link" href="http://wroot.org//tags/network">network
+                            </a>
+                        </li>
+                        
+                        <li class="article-tag-list-item">
+                            <a class="article-tag-list-link" href="http://wroot.org//tags/ssl">ssl
+                            </a>
+                        </li>
+                        
+                    </ul>
+                </footer>
+                
+            </div>
+        </article>
+        
+        <article class="article article-type-post" itemscope itemprop="blogPost">
+            <div class="article-inner">
+                
+                
+                <header class="article-header">
+                    <h1 itemprop="name"><a class="article-title" href="/posts/kentuckiana-issas-metasploit-class-videos-available-at-irongeek/">Kentuckiana ISSA’s Metasploit Class videos available at Irongeek</a></h1>
+                </header>
+                
+                <div class="article-meta">
+                    <a href="/posts/kentuckiana-issas-metasploit-class-videos-available-at-irongeek/" class="article-date">
+                        <time datetime='2010-05-27T00:02:42.000&#43;00:00' itemprop="datePublished">2010-05-27</time>
+                    </a>
+                    
+                    
+                    <div class="post-categories">
+                        <div class="article-category">
+                            
+                            
+                            <a class="article-category-link" href="http://wroot.org//categories/penetration-testing">Penetration Testing</a>
+                            
+                        </div>
+                    </div>
+                    
+                    
+                </div>
+                <div class="article-entry" itemprop="articleBody">
+                    <p>
+                        
+                    These presentations from May 8th, 2010 performed on the Brown Hotel in Louisville, Kentucky. on exploiting with the Metasploit framework has an tremendous value. Its from this month, still fresh! Its 7 hours of presentations, it takes a while to finish (I took almost a week! phew!) but its totally worth it!
+It starts with Adrian &#8220;Irongeek&#8221; Crenshaw introducing Metasploit exploiting a Windows box via msfweb and msfconsole. Pretty neat.
+                    </p>
+                    <p class="article-more-link">
+                        <a href="/posts/kentuckiana-issas-metasploit-class-videos-available-at-irongeek/">Read More</a>
+                    </p>
+                </div>
+
+                
+                <footer class="article-footer">
+                    <ul class="article-tag-list">
+                        
+                        <li class="article-tag-list-item">
+                            <a class="article-tag-list-link" href="http://wroot.org//tags/adrian-crenshaw">adrian crenshaw
+                            </a>
+                        </li>
+                        
+                        <li class="article-tag-list-item">
+                            <a class="article-tag-list-link" href="http://wroot.org//tags/david-kennedy">david kennedy
+                            </a>
+                        </li>
+                        
+                        <li class="article-tag-list-item">
+                            <a class="article-tag-list-link" href="http://wroot.org//tags/elliott-cutright">elliott cutright
+                            </a>
+                        </li>
+                        
+                        <li class="article-tag-list-item">
+                            <a class="article-tag-list-link" href="http://wroot.org//tags/ettercap">ettercap
+                            </a>
+                        </li>
+                        
+                        <li class="article-tag-list-item">
+                            <a class="article-tag-list-link" href="http://wroot.org//tags/irongeek">irongeek
+                            </a>
+                        </li>
+                        
+                        <li class="article-tag-list-item">
+                            <a class="article-tag-list-link" href="http://wroot.org//tags/martin-bos">martin bos
+                            </a>
+                        </li>
+                        
+                        <li class="article-tag-list-item">
+                            <a class="article-tag-list-link" href="http://wroot.org//tags/metasploit">metasploit
+                            </a>
+                        </li>
+                        
+                        <li class="article-tag-list-item">
+                            <a class="article-tag-list-link" href="http://wroot.org//tags/nullthreat">nullthreat
+                            </a>
+                        </li>
+                        
+                        <li class="article-tag-list-item">
+                            <a class="article-tag-list-link" href="http://wroot.org//tags/pentest">pentest
+                            </a>
+                        </li>
+                        
+                        <li class="article-tag-list-item">
+                            <a class="article-tag-list-link" href="http://wroot.org//tags/purehate">purehate
+                            </a>
+                        </li>
+                        
+                        <li class="article-tag-list-item">
+                            <a class="article-tag-list-link" href="http://wroot.org//tags/pwncycle">pwncycle
+                            </a>
+                        </li>
+                        
+                        <li class="article-tag-list-item">
+                            <a class="article-tag-list-link" href="http://wroot.org//tags/rel1k">rel1k
+                            </a>
+                        </li>
+                        
+                        <li class="article-tag-list-item">
+                            <a class="article-tag-list-link" href="http://wroot.org//tags/search-engineering-framework">search engineering framework
+                            </a>
+                        </li>
+                        
+                    </ul>
+                </footer>
+                
+            </div>
+        </article>
+        
+        <article class="article article-type-post" itemscope itemprop="blogPost">
+            <div class="article-inner">
+                
+                
+                <header class="article-header">
+                    <h1 itemprop="name"><a class="article-title" href="/posts/preventing-your-servers-from-downgrade-attacks/">Preventing your servers from downgrade attacks</a></h1>
+                </header>
+                
+                <div class="article-meta">
+                    <a href="/posts/preventing-your-servers-from-downgrade-attacks/" class="article-date">
+                        <time datetime='2010-05-22T21:33:15.000&#43;00:00' itemprop="datePublished">2010-05-22</time>
+                    </a>
+                    
+                    
+                    <div class="post-categories">
+                        <div class="article-category">
+                            
+                            
+                            <a class="article-category-link" href="http://wroot.org//categories/authentication">Authentication</a>
+                            
+                        </div>
+                    </div>
+                    
+                    
+                </div>
+                <div class="article-entry" itemprop="articleBody">
+                    <p>
+                        
+                    <p>One of the coolest attacks is forcing a downgrade between the client and server, making the server believe that client has support only for older and insecure versions of your protocol. This works with Windows&#8217; NTLM authentication and with <acronym title="Secure Sockets Layer">SSL</acronym>, mostly.</p>
+
+<h2 id="how-does-8216-downgrade-attack-8217-work">How does &#8216;downgrade attack&#8217; work?</h2>
+
+<p>Downgrade attacks are born from a misconfiguration and takes place within <acronym title="Man-in-the-middle">MITM</acronym> attacks. Privilege is escalated by trapping the connection request and thus forcing the use of an older protocol version with known security issues by faking the client-side accepted protocol versions. Then the weak protocol is attacked and access is escalated.</p>
+                    </p>
+                    <p class="article-more-link">
+                        <a href="/posts/preventing-your-servers-from-downgrade-attacks/">Read More</a>
+                    </p>
+                </div>
+
+                
+                <footer class="article-footer">
+                    <ul class="article-tag-list">
+                        
+                        <li class="article-tag-list-item">
+                            <a class="article-tag-list-link" href="http://wroot.org//tags/attack">attack
+                            </a>
+                        </li>
+                        
+                        <li class="article-tag-list-item">
+                            <a class="article-tag-list-link" href="http://wroot.org//tags/downgrade">downgrade
+                            </a>
+                        </li>
+                        
+                        <li class="article-tag-list-item">
+                            <a class="article-tag-list-link" href="http://wroot.org//tags/ntlm">ntlm
+                            </a>
+                        </li>
+                        
+                        <li class="article-tag-list-item">
+                            <a class="article-tag-list-link" href="http://wroot.org//tags/prevention">prevention
+                            </a>
+                        </li>
+                        
+                        <li class="article-tag-list-item">
+                            <a class="article-tag-list-link" href="http://wroot.org//tags/ssl">ssl
+                            </a>
+                        </li>
+                        
+                    </ul>
+                </footer>
+                
+            </div>
+        </article>
+        
+
+        
+
+<nav id="page-nav">
+    
+    <a href="/page/3/" rel="prev" class="extend prev">&laquo; Prev</a>
+    
+    
+    
+    <a href="/">1</a>
+    
+    
+    
+    <a href="/page/2/">2</a>
+    
+    
+    
+    <a href="/page/3/">3</a>
+    
+    
+    
+    <span class="page-number current">4</span>
+    
+    
+    
+    <a href="/page/5/">5</a>
+    
+    
+
+    
+    <a href="/page/5/" rel="next" class="extend next">Next &raquo;</a>
+    
+</nav>
+
+    </section>
+    <footer id="footer">
+    <div class="outer">
+        <div id="footer-info" class="inner">
+            &copy; 2019 wroot&nbsp;
+            Powered by <a href="https://gohugo.io" target="_blank">Hugo</a> with (a slightly modified) theme <a href="https://github.com/carsonip/hugo-theme-minos">Minos</a>
+        </div>
+    </div>
+    
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/styles/tomorrow-night.min.css" integrity="sha256-2wL88NKUqvJi/ExflDzkzUumjUM73mcK2gBvBBeLvTk=" crossorigin="anonymous" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/highlight.min.js" integrity="sha256-KbfTjB0WZ8vvXngdpJGY3Yp3xKk+tttbqClO11anCIU=" crossorigin="anonymous"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+
+    
+    <script>
+        document.getElementById('main-nav-toggle').addEventListener('click', function () {
+            var header = document.getElementById('header');
+            if (header.classList.contains('mobile-on')) {
+                header.classList.remove('mobile-on');
+            } else {
+                header.classList.add('mobile-on');
+            }
+        });
+    </script>
+</footer>
+
+</div>
+</body>
+</html>

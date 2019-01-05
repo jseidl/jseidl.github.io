@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Whitespace on wroot</title>
+    <link>http://wroot.org/tags/whitespace/</link>
+    <description>Recent content in Whitespace on wroot</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Wed, 19 Feb 2014 14:31:02 +0000</lastBuildDate>
+    
+	<atom:link href="http://wroot.org/tags/whitespace/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Whitespace Esolang Covert Channel / Steganography</title>
+      <link>http://wroot.org/posts/whitespace-esolang-covert-channel-steganography/</link>
+      <pubDate>Wed, 19 Feb 2014 14:31:02 +0000</pubDate>
+      
+      <guid>http://wroot.org/posts/whitespace-esolang-covert-channel-steganography/</guid>
+      <description>I&amp;#8217;ve been always a fan of esoteric programming languages (esolangs). These programming languages are generally made just for fun, mostly in universities or for challenges. Wikipedia describes as the following:
+ An esoteric programming language (esolang, in short) is a programming language designed to test the boundaries of computer programming language design, as a proof of concept, or as a joke. The use of esoteric distinguishes these languages from programming languages that working developers use to write software.</description>
+    </item>
+    
+  </channel>
+</rss>

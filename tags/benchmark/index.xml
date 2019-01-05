@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Benchmark on wroot</title>
+    <link>http://wroot.org/tags/benchmark/</link>
+    <description>Recent content in Benchmark on wroot</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Tue, 29 Jun 2010 19:01:29 +0000</lastBuildDate>
+    
+	<atom:link href="http://wroot.org/tags/benchmark/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Security benchmark papers available from CIS</title>
+      <link>http://wroot.org/posts/security-benchmark-papers-available-from-cis/</link>
+      <pubDate>Tue, 29 Jun 2010 19:01:29 +0000</pubDate>
+      
+      <guid>http://wroot.org/posts/security-benchmark-papers-available-from-cis/</guid>
+      <description>The Center for Internet Security has some great papers on security benchmark for many OS (All flavours of Windows, Linux and Solaris) and applications (Apache, MSSQL, MySQL, Oracle etc).
+The papers are available to download at their CIS Resources Download.
+CIS has also a great audit tool called the &amp;#8220;CIS-CAT (Configuration Audit Tool) Benchmark Tool&amp;#8221; that is SCAP-Validated as a Federal Desktop Core Configuration (FDCC) scanner tool by NIST and is in its wonderful NCP low-level benchmark repository.</description>
+    </item>
+    
+  </channel>
+</rss>

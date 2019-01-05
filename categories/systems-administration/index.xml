@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Systems Administration on wroot</title>
+    <link>http://wroot.org/categories/systems-administration/</link>
+    <description>Recent content in Systems Administration on wroot</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Tue, 04 Dec 2012 11:29:09 +0000</lastBuildDate>
+    
+	<atom:link href="http://wroot.org/categories/systems-administration/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Fixing ‘guake can not init’ and buggy tab titles on Backtrack 5 R3</title>
+      <link>http://wroot.org/posts/fixing-guake-can-not-init-and-buggy-tab-titles-on-backtrack-5-r3/</link>
+      <pubDate>Tue, 04 Dec 2012 11:29:09 +0000</pubDate>
+      
+      <guid>http://wroot.org/posts/fixing-guake-can-not-init-and-buggy-tab-titles-on-backtrack-5-r3/</guid>
+      <description>Hi Folks, I&amp;#8217;m a heavy Guake Terminal user and I just installed the latest Backtrack 5 revision (R3) and installed Guake on it. I was surprised when I tried to start by getting the message:
+ &amp;#8220;Guake can not init!\n\nGconf Error.\nHave you installed guake.schemas properly?&amp;#8221;
+ Long story short, it seems that the package bundled with this version of Backtrack (and maybe others) have a bug into the debian package file/script that installs the guake.</description>
+    </item>
+    
+  </channel>
+</rss>

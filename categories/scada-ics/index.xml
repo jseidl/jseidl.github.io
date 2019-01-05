@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Scada/Ics on wroot</title>
+    <link>http://wroot.org/categories/scada-ics/</link>
+    <description>Recent content in Scada/Ics on wroot</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Mon, 30 Mar 2015 14:13:12 +0000</lastBuildDate>
+    
+	<atom:link href="http://wroot.org/categories/scada-ics/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Introducing VirtuaPlant 0.1</title>
+      <link>http://wroot.org/posts/introducing-virtuaplant-0-1/</link>
+      <pubDate>Mon, 30 Mar 2015 14:13:12 +0000</pubDate>
+      
+      <guid>http://wroot.org/posts/introducing-virtuaplant-0-1/</guid>
+      <description>Today I&amp;#8217;m releasing a project I&amp;#8217;ve been working on for the past week which I called VirtuaPlant (yeah I now, I suck at giving names).
+From the project page:
+ VirtuaPlant is a Industrial Control Systems simulator which adds a “similar to real-world control logic” to the basic “read/write tags” feature of most PLC simulators. Paired with a game library and 2d physics engine, VirtuaPlant is able to present a GUI simulating the “world view” behind the control system allowing the user to have a vision of the would-be actions behind the control systems.</description>
+    </item>
+    
+  </channel>
+</rss>

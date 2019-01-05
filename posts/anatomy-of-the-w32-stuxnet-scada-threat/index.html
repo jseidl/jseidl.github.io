@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+  <meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'>
+<meta name='description' content='Symantec released an in-depth analysis of W32.Stuxnet, reviewed through IDA-PRO. The analysis shows off the staged infection process, the unusual injection of legitimate services instead of issuing LoadLibrary calls, core encryption and exported functions.
+Tofino Security (specialized on SCADA security) has released an excellent white paper on the case (requires [free] registration). If you are a Malware Researcher / Reverse Engineer or just curious, I totally recommend it.
+There&#8217;s code, great explanation, images, graphs and such explaining it all the process from infection, rooting and the propper malware code.'>
+
+<meta property='og:title' content='Anatomy of the W32.Stuxnet SCADA threat • wroot'>
+<meta property='og:description' content='Symantec released an in-depth analysis of W32.Stuxnet, reviewed through IDA-PRO. The analysis shows off the staged infection process, the unusual injection of legitimate services instead of issuing LoadLibrary calls, core encryption and exported functions.
+Tofino Security (specialized on SCADA security) has released an excellent white paper on the case (requires [free] registration). If you are a Malware Researcher / Reverse Engineer or just curious, I totally recommend it.
+There&#8217;s code, great explanation, images, graphs and such explaining it all the process from infection, rooting and the propper malware code.'>
+<meta property='og:url' content='http://wroot.org/posts/anatomy-of-the-w32-stuxnet-scada-threat/'>
+<meta property='og:site_name' content='wroot'>
+<meta property='og:type' content='article'><meta property='article:section' content='Posts'><meta property='article:tag' content='ida pro'><meta property='article:tag' content='malware'><meta property='article:tag' content='scada'><meta property='article:tag' content='stuxnet'><meta property='article:tag' content='wincc'><meta property='article:tag' content='windows'><meta property='article:published_time' content='2010-08-06T13:43:41Z'/><meta property='article:modified_time' content='2010-08-06T13:43:41Z'/><meta name='twitter:card' content='summary'><meta name='twitter:site' content='@jseidl'>
+
+<meta name="generator" content="Hugo 0.53" />
+
+  <title>Anatomy of the W32.Stuxnet SCADA threat • wroot</title>
+  <link rel='canonical' href='http://wroot.org/posts/anatomy-of-the-w32-stuxnet-scada-threat/'>
+  
+  
+  <link rel='icon' href='/favicon.ico'><link rel='stylesheet' href='/webfonts/ptserif/main.css'><link rel='stylesheet' href='/webfonts/source-code-pro/main.css'><link rel='stylesheet' href='/css/style.css'>
+  
+
+</head>
+
+
+<body>
+<div id="container">
+    <header id="header">
+    <div id="header-outer" class="outer">
+        <div id="header-inner" class="inner">
+            <a id="main-nav-toggle" class="nav-icon" href="javascript:;"></a>
+            <a id="logo" class="logo-text" href="http://wroot.org/">wroot</a>
+            <nav id="main-nav">
+                
+                <a class="main-nav-link" href="/about/">About</a>
+                
+                <a class="main-nav-link" href="/talks/">Talks</a>
+                
+                <a class="main-nav-link" href="/projects/">Projects</a>
+                
+                <a class="main-nav-link" href="/press/">Press</a>
+                
+                <a class="main-nav-link" href="https://twitter.com/jseidl">Twitter</a>
+                
+                <a class="main-nav-link" href="https://www.linkedin.com/in/janseidl">LinkedIn</a>
+                
+                <a class="main-nav-link" href="http://github.com/jseidl">GitHub</a>
+                
+                <a class="main-nav-link" href="http://www.slideshare.net/jseidl/">SlideShare</a>
+                
+            </nav>
+            <nav id="sub-nav">
+                <div id="search-form-wrap">
+                </div>
+            </nav>
+        </div>
+    </div>
+</header>
+    <section id="main" class="outer">
+        <article class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+        <header class="article-header">
+            <h1 class="article-title" itemprop="name">Anatomy of the W32.Stuxnet SCADA threat</h1>
+        </header>
+        
+        <div class="article-meta">
+            
+            <a href="/posts/anatomy-of-the-w32-stuxnet-scada-threat/" class="article-date">
+                <time datetime='2010-08-06T13:43:41.000&#43;00:00' itemprop="datePublished">2010-08-06</time>
+            </a>
+            
+            
+            
+            <div class="post-categories">
+                <div class="article-category">
+                    
+                    
+                    <a class="article-category-link" href="http://wroot.org//categories/malware">Malware</a>
+                    
+                </div>
+            </div>
+            
+            
+        </div>
+        <div class="article-entry" itemprop="articleBody">
+            <p><a href="http://www.symantec.com/connect/pt-br/blogs/w32stuxnet-installation-details">Symantec released an in-depth analysis of W32.Stuxnet</a>, reviewed through IDA-PRO. The analysis shows off the staged infection process, the unusual injection of legitimate services instead of issuing LoadLibrary calls, core encryption and exported functions.</p>
+
+<p><a href="http://www.tofinosecurity.com/">Tofino Security</a> (specialized on <acronym title="Supervisory Acquisition and Data Control">SCADA</acronym> security) has released <a href="http://www.tofinosecurity.com/professional/siemens-pcs7-wincc-malware">an excellent white paper on the case</a> (requires [free] registration). If you are a Malware Researcher / Reverse Engineer or just curious, I totally recommend it.</p>
+
+<p>There&#8217;s code, great explanation, images, graphs and such explaining it all the process from infection, rooting and the propper malware code.</p>
+
+        </div>
+
+        
+        
+        
+
+        
+
+
+        
+        <footer class="article-footer">
+            <ul class="article-tag-list">
+                
+                <li class="article-tag-list-item">
+                    <a class="article-tag-list-link" href="http://wroot.org//tags/ida-pro">ida pro
+                    </a>
+                </li>
+                
+                <li class="article-tag-list-item">
+                    <a class="article-tag-list-link" href="http://wroot.org//tags/malware">malware
+                    </a>
+                </li>
+                
+                <li class="article-tag-list-item">
+                    <a class="article-tag-list-link" href="http://wroot.org//tags/scada">scada
+                    </a>
+                </li>
+                
+                <li class="article-tag-list-item">
+                    <a class="article-tag-list-link" href="http://wroot.org//tags/stuxnet">stuxnet
+                    </a>
+                </li>
+                
+                <li class="article-tag-list-item">
+                    <a class="article-tag-list-link" href="http://wroot.org//tags/wincc">wincc
+                    </a>
+                </li>
+                
+                <li class="article-tag-list-item">
+                    <a class="article-tag-list-link" href="http://wroot.org//tags/windows">windows
+                    </a>
+                </li>
+                
+            </ul>
+        </footer>
+        
+    </div>
+    <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "wroot" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+    <nav id="article-nav">
+    
+    <a href="/posts/playing-around-with-samys-quickjack-clickjacker/" id="article-nav-newer" class="article-nav-link-wrap">
+        <div class="article-nav-title"><span>&lt;</span>&nbsp;
+            Playing around with Samy’s Quickjack clickjacker
+        </div>
+    </a>
+    
+    
+    <a href="/posts/wpa-faces-new-threat-hole-196-and-new-key-bruteforcing-service-2/" id="article-nav-older" class="article-nav-link-wrap">
+        <div class="article-nav-title">WPA faces new threat ‘Hole 196’ and new key bruteforcing service&nbsp;<span>&gt;</span></div>
+    </a>
+    
+</nav>
+</article>
+
+        
+    </section>
+    <footer id="footer">
+    <div class="outer">
+        <div id="footer-info" class="inner">
+            &copy; 2019 wroot&nbsp;
+            Powered by <a href="https://gohugo.io" target="_blank">Hugo</a> with (a slightly modified) theme <a href="https://github.com/carsonip/hugo-theme-minos">Minos</a>
+        </div>
+    </div>
+    
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/styles/tomorrow-night.min.css" integrity="sha256-2wL88NKUqvJi/ExflDzkzUumjUM73mcK2gBvBBeLvTk=" crossorigin="anonymous" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.9.0/highlight.min.js" integrity="sha256-KbfTjB0WZ8vvXngdpJGY3Yp3xKk+tttbqClO11anCIU=" crossorigin="anonymous"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+
+    
+    <script>
+        document.getElementById('main-nav-toggle').addEventListener('click', function () {
+            var header = document.getElementById('header');
+            if (header.classList.contains('mobile-on')) {
+                header.classList.remove('mobile-on');
+            } else {
+                header.classList.add('mobile-on');
+            }
+        });
+    </script>
+</footer>
+
+</div>
+</body>
+</html>
